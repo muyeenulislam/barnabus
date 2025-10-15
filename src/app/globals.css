@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --backgroundGray: #1f2021;
+  --backgroundDarkGray: #121314;
+  --foreground: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-backgroundGray: var(--backgroundGray);
+  --color-backgroundDarkGray: var(--backgroundDarkGray);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 5760) {
+  html {
+    font-size: 48.2px;
+  }
+}
+
+@media (min-width: 3840) and (max-width: 5759) {
+  html {
+    font-size: 32.1px;
+  }
+}
+@media (min-width: 2880) and (max-width: 3839) {
+  html {
+    font-size: 24.05px;
+  }
+}
+@media (min-width: 2560) and (max-width: 2879) {
+  html {
+    font-size: 21.37px;
+  }
+}
+@media (min-width: 2400) and (max-width: 2559) {
+  html {
+    font-size: 20.04px;
+  }
+}
+@media (min-width: 2133) and (max-width: 2399) {
+  html {
+    font-size: 17.8px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2132px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1745px) and (max-width: 1919px) {
+  html {
+    font-size: 14.55px;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1744px) {
+  html {
+    font-size: 12.78px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+  html {
+    font-size: 10.68px;
   }
 }
 
 body {
-  background: var(--background);
+  background: var(--backgroundDarkGray);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none !important;
 }
