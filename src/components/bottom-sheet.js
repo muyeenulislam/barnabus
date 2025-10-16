@@ -68,7 +68,7 @@ export default function BottomSheet({
             leaveTo="translate-y-full"
           >
             <DialogPanel
-              className={`rounded-t-3xl bg-[#1F2021] shadow-bottomSheet backdrop-blur-lg ${panelClassName}`}
+              className={`rounded-t-3xl bg-Surface1 shadow-bottomSheet backdrop-blur-lg ${panelClassName}`}
             >
               <div className="relative py-4 px-6 border-b border-Border-Secondary">
                 {showHandle && (
@@ -78,7 +78,7 @@ export default function BottomSheet({
                   ref={closeBtnRef}
                   aria-label="Close"
                   onClick={() => onClose(false)}
-                  className="absolute right-6 top-3 py-3 px-4 rounded-full bg-[#313233] backdrop-blur-lg shadow-bottomSheetClose"
+                  className="absolute right-6 top-3 py-3 px-4 rounded-full bg-Action-Buttons-Secondary-Background-Default backdrop-blur-lg shadow-bottomSheetClose"
                 >
                   <Image
                     src="/icons/cancel.svg"

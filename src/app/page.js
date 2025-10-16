@@ -1,5 +1,11 @@
-import Image from "next/image";
+import HomeHero from "@/components/home/hero";
+import DefineNewCategory from "@/components/home/define-new-category";
 
 export default function Home() {
-  return <div className="">home</div>;
+  return (
+    <>
+      <HomeHero />
+      <DefineNewCategory />
+    </>
+  );
 }

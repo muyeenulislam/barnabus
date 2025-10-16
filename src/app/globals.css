@@ -7,6 +7,7 @@
   --Overlays-White-5: rgba(255, 255, 255, 0.09);
   --Overlays-White-4: rgba(247, 247, 248, 0.06);
   --Content-Primary: #eaebeb;
+  --Content-Secondary: #b7b8b9;
   --action-buttons-tertiary-content-default-hover: #f7f7f8;
   --Border-Secondary: #454647;
   --Surface-L0: #121314;
@@ -18,6 +19,7 @@
   --Action-Buttons-Primary-Accent-Background-Default: rgba(0, 240, 255, 0.2);
   --Action-Buttons-Secondary-Background-Default: rgba(247, 247, 248, 0.09);
   --Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
+  --Brand-Accent-Alpha-200: #009199;
   --action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
   --Action-Buttons-Tertiary-Background-Hover: rgba(247, 247, 248, 0.18);
 }
@@ -27,13 +29,21 @@
   --color-backgroundDarkGray: var(--backgroundDarkGray);
   --color-foreground: var(--foreground);
   --color-Border-Secondary: var(--Border-Secondary);
-  --color-Surface-L0: var(--Surface-L0);
-  --color-Surface-L1: var(--Surface-L1);
-  --color-Surface-L2: var(--Surface-L2);
+  --color-Surface0: var(--Surface-L0);
+  --color-Surface1: var(--Surface-L1);
+  --color-Surface2: var(--Surface-L2);
   --color-Overlays-Black-9: var(--Overlays-Black-9);
   --color-Overlays-White-5: var(--Overlays-White-5);
   --color-Overlays-White-4: var(--Overlays-White-4);
   --color-Content-Primary: var(--Content-Primary);
+  --color-Content-Secondary: var(--Content-Secondary);
+  --color-Brand-Accent-Alpha-200: var(--Brand-Accent-Alpha-200);
+  --color-Action-Buttons-Secondary-Background-Default: var(
+    --Action-Buttons-Secondary-Background-Default
+  );
+  --color-Action-Buttons-Primary-Accent-Background-Default: var(
+    --Action-Buttons-Primary-Accent-Background-Default
+  );
   --color-Action-Buttons-Tertiary-Background-Hover: var(
     --Action-Buttons-Tertiary-Background-Hover
   );
@@ -68,6 +78,10 @@
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   --shadow-navDropdown: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 2px #38393a inset;
+  --shadow-boxPrimary: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
+    0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
+  --shadow-homeTableShadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
+    0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
   --font-outfit: var(--font-outfit);
 }
 
@@ -128,6 +142,11 @@ html {
 @media (min-width: 1280px) and (max-width: 1535px) {
   html {
     font-size: 10.68px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: 9.15px;
   }
 }
 

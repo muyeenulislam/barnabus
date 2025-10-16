@@ -71,7 +71,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-[#121314] fixed z-10"
+        className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-Surface0 fixed z-10"
         ref={navRef}
       >
         {/* Left: Logo */}
@@ -212,7 +212,7 @@ const Navbar = () => {
         onClose={setDrawerOpen}
         title="Menu"
         className="md:hidden"
-        contentClassName="px-[1.5rem] py-[1.25rem] bg-[#2B2C2D] flex flex-col gap-4"
+        contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
         {navItems.map((item, idx) => (
           <Link

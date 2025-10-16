@@ -5,30 +5,35 @@ import PropTypes from "prop-types";
 const SIZE_STYLES = {
   S: {
     text: "text-xs leading-4",
+    iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-1 px-2",
     gap: "gap-2",
     icon: 16,
   },
   M: {
     text: "text-[0.875rem] leading-[1.25rem]",
+    iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-[0.5rem] px-[1rem]",
     gap: "gap-3",
     icon: 20,
   },
   L: {
     text: "text-base leading-5",
+    iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-2 px-4",
     gap: "gap-4",
     icon: 24,
   },
   XL: {
     text: "text-[1.125rem] leading-[1.625rem]",
+    iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-[1rem] px-[1.5rem]",
     gap: "gap-4",
     icon: 28,
   },
   "2XL": {
     text: "text-[1.125rem] leading-[1.625rem]",
+    iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-[1.25rem] px-[2rem]",
     gap: "gap-5",
     icon: 32,
@@ -104,6 +109,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
+          className={s.iconSize}
         />
       )}
 
@@ -114,6 +120,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
+          className={s.iconSize}
         />
       )}
 
@@ -126,6 +133,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
+          className={s.iconSize}
         />
       )}
 
@@ -136,6 +144,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
+          className={s.iconSize}
         />
       )}
     </button>
