@@ -155,4 +155,4 @@ Button.propTypes = {
   type: PropTypes.oneOf(["button", "submit", "reset"]),
 };
 
-export { Button };
+export default Button;

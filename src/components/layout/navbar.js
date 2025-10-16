@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Menu,
   MenuButton,
@@ -10,13 +11,37 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-import { usePathname } from "next/navigation";
-import { Button } from "../button";
+import Button from "../button";
 import BottomSheet from "../bottom-sheet";
 
 const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
+  const navRef = useRef(null);
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = navRef.current;
+    if (!el) return;
+
+    const setHeight = () => {
+      document.documentElement.style.setProperty(
+        "--nav-h",
+        `${el.offsetHeight}px`
+      );
+    };
+
+    setHeight();
+
+    const ro = new ResizeObserver(setHeight);
+    ro.observe(el);
+
+    window.addEventListener("resize", setHeight);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", setHeight);
+    };
+  }, []);
 
   const navItems = [
     { title: "Vision", route: "/vision" },
@@ -45,7 +70,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-[#121314] fixed z-10">
+      <div
+        className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-[#121314] fixed z-10"
+        ref={navRef}
+      >
         {/* Left: Logo */}
         <Link className="flex gap-3 items-center" href="/">
           <Image

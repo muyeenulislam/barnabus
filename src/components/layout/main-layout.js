@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen">{children}</div>
+      <div style={{ paddingTop: "var(--nav-h)" }}>{children}</div>
       <Footer />
     </>
   );
