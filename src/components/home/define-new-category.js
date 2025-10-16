@@ -55,7 +55,7 @@ const DefineNewCategory = () => {
           </p>
         </div>
         <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
-          <div className="rounded-xl lg:rounded-3xl bg-Surface0 shadow-homeTableShadow">
+          <div className="rounded-xl lg:rounded-3xl bg-Surface0 shadow-homeTableShadow p-[1px]">
             <div className="flex gap-4 p-2 md:p-3 lg:p-4">
               <p className="flex-1 text-left text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7">
                 Static & Reactive
@@ -67,7 +67,7 @@ const DefineNewCategory = () => {
             {tableContent?.map((item, index) => (
               <div key={index} className="flex ">
                 <p
-                  className={`w-full lg:w-[45%] p-2 md:p-3 lg:p-4 text-left bg-Surface1 text-Content-Secondary text-sm leading-5 lg:text-base lg:leading-6 ${
+                  className={`w-full lg:w-[47%] p-2 md:p-3 lg:p-4 text-left bg-Surface1 text-Content-Secondary text-sm leading-5 lg:text-base lg:leading-6 ${
                     index !== tableContent?.length - 1 &&
                     "border-b border-white/30"
                   } ${
@@ -78,7 +78,7 @@ const DefineNewCategory = () => {
                   {item.left}
                 </p>
                 <p
-                  className={`w-full lg:w-[55%] p-2 md:p-3 lg:p-4 text-left text-black bg-white text-sm leading-5 lg:text-base lg:leading-6 ${
+                  className={`w-full lg:w-[53%] p-2 md:p-3 lg:p-4 text-left text-black bg-white text-sm leading-5 lg:text-base lg:leading-6 ${
                     index !== tableContent?.length - 1 &&
                     "border-b border-gray/30"
                   } ${
