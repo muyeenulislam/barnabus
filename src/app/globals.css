@@ -66,6 +66,8 @@
     0 0 0 2px #38393a inset;
   --shadow-navLinkActive: 0 2px 0 0 #fff inset,
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
+  --shadow-navDropdown: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
+    0 0 0 2px #38393a inset;
   --font-outfit: var(--font-outfit);
 }
 

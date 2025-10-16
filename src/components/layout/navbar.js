@@ -126,16 +126,16 @@ const Navbar = () => {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <MenuItems className="absolute right-0 top-12 z-20 min-w-[200px] rounded-2xl bg-[#121314] border border-Border-Secondary shadow-xl p-1">
+                    <MenuItems className="absolute right-0 top-12 z-20 rounded-2xl bg-[rgba(18, 19, 20, 0.44)] shadow-navDropdown p-2 backdrop-blur-lg">
                       {rest.map((item, idx) => {
                         const active = isActive(item.route);
                         return (
                           <MenuItem key={idx}>
-                            {({ active: hover }) => (
+                            {({ focus: hover }) => (
                               <Link
                                 href={item.route}
                                 aria-current={active ? "page" : undefined}
-                                className={`block w-full text-left ${baseLinkCls} rounded-xl ${
+                                className={`block w-full text-nowrap text-action-buttons-tertiary-content-default-hover text-center p-2 text-xs font-semibold leading-4 ${baseLinkCls} rounded-xl ${
                                   active
                                     ? activeLinkCls
                                     : hover
