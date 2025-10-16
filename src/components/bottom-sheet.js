@@ -78,7 +78,7 @@ export default function BottomSheet({
                   ref={closeBtnRef}
                   aria-label="Close"
                   onClick={() => onClose(false)}
-                  className="absolute right-3 top-3 py-3 px-4 rounded-full bg-Action-Buttons-Secondary-Background-Default backdrop-blur-lg shadow-bottomSheetClose"
+                  className="absolute right-6 top-3 py-3 px-4 rounded-full bg-[#313233] backdrop-blur-lg shadow-bottomSheetClose"
                 >
                   <Image
                     src="/icons/cancel.svg"
@@ -89,7 +89,7 @@ export default function BottomSheet({
                   />
                 </button>
                 {title ? (
-                  <DialogTitle className="mt-2 text-sm font-semibold text-action-buttons-tertiary-content-default-hover">
+                  <DialogTitle className="text-lg font-semibold text-Content-Primary">
                     {title}
                   </DialogTitle>
                 ) : null}

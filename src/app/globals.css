@@ -11,6 +11,7 @@
   --Border-Secondary: #454647;
   --Surface-L0: #121314;
   --Surface-L1: #1f2021;
+  --Surface-L2: #2b2c2d;
   --Overlays-Black-9: rgba(18, 19, 20, 0.44);
   --Action-Buttons-Primary-Default-Background-Default: #c3c5c6;
   --action-buttons-primary-default-content-default-hover-pressed: #121314;
@@ -28,6 +29,7 @@
   --color-Border-Secondary: var(--Border-Secondary);
   --color-Surface-L0: var(--Surface-L0);
   --color-Surface-L1: var(--Surface-L1);
+  --color-Surface-L2: var(--Surface-L2);
   --color-Overlays-Black-9: var(--Overlays-Black-9);
   --color-Overlays-White-5: var(--Overlays-White-5);
   --color-Overlays-White-4: var(--Overlays-White-4);
@@ -62,6 +64,8 @@
     0 0 0 2px #38393a inset;
   --shadow-bottomSheet: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 2px #38393a inset;
+  --shadow-navLinkActive: 0 2px 0 0 #fff inset,
+    0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   --font-outfit: var(--font-outfit);
 }
 

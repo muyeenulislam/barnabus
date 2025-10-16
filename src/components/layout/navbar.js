@@ -10,11 +10,13 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
+import { usePathname } from "next/navigation";
 import { Button } from "../button";
 import BottomSheet from "../bottom-sheet";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { title: "Vision", route: "/vision" },
@@ -30,6 +32,16 @@ const Navbar = () => {
 
   const baseLinkCls =
     "px-4 py-2 rounded-full text-action-buttons-tertiary-content-default-hover text-sm font-semibold leading-5";
+  const activeLinkCls =
+    "bg-Action-Buttons-Primary-Default-Background-Default shadow-navLinkActive backdrop-blur-lg !text-action-buttons-primary-default-content-default-hover-pressed";
+
+  const isActive = (href) => {
+    if (!pathname) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  const restHasActive = rest.some((i) => isActive(i.route));
 
   return (
     <>
@@ -55,7 +67,14 @@ const Navbar = () => {
         {/* Center A: Desktop (lg and up) – full nav */}
         <div className="hidden lg:flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
           {navItems.map((item, index) => (
-            <Link key={index} className={baseLinkCls} href={item.route}>
+            <Link
+              key={index}
+              className={`${baseLinkCls} ${
+                isActive(item.route) ? activeLinkCls : ""
+              }`}
+              href={item.route}
+              aria-current={isActive(item.route) ? "page" : undefined}
+            >
               {item.title}
             </Link>
           ))}
@@ -64,17 +83,27 @@ const Navbar = () => {
         {/* Center B: Tablet (md only) – first 3 + dropdown */}
         <div className="hidden md:flex lg:hidden p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar relative">
           {first.map((item, index) => (
-            <Link key={index} className={baseLinkCls} href={item.route}>
+            <Link
+              key={index}
+              className={`${baseLinkCls} ${
+                isActive(item.route) ? activeLinkCls : ""
+              }`}
+              href={item.route}
+              aria-current={isActive(item.route) ? "page" : undefined}
+            >
               {item.title}
             </Link>
           ))}
+
           {rest.length > 0 && (
             <Menu as="div" className="relative">
               {({ open }) => (
                 <>
                   <MenuButton
                     className={`p-2 rounded-full ${
-                      open ? "bg-Action-Buttons-Tertiary-Background-Hover" : ""
+                      open || restHasActive
+                        ? "bg-Action-Buttons-Tertiary-Background-Hover"
+                        : ""
                     }`}
                     aria-label="More navigation items"
                   >
@@ -98,20 +127,28 @@ const Navbar = () => {
                     leaveTo="opacity-0 scale-95"
                   >
                     <MenuItems className="absolute right-0 top-12 z-20 min-w-[200px] rounded-2xl bg-[#121314] border border-Border-Secondary shadow-xl p-1">
-                      {rest.map((item, idx) => (
-                        <MenuItem key={idx}>
-                          {({ active }) => (
-                            <Link
-                              href={item.route}
-                              className={`block w-full text-left ${baseLinkCls} rounded-xl ${
-                                active ? "bg-Overlays-White-5" : ""
-                              }`}
-                            >
-                              {item.title}
-                            </Link>
-                          )}
-                        </MenuItem>
-                      ))}
+                      {rest.map((item, idx) => {
+                        const active = isActive(item.route);
+                        return (
+                          <MenuItem key={idx}>
+                            {({ active: hover }) => (
+                              <Link
+                                href={item.route}
+                                aria-current={active ? "page" : undefined}
+                                className={`block w-full text-left ${baseLinkCls} rounded-xl ${
+                                  active
+                                    ? activeLinkCls
+                                    : hover
+                                    ? "bg-Overlays-White-5"
+                                    : ""
+                                }`}
+                              >
+                                {item.title}
+                              </Link>
+                            )}
+                          </MenuItem>
+                        );
+                      })}
                     </MenuItems>
                   </Transition>
                 </>
@@ -141,26 +178,29 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* BottomSheet (only relevant on mobile; visibility controlled via state) */}
+      {/* BottomSheet (mobile) */}
       <BottomSheet
         open={drawerOpen}
         onClose={setDrawerOpen}
         title="Menu"
         className="md:hidden"
-        contentClassName="px-[1.5rem] py-[1.25rem] bg-[#2B2C2D]"
+        contentClassName="px-[1.5rem] py-[1.25rem] bg-[#2B2C2D] flex flex-col gap-4"
       >
-        <nav>
-          {navItems.map((item, idx) => (
-            <Link
-              key={idx}
-              href={item.route}
-              onClick={() => setDrawerOpen(false)}
-              className="block w-full text-center px-4 py-3 rounded-xl text-action-buttons-tertiary-content-default-hover font-semibold text-base hover:bg-Action-Buttons-Tertiary-Background-Hover"
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
+        {navItems.map((item, idx) => (
+          <Link
+            key={idx}
+            href={item.route}
+            onClick={() => setDrawerOpen(false)}
+            aria-current={isActive(item.route) ? "page" : undefined}
+            className={`block w-full text-center px-4 py-5 rounded-full text-action-buttons-tertiary-content-default-hover font-semibold text-sm hover:bg-Action-Buttons-Tertiary-Background-Hover ${
+              isActive(item.route)
+                ? "bg-Action-Buttons-Tertiary-Background-Hover"
+                : ""
+            }`}
+          >
+            {item.title}
+          </Link>
+        ))}
       </BottomSheet>
     </>
   );
