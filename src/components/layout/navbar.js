@@ -1,10 +1,21 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { Button } from "./buttons";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from "@headlessui/react";
+import { Button } from "../button";
+import BottomSheet from "../bottom-sheet";
 
 const Navbar = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const navItems = [
     { title: "Vision", route: "/vision" },
     { title: "Capabilities", route: "/capabilities" },
@@ -14,38 +25,144 @@ const Navbar = () => {
     { title: "Trust", route: "/trust" },
     { title: "Roadmap", route: "/roadmap" },
   ];
+  const first = navItems.slice(0, 3);
+  const rest = navItems.slice(3);
+
+  const baseLinkCls =
+    "px-4 py-2 rounded-full text-action-buttons-tertiary-content-default-hover text-sm font-semibold leading-5";
 
   return (
-    <div className="w-full flex justify-between items-center self-stretch p-6 border-b border-Border-Secondary bg-[#121314] fixed z-10">
-      <div className="flex gap-4 items-center">
-        <Image
-          src="/icons/barnabus-logo.svg"
-          height={48}
-          width={48}
-          className="h-9 w-9"
-          alt="logo-icon"
-        />
-        <Image
-          src="/icons/barnabus-text-logo.svg"
-          height={48}
-          width={200}
-          className="h-6 w-full"
-          alt="logo-text"
-        />
-      </div>
-      <div className="flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
-        {navItems?.map((item, index) => (
-          <Link
-            key={index}
-            className="px-4 py-2 rounded-full text-action-buttons-tertiary-content-default-hover text-sm font-semibold leading-5"
-            href={item.route}
+    <>
+      <div className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-[#121314] fixed z-10">
+        {/* Left: Logo */}
+        <Link className="flex gap-3 items-center" href="/">
+          <Image
+            src="/icons/barnabus-logo.svg"
+            height={48}
+            width={48}
+            className="h-8 w-8"
+            alt="logo-icon"
+          />
+          <Image
+            src="/icons/barnabus-text-logo.svg"
+            height={48}
+            width={200}
+            className="h-5 w-full"
+            alt="logo-text"
+          />
+        </Link>
+
+        {/* Center A: Desktop (lg and up) – full nav */}
+        <div className="hidden lg:flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
+          {navItems.map((item, index) => (
+            <Link key={index} className={baseLinkCls} href={item.route}>
+              {item.title}
+            </Link>
+          ))}
+        </div>
+
+        {/* Center B: Tablet (md only) – first 3 + dropdown */}
+        <div className="hidden md:flex lg:hidden p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar relative">
+          {first.map((item, index) => (
+            <Link key={index} className={baseLinkCls} href={item.route}>
+              {item.title}
+            </Link>
+          ))}
+          {rest.length > 0 && (
+            <Menu as="div" className="relative">
+              {({ open }) => (
+                <>
+                  <MenuButton
+                    className={`p-2 rounded-full ${
+                      open ? "bg-Action-Buttons-Tertiary-Background-Hover" : ""
+                    }`}
+                    aria-label="More navigation items"
+                  >
+                    <Image
+                      src="/icons/circle-arrow-down.svg"
+                      alt="open dropdown"
+                      height={24}
+                      width={24}
+                      className={`h-5 w-5 transition-transform duration-200 ${
+                        open ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
+                  </MenuButton>
+
+                  <Transition
+                    enter="transition ease-out duration-150"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <MenuItems className="absolute right-0 top-12 z-20 min-w-[200px] rounded-2xl bg-[#121314] border border-Border-Secondary shadow-xl p-1">
+                      {rest.map((item, idx) => (
+                        <MenuItem key={idx}>
+                          {({ active }) => (
+                            <Link
+                              href={item.route}
+                              className={`block w-full text-left ${baseLinkCls} rounded-xl ${
+                                active ? "bg-Overlays-White-5" : ""
+                              }`}
+                            >
+                              {item.title}
+                            </Link>
+                          )}
+                        </MenuItem>
+                      ))}
+                    </MenuItems>
+                  </Transition>
+                </>
+              )}
+            </Menu>
+          )}
+        </div>
+
+        {/* Right: CTA + Mobile trigger */}
+        <div className="flex items-center gap-2">
+          <Button label="Participate" variant="Primary-Default" size="L" />
+
+          {/* Mobile-only arrow to open bottom sheet */}
+          <button
+            className="md:hidden p-2 rounded-full hover:bg-Action-Buttons-Tertiary-Background-Hover"
+            aria-label="Open navigation"
+            onClick={() => setDrawerOpen(true)}
           >
-            {item.title}
-          </Link>
-        ))}
+            <Image
+              src="/icons/circle-arrow-down.svg"
+              alt="open drawer"
+              height={24}
+              width={24}
+              className="h-6 w-6"
+            />
+          </button>
+        </div>
       </div>
-      <Button label="Participate" variant="Primary-Default" size="L" />
-    </div>
+
+      {/* BottomSheet (only relevant on mobile; visibility controlled via state) */}
+      <BottomSheet
+        open={drawerOpen}
+        onClose={setDrawerOpen}
+        title="Menu"
+        className="md:hidden"
+        contentClassName="px-[1.5rem] py-[1.25rem] bg-[#2B2C2D]"
+      >
+        <nav>
+          {navItems.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.route}
+              onClick={() => setDrawerOpen(false)}
+              className="block w-full text-center px-4 py-3 rounded-xl text-action-buttons-tertiary-content-default-hover font-semibold text-base hover:bg-Action-Buttons-Tertiary-Background-Hover"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+      </BottomSheet>
+    </>
   );
 };
 

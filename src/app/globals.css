@@ -10,12 +10,15 @@
   --action-buttons-tertiary-content-default-hover: #f7f7f8;
   --Border-Secondary: #454647;
   --Surface-L0: #121314;
+  --Surface-L1: #1f2021;
+  --Overlays-Black-9: rgba(18, 19, 20, 0.44);
   --Action-Buttons-Primary-Default-Background-Default: #c3c5c6;
   --action-buttons-primary-default-content-default-hover-pressed: #121314;
   --Action-Buttons-Primary-Accent-Background-Default: rgba(0, 240, 255, 0.2);
   --Action-Buttons-Secondary-Background-Default: rgba(247, 247, 248, 0.09);
   --Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
   --action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
+  --Action-Buttons-Tertiary-Background-Hover: rgba(247, 247, 248, 0.18);
 }
 
 @theme inline {
@@ -24,9 +27,14 @@
   --color-foreground: var(--foreground);
   --color-Border-Secondary: var(--Border-Secondary);
   --color-Surface-L0: var(--Surface-L0);
+  --color-Surface-L1: var(--Surface-L1);
+  --color-Overlays-Black-9: var(--Overlays-Black-9);
   --color-Overlays-White-5: var(--Overlays-White-5);
   --color-Overlays-White-4: var(--Overlays-White-4);
   --color-Content-Primary: var(--Content-Primary);
+  --color-Action-Buttons-Tertiary-Background-Hover: var(
+    --Action-Buttons-Tertiary-Background-Hover
+  );
   --color-action-buttons-secondary-content-default-pressed-hover: var(
     --action-buttons-secondary-content-default-pressed-hover
   );
@@ -49,6 +57,10 @@
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   --shadow-AccentButton: 0 0 0 1px #3bf5ff inset, 0 0 5px 2px #009199 inset;
   --shadow-SecondaryButton: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
+    0 0 0 2px #38393a inset;
+  --shadow-bottomSheetClose: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
+    0 0 0 2px #38393a inset;
+  --shadow-bottomSheet: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 2px #38393a inset;
   --font-outfit: var(--font-outfit);
 }
