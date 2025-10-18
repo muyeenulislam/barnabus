@@ -6,6 +6,9 @@ import {
   DefineCategoryCardRound,
   DomainMemoryInnerCard,
 } from "./define-category-card-items";
+
+import ProgressBar from "../progress-bar";
+import Tags from "../tags";
 import Button from "../button";
 
 const DefineNewCategory = () => {
@@ -54,6 +57,7 @@ const DefineNewCategory = () => {
       icon: "/icons/setting-error.svg",
       status: "Elevated Risk",
       accent: "red",
+      bgColor: "bg-Badge-Red-Subtle-Background",
     },
     {
       title: "Medication Review",
@@ -63,6 +67,7 @@ const DefineNewCategory = () => {
       icon: "/icons/medicine1.svg",
       status: "Complete",
       accent: "green",
+      bgColor: "bg-Badge-Yellow-Subtle-Background",
     },
     {
       title: "Clinical Summary",
@@ -72,6 +77,7 @@ const DefineNewCategory = () => {
       icon: "/icons/clinic.svg",
       status: "Complete",
       accent: "green",
+      bgColor: "bg-Badge-Teal-Subtle-Background",
     },
   ];
   const clinicalFeedContent2 = [
@@ -81,12 +87,17 @@ const DefineNewCategory = () => {
       desc: "Problem framing",
       status: "Success",
       accent: "green",
+      percentage: 87,
+      confidence: 77,
     },
     {
-      title: "Medication Review",
-      desc: "Clopidogrel detected, recommend hold 5 days pre-op",
+      title:
+        "Therapeutic Context: The therapeutic approach must align with the patient's preferences and values to ensure adherence and satisfaction.",
+      desc: "Problem framing",
       status: "In Progress",
       accent: "yellow",
+      percentage: 87,
+      confidence: 77,
     },
   ];
   return (
@@ -320,46 +331,164 @@ const DefineNewCategory = () => {
               <DomainMemoryInnerCard />
             </div>
           </DefineCategoryCard>
-          <div className="md:col-span-2 lg:col-span-3">
-            <DefineCategoryCard>
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="flex flex-col lg:gap-[3rem] lg:max-w-[50%]">
-                  <div className="flex flex-col gap-1 lg:gap-3 mb-4">
-                    <h3 className="card-heading">Human UX</h3>
-                    <p className="card-subheading">
-                      Designed for real interaction, not backend workflows.
-                    </p>
+          <div className="md:col-span-2 lg:col-span-3 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-boxPrimary relative overflow-hidden p-4 md:p-5 lg:p-12 !pb-0">
+            <div className="h-[25rem] w-[33rem] rounded-[33rem] absolute right-[-22rem] bottom-[-14rem] lg:right-0 lg:bottom-[-10.75rem] bg-Brand-Accent-Alpha-200/25 blur-[50px] z-[100]"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-end">
+              <div className="flex flex-col lg:gap-[1rem] lg:max-w-[50%]">
+                <div className="flex flex-col gap-1 lg:gap-3 mb-4">
+                  <h3 className="card-heading">Human UX</h3>
+                  <p className="card-subheading">
+                    Designed for real interaction, not backend workflows.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 lg:gap-8 lg:pb-10">
+                  {humanUXContent?.map((item, index) => (
+                    <div key={index} className="flex gap-4 lg:gap-6">
+                      <div
+                        className="shrink-0 h-max flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3"
+                        style={{
+                          background:
+                            "radial-gradient(53.06% 69.61% at 50% 100%, var(--Overlays-White-3, rgba(255, 255, 255, 0.01)) 0%, var(--Overlays-Black-9, rgba(18, 19, 20, 0.19)) 100%), var(--Overlays-White-3, rgba(255, 255, 255, 0.03))",
+                          boxShadow:
+                            "0 0.4px 0 0.4px var(--Overlays-White-6, rgba(255, 255, 255, 0.12)) inset, 0 0 1.2px 1.2px var(--Overlays-White-6, rgba(247, 247, 248, 0.12)) inset",
+                        }}
+                      >
+                        <Image
+                          src={item.icon}
+                          alt="icon"
+                          height={32}
+                          width={32}
+                          className="shrink-0 h-[1.875rem] w-[1.875rem] lg:h-[2.5rem] lg:w-[2.5rem]"
+                        />
+                      </div>
+                      <p className="flex-1 text-Content-Secondary font-semibold text-sm leading-5 lg:text-xl lg:leading-7">
+                        {item.title}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col p-[1rem] lg:p-[1.5rem] gap-2.5 lg:gap-3 rounded-t-[1.3rem] lg:rounded-t-3xl bg-Surface0 shadow-boxPrimary max-w-[90%] lg:max-w-[75%] relative h-max">
+                <div className="flex flex-col gap-2">
+                  <h6 className="text-Content-Primary font-semibold text-[0.56rem] leading-[0.6rem] lg:text-base lg:leading-[1.18rem]">
+                    Healthcare Clinical Feed
+                  </h6>
+                  <p className="text-Content-Tertiary text-[0.4rem] leading-2 lg:text-[0.75rem] lg:leading-4">
+                    Agents run in parallel with a shared context layer for the
+                    selected goal.
+                  </p>
+                </div>
+                <div className="flex flex-col rounded-[0.33rem] lg:rounded-xl border border-Border-Secondary bg-Border-Secondary">
+                  <div className="flex gap-2 p-[0.4rem] lg:p-3 text-Content-Primary font-semibold text-[0.4rem] lg:text-sm">
+                    <p className="w-1/7">Type</p>
+                    <p className="w-4/7">Reasoning Trace</p>
+                    <p className="w-2/7 text-right">Status</p>
                   </div>
-                  <div className="flex flex-col gap-2 lg:gap-8">
-                    {humanUXContent?.map((item, index) => (
-                      <div key={index} className="flex gap-4 lg:gap-6">
+                  {clinicalFeedContent?.map((item, index) => (
+                    <div
+                      className={`flex gap-2 p-[0.4rem] lg:p-3 text-Content-Primary font-semibold text-[0.4rem] lg:text-sm bg-Surface1 ${
+                        index === clinicalFeedContent?.length - 1 &&
+                        "rounded-b-[0.33rem] lg:rounded-b-xl"
+                      } ${
+                        index !== clinicalFeedContent?.length - 1 &&
+                        "border-b border-b-Border-Secondary"
+                      }`}
+                      key={index}
+                    >
+                      <div className="w-1/7 flex justify-center">
                         <div
-                          className="shrink-0 flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3"
-                          style={{
-                            background:
-                              "radial-gradient(53.06% 69.61% at 50% 100%, var(--Overlays-White-3, rgba(255, 255, 255, 0.01)) 0%, var(--Overlays-Black-9, rgba(18, 19, 20, 0.19)) 100%), var(--Overlays-White-3, rgba(255, 255, 255, 0.03))",
-                            boxShadow:
-                              "0 0.4px 0 0.4px var(--Overlays-White-6, rgba(255, 255, 255, 0.12)) inset, 0 0 1.2px 1.2px var(--Overlays-White-6, rgba(247, 247, 248, 0.12)) inset",
-                          }}
+                          className={`flex rounded-full justify-center items-center p-[0.3rem] lg:p-2 h-max ${item.bgColor}`}
                         >
                           <Image
-                            src={item.icon}
-                            alt="icon"
-                            height={32}
-                            width={32}
-                            className="shrink-0 h-[1.875rem] w-[1.875rem] lg:h-[2.5rem] lg:w-[2.5rem]"
+                            src={item?.icon}
+                            alt="ai brain"
+                            height={35}
+                            width={35}
+                            className="h-[1rem] w-[1rem] lg:h-[1.75rem] lg:w-[1.75rem]"
                           />
                         </div>
-                        <p className="flex-1 text-Content-Secondary font-semibold text-sm leading-5 lg:text-xl lg:leading-7">
+                      </div>
+                      <div className="w-4/7 text-[0.4rem] leading-2 lg:text-sm lg:leading-4 space-y-0.5 lg:space-y-2">
+                        <p className="text-Content-Primary font-semibold">
                           {item.title}
                         </p>
+                        <p className="text-Content-Tertiary font-normal">
+                          {item.desc}{" "}
+                          {item?.span && (
+                            <span className="font-bold text-Content-Error-Bold text-[0.45rem] leading-2 lg:text-base lg:leading-5">
+                              {item?.span}
+                            </span>
+                          )}
+                        </p>
+                        <p className="text-Content-Tertiary font-normal">
+                          {item.time}
+                        </p>
                       </div>
-                    ))}
-                  </div>
+                      <div className="w-2/7 text-right">
+                        <Tags
+                          label={item.status}
+                          size="M"
+                          variant={item.accent}
+                          additionalStyle="!hidden lg:!inline-flex"
+                        />
+                        <Tags
+                          label={item.status}
+                          size="S"
+                          variant={item.accent}
+                          additionalStyle="lg:!hidden"
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div></div>
+
+                <div className="flex flex-col gap-2 absolute max-w-[20rem] lg:max-w-[25rem] bottom-[-2rem] lg:bottom-[-6rem] right-[-14rem] lg:right-[-9rem] z-[100]">
+                  {clinicalFeedContent2?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col lg:gap-[1.75rem] p-[0.5rem] lg:p-[1.25rem] bg-Surface1 shadow-boxPrimary rounded-[0.5rem] lg:rounded-[0.9rem]"
+                    >
+                      <div className="flex justify-between items-start lg:gap-[0.65rem]">
+                        <div className="flex flex-col lg:gap-1 w-2/3">
+                          <div className="text-[0.4rem] leading-2 lg:text-sm lg:leading-4 space-y-0.5 lg:space-y-2">
+                            <p className="text-Content-Primary font-semibold line-clamp-1 text-ellipsis flex-1">
+                              {item.title}
+                            </p>
+                            <p className="text-Content-Tertiary font-normal">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="w-1/3 text-right">
+                          <Tags
+                            label={item.status}
+                            size="M"
+                            variant={item.accent}
+                            additionalStyle="!hidden lg:!inline-flex"
+                          />
+                          <Tags
+                            label={item.status}
+                            size="S"
+                            variant={item.accent}
+                            additionalStyle="lg:!hidden"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-Content-Primary text-[0.4rem] lg:text-[0.9rem]">
+                          Working... {item.percentage}%
+                        </p>
+                        <ProgressBar value={item.percentage} />
+                        <div className="text-Content-Tertiary font-normal flex justify-between text-[0.4rem] leading-2 lg:text-sm lg:leading-4">
+                          <p>Confidence</p>
+                          <p>{item.confidence}%</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </DefineCategoryCard>
+            </div>
           </div>
         </div>
       </div>
