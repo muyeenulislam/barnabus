@@ -18,8 +18,8 @@ const SIZE_STYLES = {
     icon: 20,
   },
   L: {
-    text: "text-base leading-5",
-    iconSize: "h-[1.625rem] w-[1.625rem]",
+    text: "text-sm leading-[1.25rem]",
+    iconSize: "h-[1.5rem] w-[1.5rem]",
     padding: "py-2 px-4",
     gap: "gap-4",
     icon: 24,

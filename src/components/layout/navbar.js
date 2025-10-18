@@ -71,7 +71,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-Surface0 fixed z-10"
+        className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-Surface0 fixed z-1000"
         ref={navRef}
       >
         {/* Left: Logo */}

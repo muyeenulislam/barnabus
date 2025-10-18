@@ -8,6 +8,8 @@
   --Overlays-White-4: rgba(247, 247, 248, 0.06);
   --Content-Primary: #eaebeb;
   --Content-Secondary: #b7b8b9;
+  --Content-Tertiary: #9d9fa0;
+  --Content-Quartiary: #515354;
   --action-buttons-tertiary-content-default-hover: #f7f7f8;
   --Border-Secondary: #454647;
   --Surface-L0: #121314;
@@ -19,9 +21,18 @@
   --Action-Buttons-Primary-Accent-Background-Default: rgba(0, 240, 255, 0.2);
   --Action-Buttons-Secondary-Background-Default: rgba(247, 247, 248, 0.09);
   --Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
+  --Brand-Accent-Alpha-100: #003a3d;
   --Brand-Accent-Alpha-200: #009199;
   --action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
   --Action-Buttons-Tertiary-Background-Hover: rgba(247, 247, 248, 0.18);
+  --Badge-Crimson-Subtle-Background: rgba(206, 1, 93, 0.22);
+  --Badge-Blue-Subtle-Background: rgba(1, 128, 239, 0.19);
+  --Badge-Green-Subtle-Background: rgba(0, 155, 54, 0.2);
+  --Badge-Yellow-Subtle-Background: rgba(255, 234, 1, 0.18);
+  --Badge-Brand-Accent-Subtle-Background: rgba(5, 243, 255, 0.08);
+  --Content-Warning-Bold: #ffb381;
+  --Content-Info-Bold: #96c7f2;
+  --Content-Error-Bold: #f3aeaf;
 }
 
 @theme inline {
@@ -37,7 +48,22 @@
   --color-Overlays-White-4: var(--Overlays-White-4);
   --color-Content-Primary: var(--Content-Primary);
   --color-Content-Secondary: var(--Content-Secondary);
+  --color-Content-Tertiary: var(--Content-Tertiary);
+  --color-Content-Quartiary: var(--Content-Quartiary);
+  --color-Brand-Accent-Alpha-100: var(--Brand-Accent-Alpha-100);
   --color-Brand-Accent-Alpha-200: var(--Brand-Accent-Alpha-200);
+  --color-Content-Warning-Bold: var(--Content-Warning-Bold);
+  --color-Content-Info-Bold: var(--Content-Info-Bold);
+  --color-Content-Error-Bold: var(--Content-Error-Bold);
+  --color-Badge-Brand-Accent-Subtle-Background: var(
+    --Badge-Brand-Accent-Subtle-Background
+  );
+  --color-Badge-Blue-Subtle-Background: var(--Badge-Blue-Subtle-Background);
+  --color-Badge-Green-Subtle-Background: var(--Badge-Green-Subtle-Background);
+  --color-Badge-Yellow-Subtle-Background: var(--Badge-Yellow-Subtle-Background);
+  --color-Badge-Crimson-Subtle-Background: var(
+    --Badge-Crimson-Subtle-Background
+  );
   --color-Action-Buttons-Secondary-Background-Default: var(
     --Action-Buttons-Secondary-Background-Default
   );
@@ -157,4 +183,59 @@ body {
 }
 a {
   text-decoration: none !important;
+}
+
+.content-heading {
+  font-weight: 600;
+  color: var(--Content-Primary);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.content-subheading {
+  color: var(--Content-Secondary);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.card-heading {
+  font-weight: 600;
+  color: var(--Content-Primary);
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+.card-subheading {
+  color: var(--Content-Secondary);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .card-heading {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .content-heading {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .content-subheading {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+  .card-heading {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+  .card-subheading {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
