@@ -1,0 +1,29 @@
+.shadow-container::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  box-shadow: var(--shadow-boxPrimary);
+
+  z-index: 101;
+
+  pointer-events: none;
+
+  border-radius: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .shadow-container::before {
+    border-radius: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shadow-container::before {
+    border-radius: 3rem;
+  }
+}

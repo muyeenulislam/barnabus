@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DefineCategoryCard = ({ children }) => {
   return (
-    <div className="p-4 md:p-5 lg:p-12 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-boxPrimary relative overflow-hidden h-[28rem] lg:h-[35rem]">
+    <div className="p-4 md:p-5 lg:p-12 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-container relative overflow-hidden h-[28rem] lg:h-[35rem]">
       {children}
     </div>
   );
