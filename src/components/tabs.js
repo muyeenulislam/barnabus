@@ -65,4 +65,65 @@ const Tab = ({ tabItems = [], currentTab, setTab, additionalStyle = "" }) => {
   );
 };
 
-export default Tab;
+const TabSecondary = ({
+  tabItems = [],
+  currentTab,
+  setTab,
+  additionalStyle = "",
+}) => {
+  return (
+    <LayoutGroup id="tabs" initial={false}>
+      <div
+        role="tablist"
+        className={`flex self-stretch justify-left items-center border-b border-b-Content-Tertiary ${additionalStyle}`}
+      >
+        {tabItems?.map((item, index) => {
+          const selected = currentTab === item?.value;
+          return (
+            <motion.button
+              key={item?.value ?? index}
+              type="button"
+              role="tab"
+              aria-selected={selected}
+              onClick={() => setTab(item?.value)}
+              className={`relative w-full lg:w-max text-center cursor-pointer  rounded-t-2xl text-xs leading-4 px-6 py-3 lg:text-base lg:leading-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                selected
+                  ? "text-Content-Primary font-semibold"
+                  : "text-Content-Secondary"
+              }`}
+              layout
+              whileTap={{ scale: 0.98 }}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 42,
+                mass: 0.6,
+              }}
+            >
+              {selected && (
+                <motion.span
+                  layoutId="tabPill"
+                  className="absolute inset-0 rounded-t-2xl bg-Action-Buttons-Secondary-Background-Default backdrop-blur-lg"
+                  transition={{
+                    type: "spring",
+                    stiffness: 500,
+                    damping: 40,
+                    mass: 0.6,
+                  }}
+                />
+              )}
+              <motion.span
+                className="relative z-[1]"
+                animate={{ opacity: selected ? 1 : 0.85 }}
+              >
+                {item?.label}
+              </motion.span>
+            </motion.button>
+          );
+        })}
+      </div>
+    </LayoutGroup>
+  );
+};
+
+export { Tab, TabSecondary };

@@ -3,7 +3,7 @@ import { EarlyAccessForm } from "../forms";
 
 const SectionIntro = memo(function SectionIntro() {
   return (
-    <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-left lg:w-[35%]">
+    <div className="flex flex-col gap-2 md:gap-5 lg:gap-6  text-left lg:w-[35%]">
       <h2 className="text-Content-Primary text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold leading-10 md:leading-12 lg:leading-16">
         Join the R&D: Be Part of the Future of Agentic Intelligence
       </h2>

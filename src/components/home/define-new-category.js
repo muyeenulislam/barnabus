@@ -14,7 +14,7 @@ import {
 } from "@/utils/arrays";
 
 import ProgressBar from "../progress-bar";
-import Tags from "../tags";
+import { Tags } from "../tags";
 import Button from "../button";
 
 import "./styles.css";

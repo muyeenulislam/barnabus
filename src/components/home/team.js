@@ -1,12 +1,12 @@
 "use client";
 import React, { memo, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Button from "../button";
 
-import Tab from "../tab";
+import { Tab } from "../tabs";
 
 import { PARTNERSHIP_LIST, TEAM_LIST } from "@/utils/arrays";
-import Link from "next/link";
 
 const CTAButtons = memo(function CTAButtons({ text }) {
   return (
@@ -44,7 +44,9 @@ const Team = () => {
               create impactful solutions that benefit our community.
             </p>
           </div>
-          <CTAButtons text="Go To Team Page" />
+          <Link href="/team">
+            <CTAButtons text="Go To Team Page" />
+          </Link>
         </div>
 
         {/* Right column */}
@@ -71,11 +73,11 @@ const Team = () => {
                           {item.name}
                         </p>
                         <p className="text-[#9DA1A8] mt-2 text-xs lg:text-sm leading-5">
-                          {item.details}
+                          {item.headline}
                         </p>
                       </div>
-                      {item.linkedIn && (
-                        <Link href={item.linkedIn} target="_blank">
+                      {item.linkedin && (
+                        <Link href={item.linkedin} target="_blank">
                           <Image
                             src="/icons/linkedin.svg"
                             height={32}

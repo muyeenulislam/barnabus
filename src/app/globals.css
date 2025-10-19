@@ -34,6 +34,9 @@
   --Badge-Teal-Subtle-Background: rgba(0, 164, 137, 0.22);
   --Badge-Red-Subtle-Background: rgba(228, 1, 1, 0.22);
   --Badge-Gray-Subtle-Background: #38393a;
+  --Badge-Plum-Subtle-Background: rgba(163, 0, 172, 0.22);
+  --Badge-Indigo-Subtle-Background: rgba(1, 61, 228, 0.22);
+  --Badge-Amber-Subtle-Background: rgba(255, 187, 1, 0.17);
   --Badge-Red-Outline-Background: rgba(255, 5, 5, 0.03);
   --Badge-Red-Outline-Border: #cd2b31;
   --Badge-Green-Outline-Background: rgba(2, 186, 60, 0.09);
@@ -61,6 +64,11 @@
   --Badge-Amber-Outline-Content: #ebbc00;
   --Badge-Purple-Outline-Content: #be93e4;
   --Badge-Gold-Outline-Content: #b8a383;
+  --Badge-Plum-Subtle-Content: #cf91d8;
+  --Badge-Indigo-Subtle-Content: #8da4ef;
+  --Badge-Green-Subtle-Content: #30a46c;
+  --Badge-Amber-Subtle-Content: #ee9d2b;
+  --Badge-Teal-Subtle-Content: #12a594;
 }
 
 @theme inline {
@@ -85,6 +93,14 @@
   --color-Content-Warning-Bold: var(--Content-Warning-Bold);
   --color-Content-Info-Bold: var(--Content-Info-Bold);
   --color-Content-Error-Bold: var(--Content-Error-Bold);
+  --color-Badge-Plum-Subtle-Content: var(--Badge-Plum-Subtle-Content);
+  --color-Badge-Indigo-Subtle-Content: var(--Badge-Indigo-Subtle-Content);
+  --color-Badge-Green-Subtle-Content: var(--Badge-Green-Subtle-Content);
+  --color-Badge-Amber-Subtle-Content: var(--Badge-Amber-Subtle-Content);
+  --color-Badge-Teal-Subtle-Content: var(--Badge-Teal-Subtle-Content);
+  --color-Badge-Plum-Subtle-Background: var(--Badge-Plum-Subtle-Background);
+  --color-Badge-Indigo-Subtle-Background: var(--Badge-Indigo-Subtle-Background);
+  --color-Badge-Amber-Subtle-Background: var(--Badge-Amber-Subtle-Background);
   --color-Badge-Teal-Subtle-Background: var(--Badge-Teal-Subtle-Background);
   --color-Badge-Red-Subtle-Background: var(--Badge-Red-Subtle-Background);
   --color-Badge-Red-Outline-Background: var(--Badge-Red-Outline-Background);

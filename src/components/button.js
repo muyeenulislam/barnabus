@@ -47,28 +47,16 @@ const VARIANT_STYLES = {
     "bg-Action-Buttons-Primary-Default-Background-Default",
     "text-action-buttons-primary-default-content-default-hover-pressed",
     "shadow-LightGrayButton",
-    "hover:bg-Action-Buttons-Primary-Default-Background-Hover",
-    "active:bg-Action-Buttons-Primary-Default-Background-Pressed",
-    "focus:outline-none focus:ring-2 focus:ring-offset-0",
-    "focus:ring-Action-Buttons-Primary-Default-Background-Hover",
   ].join(" "),
   "Primary-Accent": [
     "bg-Action-Buttons-Primary-Accent-Background-Default",
     "text-Action-Buttons-Primary-Accent-Content-Default",
     "shadow-AccentButton",
-    "hover:bg-Action-Buttons-Primary-Accent-Background-Hover",
-    "active:bg-Action-Buttons-Primary-Accent-Background-Pressed",
-    "focus:outline-none focus:ring-2 focus:ring-offset-0",
-    "focus:ring-Action-Buttons-Primary-Accent-Background-Hover",
   ].join(" "),
   Secondary: [
     "bg-Action-Buttons-Secondary-Background-Default",
     "text-action-buttons-secondary-content-default-pressed-hover",
     "shadow-SecondaryButton",
-    "hover:bg-Action-Buttons-Secondary-Background-Hover",
-    "active:bg-Action-Buttons-Secondary-Background-Pressed",
-    "focus:outline-none focus:ring-2 focus:ring-offset-0",
-    "focus:ring-action-buttons-secondary-border",
   ].join(" "),
 };
 
@@ -95,7 +83,7 @@ const Button = ({
     <button
       type={type || "button"}
       className={[
-        "inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer",
+        "inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer outline-none",
         s.text,
         s.padding,
         s.gap,

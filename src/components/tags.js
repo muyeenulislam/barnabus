@@ -67,6 +67,28 @@ const VARIANT_STYLES = {
     "border border-Badge-Gold-Outline-Border",
   ].join(" "),
 };
+const VARIANT_STYLES_SOLID = {
+  Plum: [
+    "bg-Badge-Plum-Subtle-Background",
+    "text-Badge-Plum-Subtle-Content",
+  ].join(" "),
+  Indigo: [
+    "bg-Badge-Indigo-Subtle-Background",
+    "text-Badge-Indigo-Subtle-Content",
+  ].join(" "),
+  Green: [
+    "bg-Badge-Green-Subtle-Background",
+    "text-Badge-Green-Subtle-Content",
+  ].join(" "),
+  Amber: [
+    "bg-Badge-Amber-Subtle-Background",
+    "text-Badge-Amber-Subtle-Content",
+  ].join(" "),
+  Teal: [
+    "bg-Badge-Teal-Subtle-Background",
+    "text-Badge-Teal-Subtle-Content",
+  ].join(" "),
+};
 
 const Tags = ({
   size = "M",
@@ -145,5 +167,82 @@ const Tags = ({
     </div>
   );
 };
+const SolidTags = ({
+  size = "M",
+  variant = "green",
+  label = "",
+  leadingDot = null,
+  trailingDot = null,
+  leadingIcon = null,
+  trailingIcon = null,
+  className = "",
+  additionalStyle = "",
+  ...rest
+}) => {
+  const s = SIZE_STYLES[size] || SIZE_STYLES.L;
+  const v = VARIANT_STYLES_SOLID[variant] || VARIANT_STYLES_SOLID["green"];
+  const iconSize = s.icon;
 
-export default Tags;
+  return (
+    <div
+      className={[
+        "inline-flex items-center justify-center rounded-full font-semibold text-center",
+        s.text,
+        s.padding,
+        s.gap,
+        v,
+        className,
+        additionalStyle,
+      ].join(" ")}
+      {...rest}
+    >
+      {leadingDot && (
+        <Image
+          src={leadingDot}
+          alt="leading badge"
+          height={iconSize}
+          width={iconSize}
+          aria-hidden="true"
+          className={s.iconSize}
+        />
+      )}
+
+      {leadingIcon && (
+        <Image
+          src={leadingIcon}
+          alt="leading icon"
+          height={iconSize}
+          width={iconSize}
+          aria-hidden="true"
+          className={s.iconSize}
+        />
+      )}
+
+      {label}
+
+      {trailingIcon && (
+        <Image
+          src={trailingIcon}
+          alt="trailing icon"
+          height={iconSize}
+          width={iconSize}
+          aria-hidden="true"
+          className={s.iconSize}
+        />
+      )}
+
+      {trailingDot && (
+        <Image
+          src={trailingDot}
+          alt="trailing badge"
+          height={iconSize}
+          width={iconSize}
+          aria-hidden="true"
+          className={s.iconSize}
+        />
+      )}
+    </div>
+  );
+};
+
+export { Tags, SolidTags };
