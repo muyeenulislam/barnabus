@@ -1,6 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import PropTypes from "prop-types";
+import Image from "next/image";
+
+import { FiLoader } from "react-icons/fi";
 
 const SIZE_STYLES = {
   S: {
@@ -82,6 +84,7 @@ const Button = ({
   additionalStyle = "",
   type,
   onClick,
+  loading = false,
   ...rest
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
@@ -115,7 +118,7 @@ const Button = ({
         />
       )}
 
-      {leadingIcon && (
+      {!loading && leadingIcon && (
         <Image
           src={leadingIcon}
           alt="leading icon"
@@ -128,7 +131,7 @@ const Button = ({
 
       {label}
 
-      {trailingIcon && (
+      {!loading && trailingIcon && (
         <Image
           src={trailingIcon}
           alt="trailing icon"
@@ -136,6 +139,11 @@ const Button = ({
           width={iconSize}
           aria-hidden="true"
           className={s.iconSize}
+        />
+      )}
+      {loading && (
+        <FiLoader
+          className={`${s.iconSize} motion-safe:animate-[spin_1.6s_linear_infinite]`}
         />
       )}
 

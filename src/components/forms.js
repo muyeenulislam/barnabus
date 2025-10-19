@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useState } from "react";
 
 import Button from "./button";
 import { TextAreaInput, TextInput } from "./input-fields";
 import { Toast } from "./toast";
+import { emailValid } from "@/utils/validators";
 
 const EarlyAccessForm = () => {
   const [state, setState] = useState({
@@ -15,10 +17,8 @@ const EarlyAccessForm = () => {
     interest: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "" });
-
-  const emailValid = (v) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(String(v || "").trim());
 
   const handleSubmit = () => {
     const reqMap = {
@@ -37,6 +37,7 @@ const EarlyAccessForm = () => {
       setToast({
         show: true,
         message: `Please fill: ${missing.join(", ")}.`,
+        type: "error",
       });
       return;
     }
@@ -45,12 +46,28 @@ const EarlyAccessForm = () => {
       setToast({
         show: true,
         message: "Please enter a valid Email address.",
+        type: "error",
       });
       return;
     }
 
-    // All good — proceed (you can replace this with your submit/POST)
-    console.log("Submitting form:", state);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setToast({
+        show: true,
+        message: "Your data has been submitted.",
+        type: "success",
+      });
+      setState({
+        companyName: "",
+        firstName: "",
+        lastName: "",
+        website: "",
+        email: "",
+        interest: "",
+      });
+    }, 1000);
   };
 
   return (
@@ -118,6 +135,7 @@ const EarlyAccessForm = () => {
             size="2XL"
             additionalStyle="!hidden lg:!flex w-full"
             onClick={handleSubmit}
+            loading={loading}
           />
           <Button
             label="Apply for Early Access"
@@ -126,6 +144,7 @@ const EarlyAccessForm = () => {
             size="XL"
             additionalStyle="lg:!hidden w-full"
             onClick={handleSubmit}
+            loading={loading}
           />
         </div>
       </div>
@@ -133,7 +152,8 @@ const EarlyAccessForm = () => {
       <Toast
         show={toast.show}
         message={toast.message}
-        onClose={() => setToast({ show: false, message: "" })}
+        type={toast.type}
+        onClose={() => setToast({ show: false, message: "", type: "" })}
       />
     </>
   );
