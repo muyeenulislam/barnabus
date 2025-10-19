@@ -81,6 +81,7 @@ const Button = ({
   className = "",
   additionalStyle = "",
   type,
+  onClick,
   ...rest
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
@@ -100,6 +101,7 @@ const Button = ({
         className,
         additionalStyle,
       ].join(" ")}
+      onClick={onClick}
       {...rest}
     >
       {leadingBadge && (

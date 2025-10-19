@@ -1,108 +1,23 @@
 import React, { memo } from "react";
 import Image from "next/image";
-import "./styles.css";
 
 import {
   DefineCategoryCard,
   DefineCategoryCardRound,
   DomainMemoryInnerCard,
 } from "./define-category-card-items";
+import {
+  DEFINE_NEW_CATEGORY_TABLE_CONTENT,
+  HUMAN_UX_ITEMS,
+  CLINICAL_FEED,
+  CLINICAL_FEED_SUMMARY,
+} from "@/utils/arrays";
 
 import ProgressBar from "../progress-bar";
 import Tags from "../tags";
 import Button from "../button";
 
-const TABLE_CONTENT = [
-  {
-    left: "Predicts outcomes",
-    right: "Predicts, decides, and acts on outcomes",
-  },
-  {
-    left: "Needs retraining to learn",
-    right: "Learns in real time, in context",
-  },
-  {
-    left: "Operates in narrow, predefined workflows",
-    right: "Adapts to roles, tasks, and change",
-  },
-  {
-    left: "Built for coders, not real users",
-    right: "Designed for real-world collaboration with humans",
-  },
-  {
-    left: "Gives one-off answers, not lasting intelligence",
-    right: "Acts, adapts, and improves with every use",
-  },
-];
-
-const HUMAN_UX_ITEMS = [
-  {
-    title: "Barnabus doesn’t just respond. It comprehends.",
-    icon: "/icons/voice.svg",
-  },
-  {
-    title: "It learns your world—not just your inputs.",
-    icon: "/icons/keyboard.svg",
-  },
-  {
-    title: "Trust isn’t built on speed. It’s earned through clarity.",
-    icon: "/icons/safe.svg",
-  },
-];
-
-const CLINICAL_FEED = [
-  {
-    title: "Risk Scoring",
-    desc: "RCRI Score Calculated",
-    span: 3.2,
-    time: "6:17:35 AM",
-    icon: "/icons/setting-error.svg",
-    status: "Elevated Risk",
-    accent: "red",
-    bgColor: "bg-Badge-Red-Subtle-Background",
-  },
-  {
-    title: "Medication Review",
-    desc: "Clopidogrel detected, recommend hold 5 days pre-op",
-    span: null,
-    time: "6:17:35 AM",
-    icon: "/icons/medicine1.svg",
-    status: "Complete",
-    accent: "green",
-    bgColor: "bg-Badge-Yellow-Subtle-Background",
-  },
-  {
-    title: "Clinical Summary",
-    desc: "Drafted clearance note",
-    span: null,
-    time: "6:17:35 AM",
-    icon: "/icons/clinic.svg",
-    status: "Complete",
-    accent: "green",
-    bgColor: "bg-Badge-Teal-Subtle-Background",
-  },
-];
-
-const CLINICAL_FEED_SUMMARY = [
-  {
-    title:
-      "Diagnostic Context: Accurate diagnostics are essential for identifying the underlying issues affecting the patient's health.",
-    desc: "Problem framing",
-    status: "Success",
-    accent: "green",
-    percentage: 87,
-    confidence: 77,
-  },
-  {
-    title:
-      "Therapeutic Context: The therapeutic approach must align with the patient's preferences and values to ensure adherence and satisfaction.",
-    desc: "Problem framing",
-    status: "In Progress",
-    accent: "yellow",
-    percentage: 87,
-    confidence: 77,
-  },
-];
+import "./styles.css";
 
 const ICON_PANEL_STYLE = Object.freeze({
   background:
@@ -543,7 +458,7 @@ const DefineNewCategory = () => {
         </div>
 
         <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
-          <ComparisonTable rows={TABLE_CONTENT} />
+          <ComparisonTable rows={DEFINE_NEW_CATEGORY_TABLE_CONTENT} />
           <p className="font-semibold text-Brand-Accent-Alpha-200 text-xs leading-4 md:text-sm md:leading-5 lg:text-lg lg:leading-6">
             Agentic AI doesn’t just answer — it collaborates, adapts, and grows
             with you.

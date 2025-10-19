@@ -6,6 +6,7 @@
   --foreground: #ffffff;
   --Overlays-White-5: rgba(255, 255, 255, 0.09);
   --Overlays-White-4: rgba(247, 247, 248, 0.06);
+  --Overlays-White-3: rgba(255, 255, 255, 0.03);
   --Content-Primary: #eaebeb;
   --Content-Secondary: #b7b8b9;
   --Content-Tertiary: #9d9fa0;
@@ -32,6 +33,7 @@
   --Badge-Brand-Accent-Subtle-Background: rgba(5, 243, 255, 0.08);
   --Badge-Teal-Subtle-Background: rgba(0, 164, 137, 0.22);
   --Badge-Red-Subtle-Background: rgba(228, 1, 1, 0.22);
+  --Badge-Gray-Subtle-Background: #38393a;
   --Badge-Red-Outline-Background: rgba(255, 5, 5, 0.03);
   --Badge-Red-Outline-Border: #cd2b31;
   --Badge-Green-Outline-Background: rgba(2, 186, 60, 0.09);
@@ -40,9 +42,25 @@
   --Badge-Yellow-Outline-Content: #ebbc00;
   --Badge-Yellow-Outline-Background: rgba(255, 221, 2, 0.09);
   --Badge-Yellow-Outline-Border: #946800;
+  --Badge-Violet-Outline-Border: #5746af;
+  --Badge-Violet-Outline-Background: rgba(60, 0, 255, 0.05);
+  --Badge-Brand-Accent-Outline-Border: #009199;
+  --Badge-Brand-Accent-Outline-Background: rgba(5, 230, 255, 0.04);
+  --Badge-Amber-Outline-Border: #946800;
+  --Badge-Amber-Outline-Background: rgba(255, 221, 2, 0.09);
+  --Badge-Purple-Outline-Border: #793aaf;
+  --Badge-Purple-Outline-Background: rgba(146, 0, 237, 0.05);
+  --Badge-Gold-Outline-Border: #776750;
+  --Badge-Gold-Outline-Background: rgba(140, 106, 2, 0.09);
   --Content-Warning-Bold: #ffb381;
   --Content-Info-Bold: #96c7f2;
   --Content-Error-Bold: #f3aeaf;
+  --Content-Brand-Accent: #3bf5ff;
+  --Badge-Brand-Accent-Outline-Content: #00c1cc;
+  --Badge-Violet-Outline-Content: #aa99ec;
+  --Badge-Amber-Outline-Content: #ebbc00;
+  --Badge-Purple-Outline-Content: #be93e4;
+  --Badge-Gold-Outline-Content: #b8a383;
 }
 
 @theme inline {
@@ -56,10 +74,12 @@
   --color-Overlays-Black-9: var(--Overlays-Black-9);
   --color-Overlays-White-5: var(--Overlays-White-5);
   --color-Overlays-White-4: var(--Overlays-White-4);
+  --color-Overlays-White-3: var(--Overlays-White-3);
   --color-Content-Primary: var(--Content-Primary);
   --color-Content-Secondary: var(--Content-Secondary);
   --color-Content-Tertiary: var(--Content-Tertiary);
   --color-Content-Quartiary: var(--Content-Quartiary);
+  --color-Content-Brand-Accent: var(--Content-Brand-Accent);
   --color-Brand-Accent-Alpha-100: var(--Brand-Accent-Alpha-100);
   --color-Brand-Accent-Alpha-200: var(--Brand-Accent-Alpha-200);
   --color-Content-Warning-Bold: var(--Content-Warning-Bold);
@@ -68,7 +88,27 @@
   --color-Badge-Teal-Subtle-Background: var(--Badge-Teal-Subtle-Background);
   --color-Badge-Red-Subtle-Background: var(--Badge-Red-Subtle-Background);
   --color-Badge-Red-Outline-Background: var(--Badge-Red-Outline-Background);
+  --color-Badge-Gray-Subtle-Background: var(--Badge-Gray-Subtle-Background);
   --color-Badge-Red-Outline-Border: var(--Badge-Red-Outline-Border);
+  --color-Badge-Violet-Outline-Border: var(--Badge-Violet-Outline-Border);
+  --color-Badge-Violet-Outline-Background: var(
+    --Badge-Violet-Outline-Background
+  );
+  --color-Badge-Brand-Accent-Outline-Border: var(
+    --Badge-Brand-Accent-Outline-Border
+  );
+  --color-Badge-Brand-Accent-Outline-Background: var(
+    --Badge-Brand-Accent-Outline-Background
+  );
+  --color-Badge-Amber-Outline-Border: var(--Badge-Amber-Outline-Border);
+  --color-Badge-Amber-Outline-Background: var(--Badge-Amber-Outline-Background);
+  --color-Badge-Purple-Outline-Border: var(--Badge-Purple-Outline-Border);
+  --color-Badge-Purple-Outline-Background: var(
+    --Badge-Purple-Outline-Background
+  );
+  --color-Badge-Gold-Outline-Border: var(--Badge-Gold-Outline-Border);
+  --color-Badge-Gold-Outline-Background: var(--Badge-Gold-Outline-Background);
+
   --Badge-Red-Outline-Content: #eb9091;
   --color-Badge-Green-Outline-Background: var(--Badge-Green-Outline-Background);
   --color-Badge-Yellow-Outline-Background: var(
@@ -79,6 +119,13 @@
   --color-Badge-Green-Outline-Content: var(--Badge-Green-Outline-Content);
   --color-Badge-Red-Outline-Content: var(--Badge-Red-Outline-Content);
   --color-Badge-Yellow-Outline-Content: var(--Badge-Yellow-Outline-Content);
+  --color-Badge-Brand-Accent-Outline-Content: var(
+    --Badge-Brand-Accent-Outline-Content
+  );
+  --color-Badge-Violet-Outline-Content: var(--Badge-Violet-Outline-Content);
+  --color-Badge-Amber-Outline-Content: var(--Badge-Amber-Outline-Content);
+  --color-Badge-Purple-Outline-Content: var(--Badge-Purple-Outline-Content);
+  --color-Badge-Gold-Outline-Content: var(--Badge-Gold-Outline-Content);
   --color-Badge-Brand-Accent-Subtle-Background: var(
     --Badge-Brand-Accent-Subtle-Background
   );

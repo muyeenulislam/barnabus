@@ -17,9 +17,9 @@ const SIZE_STYLES = {
     icon: 20,
   },
   L: {
-    text: "text-sm leading-[1.25rem]",
+    text: "text-[1.25rem] leading-[1.75rem]",
     iconSize: "h-[1.5rem] w-[1.5rem]",
-    padding: "py-2 px-4",
+    padding: "py-[0.75rem] px-[1.25rem]",
     gap: "gap-4",
     icon: 24,
   },
@@ -41,6 +41,31 @@ const VARIANT_STYLES = {
     "text-Badge-Green-Outline-Content",
     "border border-Badge-Green-Outline-Border",
   ].join(" "),
+  "Brand-Accent": [
+    "bg-Badge-Brand-Accent-Outline-Background",
+    "text-Badge-Brand-Accent-Outline-Content",
+    "border border-Badge-Brand-Accent-Outline-Border",
+  ].join(" "),
+  Violet: [
+    "bg-Badge-Violet-Outline-Background",
+    "text-Badge-Violet-Outline-Content",
+    "border border-Badge-Violet-Outline-Border",
+  ].join(" "),
+  Amber: [
+    "bg-Badge-Amber-Outline-Background",
+    "text-Badge-Amber-Outline-Content",
+    "border border-Badge-Amber-Outline-Border",
+  ].join(" "),
+  Purple: [
+    "bg-Badge-Purple-Outline-Background",
+    "text-Badge-Purple-Outline-Content",
+    "border border-Badge-Purple-Outline-Border",
+  ].join(" "),
+  Gold: [
+    "bg-Badge-Gold-Outline-Background",
+    "text-Badge-Gold-Outline-Content",
+    "border border-Badge-Gold-Outline-Border",
+  ].join(" "),
 };
 
 const Tags = ({
@@ -56,7 +81,7 @@ const Tags = ({
   ...rest
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
-  const v = VARIANT_STYLES[variant] || VARIANT_STYLES["Primary-Default"];
+  const v = VARIANT_STYLES[variant] || VARIANT_STYLES["green"];
   const iconSize = s.icon;
 
   return (

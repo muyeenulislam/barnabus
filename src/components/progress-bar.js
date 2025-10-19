@@ -20,7 +20,7 @@ export default function ProgressBar({ value = 0, label = true }) {
       </div>
 
       {label && (
-        <span className="text-[0.5rem] lg:text-sm text-white/80 tabular-nums">
+        <span className="text-[0.65rem] lg:text-sm text-white/80 tabular-nums">
           {pct}%
         </span>
       )}
