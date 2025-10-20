@@ -102,7 +102,7 @@ const Team = () => {
         {featured?.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col bg-Overlays-White-2 shadow-boxPrimary p-4 rounded-[1.25rem] gap-1 md:p-5 md:rounded-3xl lg:p-6 lg:gap-1.5"
+            className="flex flex-col bg-Overlays-White-2 shadow-boxPrimary p-4 rounded-[1.25rem] gap-1 md:p-5 md:rounded-3xl lg:p-6 lg:gap-1.5 cursor-pointer"
           >
             <div className="flex gap-4 justify-between items-center">
               <div className="flex gap-3">
@@ -149,11 +149,11 @@ const Team = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[4rem]">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[2rem]">
         {withoutFeatured?.map((item, index) => {
           return (
             <React.Fragment key={index}>
-              <div className="space-y-2">
+              <div className="space-y-2 cursor-pointer md:p-2 rounded-xl transition duration-300 ease-out hover:bg-Overlays-White-4">
                 <div>
                   <p className="text-lg leading-6.5 md:text-xl lg:text-2xl md:leading-7 lg:leading-8 font-semibold text-[#CACED5]">
                     {item.name}

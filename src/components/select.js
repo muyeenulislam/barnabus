@@ -167,9 +167,9 @@ export function BaseSelect({
     "placeholder:text-[#9DA1A8] flex items-center justify-between gap-1.5 md:gap-2 lg:gap-3";
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col">
       {label && (
-        <p className="text-Content-Primary font-semibold text-xs leading-4 lg:text-sm lg:leading-5">
+        <p className="text-Content-Primary font-semibold text-xs leading-4 lg:text-sm lg:leading-5 pb-2">
           {label}
         </p>
       )}
@@ -235,17 +235,23 @@ export function BaseSelect({
 
         {/* Right: clear + chevron */}
         <div className="flex items-center gap-2">
-          {clearable && selectedValues.length > 0 && !disabled && (
-            <button
-              type="button"
-              onClick={clearSelection}
-              className="rounded-md p-1 hover:bg-white/5"
-              aria-label="Clear selection"
-            >
-              <XIcon />
-            </button>
+          {selectedValues.length > 0 ? (
+            // When there's a value: only show the clear (X) if allowed
+            clearable &&
+            !disabled && (
+              <button
+                type="button"
+                onClick={clearSelection}
+                className="rounded-md p-1 hover:bg-white/5"
+                aria-label="Clear selection"
+              >
+                <XIcon />
+              </button>
+            )
+          ) : (
+            // When empty: show the chevron
+            <Chevron open={open} />
           )}
-          <Chevron open={open} />
         </div>
       </button>
 
@@ -265,7 +271,7 @@ export function BaseSelect({
             }}
             className="relative z-[60]"
           >
-            <div className="absolute left-0 right-0 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0F1113] shadow-xl">
+            <div className="absolute left-0 right-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0F1113] shadow-xl">
               {/* Search */}
               {searchable && (
                 <div className="p-2 border-b border-white/10">
