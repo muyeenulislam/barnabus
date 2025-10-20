@@ -7,6 +7,7 @@
   --Overlays-White-5: rgba(255, 255, 255, 0.09);
   --Overlays-White-4: rgba(247, 247, 248, 0.06);
   --Overlays-White-3: rgba(255, 255, 255, 0.03);
+  --Overlays-White-2: rgba(255, 255, 255, 0.01);
   --Content-Primary: #eaebeb;
   --Content-Secondary: #b7b8b9;
   --Content-Tertiary: #9d9fa0;
@@ -22,6 +23,7 @@
   --Action-Buttons-Primary-Accent-Background-Default: rgba(0, 240, 255, 0.2);
   --Action-Buttons-Secondary-Background-Default: rgba(247, 247, 248, 0.09);
   --Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
+  --Action-Buttons-Secondary-Background-Pressed: rgba(247, 247, 248, 0.25);
   --Brand-Accent-Alpha-100: #003a3d;
   --Brand-Accent-Alpha-200: #009199;
   --action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
@@ -83,6 +85,7 @@
   --color-Overlays-White-5: var(--Overlays-White-5);
   --color-Overlays-White-4: var(--Overlays-White-4);
   --color-Overlays-White-3: var(--Overlays-White-3);
+  --color-Overlays-White-2: var(--Overlays-White-2);
   --color-Content-Primary: var(--Content-Primary);
   --color-Content-Secondary: var(--Content-Secondary);
   --color-Content-Tertiary: var(--Content-Tertiary);
@@ -153,6 +156,9 @@
   );
   --color-Action-Buttons-Secondary-Background-Default: var(
     --Action-Buttons-Secondary-Background-Default
+  );
+  --color-Action-Buttons-Secondary-Background-Pressed: var(
+    --Action-Buttons-Secondary-Background-Pressed
   );
   --color-Action-Buttons-Primary-Accent-Background-Default: var(
     --Action-Buttons-Primary-Accent-Background-Default

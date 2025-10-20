@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const SIZE_STYLES = {
   S: {
-    text: "text-[0.5rem] leading-[0.45rem]",
+    text: "text-[0.75rem] leading-[1]",
     iconSize: "h-[0.625rem] w-[0.625rem]",
-    padding: "py-[0.06rem] px-[0.22rem]",
+    padding: "py-[0.325rem] px-[0.5rem]",
     gap: "gap-[0.05rem]",
     icon: 16,
   },
