@@ -2,15 +2,22 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+
 import { Select } from "../select";
+import Modal from "../modal";
+import BottomSheet from "../bottom-sheet";
+
 import {
   TIER_LIST,
   DOMAIN_LIST,
   REGION_LIST,
   PARTNERSHIP_LIST,
 } from "@/utils/arrays";
+import { useIsMobile } from "@/utils/useismobile";
 
 const Partnership = () => {
+  const isMobile = useIsMobile();
+
   const [filters, setFilters] = useState({
     tier: null,
     domain: null,
@@ -18,6 +25,8 @@ const Partnership = () => {
     status: null,
   });
   const [partners, setPartners] = useState(PARTNERSHIP_LIST);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const getVal = (x) => (x && typeof x === "object" ? x.value : x) || null;
 
@@ -42,6 +51,30 @@ const Partnership = () => {
 
     setPartners(next);
   }, [filters]);
+
+  useEffect(() => {
+    if (isMobile && modalOpen) {
+      setModalOpen(false);
+      setDrawerOpen(true);
+    } else if (!isMobile && drawerOpen) {
+      setDrawerOpen(false);
+      setModalOpen(true);
+    }
+  }, [isMobile, modalOpen, drawerOpen]);
+
+  const openDetails = () => {
+    if (isMobile) {
+      setDrawerOpen(true);
+      setModalOpen(false);
+    } else {
+      setModalOpen(true);
+      setDrawerOpen(false);
+    }
+  };
+  const closeDetails = () => {
+    setDrawerOpen(false);
+    setModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
@@ -106,6 +139,7 @@ const Partnership = () => {
             <div
               key={Math.random()}
               className="group flex items-center justify-left overflow-hidden"
+              onClick={openDetails}
             >
               <Image
                 src={item.icon}
@@ -118,6 +152,22 @@ const Partnership = () => {
           ))}
         </div>
       )}
+      <BottomSheet
+        open={isMobile && drawerOpen}
+        onClose={closeDetails}
+        title="Partner Details"
+        className="md:hidden"
+        contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
+      >
+        hello
+      </BottomSheet>
+      <Modal
+        open={!isMobile && modalOpen}
+        onClose={closeDetails}
+        title="Partner Details"
+      >
+        hello
+      </Modal>
     </div>
   );
 };

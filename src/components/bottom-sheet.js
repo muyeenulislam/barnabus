@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Fragment, useRef } from "react";
+import Image from "next/image";
 import {
   Dialog,
   Transition,
@@ -8,7 +9,6 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import Image from "next/image";
 
 /**
  * Reusable BottomSheet

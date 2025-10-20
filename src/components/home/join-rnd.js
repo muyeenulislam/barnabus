@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+
 import { EarlyAccessForm } from "../forms";
 
 const SectionIntro = memo(function SectionIntro() {

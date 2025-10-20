@@ -1,7 +1,7 @@
 import { Outfit } from "next/font/google";
-import "./globals.css";
-
 import MainLayout from "@/components/layout/main-layout";
+
+import "./globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",

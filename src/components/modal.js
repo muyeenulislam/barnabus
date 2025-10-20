@@ -93,7 +93,7 @@ export default function Modal({
           >
             <DialogPanel
               className={`
-                w-max min-w-[30rem] rounded-[3rem] bg-Surface1 shadow-boxPrimary backdrop-blur-lg ${panelClassName}
+                w-max min-w-[30rem] rounded-[1.5rem] lg:rounded-[3rem] bg-Surface1 shadow-container backdrop-blur-lg ${panelClassName}
               `}
             >
               {(title || showClose) && (
@@ -122,7 +122,7 @@ export default function Modal({
 
               {/* Scrollable content area */}
               <div
-                className={`max-h-[85vh] overflow-y-auto rounded-b-[3rem] p-8 lg:p-12 bg-Surface2 ${contentClassName}`}
+                className={`max-h-[85vh] overflow-y-auto rounded-b-[1.5rem] lg:rounded-b-[3rem] p-8 lg:p-12 bg-Surface2 ${contentClassName}`}
               >
                 {children}
               </div>

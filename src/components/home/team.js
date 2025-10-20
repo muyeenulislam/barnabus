@@ -1,9 +1,10 @@
 "use client";
+
 import React, { memo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../button";
 
+import Button from "../button";
 import { Tab } from "../tabs";
 
 import { PARTNERSHIP_LIST, TEAM_LIST } from "@/utils/arrays";

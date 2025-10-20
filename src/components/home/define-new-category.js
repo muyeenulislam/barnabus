@@ -1,11 +1,10 @@
 import React, { memo } from "react";
 import Image from "next/image";
 
-import {
-  DefineCategoryCard,
-  DefineCategoryCardRound,
-  DomainMemoryInnerCard,
-} from "./define-category-card-items";
+import ProgressBar from "../progress-bar";
+import { Tags } from "../tags";
+import Button from "../button";
+
 import {
   DEFINE_NEW_CATEGORY_TABLE_CONTENT,
   HUMAN_UX_ITEMS,
@@ -13,9 +12,11 @@ import {
   CLINICAL_FEED_SUMMARY,
 } from "@/utils/arrays";
 
-import ProgressBar from "../progress-bar";
-import { Tags } from "../tags";
-import Button from "../button";
+import {
+  DefineCategoryCard,
+  DefineCategoryCardRound,
+  DomainMemoryInnerCard,
+} from "./define-category-card-items";
 
 import "./styles.css";
 

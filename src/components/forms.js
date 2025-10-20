@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 
 import Button from "./button";
-import { TextAreaInput, TextInput } from "./input-fields";
 import { Toast } from "./toast";
+import { TextAreaInput, TextInput } from "./input-fields";
+
 import { emailValid } from "@/utils/validators";
 
 const EarlyAccessForm = () => {

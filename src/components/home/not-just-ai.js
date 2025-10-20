@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import Image from "next/image";
 
 import { Tags } from "../tags";
+
 import { NOT_JUST_AI_LIST } from "@/utils/arrays";
 
 const SectionIntro = memo(function SectionIntro() {

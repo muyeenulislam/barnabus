@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+
 import { INTELLIGENCE_KEYPOINTS } from "@/utils/arrays";
 
 const SectionIntro = memo(function SectionIntro() {

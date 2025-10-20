@@ -3,23 +3,37 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { TEAM_LIST, ROLE_LIST, TAGS_LIST } from "@/utils/arrays";
 
 import BottomSheet from "../bottom-sheet";
 import { Tab } from "../tabs";
 import { SolidTags } from "../tags";
 import Modal from "../modal";
 
+import { TEAM_LIST, ROLE_LIST, TAGS_LIST } from "@/utils/arrays";
+import { useIsMobile } from "@/utils/useismobile";
+
 const Team = () => {
+  const isMobile = useIsMobile();
+
   const featured = TEAM_LIST?.filter((item) => item.featured);
 
   const [filter, setFilter] = useState("All");
   const [tab, setTab] = useState("core-team");
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [withoutFeatured, setWithoutFeatured] = useState(
     TEAM_LIST?.filter((item) => !item.featured)
   );
+
+  useEffect(() => {
+    if (isMobile && modalOpen) {
+      setModalOpen(false);
+      setDrawerOpen(true);
+    } else if (!isMobile && drawerOpen) {
+      setDrawerOpen(false);
+      setModalOpen(true);
+    }
+  }, [isMobile, modalOpen, drawerOpen]);
 
   useEffect(() => {
     if (filter === "All") {
@@ -31,6 +45,7 @@ const Team = () => {
       setWithoutFeatured(getFilteredList);
     }
   }, [filter]);
+
   useEffect(() => {
     if (tab === "core-team") {
       setWithoutFeatured(
@@ -53,6 +68,20 @@ const Team = () => {
     }
   }, [tab]);
 
+  const openDetails = () => {
+    if (isMobile) {
+      setDrawerOpen(true);
+      setModalOpen(false);
+    } else {
+      setModalOpen(true);
+      setDrawerOpen(false);
+    }
+  };
+  const closeDetails = () => {
+    setDrawerOpen(false);
+    setModalOpen(false);
+  };
+
   const handleResetFilter = () => {
     setFilter("All");
   };
@@ -72,8 +101,9 @@ const Team = () => {
             setTab={setTab}
             additionalStyle="w-max"
           />
-          <div
-            className="flex justify-center items-center rounded-full bg-Action-Buttons-Secondary-Background-Default text-action-buttons-secondary-content-default-pressed-hover font-semibold gap-1 lg:gap-2 py-2 px-5 lg:py-3 lg:px-5 text-xs lg:text-base leading-4 lg:leading-6"
+          <button
+            type="button"
+            className="flex justify-center items-center rounded-full bg-Action-Buttons-Secondary-Background-Default text-action-buttons-secondary-content-default-pressed-hover font-semibold gap-1 lg:gap-2 py-2 px-5 lg:py-3 lg:px-5 text-xs lg:text-base leading-4 lg:leading-6 cursor-pointer"
             onClick={handleResetFilter}
           >
             <p>Filter</p>
@@ -84,30 +114,33 @@ const Team = () => {
               width={24}
               className="h-5 w-5"
             />
-          </div>
+          </button>
         </div>
         <div className="flex flex-wrap gap-2">
           {ROLE_LIST?.map((item, index) => (
-            <div
+            <button
+              type="button"
               key={index}
-              className={`rounded-full font-semibold backdrop-blur-lg px-3 py-2 text-xs lg:text-[0.875rem] leading-4 lg:leading-5 ${
+              className={`rounded-full font-semibold backdrop-blur-lg px-3 py-2 text-xs lg:text-[0.875rem] leading-4 lg:leading-5 cursor-pointer ${
                 item === filter
                   ? "bg-Action-Buttons-Primary-Default-Background-Default text-backgroundDarkGray"
-                  : "bg-Action-Buttons-Secondary-Background-Default  "
+                  : "bg-Action-Buttons-Secondary-Background-Default"
               }`}
               onClick={() => setFilter(item)}
             >
               {item}
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Featured list */}
       <div className="flex flex-col gap-4">
         {featured?.map((item, index) => (
           <div
             key={index}
             className="flex flex-col bg-Overlays-White-2 shadow-boxPrimary p-4 rounded-[1.25rem] gap-1 md:p-5 md:rounded-3xl lg:p-6 lg:gap-1.5 cursor-pointer"
-            onClick={() => setDrawerOpen(true)}
+            onClick={openDetails}
           >
             <div className="flex gap-4 justify-between items-center">
               <div className="flex gap-3">
@@ -129,19 +162,19 @@ const Team = () => {
               {item.headline}
             </p>
             <div className="flex gap-1 flex-wrap">
-              {item.tags?.map((tag, index) => {
+              {item.tags?.map((tag, idx) => {
                 const getTag = TAGS_LIST?.find((tag2) => tag === tag2.name);
                 return (
-                  <React.Fragment key={index}>
+                  <React.Fragment key={idx}>
                     <SolidTags
-                      key={Math.random()}
+                      key={`s-${idx}`}
                       size="S"
                       variant={getTag.accent}
                       label={getTag.name}
                       additionalStyle="md:!hidden"
                     />
                     <SolidTags
-                      key={Math.random()}
+                      key={`m-${idx}`}
                       size="M"
                       variant={getTag.accent}
                       label={getTag.name}
@@ -154,96 +187,96 @@ const Team = () => {
           </div>
         ))}
       </div>
+
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[2rem]">
-        {withoutFeatured?.map((item, index) => {
-          return (
-            <React.Fragment key={index}>
-              <div
-                className="space-y-2 cursor-pointer md:p-2 rounded-xl transition duration-300 ease-out hover:bg-Overlays-White-4"
-                onClick={() => setModalOpen(true)}
-              >
-                <div>
-                  <p className="text-lg leading-6.5 md:text-xl lg:text-2xl md:leading-7 lg:leading-8 font-semibold text-[#CACED5]">
-                    {item.name}
-                  </p>
-                  <p className="text-[#9DA1A8] mt-2 text-xs lg:text-sm leading-5">
-                    {item.headline}
-                  </p>
-                </div>
-                <div className="flex gap-1 flex-wrap">
-                  {item.tags?.map((tag, index) => {
-                    const getTag = TAGS_LIST?.find((tag2) => tag === tag2.name);
-                    return (
-                      <React.Fragment key={index}>
-                        <SolidTags
-                          key={Math.random()}
-                          size="S"
-                          variant={getTag.accent}
-                          label={getTag.name}
-                          additionalStyle="md:!hidden"
-                        />
-                        <SolidTags
-                          key={Math.random()}
-                          size="M"
-                          variant={getTag.accent}
-                          label={getTag.name}
-                          additionalStyle="!hidden md:!inline-flex"
-                        />
-                      </React.Fragment>
-                    );
-                  })}
-                </div>
-                {item.linkedin && (
-                  <Link href={item.linkedin} target="_blank">
-                    <Image
-                      src="/icons/linkedin.svg"
-                      height={32}
-                      width={32}
-                      alt="linkedin"
-                      className="h-[1.5rem] w-[1.5rem]"
-                    />
-                  </Link>
-                )}
+        {withoutFeatured?.map((item, index) => (
+          <React.Fragment key={index}>
+            <div
+              className="space-y-2 cursor-pointer md:p-2 rounded-xl transition duration-300 ease-out hover:bg-Overlays-White-4"
+              onClick={openDetails}
+            >
+              <div>
+                <p className="text-lg leading-6.5 md:text-xl lg:text-2xl md:leading-7 lg:leading-8 font-semibold text-[#CACED5]">
+                  {item.name}
+                </p>
+                <p className="text-[#9DA1A8] mt-2 text-xs lg:text-sm leading-5">
+                  {item.headline}
+                </p>
               </div>
-
-              {index % 2 === 1 && index < withoutFeatured.length - 1 && (
-                <div
-                  aria-hidden="true"
-                  className="col-span-2 my-3 border-t border-white/10 block md:hidden"
-                />
+              <div className="flex gap-1 flex-wrap">
+                {item.tags?.map((tag, idx) => {
+                  const getTag = TAGS_LIST?.find((tag2) => tag === tag2.name);
+                  return (
+                    <React.Fragment key={idx}>
+                      <SolidTags
+                        key={`s2-${idx}`}
+                        size="S"
+                        variant={getTag.accent}
+                        label={getTag.name}
+                        additionalStyle="md:!hidden"
+                      />
+                      <SolidTags
+                        key={`m2-${idx}`}
+                        size="M"
+                        variant={getTag.accent}
+                        label={getTag.name}
+                        additionalStyle="!hidden md:!inline-flex"
+                      />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+              {item.linkedin && (
+                <Link href={item.linkedin} target="_blank">
+                  <Image
+                    src="/icons/linkedin.svg"
+                    height={32}
+                    width={32}
+                    alt="linkedin"
+                    className="h-[1.5rem] w-[1.5rem]"
+                  />
+                </Link>
               )}
+            </div>
 
-              {index % 3 === 2 && index < withoutFeatured.length - 1 && (
-                <div
-                  aria-hidden="true"
-                  className="hidden md:block lg:hidden md:col-span-3 my-6 border-t border-white/10"
-                />
-              )}
-
-              {index % 4 === 3 && index < withoutFeatured.length - 1 && (
-                <div
-                  aria-hidden="true"
-                  className="hidden lg:block lg:col-span-4 my-8 border-t border-white/10"
-                />
-              )}
-            </React.Fragment>
-          );
-        })}
+            {index % 2 === 1 && index < withoutFeatured.length - 1 && (
+              <div
+                aria-hidden="true"
+                className="col-span-2 my-3 border-t border-white/10 block md:hidden"
+              />
+            )}
+            {index % 3 === 2 && index < withoutFeatured.length - 1 && (
+              <div
+                aria-hidden="true"
+                className="hidden md:block lg:hidden md:col-span-3 my-6 border-t border-white/10"
+              />
+            )}
+            {index % 4 === 3 && index < withoutFeatured.length - 1 && (
+              <div
+                aria-hidden="true"
+                className="hidden lg:block lg:col-span-4 my-8 border-t border-white/10"
+              />
+            )}
+          </React.Fragment>
+        ))}
       </div>
+
       <BottomSheet
-        open={drawerOpen}
-        onClose={setDrawerOpen}
-        title="Menu"
+        open={isMobile && drawerOpen}
+        onClose={closeDetails}
+        title="Member Details"
         className="md:hidden"
         contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
         hello
       </BottomSheet>
       <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        open={!isMobile && modalOpen}
+        onClose={closeDetails}
         title="Member Details"
-      ></Modal>
+      >
+        hello
+      </Modal>
     </div>
   );
 };

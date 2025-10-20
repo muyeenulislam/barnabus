@@ -2,11 +2,11 @@
 import React, { memo } from "react";
 import Image from "next/image";
 
-import { PROGRESS_TRACKER_POINTS, ECO_BREAKDOWN_POINTS } from "@/utils/arrays";
-
 import Accordion from "../accordion";
 import Button from "../button";
 import ProgressBar from "../progress-bar";
+
+import { PROGRESS_TRACKER_POINTS, ECO_BREAKDOWN_POINTS } from "@/utils/arrays";
 
 const ICON_PANEL_STYLE = Object.freeze({
   background:

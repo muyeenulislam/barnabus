@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 
+import { TabSecondary } from "../tabs";
+
 import Team from "./team";
 import Partnership from "./partnership";
-
-import { TabSecondary } from "../tabs";
 
 const TeamAndPartnership = () => {
   const [tab, setTab] = useState("team");
