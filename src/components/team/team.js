@@ -5,21 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { TEAM_LIST, ROLE_LIST, TAGS_LIST } from "@/utils/arrays";
 
+import BottomSheet from "../bottom-sheet";
 import { Tab } from "../tabs";
 import { SolidTags } from "../tags";
+import Modal from "../modal";
 
 const Team = () => {
+  const featured = TEAM_LIST?.filter((item) => item.featured);
+
   const [filter, setFilter] = useState("All");
   const [tab, setTab] = useState("core-team");
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   const [withoutFeatured, setWithoutFeatured] = useState(
     TEAM_LIST?.filter((item) => !item.featured)
   );
-
-  const handleResetFilter = () => {
-    setFilter("All");
-  };
-
-  const featured = TEAM_LIST?.filter((item) => item.featured);
 
   useEffect(() => {
     if (filter === "All") {
@@ -52,6 +52,10 @@ const Team = () => {
       setWithoutFeatured(TEAM_LIST?.filter((item) => !item.featured));
     }
   }, [tab]);
+
+  const handleResetFilter = () => {
+    setFilter("All");
+  };
 
   return (
     <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
@@ -103,6 +107,7 @@ const Team = () => {
           <div
             key={index}
             className="flex flex-col bg-Overlays-White-2 shadow-boxPrimary p-4 rounded-[1.25rem] gap-1 md:p-5 md:rounded-3xl lg:p-6 lg:gap-1.5 cursor-pointer"
+            onClick={() => setDrawerOpen(true)}
           >
             <div className="flex gap-4 justify-between items-center">
               <div className="flex gap-3">
@@ -124,10 +129,10 @@ const Team = () => {
               {item.headline}
             </p>
             <div className="flex gap-1 flex-wrap">
-              {item.tags?.map((tag) => {
+              {item.tags?.map((tag, index) => {
                 const getTag = TAGS_LIST?.find((tag2) => tag === tag2.name);
                 return (
-                  <>
+                  <React.Fragment key={index}>
                     <SolidTags
                       key={Math.random()}
                       size="S"
@@ -142,7 +147,7 @@ const Team = () => {
                       label={getTag.name}
                       additionalStyle="!hidden md:!inline-flex"
                     />
-                  </>
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -153,7 +158,10 @@ const Team = () => {
         {withoutFeatured?.map((item, index) => {
           return (
             <React.Fragment key={index}>
-              <div className="space-y-2 cursor-pointer md:p-2 rounded-xl transition duration-300 ease-out hover:bg-Overlays-White-4">
+              <div
+                className="space-y-2 cursor-pointer md:p-2 rounded-xl transition duration-300 ease-out hover:bg-Overlays-White-4"
+                onClick={() => setModalOpen(true)}
+              >
                 <div>
                   <p className="text-lg leading-6.5 md:text-xl lg:text-2xl md:leading-7 lg:leading-8 font-semibold text-[#CACED5]">
                     {item.name}
@@ -163,10 +171,10 @@ const Team = () => {
                   </p>
                 </div>
                 <div className="flex gap-1 flex-wrap">
-                  {item.tags?.map((tag) => {
+                  {item.tags?.map((tag, index) => {
                     const getTag = TAGS_LIST?.find((tag2) => tag === tag2.name);
                     return (
-                      <>
+                      <React.Fragment key={index}>
                         <SolidTags
                           key={Math.random()}
                           size="S"
@@ -181,7 +189,7 @@ const Team = () => {
                           label={getTag.name}
                           additionalStyle="!hidden md:!inline-flex"
                         />
-                      </>
+                      </React.Fragment>
                     );
                   })}
                 </div>
@@ -222,6 +230,20 @@ const Team = () => {
           );
         })}
       </div>
+      <BottomSheet
+        open={drawerOpen}
+        onClose={setDrawerOpen}
+        title="Menu"
+        className="md:hidden"
+        contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
+      >
+        hello
+      </BottomSheet>
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Member Details"
+      ></Modal>
     </div>
   );
 };
