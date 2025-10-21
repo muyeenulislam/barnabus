@@ -1,5 +1,7 @@
 import React from "react";
-import AgentInfrastrusture from "@/components/enterprise/agent-infrastructure";
+
+import EnterpriseIntro from "@/components/enterprise/intro";
+import KeyEnterpriseDomains from "@/components/enterprise/key-domains";
 import JoinRnd from "@/components/home/join-rnd";
 
 const Page = () => {
@@ -13,7 +15,8 @@ const Page = () => {
         }}
       ></div>
 
-      <AgentInfrastrusture />
+      <EnterpriseIntro />
+      <KeyEnterpriseDomains />
       <JoinRnd />
     </div>
   );

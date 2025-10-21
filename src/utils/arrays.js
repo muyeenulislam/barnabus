@@ -930,7 +930,7 @@ const KEY_ENTERPRISE_DOMAINS = [
   {
     title: "Semiconductors",
     subtitle: "Design simulations, anomaly detection",
-    icon: "/icons/chip.svg",
+    icon: "/icons/chip-neon.svg",
   },
   {
     title: "Cybersecurity",
