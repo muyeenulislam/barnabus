@@ -696,84 +696,144 @@ const TIER_LIST = [
 ];
 const PARTNERSHIP_LIST = [
   {
-    tier: "non-strategic",
+    tier: "Non Strategic",
     domain: ["Semiconductor", "MLOps"],
     region: "Australia",
     status: "active",
     icon: "/icons/pinterest-logo.svg",
     name: "Pinterest",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor", "MLOps"],
     region: "UK",
     status: "active",
     icon: "/icons/facebook-logo.svg",
     name: "Facebook",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor", "MLOps"],
     region: "Australia",
     status: "active",
     icon: "/icons/microsoft-logo.svg",
     name: "Microsoft",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor", "MLOps"],
     region: "Asia",
     status: "inactive",
     icon: "/icons/kickstarter-logo.svg",
     name: "Kickstarter",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor", "MLOps"],
     region: "Australia",
     status: "active",
     icon: "/icons/verisign-logo.svg",
     name: "Verisign",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor"],
     region: "Australia",
     status: "inactive",
     icon: "/icons/pinterest-logo.svg",
     name: "Pinterest",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor"],
     region: "Australia",
     status: "active",
     icon: "/icons/facebook-logo.svg",
     name: "Facebook",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor"],
     region: "Australia",
     status: "active",
     icon: "/icons/microsoft-logo.svg",
     name: "Microsoft",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor"],
     region: "Australia",
     status: "active",
     icon: "/icons/kickstarter-logo.svg",
     name: "Kickstarter",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
   {
-    tier: "strategic",
+    tier: "Strategic",
     domain: ["Semiconductor"],
     region: "Australia",
     status: "active",
     icon: "/icons/verisign-logo.svg",
     name: "Verisign",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
+    link: "#",
+    headline:
+      "A cutting-edge analytics company that specializes in providing real-time insights into customer behavior and digital experiences.",
   },
 ];
 

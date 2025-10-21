@@ -88,6 +88,10 @@ const VARIANT_STYLES_SOLID = {
     "bg-Badge-Teal-Subtle-Background",
     "text-Badge-Teal-Subtle-Content",
   ].join(" "),
+  Gold: [
+    "bg-Badge-Gold-Solid-Background",
+    "text-Badge-Gold-Solid-Content",
+  ].join(" "),
 };
 
 const Tags = ({
