@@ -36,7 +36,6 @@ const Team = () => {
   return (
     <div className="bg-Surface1 py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:p-[16rem] flex flex-col gap-[4rem] md:gap-[6rem] lg:gap-[6rem]">
       <div className="flex flex-col md:flex-row gap-3">
-        {/* Left column */}
         <div className="flex flex-col gap-8 lg:gap-10 pb-4 md:pb-0 md:w-1/3">
           <div className="flex flex-col gap-1 lg:gap-3 md:pr-5 lg:pr-16">
             <h3 className="content-heading">Barnabus Team and Partnerships</h3>
@@ -50,7 +49,6 @@ const Team = () => {
           </Link>
         </div>
 
-        {/* Right column */}
         <div className="md:w-2/3 flex flex-col gap-5 md:gap-6 lg:gap-12">
           <Tab
             tabItems={[
@@ -59,10 +57,10 @@ const Team = () => {
             ]}
             currentTab={tab}
             setTab={setTab}
-            additionalStyle="md:w-max"
+            additionalStyle="md:!w-max"
+            tabItemFullWidth={true}
           />
 
-          {/* Panels */}
           <div id={`panel-${tab}`} role="tabpanel" className="mt-4">
             {tab === "team" ? (
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[4rem]">

@@ -1,4 +1,3 @@
-// components/tabs.jsx
 import React, { useId } from "react";
 import { motion, LayoutGroup } from "framer-motion";
 
@@ -8,6 +7,7 @@ function BaseTabs({
   setTab,
   additionalStyle = "",
   variant = "primary",
+  tabItemFullWidth = false,
   groupId,
 }) {
   const autoId = useId();
@@ -17,7 +17,6 @@ function BaseTabs({
 
   return (
     <LayoutGroup>
-      {/* OUTER FRAME — fixed, non-scrollable */}
       <div
         className={
           isPrimary
@@ -33,19 +32,19 @@ function BaseTabs({
             : undefined
         }
       >
-        {/* INNER SCROLLER — only this scrolls on small */}
         <div
           className={`w-full overflow-x-auto lg:overflow-visible no-scrollbar ${
             isPrimary ? "p-0.5 lg:p-1" : "p-0"
           }  overscroll-x-contain touch-pan-x`}
         >
-          {/* TAB ROW — grows beyond width so it can scroll */}
           <div
             role="tablist"
             aria-orientation="horizontal"
             className={
               isPrimary
-                ? "flex w-max flex-nowrap items-center gap-0.5 lg:gap-1 lg:mx-auto"
+                ? `flex ${
+                    tabItemFullWidth ? "w-full" : "w-max"
+                  } flex-nowrap items-center gap-0.5 lg:gap-1 lg:mx-auto`
                 : "flex w-full lg:w-max flex-nowrap items-center"
             }
           >
@@ -60,7 +59,9 @@ function BaseTabs({
                   onClick={() => setTab(item?.value)}
                   className={
                     isPrimary
-                      ? `relative shrink-0 text-center cursor-pointer font-semibold rounded-full text-xs leading-4 px-5 py-3 lg:text-base lg:leading-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                      ? `relative ${
+                          tabItemFullWidth ? "w-full" : "w-max"
+                        } shrink-0 text-center cursor-pointer font-semibold rounded-full text-xs leading-4 px-5 py-3 lg:text-base lg:leading-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                           selected
                             ? "text-backgroundDarkGray"
                             : "text-action-buttons-tertiary-content-default-hover"
