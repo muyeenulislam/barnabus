@@ -6,12 +6,12 @@ import Link from "next/link";
 
 import BottomSheet from "../bottom-sheet";
 import { Tab } from "../tabs";
-import { SolidTags } from "../tags";
 import Modal from "../modal";
 
 import { TEAM_LIST, ROLE_LIST, TAGS_LIST } from "@/utils/arrays";
 import { useIsMobile } from "@/utils/useismobile";
 import { ddmmmyyyy } from "@/utils/date-formatter";
+import { buildTagMap, TagChips } from "@/utils/tag-utils";
 
 const TAB_ITEMS = [
   { value: "core-team", label: "Core Team" },
@@ -33,55 +33,6 @@ const CoreLeaderBadge = React.memo(function CoreLeaderBadge() {
         width={32}
         className="h-4 w-4"
       />
-    </div>
-  );
-});
-
-function buildTagMap(list) {
-  const map = Object.create(null);
-  for (const t of list || []) map[t.name] = t;
-  return map;
-}
-
-const TagChips = React.memo(function TagChips({
-  tags = [],
-  tagMap,
-  responsive = true,
-  size = "M",
-}) {
-  if (!tags?.length) return null;
-  return (
-    <div className="flex gap-1 flex-wrap">
-      {tags.map((name, idx) => {
-        const t = tagMap[name];
-        if (!t) return null;
-        if (responsive) {
-          return (
-            <React.Fragment key={`${name}-${idx}`}>
-              <SolidTags
-                size="S"
-                variant={t.accent}
-                label={t.name}
-                additionalStyle="md:!hidden"
-              />
-              <SolidTags
-                size="M"
-                variant={t.accent}
-                label={t.name}
-                additionalStyle="!hidden md:!inline-flex"
-              />
-            </React.Fragment>
-          );
-        }
-        return (
-          <SolidTags
-            key={`${name}-${idx}`}
-            size={size}
-            variant={t.accent}
-            label={t.name}
-          />
-        );
-      })}
     </div>
   );
 });
@@ -314,12 +265,12 @@ const MemberDetailsContent = React.memo(function MemberDetailsContent({
 
 export default function Team() {
   const isMobile = useIsMobile();
+
   const [roleFilter, setRoleFilter] = useState(FILTER_ALL);
   const [tab, setTab] = useState(TAB_ITEMS[0].value);
   const [memberDetails, setMemberDetails] = useState(null);
 
   const tagMap = useMemo(() => buildTagMap(TAGS_LIST), []);
-
   const featured = useMemo(
     () => (TEAM_LIST || []).filter((m) => m?.featured),
     []

@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Select } from "../select";
 import Modal from "../modal";
 import BottomSheet from "../bottom-sheet";
-import { SolidTags } from "../tags";
+import { buildTagMap, TagChips } from "@/utils/tag-utils";
 
 import {
   TIER_LIST,
@@ -17,55 +17,6 @@ import {
   TAGS_LIST,
 } from "@/utils/arrays";
 import { useIsMobile } from "@/utils/useismobile";
-
-const buildTagMap = (list) => {
-  const map = Object.create(null);
-  for (const t of list || []) map[t.name] = t;
-  return map;
-};
-
-const TagChips = React.memo(function TagChips({
-  tags = [],
-  tagMap,
-  responsive = true,
-  size = "M",
-}) {
-  if (!tags?.length) return null;
-  return (
-    <div className="flex gap-1 flex-wrap">
-      {tags.map((name, idx) => {
-        const t = tagMap[name];
-        if (!t) return null;
-        if (responsive) {
-          return (
-            <React.Fragment key={`${name}-${idx}`}>
-              <SolidTags
-                size="S"
-                variant={t.accent}
-                label={t.name}
-                additionalStyle="md:!hidden"
-              />
-              <SolidTags
-                size="M"
-                variant={t.accent}
-                label={t.name}
-                additionalStyle="!hidden md:!inline-flex"
-              />
-            </React.Fragment>
-          );
-        }
-        return (
-          <SolidTags
-            key={`${name}-${idx}`}
-            size={size}
-            variant={t.accent}
-            label={t.name}
-          />
-        );
-      })}
-    </div>
-  );
-});
 
 const PartnerDetailsContent = React.memo(function PartnerDetailsContent({
   partner,
@@ -241,6 +192,8 @@ const PartnerDetailsContent = React.memo(function PartnerDetailsContent({
   );
 });
 
+const getVal = (x) => (x && typeof x === "object" ? x.value : x) || null;
+
 const Partnership = () => {
   const isMobile = useIsMobile();
 
@@ -259,8 +212,6 @@ const Partnership = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-
-  const getVal = (x) => (x && typeof x === "object" ? x.value : x) || null;
 
   useEffect(() => {
     const tier = getVal(filters.tier);

@@ -691,8 +691,8 @@ const DOMAIN_LIST = [
   { name: "Semiconductor", value: "Semiconductor", accent: "Indigo" },
 ];
 const TIER_LIST = [
-  { name: "Strategic", value: "strategic", accent: "Gold" },
-  { name: "Non Strategic", value: "non-strategic", accent: "Indigo" },
+  { name: "Strategic", value: "Strategic", accent: "Gold" },
+  { name: "Non Strategic", value: "Non Strategic", accent: "Indigo" },
 ];
 const PARTNERSHIP_LIST = [
   {
