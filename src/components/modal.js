@@ -17,16 +17,12 @@ import Image from "next/image";
  * - open (bool): visibility
  * - onClose (fn): e.g., setOpen(false)
  * - title (string, optional)
- * - subtitle (string, optional)
  * - showClose (bool, default true)
- * - size ("sm"|"md"|"lg"|"xl"|"2xl"), default "md"
  * - className (string): classes on root dialog wrapper
  * - overlayClassName (string)
  * - panelClassName (string)
  * - headerClassName (string)
  * - contentClassName (string)
- * - footerClassName (string)
- * - footer (ReactNode, optional): actions area
  * - initialFocusRef (ref, optional)
  * - closeOnOverlayClick (bool, default true)
  *
@@ -38,16 +34,11 @@ export default function Modal({
   open,
   onClose,
   title,
-  subtitle,
   showClose = true,
-  size = "md",
   className = "",
   overlayClassName = "",
   panelClassName = "",
-  headerClassName = "",
   contentClassName = "",
-  footerClassName = "",
-  footer = null,
   initialFocusRef = null,
   closeOnOverlayClick = true,
   children,
@@ -122,7 +113,7 @@ export default function Modal({
 
               {/* Scrollable content area */}
               <div
-                className={`max-h-[85vh] overflow-y-auto rounded-b-[1.5rem] lg:rounded-b-[3rem] p-8 lg:p-12 bg-Surface2 ${contentClassName}`}
+                className={`max-h-[75vh] overflow-y-auto rounded-b-[1.5rem] lg:rounded-b-[3rem] p-8 lg:p-12 bg-Surface2 ${contentClassName}`}
               >
                 {children}
               </div>

@@ -1,190 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  --backgroundGray: #1f2021;
-  --backgroundDarkGray: #121314;
-  --foreground: #ffffff;
-  --Overlays-White-5: rgba(255, 255, 255, 0.09);
-  --Overlays-White-4: rgba(247, 247, 248, 0.06);
-  --Overlays-White-3: rgba(255, 255, 255, 0.03);
-  --Overlays-White-2: rgba(255, 255, 255, 0.01);
-  --Content-Primary: #eaebeb;
-  --Content-Secondary: #b7b8b9;
-  --Content-Tertiary: #9d9fa0;
-  --Content-Quartiary: #515354;
-  --action-buttons-tertiary-content-default-hover: #f7f7f8;
-  --Border-Secondary: #454647;
-  --Surface-L0: #121314;
-  --Surface-L1: #1f2021;
-  --Surface-L2: #2b2c2d;
-  --Overlays-Black-9: rgba(18, 19, 20, 0.44);
-  --Action-Buttons-Primary-Default-Background-Default: #c3c5c6;
-  --action-buttons-primary-default-content-default-hover-pressed: #121314;
-  --Action-Buttons-Primary-Accent-Background-Default: rgba(0, 240, 255, 0.2);
-  --Action-Buttons-Secondary-Background-Default: rgba(247, 247, 248, 0.09);
-  --Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
-  --Action-Buttons-Secondary-Background-Pressed: rgba(247, 247, 248, 0.25);
-  --Brand-Accent-Alpha-100: #003a3d;
-  --Brand-Accent-Alpha-200: #009199;
-  --action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
-  --Action-Buttons-Tertiary-Background-Hover: rgba(247, 247, 248, 0.18);
-  --Badge-Crimson-Subtle-Background: rgba(206, 1, 93, 0.22);
-  --Badge-Blue-Subtle-Background: rgba(1, 128, 239, 0.19);
-  --Badge-Green-Subtle-Background: rgba(0, 155, 54, 0.2);
-  --Badge-Yellow-Subtle-Background: rgba(255, 234, 1, 0.18);
-  --Badge-Brand-Accent-Subtle-Background: rgba(5, 243, 255, 0.08);
-  --Badge-Teal-Subtle-Background: rgba(0, 164, 137, 0.22);
-  --Badge-Red-Subtle-Background: rgba(228, 1, 1, 0.22);
-  --Badge-Gray-Subtle-Background: #38393a;
-  --Badge-Plum-Subtle-Background: rgba(163, 0, 172, 0.22);
-  --Badge-Indigo-Subtle-Background: rgba(1, 61, 228, 0.22);
-  --Badge-Amber-Subtle-Background: rgba(255, 187, 1, 0.17);
-  --Badge-Red-Outline-Background: rgba(255, 5, 5, 0.03);
-  --Badge-Red-Outline-Border: #cd2b31;
-  --Badge-Green-Outline-Background: rgba(2, 186, 60, 0.09);
-  --Badge-Green-Outline-Content: #5bb98c;
-  --Badge-Green-Outline-Border: #18794e;
-  --Badge-Yellow-Outline-Content: #ebbc00;
-  --Badge-Yellow-Outline-Background: rgba(255, 221, 2, 0.09);
-  --Badge-Yellow-Outline-Border: #946800;
-  --Badge-Violet-Outline-Border: #5746af;
-  --Badge-Violet-Outline-Background: rgba(60, 0, 255, 0.05);
-  --Badge-Brand-Accent-Outline-Border: #009199;
-  --Badge-Brand-Accent-Outline-Background: rgba(5, 230, 255, 0.04);
-  --Badge-Amber-Outline-Border: #946800;
-  --Badge-Amber-Outline-Background: rgba(255, 221, 2, 0.09);
-  --Badge-Purple-Outline-Border: #793aaf;
-  --Badge-Purple-Outline-Background: rgba(146, 0, 237, 0.05);
-  --Badge-Gold-Outline-Border: #776750;
-  --Badge-Gold-Outline-Background: rgba(140, 106, 2, 0.09);
-  --Content-Warning-Bold: #ffb381;
-  --Content-Info-Bold: #96c7f2;
-  --Content-Error-Bold: #f3aeaf;
-  --Content-Brand-Accent: #3bf5ff;
-  --Badge-Brand-Accent-Outline-Content: #00c1cc;
-  --Badge-Violet-Outline-Content: #aa99ec;
-  --Badge-Amber-Outline-Content: #ebbc00;
-  --Badge-Purple-Outline-Content: #be93e4;
-  --Badge-Gold-Outline-Content: #b8a383;
-  --Badge-Plum-Subtle-Content: #cf91d8;
-  --Badge-Indigo-Subtle-Content: #8da4ef;
-  --Badge-Green-Subtle-Content: #30a46c;
-  --Badge-Amber-Subtle-Content: #ee9d2b;
-  --Badge-Teal-Subtle-Content: #12a594;
-}
-
 @theme inline {
-  --color-backgroundGray: var(--backgroundGray);
-  --color-backgroundDarkGray: var(--backgroundDarkGray);
-  --color-foreground: var(--foreground);
-  --color-Border-Secondary: var(--Border-Secondary);
-  --color-Surface0: var(--Surface-L0);
-  --color-Surface1: var(--Surface-L1);
-  --color-Surface2: var(--Surface-L2);
-  --color-Overlays-Black-9: var(--Overlays-Black-9);
-  --color-Overlays-White-5: var(--Overlays-White-5);
-  --color-Overlays-White-4: var(--Overlays-White-4);
-  --color-Overlays-White-3: var(--Overlays-White-3);
-  --color-Overlays-White-2: var(--Overlays-White-2);
-  --color-Content-Primary: var(--Content-Primary);
-  --color-Content-Secondary: var(--Content-Secondary);
-  --color-Content-Tertiary: var(--Content-Tertiary);
-  --color-Content-Quartiary: var(--Content-Quartiary);
-  --color-Content-Brand-Accent: var(--Content-Brand-Accent);
-  --color-Brand-Accent-Alpha-100: var(--Brand-Accent-Alpha-100);
-  --color-Brand-Accent-Alpha-200: var(--Brand-Accent-Alpha-200);
-  --color-Content-Warning-Bold: var(--Content-Warning-Bold);
-  --color-Content-Info-Bold: var(--Content-Info-Bold);
-  --color-Content-Error-Bold: var(--Content-Error-Bold);
-  --color-Badge-Plum-Subtle-Content: var(--Badge-Plum-Subtle-Content);
-  --color-Badge-Indigo-Subtle-Content: var(--Badge-Indigo-Subtle-Content);
-  --color-Badge-Green-Subtle-Content: var(--Badge-Green-Subtle-Content);
-  --color-Badge-Amber-Subtle-Content: var(--Badge-Amber-Subtle-Content);
-  --color-Badge-Teal-Subtle-Content: var(--Badge-Teal-Subtle-Content);
-  --color-Badge-Plum-Subtle-Background: var(--Badge-Plum-Subtle-Background);
-  --color-Badge-Indigo-Subtle-Background: var(--Badge-Indigo-Subtle-Background);
-  --color-Badge-Amber-Subtle-Background: var(--Badge-Amber-Subtle-Background);
-  --color-Badge-Teal-Subtle-Background: var(--Badge-Teal-Subtle-Background);
-  --color-Badge-Red-Subtle-Background: var(--Badge-Red-Subtle-Background);
-  --color-Badge-Red-Outline-Background: var(--Badge-Red-Outline-Background);
-  --color-Badge-Gray-Subtle-Background: var(--Badge-Gray-Subtle-Background);
-  --color-Badge-Red-Outline-Border: var(--Badge-Red-Outline-Border);
-  --color-Badge-Violet-Outline-Border: var(--Badge-Violet-Outline-Border);
-  --color-Badge-Violet-Outline-Background: var(
-    --Badge-Violet-Outline-Background
-  );
-  --color-Badge-Brand-Accent-Outline-Border: var(
-    --Badge-Brand-Accent-Outline-Border
-  );
-  --color-Badge-Brand-Accent-Outline-Background: var(
-    --Badge-Brand-Accent-Outline-Background
-  );
-  --color-Badge-Amber-Outline-Border: var(--Badge-Amber-Outline-Border);
-  --color-Badge-Amber-Outline-Background: var(--Badge-Amber-Outline-Background);
-  --color-Badge-Purple-Outline-Border: var(--Badge-Purple-Outline-Border);
-  --color-Badge-Purple-Outline-Background: var(
-    --Badge-Purple-Outline-Background
-  );
-  --color-Badge-Gold-Outline-Border: var(--Badge-Gold-Outline-Border);
-  --color-Badge-Gold-Outline-Background: var(--Badge-Gold-Outline-Background);
+  /* Base */
+  --color-backgroundGray: #1f2021;
+  --color-backgroundDarkGray: #121314;
+  --color-foreground: #ffffff;
 
-  --Badge-Red-Outline-Content: #eb9091;
-  --color-Badge-Green-Outline-Background: var(--Badge-Green-Outline-Background);
-  --color-Badge-Yellow-Outline-Background: var(
-    --Badge-Yellow-Outline-Background
+  /* Surfaces & Borders */
+  --color-Border-Secondary: #454647;
+  --color-Surface0: #121314;
+  --color-Surface1: #1f2021;
+  --color-Surface2: #2b2c2d;
+
+  /* Overlays Blacks */
+  --color-Overlays-Black-9: rgba(18, 19, 20, 0.44);
+
+  /* Overlay Whites */
+  --color-Overlays-White-7: rgba(255, 255, 255, 0.18);
+  --color-Overlays-White-5: rgba(255, 255, 255, 0.09);
+  --color-Overlays-White-4: rgba(247, 247, 248, 0.06);
+  --color-Overlays-White-3: rgba(255, 255, 255, 0.03);
+  --color-Overlays-White-2: rgba(255, 255, 255, 0.01);
+
+  /* Content */
+  --color-Content-Primary: #eaebeb;
+  --color-Content-Secondary: #b7b8b9;
+  --color-Content-Tertiary: #9d9fa0;
+  --color-Content-Quartiary: #515354;
+  --color-Content-Brand-Accent: #3bf5ff;
+  --color-Content-Warning-Bold: #ffb381;
+  --color-Content-Info-Bold: #96c7f2;
+  --color-Content-Error-Bold: #f3aeaf;
+
+  /* Brand Accents */
+  --color-Brand-Accent-Alpha-100: #003a3d;
+  --color-Brand-Accent-Alpha-200: #009199;
+
+  /* Action Buttons */
+  --color-Action-Buttons-Secondary-Background-Default: rgba(
+    247,
+    247,
+    248,
+    0.09
   );
-  --color-Badge-Yellow-Outline-Border: var(--Badge-Yellow-Outline-Border);
-  --color-Badge-Green-Outline-Border: var(--Badge-Green-Outline-Border);
-  --color-Badge-Green-Outline-Content: var(--Badge-Green-Outline-Content);
-  --color-Badge-Red-Outline-Content: var(--Badge-Red-Outline-Content);
-  --color-Badge-Yellow-Outline-Content: var(--Badge-Yellow-Outline-Content);
-  --color-Badge-Brand-Accent-Outline-Content: var(
-    --Badge-Brand-Accent-Outline-Content
+  --color-Action-Buttons-Secondary-Background-Pressed: rgba(
+    247,
+    247,
+    248,
+    0.25
   );
-  --color-Badge-Violet-Outline-Content: var(--Badge-Violet-Outline-Content);
-  --color-Badge-Amber-Outline-Content: var(--Badge-Amber-Outline-Content);
-  --color-Badge-Purple-Outline-Content: var(--Badge-Purple-Outline-Content);
-  --color-Badge-Gold-Outline-Content: var(--Badge-Gold-Outline-Content);
-  --color-Badge-Brand-Accent-Subtle-Background: var(
-    --Badge-Brand-Accent-Subtle-Background
+  --color-Action-Buttons-Primary-Accent-Background-Default: rgba(
+    0,
+    240,
+    255,
+    0.2
   );
-  --color-Badge-Blue-Subtle-Background: var(--Badge-Blue-Subtle-Background);
-  --color-Badge-Green-Subtle-Background: var(--Badge-Green-Subtle-Background);
-  --color-Badge-Yellow-Subtle-Background: var(--Badge-Yellow-Subtle-Background);
-  --color-Badge-Crimson-Subtle-Background: var(
-    --Badge-Crimson-Subtle-Background
-  );
-  --color-Action-Buttons-Secondary-Background-Default: var(
-    --Action-Buttons-Secondary-Background-Default
-  );
-  --color-Action-Buttons-Secondary-Background-Pressed: var(
-    --Action-Buttons-Secondary-Background-Pressed
-  );
-  --color-Action-Buttons-Primary-Accent-Background-Default: var(
-    --Action-Buttons-Primary-Accent-Background-Default
-  );
-  --color-Action-Buttons-Tertiary-Background-Hover: var(
-    --Action-Buttons-Tertiary-Background-Hover
-  );
-  --color-action-buttons-secondary-content-default-pressed-hover: var(
-    --action-buttons-secondary-content-default-pressed-hover
-  );
-  --color-Action-Buttons-Primary-Accent-Content-Default: var(
-    --Action-Buttons-Primary-Accent-Content-Default
-  );
-  --color-action-buttons-primary-default-content-default-hover-pressed: var(
-    --action-buttons-primary-default-content-default-hover-pressed
-  );
-  --color-Action-Buttons-Primary-Default-Background-Default: var(
-    --Action-Buttons-Primary-Default-Background-Default
-  );
-  --color-action-buttons-tertiary-content-default-hover: var(
-    --action-buttons-tertiary-content-default-hover
-  );
-  --shadow-navbar: 0 0.5px 0 0.5px
-      var(--Overlays-White-4, rgba(247, 247, 248, 0.06)) inset,
-    0 0 1.5px 1.5px var(--Overlays-White-4, rgba(247, 247, 248, 0.06)) inset;
-  --shadow-LightGrayButton: 0 2px 0 0 #fff inset,
+  --color-Action-Buttons-Tertiary-Background-Hover: rgba(247, 247, 248, 0.18);
+  --color-action-buttons-secondary-content-default-pressed-hover: #f7f7f8;
+  --color-Action-Buttons-Primary-Accent-Content-Default: #3bf5ff;
+  --color-action-buttons-primary-default-content-default-hover-pressed: #121314;
+  --color-Action-Buttons-Primary-Default-Background-Default: #c3c5c6;
+  --color-action-buttons-tertiary-content-default-hover: #f7f7f8;
+
+  /* Badges - Subtle backgrounds */
+  --color-Badge-Plum-Subtle-Background: rgba(163, 0, 172, 0.22);
+  --color-Badge-Indigo-Subtle-Background: rgba(1, 61, 228, 0.22);
+  --color-Badge-Amber-Subtle-Background: rgba(255, 187, 1, 0.17);
+  --color-Badge-Teal-Subtle-Background: rgba(0, 164, 137, 0.22);
+  --color-Badge-Red-Subtle-Background: rgba(228, 1, 1, 0.22);
+  --color-Badge-Gray-Subtle-Background: #38393a;
+  --color-Badge-Green-Subtle-Background: rgba(0, 155, 54, 0.2);
+  --color-Badge-Yellow-Subtle-Background: rgba(255, 234, 1, 0.18);
+  --color-Badge-Blue-Subtle-Background: rgba(1, 128, 239, 0.19);
+  --color-Badge-Brand-Accent-Subtle-Background: rgba(5, 243, 255, 0.08);
+
+  /* Badges - Subtle content */
+  --color-Badge-Plum-Subtle-Content: #cf91d8;
+  --color-Badge-Indigo-Subtle-Content: #8da4ef;
+  --color-Badge-Green-Subtle-Content: #30a46c;
+  --color-Badge-Amber-Subtle-Content: #ee9d2b;
+  --color-Badge-Teal-Subtle-Content: #12a594;
+
+  /* Badges - Outline backgrounds & borders */
+  --color-Badge-Red-Outline-Background: rgba(255, 5, 5, 0.03);
+  --color-Badge-Red-Outline-Border: #cd2b31;
+  --color-Badge-Green-Outline-Background: rgba(2, 186, 60, 0.09);
+  --color-Badge-Green-Outline-Border: #18794e;
+  --color-Badge-Yellow-Outline-Background: rgba(255, 221, 2, 0.09);
+  --color-Badge-Yellow-Outline-Border: #946800;
+  --color-Badge-Violet-Outline-Background: rgba(60, 0, 255, 0.05);
+  --color-Badge-Violet-Outline-Border: #5746af;
+  --color-Badge-Brand-Accent-Outline-Background: rgba(5, 230, 255, 0.04);
+  --color-Badge-Brand-Accent-Outline-Border: #009199;
+  --color-Badge-Amber-Outline-Background: rgba(255, 221, 2, 0.09);
+  --color-Badge-Amber-Outline-Border: #946800;
+  --color-Badge-Purple-Outline-Background: rgba(146, 0, 237, 0.05);
+  --color-Badge-Purple-Outline-Border: #793aaf;
+  --color-Badge-Gold-Outline-Background: rgba(140, 106, 2, 0.09);
+  --color-Badge-Gold-Outline-Border: #776750;
+
+  /* Badges - Outline content */
+  --color-Badge-Red-Outline-Content: #eb9091;
+  --color-Badge-Green-Outline-Content: #5bb98c;
+  --color-Badge-Yellow-Outline-Content: #ebbc00;
+  --color-Badge-Violet-Outline-Content: #aa99ec;
+  --color-Badge-Brand-Accent-Outline-Content: #00c1cc;
+  --color-Badge-Amber-Outline-Content: #ebbc00;
+  --color-Badge-Purple-Outline-Content: #be93e4;
+  --color-Badge-Gold-Outline-Content: #b8a383;
+
+  /* Badges - Solid */
+  --color-Badge-Gold-Solid-Background: #776750;
+  --color-Badge-Gold-Solid-Content: #fbf9f2;
+
+  /* Shadows */
+  --shadow-navbar: 0 0.5px 0 0.5px rgba(247, 247, 248, 0.06) inset,
+    0 0 1.5px 1.5px rgba(247, 247, 248, 0.06) inset;
+  --shadow-LightGrayButton: 0 2px 0 0 #ffffff inset,
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   --shadow-AccentButton: 0 0 0 1px #3bf5ff inset, 0 0 5px 2px #009199 inset;
   --shadow-SecondaryButton: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
@@ -193,7 +125,7 @@
     0 0 0 2px #38393a inset;
   --shadow-bottomSheet: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 2px #38393a inset;
-  --shadow-navLinkActive: 0 2px 0 0 #fff inset,
+  --shadow-navLinkActive: 0 2px 0 0 #ffffff inset,
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   --shadow-navDropdown: 0 2px 0 0 rgba(255, 255, 255, 0.2) inset,
     0 0 0 2px #38393a inset;
@@ -201,6 +133,8 @@
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
   --shadow-homeTableShadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
+
+  /* Fonts (kept as-is so Next.js font var works) */
   --font-outfit: var(--font-outfit);
 }
 
@@ -210,37 +144,42 @@ html {
   /* scrollbar-gutter: stable both-edges; */
 }
 
-@media (min-width: 5760) {
+@media (min-width: 5760px) {
   html {
     font-size: 48.2px;
   }
 }
 
-@media (min-width: 3840) and (max-width: 5759) {
+@media (min-width: 3840px) and (max-width: 5759px) {
   html {
     font-size: 32.1px;
   }
 }
-@media (min-width: 2880) and (max-width: 3839) {
+
+@media (min-width: 2880px) and (max-width: 3839px) {
   html {
     font-size: 24.05px;
   }
 }
-@media (min-width: 2560) and (max-width: 2879) {
+
+@media (min-width: 2560px) and (max-width: 2879px) {
   html {
     font-size: 21.37px;
   }
 }
-@media (min-width: 2400) and (max-width: 2559) {
+
+@media (min-width: 2400px) and (max-width: 2559px) {
   html {
     font-size: 20.04px;
   }
 }
-@media (min-width: 2133) and (max-width: 2399) {
+
+@media (min-width: 2133px) and (max-width: 2399px) {
   html {
     font-size: 17.8px;
   }
 }
+
 @media (min-width: 1920px) and (max-width: 2132px) {
   html {
     font-size: 16px;
@@ -264,6 +203,7 @@ html {
     font-size: 10.68px;
   }
 }
+
 @media (min-width: 1024px) and (max-width: 1279px) {
   html {
     font-size: 9.15px;
@@ -271,40 +211,51 @@ html {
 }
 
 body {
-  background: var(--backgroundDarkGray);
-  color: var(--foreground);
-  font-family: var(--font-outfit);
+  background: var(--color-backgroundDarkGray);
+  color: var(--color-foreground);
+  font-family: var(
+    --font-outfit,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+  );
 }
+
 a {
   text-decoration: none !important;
 }
 
 .content-heading {
   font-weight: 600;
-  color: var(--Content-Primary);
+  color: var(--color-Content-Primary);
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
 .content-subheading {
-  color: var(--Content-Secondary);
+  color: var(--color-Content-Secondary);
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
 }
 
 .card-heading {
   font-weight: 600;
-  color: var(--Content-Primary);
+  color: var(--color-Content-Primary);
   font-size: 1.125rem;
   line-height: 1.625rem;
 }
 
 .card-subheading {
-  color: var(--Content-Secondary);
+  color: var(--color-Content-Secondary);
   font-size: 0.875rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
 }
@@ -315,6 +266,7 @@ a {
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
   .content-heading {
     font-size: 2.5rem;
@@ -332,4 +284,24 @@ a {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto !important;
+  scrollbar-color: var(--color-Border-Secondary) transparent !important;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 1rem !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-Border-Secondary) !important;
 }

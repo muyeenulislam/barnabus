@@ -278,17 +278,18 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
       {
-        name: "aergrg",
+        name: "Publication 2",
         publishDate: new Date(),
         link: "#",
         tags: ["PhD", "Clinical", "Ops"],
@@ -306,14 +307,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -327,14 +329,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -348,14 +351,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -369,14 +373,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -390,14 +395,15 @@ const TEAM_LIST = [
     teamMfalser: true,
     advisor: true,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -411,14 +417,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: false,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -432,14 +439,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: false,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -453,14 +461,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: false,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -474,14 +483,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: false,
     contributor: true,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -495,14 +505,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: false,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -516,14 +527,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -543,14 +555,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -569,14 +582,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -596,14 +610,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -624,14 +639,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
@@ -651,14 +667,15 @@ const TEAM_LIST = [
     teamMember: true,
     advisor: true,
     contributor: false,
-    bio: "asdasdasdasdsda",
-    currentContributions: "asdasds",
+    bio: "Emad Masoud, Founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. He blends technology with human insight, focusing on AI solutions that prioritize user experience and ethics, enhancing human capabilities and collaboration with machines.",
+    currentContributions:
+      "Emad Masoud, founder of Barnabus, leads in Agentic AI and Human-Centered Intelligence. His work creates ethical AI solutions that enhance user experience and empower users, ensuring harmony between intelligent systems and human capabilities.",
     publications: [
       {
-        name: "aergrg",
+        name: "Publicaion 1",
         publishDate: new Date(),
         link: "#",
-        tags: ["PhD", "Clinical", "Ops"],
+        tags: ["Security", "Data"],
       },
     ],
   },
