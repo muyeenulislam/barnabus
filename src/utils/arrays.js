@@ -914,6 +914,138 @@ const NOT_JUST_AI_LIST = [
   },
 ];
 
+const GRADE_INTELLIGENCE = [
+  "Domain-specific intelligence, shared global memory",
+  "Human-in-the-loop feedback for safe deployment",
+  "Multi-agent coordination and observability",
+  "Interrupt, rollback, and auditing mechanisms",
+];
+
+const KEY_ENTERPRISE_DOMAINS = [
+  {
+    title: "Healthcare",
+    subtitle: "From Data to Understanding",
+    icon: "/icons/healthcare.svg",
+  },
+  {
+    title: "Semiconductors",
+    subtitle: "Design simulations, anomaly detection",
+    icon: "/icons/chip.svg",
+  },
+  {
+    title: "Cybersecurity",
+    subtitle: "Threat modeling, behavior prediction",
+    icon: "/icons/ai-security.svg",
+  },
+  {
+    title: "Industrial Ops",
+    subtitle: "Real-time control, fault recovery",
+    icon: "/icons/factory-industrial-robot-arm.svg",
+  },
+  {
+    title: "Simulation",
+    subtitle: "Internal world modeling, scenario planning",
+    icon: "/icons/cube-scan.svg",
+  },
+];
+
+const SAFE_BY_DESIGN = [
+  {
+    title: "Feedback Loops",
+    subtitle: "Barnabus learns not just from data, but from decisions.",
+  },
+  {
+    title: "Ethical Layer",
+    subtitle: "Track source, purpose, and sensitivity of every data point.",
+  },
+  {
+    title: "Auditable Actions",
+    subtitle: "Every decision is traceable — and reversible.",
+  },
+];
+const RUN_ANYWHERE = [
+  "/icons/facebook.svg",
+  "/icons/kubernetes-logo.svg",
+  "/icons/safe-vault-remix.svg",
+  "/icons/ibm-quantum-safe-advisor.svg",
+  "/icons/ibm-quantum-safe-advisor.svg",
+  "/icons/azure-logo.svg",
+  "/icons/database-encryption.svg",
+  "/icons/aws-logo.svg",
+  "/icons/nvidia.svg",
+  "/icons/gcp.svg",
+];
+
+const EVOLUTION_PATH = [
+  {
+    phase: 1,
+    key: "autonomous-agents",
+    title: "Autonomous Agents",
+    summary:
+      "Single agents performing isolated tasks (e.g., copilots, assistants).",
+    icon: "/icons/robot1.svg",
+  },
+  {
+    phase: 2,
+    key: "agentic-collaboration",
+    title: "Agentic Collaboration",
+    summary: "Multi-agent systems coordinating across domains or workflows.",
+    icon: "/icons/organization.svg",
+  },
+  {
+    phase: 3,
+    key: "agentic-organization",
+    title: "Agentic Organization",
+    summary: "Hierarchical + distributed agents mimicking org structures.",
+    icon: "/icons/organization-regular.svg",
+  },
+  {
+    phase: 4,
+    key: "cognitive-mesh",
+    title: "Cognitive Mesh",
+    summary: "Agents with memory, reasoning, and shared knowledge graphs.",
+    icon: "/icons/brain-cognitive.svg",
+  },
+  {
+    phase: 5,
+    key: "general-intelligence",
+    title: "General Intelligence",
+    summary:
+      "Abstract reasoning, situational adaptation, human-AI co-development.",
+    icon: "/icons/artificial-intelligence.svg",
+  },
+  {
+    phase: 6,
+    key: "alignment-layer",
+    title: "Alignment Layer",
+    summary:
+      "Ethics, control systems, value alignment, human-in-the-loop safeguards.",
+    icon: "/icons/lens-alignment.svg",
+    items: [
+      {
+        code: "6A",
+        title: "Moral Core",
+        desc: "Embedding values, norms, human behavior simulation.",
+        status: "done",
+      },
+      {
+        code: "6B",
+        title: "Oversight Framework",
+        desc: "Auditing, rollback, agent-level governance (ties into Barnabus’ NAYAR guardian layer).",
+        status: "done",
+      },
+    ],
+  },
+  {
+    phase: 7,
+    key: "agi-integration",
+    title: "AGI Integration",
+    icon: "/icons/agile.svg",
+    summary:
+      "Seamless human-AI collaboration at system level, co-piloting, decision-making, autonomous discovery.",
+  },
+];
+
 export {
   DEFINE_NEW_CATEGORY_TABLE_CONTENT,
   HUMAN_UX_ITEMS,
@@ -932,4 +1064,9 @@ export {
   REGION_LIST,
   DOMAIN_LIST,
   TIER_LIST,
+  GRADE_INTELLIGENCE,
+  KEY_ENTERPRISE_DOMAINS,
+  SAFE_BY_DESIGN,
+  RUN_ANYWHERE,
+  EVOLUTION_PATH,
 };

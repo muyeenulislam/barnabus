@@ -14,6 +14,7 @@
 
   /* Overlays Blacks */
   --color-Overlays-Black-9: rgba(18, 19, 20, 0.44);
+  --color-Overlays-Black-2: rgba(18, 19, 20, 0.03);
 
   /* Overlay Whites */
   --color-Overlays-White-7: rgba(255, 255, 255, 0.18);
