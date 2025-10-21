@@ -60,7 +60,7 @@ const DefineCategoryCardRound = memo(function DefineCategoryCardRound({
 }) {
   return (
     <div
-      className={`h-[5.7rem] w-[5.7rem] md:h-[5.7rem] md:w-[5.7rem] lg:h-[7.5rem] lg:w-[7.5rem] shadow-boxPrimary rounded-full bg-Surface1 flex flex-col justify-center items-center gap-1.5 lg:gap-2 z-[200] ${className}`}
+      className={`h-[6rem] w-[6rem] lg:h-[8rem] lg:w-[8rem] shadow-boxPrimary rounded-full bg-Surface1 flex flex-col justify-center items-center gap-1.5 lg:gap-2 z-[200] p-1 ${className}`}
     >
       {children}
     </div>

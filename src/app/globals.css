@@ -64,6 +64,7 @@
   --color-action-buttons-tertiary-content-default-hover: #f7f7f8;
 
   /* Badges - Subtle backgrounds */
+  --color-Badge-Crimson-Subtle-Background: rgba(206, 1, 93, 0.22);
   --color-Badge-Plum-Subtle-Background: rgba(163, 0, 172, 0.22);
   --color-Badge-Indigo-Subtle-Background: rgba(1, 61, 228, 0.22);
   --color-Badge-Amber-Subtle-Background: rgba(255, 187, 1, 0.17);
@@ -134,10 +135,6 @@
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
   --shadow-homeTableShadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
-
-  --shadow-glowyImgBox: 0 0.5px 0 0.5px
-      var(--Overlays-White-6, rgba(255, 255, 255, 0.12)) inset,
-    0 0 1.5px 1.5px var(--Overlays-White-6, rgba(247, 247, 248, 0.12)) inset;
 
   /* Fonts (kept as-is so Next.js font var works) */
   --font-outfit: var(--font-outfit);
@@ -289,10 +286,27 @@ a {
   line-height: 1.25rem;
 }
 
+.shadow-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
+    0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
+  z-index: 1001;
+  pointer-events: none;
+  border-radius: 1.25rem;
+}
+
 @media (min-width: 768px) {
   .card-heading {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+  .shadow-container::before {
+    border-radius: 1.5rem;
   }
 }
 
@@ -312,6 +326,9 @@ a {
   .card-subheading {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+  .shadow-container::before {
+    border-radius: 3rem;
   }
 }
 
