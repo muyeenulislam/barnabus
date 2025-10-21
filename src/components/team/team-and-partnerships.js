@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 import { TabSecondary } from "../tabs";
 
@@ -8,7 +9,21 @@ import Team from "./team";
 import Partnership from "./partnership";
 
 const TeamAndPartnership = () => {
-  const [tab, setTab] = useState("team");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const [tab, setTab] = useState(searchParams.get("tab") ?? "team");
+
+  const createQueryString = useCallback(
+    (name, value) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   return (
     <div className="bg-Surface1 py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[2.5rem] lg:py-[4rem] lg:px-[16rem] flex flex-col gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem] relative">
@@ -30,7 +45,10 @@ const TeamAndPartnership = () => {
           { value: "partners", label: "Partnerships" },
         ]}
         currentTab={tab}
-        setTab={setTab}
+        setTab={(value) => {
+          router.push(pathname + "?" + createQueryString("tab", value));
+          setTab(value);
+        }}
       />
       <h1 className="lg:max-w-[50rem] text-Content-Primary font-semibold text-lg leading-6.5 md:text-xl md:leading-7 lg:text-[2rem] lg:leading-10">
         Cross-domain Team across Healthcare, Semiconductor, Cybersecurity, and

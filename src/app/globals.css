@@ -135,6 +135,10 @@
   --shadow-homeTableShadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
 
+  --shadow-glowyImgBox: 0 0.5px 0 0.5px
+      var(--Overlays-White-6, rgba(255, 255, 255, 0.12)) inset,
+    0 0 1.5px 1.5px var(--Overlays-White-6, rgba(247, 247, 248, 0.12)) inset;
+
   /* Fonts (kept as-is so Next.js font var works) */
   --font-outfit: var(--font-outfit);
 }
@@ -233,6 +237,30 @@ a {
   text-decoration: none !important;
 }
 
+.glowyBoxBg {
+  background: radial-gradient(
+      66.22% 86.87% at 50% 100%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(18, 19, 20, 0.19) 100%
+    ),
+    rgba(255, 255, 255, 0.03);
+
+  box-shadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.12) inset,
+    0 0 1.5px 1.5px rgba(247, 247, 248, 0.12) inset;
+  backdrop-filter: blur(25px);
+}
+.glowyBoxBg:hover {
+  background: radial-gradient(
+      66.22% 86.87% at 50% 100%,
+      rgba(59, 245, 255, 0.09) 0%,
+      rgba(59, 245, 255, 0.26) 100%
+    ),
+    rgba(255, 255, 255, 0.03);
+
+  box-shadow: 0 0 0 2px rgba(59, 245, 255, 0.5),
+    0 3px 5px 0 rgba(59, 245, 255, 0.5), 0 6px 24px 0 rgba(59, 245, 255, 0.5);
+  backdrop-filter: blur(25px);
+}
 .content-heading {
   font-weight: 600;
   color: var(--color-Content-Primary);

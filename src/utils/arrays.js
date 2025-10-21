@@ -964,10 +964,8 @@ const SAFE_BY_DESIGN = [
   },
 ];
 const RUN_ANYWHERE = [
-  "/icons/facebook.svg",
   "/icons/kubernetes-logo.svg",
   "/icons/safe-vault-remix.svg",
-  "/icons/ibm-quantum-safe-advisor.svg",
   "/icons/ibm-quantum-safe-advisor.svg",
   "/icons/azure-logo.svg",
   "/icons/database-encryption.svg",

@@ -61,7 +61,7 @@ function BaseTabs({
                     isPrimary
                       ? `relative ${
                           tabItemFullWidth ? "w-full" : "w-max"
-                        } shrink-0 text-center cursor-pointer font-semibold rounded-full text-xs leading-4 px-5 py-3 lg:text-base lg:leading-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                        } text-center cursor-pointer font-semibold rounded-full text-xs leading-4 px-5 py-3 lg:text-base lg:leading-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                           selected
                             ? "text-backgroundDarkGray"
                             : "text-action-buttons-tertiary-content-default-hover"
