@@ -52,7 +52,7 @@ export default function Modal({
     <Transition show={open} as={Fragment}>
       <Dialog
         as="div"
-        className={`relative z-[1000] ${className}`}
+        className={`relative z-[1020] ${className}`}
         onClose={handleClose}
         initialFocus={focusRef}
       >

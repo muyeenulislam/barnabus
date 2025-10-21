@@ -39,7 +39,7 @@ export default function BottomSheet({
     <Transition show={open} as={Fragment}>
       <Dialog
         as="div"
-        className={`relative z-1000 ${className}`}
+        className={`relative z-1010 ${className}`}
         onClose={onClose}
         initialFocus={closeBtnRef}
       >

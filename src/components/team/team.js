@@ -269,6 +269,8 @@ export default function Team() {
   const [roleFilter, setRoleFilter] = useState(FILTER_ALL);
   const [tab, setTab] = useState(TAB_ITEMS[0].value);
   const [memberDetails, setMemberDetails] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const tagMap = useMemo(() => buildTagMap(TAGS_LIST), []);
   const featured = useMemo(
@@ -304,17 +306,23 @@ export default function Team() {
     });
   }, [roleFilter, matchesTab]);
 
-  const openDetails = useCallback((name) => {
-    const m = (TEAM_LIST || []).find((it) => it?.name === name);
-    setMemberDetails(m || null);
-  }, []);
-
-  const closeDetails = useCallback(() => setMemberDetails(null), []);
+  const openDetails = (name) => {
+    setMemberDetails(TEAM_LIST?.find((item) => item.name === name));
+    if (isMobile) {
+      setDrawerOpen(true);
+      setModalOpen(false);
+    } else {
+      setModalOpen(true);
+      setDrawerOpen(false);
+    }
+  };
 
   const resetFilter = useCallback(() => setRoleFilter(FILTER_ALL), []);
 
-  const sheetOpen = isMobile && !!memberDetails;
-  const modalOpen = !isMobile && !!memberDetails;
+  const closeDetails = () => {
+    setDrawerOpen(false);
+    setModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
@@ -403,7 +411,7 @@ export default function Team() {
       </div>
 
       <BottomSheet
-        open={sheetOpen}
+        open={isMobile && drawerOpen}
         onClose={closeDetails}
         title="Member Details"
         className="md:hidden"
@@ -413,7 +421,7 @@ export default function Team() {
       </BottomSheet>
 
       <Modal
-        open={modalOpen}
+        open={!isMobile && modalOpen}
         onClose={closeDetails}
         title="Member Details"
         panelClassName="md:!max-w-[40rem] lg:!max-w-[50rem]"
