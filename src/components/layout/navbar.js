@@ -4,7 +4,7 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-
+import { LayoutGroup, motion } from "framer-motion";
 import {
   Menu,
   MenuButton,
@@ -12,6 +12,8 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
+
+import { NAV_ITEMS } from "@/utils/arrays";
 
 import Button from "../button";
 import BottomSheet from "../bottom-sheet";
@@ -45,22 +47,14 @@ const Navbar = () => {
     };
   }, []);
 
-  const navItems = [
-    { title: "Vision", route: "/vision" },
-    { title: "Capabilities", route: "/capabilities" },
-    { title: "Solutions", route: "/solutions" },
-    { title: "System Protocol", route: "/system-protocol" },
-    { title: "Enterprise", route: "/enterprise" },
-    { title: "Trust", route: "/trust" },
-    { title: "Roadmap", route: "/roadmap" },
-  ];
-  const first = navItems.slice(0, 3);
-  const rest = navItems.slice(3);
+  const first = NAV_ITEMS.slice(0, 3);
+  const rest = NAV_ITEMS.slice(3);
 
   const baseLinkCls =
-    "px-4 py-2 rounded-full text-action-buttons-tertiary-content-default-hover text-sm font-semibold leading-5";
+    "relative px-4 py-2 rounded-full text-action-buttons-tertiary-content-default-hover text-sm font-semibold leading-5 hover:bg-Overlays-White-5 transition-colors duration-150";
+
   const activeLinkCls =
-    "bg-Action-Buttons-Primary-Default-Background-Default shadow-navLinkActive backdrop-blur-lg !text-action-buttons-primary-default-content-default-hover-pressed";
+    "!text-action-buttons-primary-default-content-default-hover-pressed";
 
   const isActive = (href) => {
     if (!pathname) return false;
@@ -69,6 +63,15 @@ const Navbar = () => {
   };
 
   const restHasActive = rest.some((i) => isActive(i.route));
+
+  const pillClass =
+    "absolute inset-0 -z-10 rounded-full bg-Action-Buttons-Primary-Default-Background-Default shadow-navLinkActive backdrop-blur-lg";
+  const pillTransition = {
+    type: "spring",
+    stiffness: 520,
+    damping: 32,
+    mass: 0.6,
+  };
 
   return (
     <>
@@ -94,98 +97,118 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Center A: Desktop (lg and up) – full nav */}
-        <div className="hidden lg:flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
-          {navItems.map((item, index) => (
-            <Link
-              key={index}
-              className={`${baseLinkCls} ${
-                isActive(item.route) ? activeLinkCls : ""
-              }`}
-              href={item.route}
-              aria-current={isActive(item.route) ? "page" : undefined}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </div>
-
-        {/* Center B: Tablet (md only) – first 3 + dropdown */}
-        <div className="hidden md:flex lg:hidden p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar relative">
-          {first.map((item, index) => (
-            <Link
-              key={index}
-              className={`${baseLinkCls} ${
-                isActive(item.route) ? activeLinkCls : ""
-              }`}
-              href={item.route}
-              aria-current={isActive(item.route) ? "page" : undefined}
-            >
-              {item.title}
-            </Link>
-          ))}
-
-          {rest.length > 0 && (
-            <Menu as="div" className="relative">
-              {({ open }) => (
-                <>
-                  <MenuButton
-                    className={`p-2 rounded-full ${
-                      open || restHasActive
-                        ? "bg-Action-Buttons-Tertiary-Background-Hover"
-                        : ""
-                    }`}
-                    aria-label="More navigation items"
-                  >
-                    <Image
-                      src="/icons/circle-arrow-down.svg"
-                      alt="open dropdown"
-                      height={24}
-                      width={24}
-                      className={`h-5 w-5 transition-transform duration-200 ${
-                        open ? "rotate-180" : "rotate-0"
-                      }`}
+        {/* Center A: Desktop (lg and up) – full nav with animated pill */}
+        <LayoutGroup id="nav-desktop">
+          <div className="hidden lg:flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
+            {NAV_ITEMS.map((item, index) => {
+              const active = isActive(item.route);
+              return (
+                <Link
+                  key={index}
+                  className={`${baseLinkCls} ${active ? activeLinkCls : ""}`}
+                  href={item.route}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="navPill"
+                      className={pillClass}
+                      transition={pillTransition}
                     />
-                  </MenuButton>
+                  )}
+                  <span className="relative z-10">{item.title}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </LayoutGroup>
 
-                  <Transition
-                    enter="transition ease-out duration-150"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="transition ease-in duration-100"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                  >
-                    <MenuItems className="absolute right-0 top-12 z-20 rounded-2xl bg-[rgba(18, 19, 20, 0.44)] shadow-navDropdown p-2 backdrop-blur-lg">
-                      {rest.map((item, idx) => {
-                        const active = isActive(item.route);
-                        return (
-                          <MenuItem key={idx}>
-                            {({ focus: hover }) => (
-                              <Link
-                                href={item.route}
-                                aria-current={active ? "page" : undefined}
-                                className={`block w-full text-nowrap text-action-buttons-tertiary-content-default-hover text-center p-2 text-xs font-semibold leading-4 ${baseLinkCls} rounded-xl ${
-                                  active
-                                    ? activeLinkCls
-                                    : hover
-                                    ? "bg-Overlays-White-5"
-                                    : ""
-                                }`}
-                              >
-                                {item.title}
-                              </Link>
-                            )}
-                          </MenuItem>
-                        );
-                      })}
-                    </MenuItems>
-                  </Transition>
-                </>
-              )}
-            </Menu>
-          )}
-        </div>
+        {/* Center B: Tablet (md only) – first 3 + dropdown, with animated pill on the first 3 */}
+        <LayoutGroup id="nav-md">
+          <div className="hidden md:flex lg:hidden p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar relative">
+            {first.map((item, index) => {
+              const active = isActive(item.route);
+              return (
+                <Link
+                  key={index}
+                  className={`${baseLinkCls} ${active ? activeLinkCls : ""}`}
+                  href={item.route}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="navPill"
+                      className={pillClass}
+                      transition={pillTransition}
+                    />
+                  )}
+                  <span className="relative z-10">{item.title}</span>
+                </Link>
+              );
+            })}
+
+            {rest.length > 0 && (
+              <Menu as="div" className="relative">
+                {({ open }) => (
+                  <>
+                    <MenuButton
+                      className={`p-2 rounded-full ${
+                        open || restHasActive
+                          ? "bg-Action-Buttons-Tertiary-Background-Hover t"
+                          : ""
+                      }`}
+                      aria-label="More navigation items"
+                    >
+                      <Image
+                        src="/icons/circle-arrow-down.svg"
+                        alt="open dropdown"
+                        height={24}
+                        width={24}
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          open ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </MenuButton>
+
+                    <Transition
+                      enter="transition ease-out duration-150"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <MenuItems className="absolute right-0 top-12 z-20 rounded-2xl bg-[rgba(18,19,20,0.44)] shadow-navDropdown p-2 backdrop-blur-lg">
+                        {rest.map((item, idx) => {
+                          const active = isActive(item.route);
+                          return (
+                            <MenuItem key={idx}>
+                              {({ focus: hover }) => (
+                                <Link
+                                  href={item.route}
+                                  aria-current={active ? "page" : undefined}
+                                  className={`relative block w-full text-nowrap text-action-buttons-tertiary-content-default-hover text-center p-2 text-xs font-semibold leading-4 rounded-xl ${
+                                    active
+                                      ? "bg-Action-Buttons-Tertiary-Background-Hover"
+                                      : hover
+                                      ? "bg-Overlays-White-5"
+                                      : ""
+                                  }`}
+                                >
+                                  {item.title}
+                                </Link>
+                              )}
+                            </MenuItem>
+                          );
+                        })}
+                      </MenuItems>
+                    </Transition>
+                  </>
+                )}
+              </Menu>
+            )}
+          </div>
+        </LayoutGroup>
 
         {/* Right: CTA + Mobile trigger */}
         <div className="flex items-center gap-2">
@@ -216,7 +239,7 @@ const Navbar = () => {
         className="md:hidden"
         contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
-        {navItems.map((item, idx) => (
+        {NAV_ITEMS.map((item, idx) => (
           <Link
             key={idx}
             href={item.route}

@@ -1,3 +1,31 @@
+const NAV_ITEMS = [
+  { title: "Vision", route: "/vision" },
+  { title: "Capabilities", route: "/capabilities" },
+  { title: "Solutions", route: "/solutions" },
+  { title: "System Protocol", route: "/system-protocol" },
+  { title: "Enterprise", route: "/enterprise" },
+  { title: "Trust", route: "/trust" },
+  { title: "Roadmap", route: "/roadmap" },
+];
+
+const FOOTER_NAV_ITEMS = [
+  ...NAV_ITEMS,
+  { title: "Participate", route: "/participate" },
+];
+
+const FOOTER_SOCIAL_LINKS = [
+  { icon: "/icons/x.svg", link: "#" },
+  { icon: "/icons/facebook.svg", link: "#" },
+  { icon: "/icons/linkedin.svg", link: "#" },
+  { icon: "/icons/instagram.svg", link: "#" },
+];
+
+const FOOTER_OTHER_LINKS = [
+  { title: "English", route: "/roadmap" },
+  { title: "Privacy", route: "/privacy-policy" },
+  { title: "Terms", route: "/terms-of-use" },
+  { title: "Sitemap", route: "/sitemap" },
+];
 const DEFINE_NEW_CATEGORY_TABLE_CONTENT = [
   {
     left: "Predicts outcomes",
@@ -1045,6 +1073,10 @@ const EVOLUTION_PATH = [
 ];
 
 export {
+  NAV_ITEMS,
+  FOOTER_NAV_ITEMS,
+  FOOTER_SOCIAL_LINKS,
+  FOOTER_OTHER_LINKS,
   DEFINE_NEW_CATEGORY_TABLE_CONTENT,
   HUMAN_UX_ITEMS,
   CLINICAL_FEED,

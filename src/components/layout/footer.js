@@ -2,30 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Footer = () => {
-  const social = [
-    { icon: "/icons/x.svg", link: "#" },
-    { icon: "/icons/facebook.svg", link: "#" },
-    { icon: "/icons/linkedin.svg", link: "#" },
-    { icon: "/icons/instagram.svg", link: "#" },
-  ];
-  const navItems = [
-    { title: "Vision", route: "/vision" },
-    { title: "Capabilities", route: "/capabilities" },
-    { title: "Solutions", route: "/solutions" },
-    { title: "System Protocol", route: "/system-protocol" },
-    { title: "Enterprise", route: "/enterprise" },
-    { title: "Trust", route: "/trust" },
-    { title: "Roadmap", route: "/roadmap" },
-    { title: "Participate", route: "/participate" },
-  ];
-  const otherLinks = [
-    { title: "English", route: "/roadmap" },
-    { title: "Privacy", route: "/privacy-policy" },
-    { title: "Terms", route: "/terms-of-use" },
-    { title: "Sitemap", route: "/sitemap" },
-  ];
+import {
+  FOOTER_NAV_ITEMS,
+  FOOTER_SOCIAL_LINKS,
+  FOOTER_OTHER_LINKS,
+} from "@/utils/arrays";
 
+const Footer = () => {
   return (
     <div
       className="pb-[2.5rem] pt-[2.5rem] px-[1.5rem] md:pb-[4rem] md:pt-[8rem] md:px-[8rem] bg-no-repeat bg-top bg-cover flex flex-col gap-[4rem] relative"
@@ -47,30 +30,30 @@ const Footer = () => {
           <Link
             href="mailto:hey@barnabus.ai"
             target="_blank"
-            className="md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 md:leading-7"
+            className="md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 md:leading-7 hover:text-Content-Brand-Accent transition-all duration-200"
           >
             hey@barnabus.ai
           </Link>
           <div className="flex gap-4">
-            {social?.map((item, index) => (
+            {FOOTER_SOCIAL_LINKS?.map((item, index) => (
               <Link key={index} href={item.link}>
                 <Image
                   src={item.icon}
                   height={32}
                   width={32}
                   alt="social"
-                  className="h-8 w-8"
+                  className="h-8 w-8 hover:scale-110 transition-all duration-200"
                 />
               </Link>
             ))}
           </div>
         </div>
         <div className="flex flex-wrap gap-3 md:gap-6 items-start h-max">
-          {navItems?.map((item, index) => (
+          {FOOTER_NAV_ITEMS?.map((item, index) => (
             <Link
               key={index}
               href={item.route}
-              className="md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 uppercase"
+              className="md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 uppercase hover:text-Content-Brand-Accent hover:scale-105 transition-all duration-200"
             >
               {item.title}
             </Link>
@@ -82,11 +65,11 @@ const Footer = () => {
           © 2016 - {new Date().getFullYear()} Barnabus
         </p>
         <div className="flex justify-between items-center">
-          {otherLinks?.map((item, index) => (
+          {FOOTER_OTHER_LINKS?.map((item, index) => (
             <Link
               key={index}
               href={item.route}
-              className="text-[#CACED5] !underline !underline-offset-[25%] leading-7 text-sm md:text-base"
+              className="text-[#CACED5] !underline !underline-offset-[25%] leading-7 text-sm md:text-base hover:text-Content-Brand-Accent hover:scale-105 transition-all duration-200"
             >
               {item.title}
             </Link>
