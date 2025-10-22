@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-/** ---------- utils ---------- */
-
 const parsePlacement = (p = "top") => {
   const s = String(p).toLowerCase().replace(/\s+/g, "");
   const map = {
@@ -98,7 +96,6 @@ const marginFromSide = (side, offset) => {
 };
 
 const arrowClasses = (side, align) => {
-  // positions the diamond on an edge and aligns along that edge
   if (side === "top") {
     const along =
       align === "start"
@@ -147,8 +144,6 @@ export default function Tooltip({
   offset = 10,
   open: controlledOpen,
   onOpenChange,
-
-  // arrow options
   withArrow = true,
   arrowSide, // "top" | "bottom" | "left" | "right" (default: same as placement's side)
   arrowAlign, // "center" | "start" | "end" (default: same as placement's align)
@@ -248,7 +243,7 @@ export default function Tooltip({
             {/* Panel */}
             <div
               className={[
-                "relative w-max max-w-[20rem] md:max-w-[25rem] lg:max-w-[27.5rem]",
+                "relative w-max max-w-[18rem] md:max-w-[20rem] lg:max-w-[27.5rem]",
                 "p-3 md:p-5 lg:p-6 rounded-2xl md:rounded-[1.25rem] lg:rounded-3xl",
                 "bg-Surface0",
                 "shadow-boxPrimary",
