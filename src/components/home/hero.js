@@ -9,7 +9,7 @@ const HomeHero = () => {
       className="py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col-reverse lg:flex-row md:gap-[2.5rem] lg:gap-[6rem] relative"
       style={{
         backgroundImage:
-          "linear-gradient(to top, #121314, rgba(0,0,0,0)), url('/images/hero-bg.png')",
+          "linear-gradient(to top, #121314, rgba(0,0,0,0)), url('/images/hero-bg.webp')",
         backgroundRepeat: "no-repeat, no-repeat",
         backgroundSize: "100% 100%, cover",
         backgroundPosition: "top, top",

@@ -14,7 +14,7 @@ const Footer = () => {
       className="pb-[2.5rem] pt-[2.5rem] px-[1.5rem] md:pb-[4rem] md:pt-[8rem] md:px-[8rem] bg-no-repeat bg-top bg-cover flex flex-col gap-[4rem] relative"
       style={{
         backgroundImage:
-          "linear-gradient(to bottom, #121314, rgba(0,0,0,0)), url('/images/footer-bg.png')",
+          "linear-gradient(to bottom, #121314, rgba(0,0,0,0)), url('/images/footer-bg.webp')",
         backgroundRepeat: "no-repeat, no-repeat",
         backgroundSize: "100% 100%, cover",
         backgroundPosition: "top, top",
