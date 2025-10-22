@@ -1,5 +1,8 @@
 import React, { memo } from "react";
 import Image from "next/image";
+
+import Tooltip from "../tooltip";
+
 import {
   KEY_ENTERPRISE_DOMAINS,
   RUN_ANYWHERE,
@@ -34,7 +37,7 @@ const FirstPart = memo(function FirstPart() {
             aria-hidden="true"
           >
             <Image
-              src={item.icon}
+              src={item?.icon}
               alt=""
               height={32}
               width={32}
@@ -43,10 +46,10 @@ const FirstPart = memo(function FirstPart() {
           </div>
           <div className="flex flex-col gap-1.5 md:gap-2 lg:gap-4">
             <h6 className="font-semibold text-base leading-6 md:text-lg md:leading-6.5 lg:text-2xl lg:leading-8">
-              {item.title}
+              {item?.title}
             </h6>
             <p className="text-Content-Secondary text-sm leading-5 lg:text-base lg:leading-6">
-              {item.subtitle}
+              {item?.subtitle}
             </p>
           </div>
         </div>
@@ -68,10 +71,10 @@ const FirstPart = memo(function FirstPart() {
                 className="bg-Surface1 shadow-boxPrimary flex flex-col gap-1 lg:gap-2 p-4 rounded-[1.25rem] md:p-5 md:rounded-3xl lg:p-6 lg:rounded-3xl"
               >
                 <h6 className="text-Content-Primary font-semibold leading-6 md:text-lg md:leading-6.5 lg:text-xl lg:leading-7">
-                  {item.title}
+                  {item?.title}
                 </h6>
                 <p className="text-Content-Secondary text-sm leading-5 lg:text-base lg:leading-6">
-                  {item.subtitle}
+                  {item?.subtitle}
                 </p>
               </div>
             ))}
@@ -132,27 +135,74 @@ const EvolutionPath = memo(function EvolutionPath() {
         ></div>
         {EVOLUTION_PATH?.map((item, index) => (
           <div
-            key={index}
             className="flex lg:flex-col gap-6 md:gap-8 lg:gap-12 items-center lg:justify-center"
+            key={index}
           >
-            <div
-              className="shrink-0 h-max w-max flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3 glowyBoxBg hover:scale-125 transition-all cursor-pointer"
-              aria-hidden="true"
+            <Tooltip
+              trigger="click"
+              placement="top"
+              offset={12}
+              arrowSide="bottom"
+              content={
+                <div className="space-y-4 md:space-y-6 lg:space-y-8">
+                  <div className="space-y-1 md:space-y-3">
+                    <div className="space-y-1">
+                      <p className="text-Content-Secondary text-xs leading-4 md:text-sm md:leading-5 lg:text-base lg:leading-6">
+                        Phase {item?.phase}
+                      </p>
+                      <h5 className="text-Content-Brand-Accent font-semibold text-xs leading-4 md:text-base md:leading-6 lg:text-xl lg:leading-7">
+                        {item?.title}
+                      </h5>
+                    </div>
+                    <p className="text-Content-Secondary text-xs leading-4 md:text-sm md:leading-5 lg:text-base lg:leading-6">
+                      {item?.summary}
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    {item?.steps &&
+                      item?.steps.length > 0 &&
+                      item?.steps?.map((step, index) => (
+                        <div className="flex gap-1 md:gap-3" key={index}>
+                          <Image
+                            src="/icons/circle-check-neon.svg"
+                            alt="circle check"
+                            height={32}
+                            width={32}
+                            className="h-6 w-6 md:h-9.5 md:w-9.5 shrink-0"
+                          />
+                          <div className="space-y-1">
+                            <h6 className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6">
+                              {step.code}: {step.title}
+                            </h6>
+                            <p className="text-Content-Secondary text-xs leading-4 md:text-sm md:leading-5 lg:text-base lg:leading-6">
+                              {step.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              }
             >
-              <Image
-                src={item.icon}
-                alt=""
-                height={32}
-                width={32}
-                className="shrink-0 h-[1.875rem] w-[1.875rem] lg:h-[2.5rem] lg:w-[2.5rem]"
-              />
-            </div>
+              <div
+                className="shrink-0 h-max w-max flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3 glowyBoxBg hover:scale-125 transition-all cursor-pointer"
+                aria-hidden="true"
+              >
+                <Image
+                  src={item?.icon}
+                  alt=""
+                  height={32}
+                  width={32}
+                  className="shrink-0 h-[1.875rem] w-[1.875rem] lg:h-[2.5rem] lg:w-[2.5rem]"
+                />
+              </div>
+            </Tooltip>
             <div className="flex flex-col gap-1 md:gap-2 lg:text-center">
               <p className="text-Content-Tertiary text-xs leading-4 md:text-sm md:leading-5 lg:text-base lg:leading-5">
-                Phase {item.phase}
+                Phase {item?.phase}
               </p>
               <h6 className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7">
-                {item.title}
+                {item?.title}
               </h6>
             </div>
           </div>

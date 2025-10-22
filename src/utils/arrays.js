@@ -1019,7 +1019,7 @@ const EVOLUTION_PATH = [
     summary:
       "Ethics, control systems, value alignment, human-in-the-loop safeguards.",
     icon: "/icons/lens-alignment.svg",
-    items: [
+    steps: [
       {
         code: "6A",
         title: "Moral Core",
