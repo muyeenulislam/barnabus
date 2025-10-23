@@ -73,6 +73,7 @@ const Button = ({
   type,
   onClick,
   loading = false,
+  disabled = false,
   ...rest
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
@@ -83,7 +84,7 @@ const Button = ({
     <button
       type={type || "button"}
       className={[
-        "inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer outline-none",
+        "inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer outline-none disabled:cursor-default",
         s.text,
         s.padding,
         s.gap,
@@ -93,6 +94,7 @@ const Button = ({
         additionalStyle,
       ].join(" ")}
       onClick={onClick}
+      disabled={disabled}
       {...rest}
     >
       {leadingBadge && (

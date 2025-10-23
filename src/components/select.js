@@ -4,29 +4,81 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Chevron = ({ open }) => (
+const Chevron = ({ open, className = "h-6 w-6" }) => (
   <Image
     src="/icons/arrow-down.svg"
     height={24}
     width={24}
-    className={`h-6 w-6 transition-transform ${open ? "rotate-180" : ""}`}
+    className={`${className} transition-transform ${open ? "rotate-180" : ""}`}
     alt="arrow down"
   />
 );
 
-const XIcon = () => (
+const XIcon = ({ className = "h-4 w-4" }) => (
   <Image
     src="/icons/cancel.svg"
     height={24}
     width={24}
-    className={`h-4 w-4 transition-transform`}
-    alt="arrow down"
+    className={`${className} transition-transform`}
+    alt="close"
   />
 );
 
 function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
 }
+
+// Size styles
+const SIZE_STYLES = {
+  S: {
+    control: "px-2 py-1.5 rounded-[0.625rem] text-xs gap-1",
+    innerGap: "gap-1",
+    clearBtnPad: "p-0.5",
+    chevron: "h-4 w-4",
+    xIcon: "h-3.5 w-3.5",
+    chipsWrap: "gap-1",
+    chip: "px-1.5 py-0.5 text-[0.75rem] gap-1",
+    searchWrap: "px-2 py-1.5",
+    searchInput: "text-xs",
+    option: "px-2 py-1.5 text-xs",
+    checkbox: "h-3.5 w-3.5",
+    checkmark: "h-3 w-3",
+    labelText: "text-[0.75rem] leading-4",
+    labelPb: "pb-1.5",
+  },
+  M: {
+    control: "px-3 py-2 rounded-[0.75rem] text-sm gap-2",
+    innerGap: "gap-2",
+    clearBtnPad: "p-1",
+    chevron: "h-6 w-6",
+    xIcon: "h-4 w-4",
+    chipsWrap: "gap-1.5",
+    chip: "px-2 py-1 text-xs gap-1",
+    searchWrap: "px-3 py-2",
+    searchInput: "text-sm",
+    option: "px-3 py-2 text-sm",
+    checkbox: "h-4 w-4",
+    checkmark: "h-3 w-3",
+    labelText: "text-xs lg:text-sm leading-4 lg:leading-5",
+    labelPb: "pb-2",
+  },
+  L: {
+    control: "px-[1.25rem] py-[0.95rem] rounded-[0.75rem] text-[1.25rem] gap-3",
+    innerGap: "gap-3",
+    clearBtnPad: "p-1.5",
+    chevron: "h-7 w-7",
+    xIcon: "h-4 w-4",
+    chipsWrap: "gap-2",
+    chip: "px-2.5 py-1.5 text-sm gap-1.5",
+    searchWrap: "px-4 py-3",
+    searchInput: "text-base",
+    option: "px-4 py-3 text-base",
+    checkbox: "h-5 w-5",
+    checkmark: "h-3.5 w-3.5",
+    labelText: "font-semibold text-base leading-6 lg:text-lg lg:leading-6.5",
+    labelPb: "pb-3",
+  },
+};
 
 /**
  * BaseSelect
@@ -35,13 +87,14 @@ function classNames(...xs) {
  * - value: single value OR array (when multiple=true)
  * - onChange: fn(nextValue)
  * - label?: string (field label above)
- * - placeholder?: string (default "Select...")
+ * - placeholder?: string (default "Select value")
  * - multiple?: boolean
  * - searchable?: boolean
  * - disabled?: boolean
  * - clearable?: boolean
  * - maxMenuHeight?: number (px)
  * - className?: string (extra classes for the control)
+ * - size?: "S" | "M" | "L"  (default "M")
  */
 export function BaseSelect({
   options = [],
@@ -55,6 +108,7 @@ export function BaseSelect({
   clearable = true,
   maxMenuHeight = 264,
   className = "",
+  size = "M",
 }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -62,6 +116,8 @@ export function BaseSelect({
   const controlRef = useRef(null);
   const menuRef = useRef(null);
   const inputRef = useRef(null);
+
+  const S = SIZE_STYLES[size] ?? SIZE_STYLES.M;
 
   const byValue = useMemo(
     () => new Map(options.map((o) => [o.value, o])),
@@ -163,14 +219,20 @@ export function BaseSelect({
     setQuery("");
   }
 
-  const controlBase =
-    "w-full px-3 py-2 md:py-3 md:px-4 rounded-[0.75rem] bg-Overlays-Black-9 border border-Badge-Gray-Subtle-Background text-Content-Primary " +
-    "placeholder:text-[#9DA1A8] flex items-center justify-between gap-1.5 md:gap-2 lg:gap-3";
+  const controlSkeleton =
+    "w-full bg-Overlays-Black-9 border border-Badge-Gray-Subtle-Background text-Content-Primary " +
+    "placeholder:text-[#9DA1A8] flex items-center justify-between";
 
   return (
     <div className="flex flex-col">
       {label && (
-        <p className="text-Content-Primary font-semibold text-xs leading-4 lg:text-sm lg:leading-5 pb-2">
+        <p
+          className={classNames(
+            "text-Content-Primary font-semibold",
+            S.labelText,
+            S.labelPb
+          )}
+        >
           {label}
         </p>
       )}
@@ -180,7 +242,8 @@ export function BaseSelect({
         type="button"
         ref={controlRef}
         className={classNames(
-          controlBase,
+          controlSkeleton,
+          S.control,
           disabled
             ? "opacity-50 cursor-not-allowed"
             : "cursor-pointer hover:border-white/20",
@@ -192,17 +255,27 @@ export function BaseSelect({
         aria-expanded={open}
       >
         {/* Left: value/chips/placeholder */}
-        <div className="min-w-0 flex-1 flex items-center gap-2">
+        <div
+          className={classNames("min-w-0 flex-1 flex items-center", S.innerGap)}
+        >
           {multiple ? (
             selectedValues.length ? (
-              <div className="flex flex-wrap items-center gap-1.5">
+              <div
+                className={classNames(
+                  "flex flex-wrap items-center",
+                  S.chipsWrap
+                )}
+              >
                 {selectedValues.map((v) => {
                   const o = byValue.get(v);
                   if (!o) return null;
                   return (
                     <span
                       key={v}
-                      className="group inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/5 px-2 py-1 text-xs text-[#E5E7EB]"
+                      className={classNames(
+                        "group inline-flex items-center rounded-xl border border-white/10 bg-white/5",
+                        S.chip
+                      )}
                       onClick={(e) => e.stopPropagation()}
                     >
                       {o.icon}
@@ -216,7 +289,7 @@ export function BaseSelect({
                         className="opacity-70 hover:opacity-100"
                         aria-label={`Remove ${o.label}`}
                       >
-                        <XIcon />
+                        <XIcon className={S.xIcon} />
                       </button>
                     </span>
                   );
@@ -237,21 +310,22 @@ export function BaseSelect({
         {/* Right: clear + chevron */}
         <div className="flex items-center gap-2">
           {selectedValues.length > 0 ? (
-            // When there's a value: only show the clear (X) if allowed
             clearable &&
             !disabled && (
-              <button
+              <div
                 type="button"
                 onClick={clearSelection}
-                className="rounded-md p-1 hover:bg-white/5"
+                className={classNames(
+                  "rounded-md hover:bg-white/5",
+                  S.clearBtnPad
+                )}
                 aria-label="Clear selection"
               >
-                <XIcon />
-              </button>
+                <XIcon className={S.xIcon} />
+              </div>
             )
           ) : (
-            // When empty: show the chevron
-            <Chevron open={open} />
+            <Chevron open={open} className={S.chevron} />
           )}
         </div>
       </button>
@@ -275,8 +349,18 @@ export function BaseSelect({
             <div className="absolute left-0 right-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0F1113] shadow-xl">
               {/* Search */}
               {searchable && (
-                <div className="p-2 border-b border-white/10">
-                  <div className="flex items-center gap-2 rounded-xl bg-white/5 px-3 py-2">
+                <div
+                  className={classNames(
+                    "border-b border-white/10",
+                    S.searchWrap
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      "flex items-center gap-2 rounded-xl bg-white/5",
+                      S.searchWrap
+                    )}
+                  >
                     <svg
                       className="h-4 w-4 opacity-70"
                       viewBox="0 0 24 24"
@@ -304,7 +388,10 @@ export function BaseSelect({
                         setActiveIndex(0);
                       }}
                       placeholder="Search…"
-                      className="w-full bg-transparent text-sm outline-none placeholder:text-[#9DA1A8]"
+                      className={classNames(
+                        "w-full bg-transparent outline-none placeholder:text-[#9DA1A8]",
+                        S.searchInput
+                      )}
                     />
                   </div>
                 </div>
@@ -318,7 +405,12 @@ export function BaseSelect({
                 className="no-scrollbar overflow-y-auto py-1"
               >
                 {filtered.length === 0 ? (
-                  <div className="px-3 py-3 text-sm text-[#9DA1A8]">
+                  <div
+                    className={classNames(
+                      "px-3 py-3 text-[#9DA1A8]",
+                      S.searchInput
+                    )}
+                  >
                     No results
                   </div>
                 ) : (
@@ -335,7 +427,8 @@ export function BaseSelect({
                         onMouseDown={(e) => e.preventDefault()} // keep focus
                         onClick={() => !opt.disabled && selectOption(opt.value)}
                         className={classNames(
-                          "mx-1 flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm",
+                          "mx-1 flex cursor-pointer items-center gap-2 rounded-xl",
+                          S.option,
                           opt.disabled
                             ? "opacity-40 cursor-not-allowed"
                             : active
@@ -347,7 +440,8 @@ export function BaseSelect({
                         {multiple ? (
                           <span
                             className={classNames(
-                              "grid h-4 w-4 place-items-center rounded border",
+                              "grid place-items-center rounded border",
+                              S.checkbox,
                               selected
                                 ? "border-white/60 bg-white/20"
                                 : "border-white/20"
@@ -355,7 +449,7 @@ export function BaseSelect({
                           >
                             {selected && (
                               <svg
-                                className="h-3 w-3"
+                                className={S.checkmark}
                                 viewBox="0 0 24 24"
                                 fill="none"
                               >
@@ -370,7 +464,12 @@ export function BaseSelect({
                             )}
                           </span>
                         ) : (
-                          <span className="h-4 w-4" />
+                          <span
+                            className={S.checkbox.replace(
+                              /h-\S+ w-\S+/,
+                              "h-4 w-4"
+                            )}
+                          />
                         )}
 
                         {opt.icon && (
@@ -408,7 +507,7 @@ export function BaseSelect({
   );
 }
 
-/** Public wrappers for clarity */
+/** Public wrappers */
 export function Select(props) {
   return <BaseSelect {...props} multiple={false} />;
 }

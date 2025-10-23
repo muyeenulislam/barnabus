@@ -1072,6 +1072,21 @@ const EVOLUTION_PATH = [
   },
 ];
 
+const VERIFICATION_HELP = [
+  {
+    title: "Canada",
+    subtitle: "Enter your MINC.",
+    link: "#",
+    linkText: "Learn more",
+  },
+  {
+    title: "USA",
+    subtitle: "Enter your NPI or valid state medical license number.",
+    link: "#",
+    linkText: "Lookup",
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1099,4 +1114,5 @@ export {
   SAFE_BY_DESIGN,
   RUN_ANYWHERE,
   EVOLUTION_PATH,
+  VERIFICATION_HELP,
 };
