@@ -1087,6 +1087,126 @@ const VERIFICATION_HELP = [
   },
 ];
 
+const INDUSTRIES = [
+  {
+    slug: "healthcare",
+    title: "Healthcare",
+    icon: "/icons/healthcare.svg",
+    items: [
+      {
+        title: "Bedside & Point of Care",
+        subtitle: "Pre-op clearance, ICU/ER support, real-time alerts",
+      },
+      {
+        title: "Specialty & Department Level",
+        subtitle: "Tumor boards, oncology, pathology, ophthalmology modules",
+      },
+      {
+        title: "Hospital Operations",
+        subtitle: "Patient flow optimization, scheduling, risk calculators",
+      },
+      {
+        title: "Population Health",
+        subtitle:
+          "Chronic disease management, preventive screening, epidemiology",
+      },
+      {
+        title: "Global / System-Level",
+        subtitle: "Compliance, knowledge federation, cross-border learning",
+      },
+    ],
+  },
+  {
+    slug: "semiconductors",
+    title: "Semiconductors",
+    icon: "/icons/semiconductor.svg",
+    items: [
+      {
+        title: "Wafer & Die Intelligence",
+        subtitle: "Maps, binning, excursion detection",
+      },
+      {
+        title: "Yield Optimization",
+        subtitle: "Root-cause analysis, predictive forecasting",
+      },
+      {
+        title: "Process & Equipment Health",
+        subtitle: "Chamber drift, inline defect inspection",
+      },
+      {
+        title: "Test & Probe Data Analytics",
+        subtitle: "Wafer sort, multi-site probing, final test correlation",
+      },
+      {
+        title: "Cross-Fab & Design Feedback",
+        subtitle: "Design-to-yield loops, global fab learning",
+      },
+    ],
+  },
+  {
+    slug: "manufacturing",
+    title: "Manufacturing",
+    icon: "/icons/manufacturing.svg",
+    items: [
+      {
+        title: "Equipment Intelligence",
+        subtitle:
+          "Predictive maintenance, drift detection, uptime optimization",
+      },
+      {
+        title: "Defect Detection & Quality",
+        subtitle:
+          "Inline visual inspection, anomaly detection, scrap reduction",
+      },
+      {
+        title: "Process Optimization",
+        subtitle: "Yield improvement, cycle time reduction, energy efficiency",
+      },
+      {
+        title: "Factory Operations",
+        subtitle:
+          "Scheduling, bottleneck identification, throughput optimization",
+      },
+      {
+        title: "Enterprise Integration",
+        subtitle: "Linking production data to supply chain & design feedback",
+      },
+      {
+        title: "Supply Chain",
+        subtitle: "Demand forecasting, resilience modeling",
+      },
+    ],
+  },
+];
+
+const SYSTEM_STACK = [
+  {
+    title: "Action Agents",
+    tag: "DO → EXECUTE",
+    description: "Decision execution.",
+  },
+  {
+    title: "Intelligence Units",
+    tag: "THINK",
+    description: "Domain-specialized reasoning.",
+  },
+  {
+    title: "Core Intelligence",
+    tag: "Barnabus",
+    description: "Multi-agent orchestration + conscience.",
+  },
+  {
+    title: "Routing Layer",
+    tag: "AXON",
+    description: "Directs information flow.",
+  },
+  {
+    title: "Memory Fabric",
+    tag: "Remember",
+    description: "Persistent knowledge and provenance.",
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1115,4 +1235,6 @@ export {
   RUN_ANYWHERE,
   EVOLUTION_PATH,
   VERIFICATION_HELP,
+  INDUSTRIES,
+  SYSTEM_STACK,
 };

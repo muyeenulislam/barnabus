@@ -212,7 +212,9 @@ const Navbar = () => {
 
         {/* Right: CTA + Mobile trigger */}
         <div className="flex items-center gap-2">
-          <Button label="Participate" variant="Primary-Default" size="L" />
+          <Link href="/participate">
+            <Button label="Participate" variant="Primary-Default" size="L" />
+          </Link>
 
           {/* Mobile-only arrow to open bottom sheet */}
           <button

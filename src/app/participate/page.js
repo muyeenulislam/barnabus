@@ -2,6 +2,7 @@ import React from "react";
 
 import ParticipateIntro from "@/components/participate/intro";
 import CompleteFreeRegistration from "@/components/participate/complete-free-reg";
+import Steps from "@/components/participate/steps";
 
 const Page = () => {
   return (
@@ -15,6 +16,7 @@ const Page = () => {
       ></div>
 
       <ParticipateIntro />
+      <Steps />
       <CompleteFreeRegistration />
     </div>
   );

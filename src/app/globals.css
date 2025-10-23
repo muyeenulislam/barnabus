@@ -136,6 +136,9 @@
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
   --shadow-homeTableShadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.09) inset,
     0 0 1.5px 1.5px rgba(247, 247, 248, 0.09) inset;
+  --shadow-participateBlackCard: 0 0 3.323px 0 rgba(59, 245, 255, 0.5);
+  --shadow-participateNeonCard: 0 0 3.323px 0 #3bf5ff, 0 0 0.831px 0 #3bf5ff,
+    0 0 0.498px 0 #3bf5ff;
 
   /* Fonts (kept as-is so Next.js font var works) */
   --font-outfit: var(--font-outfit);
