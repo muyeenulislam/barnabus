@@ -1,3 +1,8 @@
+import Stethoscope from "../../public/icons/stethoscope";
+import Chip from "../../public/icons/chip";
+import StarAward from "../../public/icons/star-award";
+import ArtificalIntelligence from "../../public/icons/artifical-intelligence";
+
 const NAV_ITEMS = [
   { title: "Vision", route: "/vision" },
   { title: "Capabilities", route: "/capabilities" },
@@ -1211,42 +1216,110 @@ const INTELLIGENCE_INPUTS = [
   {
     key: "text-docs",
     title: "Text & Documents",
+    icon: "/icons/text-creation.svg",
     items: [
-      { label: "Clinical", detail: "EHR notes, discharge summaries" },
-      { label: "Semiconductor", detail: "Yield logs, test reports" },
-      { label: "Compliance", detail: "HIPAA/SOC-2 checklists, contracts" },
+      {
+        label: "Clinical",
+        detail: "EHR notes, discharge summaries",
+        icon: <Stethoscope variant="teal" />,
+      },
+      {
+        label: "Semiconductor",
+        detail: "Yield logs, test reports",
+        icon: <Chip variant="teal" />,
+      },
+      {
+        label: "Compliance",
+        detail: "HIPAA/SOC-2 checklists, contracts",
+        icon: <StarAward variant="teal" />,
+      },
+      {
+        label: "Value",
+        detail: "Turns unstructured text into structured reasoning.",
+        icon: <ArtificalIntelligence variant="teal" />,
+      },
     ],
-    value: "Turns unstructured text into structured reasoning.",
   },
   {
     key: "images",
     title: "Images",
+    icon: "/icons/ai-image.svg",
     items: [
-      { label: "Clinical", detail: "Radiology (X-ray, CT, MRI)" },
-      { label: "Semiconductor", detail: "Wafer/Die maps, defect maps" },
-      { label: "Industrial", detail: "Optical inspection photos" },
+      {
+        label: "Clinical",
+        detail: "Radiology (X-ray, CT, MRI)",
+        icon: <Stethoscope variant="purple" />,
+      },
+      {
+        label: "Semiconductor",
+        detail: "Wafer/Die maps, defect maps",
+        icon: <Chip variant="purple" />,
+      },
+      {
+        label: "Industrial",
+        detail: "Optical inspection photos",
+        icon: <StarAward variant="purple" />,
+      },
+      {
+        label: "Value",
+        detail: "Converts pixels into measurable signals.",
+        icon: <ArtificalIntelligence variant="purple" />,
+      },
     ],
-    value: "Converts pixels into measurable signals.",
   },
   {
     key: "videos-streams",
     title: "Videos & Streams",
+    icon: "/icons/video-camera-ai.svg",
     items: [
-      { label: "Clinical", detail: "Surgical footage, endoscopy" },
-      { label: "Manufacturing", detail: "Process video, defect detection" },
-      { label: "Cyber/IoT", detail: "Security camera feeds, real-time events" },
+      {
+        label: "Clinical",
+        detail: "Surgical footage, endoscopy",
+        icon: <Stethoscope variant="yellow" />,
+      },
+      {
+        label: "Manufacturing",
+        detail: "Process video, defect detection",
+        icon: <Chip variant="yellow" />,
+      },
+      {
+        label: "Cyber/IoT",
+        detail: "Security camera feeds, real-time events",
+        icon: <StarAward variant="yellow" />,
+      },
+      {
+        label: "Value",
+        detail: "Real-time situational awareness.",
+        icon: <ArtificalIntelligence variant="yellow" />,
+      },
     ],
-    value: "Real-time situational awareness.",
   },
   {
     key: "3d-sensor",
     title: "3D & Sensor Data",
+    icon: "/icons/3d-view.svg",
     items: [
-      { label: "Semiconductor", detail: "Wafer sort / probe data" },
-      { label: "IoT", detail: "Vibration, temperature, LiDAR" },
-      { label: "Robotics", detail: "Automation feedback loops" },
+      {
+        label: "Semiconductor",
+        detail: "Wafer sort / probe data",
+        icon: <Stethoscope variant="violet" />,
+      },
+      {
+        label: "IoT",
+        detail: "Vibration, temperature, LiDAR",
+        icon: <Chip variant="violet" />,
+      },
+      {
+        label: "Robotics",
+        detail: "Automation feedback loops",
+        icon: <StarAward variant="violet" />,
+      },
+      {
+        label: "Value",
+        detail: "Precision + contextual grounding.",
+        icon: <ArtificalIntelligence variant="violet" />,
+      },
     ],
-    value: "Precision + contextual grounding.",
   },
 ];
 
