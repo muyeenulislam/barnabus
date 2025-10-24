@@ -1217,6 +1217,7 @@ const INTELLIGENCE_INPUTS = [
     key: "text-docs",
     title: "Text & Documents",
     icon: "/icons/text-creation.svg",
+    variant: "teal",
     items: [
       {
         label: "Clinical",
@@ -1244,6 +1245,7 @@ const INTELLIGENCE_INPUTS = [
     key: "images",
     title: "Images",
     icon: "/icons/ai-image.svg",
+    variant: "purple",
     items: [
       {
         label: "Clinical",
@@ -1271,6 +1273,7 @@ const INTELLIGENCE_INPUTS = [
     key: "videos-streams",
     title: "Videos & Streams",
     icon: "/icons/video-camera-ai.svg",
+    variant: "yellow",
     items: [
       {
         label: "Clinical",
@@ -1298,6 +1301,7 @@ const INTELLIGENCE_INPUTS = [
     key: "3d-sensor",
     title: "3D & Sensor Data",
     icon: "/icons/3d-view.svg",
+    variant: "violet",
     items: [
       {
         label: "Semiconductor",

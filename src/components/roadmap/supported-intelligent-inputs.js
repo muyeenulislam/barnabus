@@ -2,6 +2,7 @@ import React from "react";
 
 import AgentTables from "./agent-tables";
 import InputCards from "./input-cards";
+import { INTELLIGENCE_INPUTS } from "@/utils/arrays";
 
 const SupportedIntelligentInputs = () => {
   return (
@@ -16,8 +17,16 @@ const SupportedIntelligentInputs = () => {
             context that compounds into understanding.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4">
-          <InputCards />
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+          {INTELLIGENCE_INPUTS?.map((item, index) => (
+            <InputCards
+              key={index}
+              variant={item.variant}
+              title={item.title}
+              icon={item.icon}
+              items={item.items}
+            />
+          ))}
         </div>
         <div className="w-full md:w-max mx-auto bg-Surface2 text-Content-Brand-Accent rounded-2xl md:rounded-full p-4 md:px-5.5 md:py-3.5 text-base md:text-lg leading-6 md:leading-6.6 lg:text-xl lg:leading-7">
           From multi-modal data → to agentic intelligence → to aligned human

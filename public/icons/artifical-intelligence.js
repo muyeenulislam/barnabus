@@ -16,8 +16,8 @@ const ArtificalIntelligence = ({ variant = "white" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="35"
+      width="2.5rem"
+      height="2.5rem"
       viewBox="0 0 35 35"
       fill="none"
     >

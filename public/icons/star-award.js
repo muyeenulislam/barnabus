@@ -16,8 +16,8 @@ const StarAward = ({ variant = "white" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="34"
-      height="34"
+      width="2.5rem"
+      height="2.5rem"
       viewBox="0 0 34 34"
       fill="none"
     >
