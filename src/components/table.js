@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useEffect, useState } from "react";
 
 function cx(...xs) {
   return xs.filter(Boolean).join(" ");
@@ -26,11 +26,10 @@ function toPx(v) {
  * - rowKey?: string (default "id")
  * - className?: string
  * - striped?: boolean (default true)
- * - compact?: boolean (default false) — tighter paddings
- *
- * Notes:
- * - For sticky columns, provide explicit widths (number = px or "rem"/"px" string).
- * - Any column with fixed:true is treated as fixed:'left'.
+ * - compact?: boolean (default false)
+ * - edgeFade?: boolean (default true)
+ * - edgeFadeWidthRem?: number (default 0.75)
+ * - edgeFadeOpacity?: number (default 0.35)
  */
 const DefaultTable = ({
   columns = [],
@@ -39,6 +38,9 @@ const DefaultTable = ({
   className = "",
   striped = true,
   compact = false,
+  edgeFade = true,
+  edgeFadeWidthRem = 0.75,
+  edgeFadeOpacity = 0.35,
 }) => {
   const computed = useMemo(() => {
     const cols = columns.map((c) => {
@@ -46,11 +48,10 @@ const DefaultTable = ({
       return {
         ...c,
         _widthPx: widthPx,
-        _fixed: c.fixed === true ? "left" : c.fixed, // normalize
+        _fixed: c.fixed === true ? "left" : c.fixed,
       };
     });
 
-    // Left offsets
     let leftAcc = 0;
     const leftOffsets = {};
     cols.forEach((c) => {
@@ -60,7 +61,6 @@ const DefaultTable = ({
       }
     });
 
-    // Right offsets
     let rightAcc = 0;
     const rightOffsets = {};
     [...cols].reverse().forEach((c) => {
@@ -71,8 +71,6 @@ const DefaultTable = ({
     });
 
     const tableWidth = cols.reduce((s, c) => s + c._widthPx, 0);
-
-    // For drawing dividers on the last fixed-left / first fixed-right columns
     const lastLeftIdx = [...cols].reduce(
       (acc, c, i) => (c._fixed === "left" ? i : acc),
       -1
@@ -102,9 +100,54 @@ const DefaultTable = ({
   const padYHead = compact ? "py-2.5" : "py-3";
   const padYCell = compact ? "py-3" : "py-4";
 
+  // Fade config
+  const fadeW = `${edgeFadeWidthRem}rem`;
+  const rightFade = `linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,${edgeFadeOpacity}) 100%)`;
+  const leftFade = `linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,${edgeFadeOpacity}) 100%)`;
+
+  // Overflow + scroll state
+  const scrollRef = useRef(null);
+  const [scrollState, setScrollState] = useState({
+    overflow: false,
+    atStart: true,
+    atEnd: true,
+  });
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const { scrollWidth, clientWidth, scrollLeft } = el;
+      const overflow = scrollWidth > clientWidth + 1; // tolerance
+      const atStart = scrollLeft <= 0;
+      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+      setScrollState({ overflow, atStart, atEnd });
+    };
+
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    // observe table too in case columns change widths
+    const tableEl = el.querySelector("table");
+    if (tableEl) ro.observe(tableEl);
+
+    window.addEventListener("resize", update);
+    return () => {
+      el.removeEventListener("scroll", update);
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, [tableWidth]);
+
   return (
     <div className={cx("relative w-full", className)}>
-      <div className="overflow-x-auto rounded-2xl md:rounded-3xl bg-Overlays-Black-9 shadow-table">
+      <div
+        ref={scrollRef}
+        className="overflow-x-auto rounded-2xl md:rounded-3xl bg-Overlays-Black-9 shadow-table"
+      >
         <table
           className="w-full border-collapse table-fixed"
           style={{ minWidth: tableWidth }}
@@ -129,12 +172,21 @@ const DefaultTable = ({
                       }
                   : {};
 
-                const dividerClass =
-                  i === lastLeftIdx
-                    ? "border-r border-Overlays-White-5"
-                    : i === firstRightIdx && firstRightIdx !== -1
-                    ? "border-l border-Overlays-White-5"
-                    : "";
+                // borders removed
+                const dividerClass = "";
+
+                const showRightEdgeFade =
+                  edgeFade &&
+                  i === lastLeftIdx &&
+                  scrollState.overflow &&
+                  !scrollState.atEnd;
+
+                const showLeftEdgeFade =
+                  edgeFade &&
+                  firstRightIdx !== -1 &&
+                  i === firstRightIdx &&
+                  scrollState.overflow &&
+                  !scrollState.atStart;
 
                 return (
                   <th
@@ -144,6 +196,7 @@ const DefaultTable = ({
                       padX,
                       padYHead,
                       "whitespace-nowrap",
+                      sticky && "relative",
                       dividerClass,
                       c.headerClassName
                     )}
@@ -154,6 +207,31 @@ const DefaultTable = ({
                     }}
                   >
                     <div className="flex items-center gap-2">{c.header}</div>
+
+                    {showRightEdgeFade && (
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute top-0 bottom-0"
+                        style={{
+                          right: `-${fadeW}`,
+                          width: fadeW,
+                          background: leftFade,
+                          zIndex: 3,
+                        }}
+                      />
+                    )}
+                    {showLeftEdgeFade && (
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute top-0 bottom-0"
+                        style={{
+                          left: `-${fadeW}`,
+                          width: fadeW,
+                          background: rightFade,
+                          zIndex: 3,
+                        }}
+                      />
+                    )}
                   </th>
                 );
               })}
@@ -164,7 +242,10 @@ const DefaultTable = ({
             {data.map((row, rIdx) => (
               <tr
                 key={row[rowKey] ?? rIdx}
-                className={cx("border-t border-Surface0 bg-Surface1")}
+                className={cx(
+                  "border-t border-Surface0 bg-Surface1",
+                  striped && rIdx % 2 === 1 ? "bg-Surface1/90" : ""
+                )}
               >
                 {cols.map((c, i) => {
                   const isLeft = c._fixed === "left";
@@ -184,17 +265,26 @@ const DefaultTable = ({
                         }
                     : {};
 
-                  const dividerClass =
-                    i === lastLeftIdx
-                      ? "border-r border-Overlays-White-7/50"
-                      : i === firstRightIdx && firstRightIdx !== -1
-                      ? "border-l border-Overlays-White-7/50"
-                      : "";
+                  // borders removed
+                  const dividerClass = "";
 
                   const value =
                     typeof c.accessor === "function"
                       ? c.accessor(row)
                       : row[c.key];
+
+                  const showRightEdgeFade =
+                    edgeFade &&
+                    i === lastLeftIdx &&
+                    scrollState.overflow &&
+                    !scrollState.atEnd;
+
+                  const showLeftEdgeFade =
+                    edgeFade &&
+                    firstRightIdx !== -1 &&
+                    i === firstRightIdx &&
+                    scrollState.overflow &&
+                    !scrollState.atStart;
 
                   return (
                     <td
@@ -205,6 +295,7 @@ const DefaultTable = ({
                         "align-top bg-Surface1",
                         "text-sm leading-6",
                         "whitespace-normal",
+                        sticky && "relative",
                         dividerClass,
                         c.cellClassName
                       )}
@@ -215,6 +306,31 @@ const DefaultTable = ({
                       }}
                     >
                       {c.render ? c.render(value, row) : value}
+
+                      {showRightEdgeFade && (
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute top-0 bottom-0"
+                          style={{
+                            right: `-${fadeW}`,
+                            width: fadeW,
+                            background: leftFade,
+                            zIndex: 2,
+                          }}
+                        />
+                      )}
+                      {showLeftEdgeFade && (
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute top-0 bottom-0"
+                          style={{
+                            left: `-${fadeW}`,
+                            width: fadeW,
+                            background: rightFade,
+                            zIndex: 2,
+                          }}
+                        />
+                      )}
                     </td>
                   );
                 })}
@@ -226,4 +342,5 @@ const DefaultTable = ({
     </div>
   );
 };
+
 export { DefaultTable };
