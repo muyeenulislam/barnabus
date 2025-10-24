@@ -1207,6 +1207,49 @@ const SYSTEM_STACK = [
   },
 ];
 
+const INTELLIGENCE_INPUTS = [
+  {
+    key: "text-docs",
+    title: "Text & Documents",
+    items: [
+      { label: "Clinical", detail: "EHR notes, discharge summaries" },
+      { label: "Semiconductor", detail: "Yield logs, test reports" },
+      { label: "Compliance", detail: "HIPAA/SOC-2 checklists, contracts" },
+    ],
+    value: "Turns unstructured text into structured reasoning.",
+  },
+  {
+    key: "images",
+    title: "Images",
+    items: [
+      { label: "Clinical", detail: "Radiology (X-ray, CT, MRI)" },
+      { label: "Semiconductor", detail: "Wafer/Die maps, defect maps" },
+      { label: "Industrial", detail: "Optical inspection photos" },
+    ],
+    value: "Converts pixels into measurable signals.",
+  },
+  {
+    key: "videos-streams",
+    title: "Videos & Streams",
+    items: [
+      { label: "Clinical", detail: "Surgical footage, endoscopy" },
+      { label: "Manufacturing", detail: "Process video, defect detection" },
+      { label: "Cyber/IoT", detail: "Security camera feeds, real-time events" },
+    ],
+    value: "Real-time situational awareness.",
+  },
+  {
+    key: "3d-sensor",
+    title: "3D & Sensor Data",
+    items: [
+      { label: "Semiconductor", detail: "Wafer sort / probe data" },
+      { label: "IoT", detail: "Vibration, temperature, LiDAR" },
+      { label: "Robotics", detail: "Automation feedback loops" },
+    ],
+    value: "Precision + contextual grounding.",
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1237,4 +1280,5 @@ export {
   VERIFICATION_HELP,
   INDUSTRIES,
   SYSTEM_STACK,
+  INTELLIGENCE_INPUTS,
 };
