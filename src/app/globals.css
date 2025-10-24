@@ -101,6 +101,8 @@
   --color-Badge-Purple-Outline-Border: #793aaf;
   --color-Badge-Gold-Outline-Background: rgba(140, 106, 2, 0.09);
   --color-Badge-Gold-Outline-Border: #776750;
+  --color-Badge-Lime-Outline-Background: rgba(119, 204, 1, 0.06);
+  --color-Badge-Lime-Outline-Border: #5d770d;
 
   /* Badges - Outline content */
   --color-Badge-Red-Outline-Content: #eb9091;
@@ -111,6 +113,7 @@
   --color-Badge-Amber-Outline-Content: #ebbc00;
   --color-Badge-Purple-Outline-Content: #be93e4;
   --color-Badge-Gold-Outline-Content: #b8a383;
+  --color-Badge-Lime-Outline-Content: #94ba2c;
 
   /* Badges - Solid */
   --color-Badge-Gold-Solid-Background: #776750;

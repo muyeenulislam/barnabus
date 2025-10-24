@@ -11,22 +11,13 @@ import {
   SAFE_BY_DESIGN,
   EVOLUTION_PATH,
 } from "@/utils/arrays";
+import { IconBadge } from "@/utils/common-styles";
 
 const CARD_BASE = "bg-Overlays-Black-9 shadow-boxPrimary text-Content-Primary";
 
 const SMALL_CARD = `${CARD_BASE} flex flex-col gap-5 md:gap-6 lg:gap-12 p-4 md:p-5 lg:p-8 rounded-[1.25rem] md:rounded-3xl lg:rounded-4xl`;
 
 const BIG_CARD = `${CARD_BASE} flex flex-col justify-between gap-6 md:gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[3rem]`;
-
-const ICON_PANEL_BOX =
-  "shrink-0 h-max w-max flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3";
-
-const ICON_PANEL_STYLE = Object.freeze({
-  background:
-    "radial-gradient(66.22% 86.87% at 50% 100%, rgba(255, 255, 255, 0.08) 0%, rgba(18, 19, 20, 0.19) 100%), rgba(255, 255, 255, 0.03)",
-  boxShadow:
-    "0 0.5px 0 0.5px rgba(255, 255, 255, 0.12) inset, 0 0 1.5px 1.5px rgba(247, 247, 248, 0.12) inset",
-});
 
 const H_LINE =
   "bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,#3BF5FF_30%,#3BF5FF_70%,rgba(255,255,255,0.01)_100%)]";
@@ -38,20 +29,6 @@ const SectionHeading = memo(function SectionHeading({ title, subtitle }) {
     <div className="flex flex-col gap-1 lg:gap-3">
       <h3 className="content-heading">{title}</h3>
       <p className="content-subheading">{subtitle}</p>
-    </div>
-  );
-});
-
-const IconBadge = memo(function IconBadge({ src, alt = "" }) {
-  return (
-    <div className={ICON_PANEL_BOX} style={ICON_PANEL_STYLE} aria-hidden="true">
-      <Image
-        src={src}
-        alt={alt}
-        height={32}
-        width={32}
-        className="shrink-0 h-[1.875rem] w-[1.875rem] lg:h-[2.5rem] lg:w-[2.5rem]"
-      />
     </div>
   );
 });

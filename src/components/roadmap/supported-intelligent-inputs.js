@@ -1,8 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
+import Image from "next/image";
 
 import AgentTables from "./agent-tables";
 import InputCards from "./input-cards";
-import { INTELLIGENCE_INPUTS } from "@/utils/arrays";
+import { INTELLIGENCE_INPUTS, ROADMAP_TABLES_CONTENT } from "@/utils/arrays";
+import { IconBadge } from "@/utils/common-styles";
 
 const SupportedIntelligentInputs = () => {
   return (
@@ -33,7 +35,27 @@ const SupportedIntelligentInputs = () => {
           decisions.
         </div>
       </div>
-      <AgentTables />
+      <div className="mt-10 md:mt-12 lg:mt-16 space-y-4 md:space-y-5 lg:space-y-6">
+        {ROADMAP_TABLES_CONTENT?.map((table, idx) => (
+          <div
+            key={idx}
+            className="bg-Overlays-Black-9 shadow-boxPrimary space-y-4 p-5 rounded-[1.25rem] md:space-y-5 md:p-8 md:rounded-4xl lg:space-y-8 lg:p-[4rem] lg:rounded-[4rem]"
+          >
+            <div className="flex flex-col md:items-center md:flex-row gap-2 md:gap-3 lg:gap-4">
+              <IconBadge src={table.icon} />
+              <div>
+                <h2 className="text-Content-Primary font-semibold text-xl leading-7 md:text-2xl md:leading-8 lg:text-[2rem] lg:leading-10">
+                  {table.title}
+                </h2>
+                <p className="text-Content-Secondary text-base leading-6 lg:text-lg lg:leading-6.5">
+                  {table.subtitle}
+                </p>
+              </div>
+            </div>
+            <AgentTables rows={table.rows} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

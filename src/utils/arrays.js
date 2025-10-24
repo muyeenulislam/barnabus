@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { Tags } from "@/components/tags";
 import Stethoscope from "../../public/icons/stethoscope";
 import Chip from "../../public/icons/chip";
 import StarAward from "../../public/icons/star-award";
@@ -1327,6 +1329,268 @@ const INTELLIGENCE_INPUTS = [
   },
 ];
 
+const ROADMAP_TABLES_CONTENT = [
+  {
+    title: "Foundational Agents",
+    subtitle:
+      "Build the base intelligence: memory, knowledge retention, and reuse.",
+    icon: "/icons/building-construction.svg",
+    rows: [
+      {
+        id: 1,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/workflow-circle.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="workflow-circle"
+            />
+            <span>Knowledge</span>
+          </div>
+        ),
+        agent: "Shadow Knowledge",
+        problem: "Tacit knowledge is lost or siloed",
+        value: "Captures tribal behavior, formalizes SOPs",
+        stage: <Tags label="MVP" variant="Lime" size="M" leadingDot={true} />,
+      },
+      {
+        id: 2,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/memory-card.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="memory-card"
+            />
+            <span>Memory</span>
+          </div>
+        ),
+        agent: "Memory Bridge",
+        problem: "Learnings not reused across projects",
+        value: "Enables cross-domain transfer learning",
+        stage: (
+          <Tags
+            label="FUTURE"
+            variant="Brand-Accent"
+            size="M"
+            leadingDot={true}
+          />
+        ),
+      },
+      {
+        id: 3,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/content-paper-edit.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="content-paper-edit"
+            />
+            <span>Context</span>
+          </div>
+        ),
+        agent: "Thought Trace",
+        problem: "No trace of why past decisions were made",
+        value: "Stores contextual breadcrumbs for explainability",
+        stage: (
+          <Tags label="MOONSHOT" variant="Violet" size="M" leadingDot={true} />
+        ),
+      },
+    ],
+  },
+  {
+    title: "Operational Flow Agents",
+    subtitle: "Build intelligent action through automation and coordination.",
+    icon: "/icons/weather-wind-flow.svg",
+    rows: [
+      {
+        id: 1,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/workflow-circle.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="workflow-circle"
+            />
+            <span>Flow/Design</span>
+          </div>
+        ),
+        agent: "Shadow Knowledge",
+        problem: "Tacit knowledge is lost or siloed",
+        value: "Captures tribal behavior, formalizes SOPs",
+        stage: (
+          <Tags
+            label="FUTURE"
+            variant="Brand-Accent"
+            size="M"
+            leadingDot={true}
+          />
+        ),
+      },
+      {
+        id: 2,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/ibm-event-automation.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="ibm-event-automation"
+            />
+            <span>Automation</span>
+          </div>
+        ),
+        agent: "Memory Bridge",
+        problem: "Learnings not reused across projects",
+        value: "Enables cross-domain transfer learning",
+        stage: (
+          <Tags
+            label="FUTURE"
+            variant="Brand-Accent"
+            size="M"
+            leadingDot={true}
+          />
+        ),
+      },
+      {
+        id: 3,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/navy-federal.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="navy-federal"
+            />
+            <span>Federation</span>
+          </div>
+        ),
+        agent: "Thought Trace",
+        problem: "No trace of why past decisions were made",
+        value: "Stores contextual breadcrumbs for explainability",
+        stage: <Tags label="MVP" variant="Lime" size="M" leadingDot={true} />,
+      },
+    ],
+  },
+  {
+    title: "Meta/AI Management Agents",
+    subtitle: "Build the agents that manage and improve other agents.",
+    icon: "/icons/ai.svg",
+    rows: [
+      {
+        id: 1,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/bug-antivirus-debugging.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="bug-antivirus-debugging"
+            />
+            <span>Debugging</span>
+          </div>
+        ),
+        agent: "AI-to-AI Debugger",
+        problem: "Black-box models can't explain themselves",
+        value:
+          "Interprets, audits, and corrects AI outputs tribal behavior, formalizes SOPs",
+        stage: (
+          <Tags
+            label="FUTURE"
+            variant="Brand-Accent"
+            size="M"
+            leadingDot={true}
+          />
+        ),
+      },
+      {
+        id: 2,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/floor-plan.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="floor-plan"
+            />
+            <span>Planning</span>
+          </div>
+        ),
+        agent: "Meta-Agent Planner",
+        problem: "Uncoordinated agent actions",
+        value: "Aligns agent actions with system goals",
+        stage: (
+          <Tags label="MOONSHOT" variant="Violet" size="M" leadingDot={true} />
+        ),
+      },
+    ],
+  },
+  {
+    title: "Human-Centric Agents",
+    subtitle: "Build emotional, explainable, and intent-aware AI.",
+    icon: "/icons/human-resources-network.svg",
+    rows: [
+      {
+        id: 1,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/emotion-happy.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="emotion-happy"
+            />
+            <span>Emotion/Intent</span>
+          </div>
+        ),
+        agent: "Intent & Emotion Modeler",
+        problem: "Emotion and motivation behind decisions lost",
+        value: "Captures affective context to align reasoning",
+        stage: <Tags label="MVP" variant="Lime" size="M" leadingDot={true} />,
+      },
+      {
+        id: 2,
+        type: (
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/mentoring.svg"
+              width={36}
+              height={36}
+              className="p-2 h-[2rem] w-[2rem] rounded-full bg-Surface0"
+              alt="mentoring"
+            />
+            <span>Mentorship</span>
+          </div>
+        ),
+        agent: "Design Mentor",
+        problem: "New engineers lack embedded know-how",
+        value: "Mentors others based on expert design patterns",
+        stage: (
+          <Tags
+            label="FUTURE"
+            variant="Brand-Accent"
+            size="M"
+            leadingDot={true}
+          />
+        ),
+      },
+    ],
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1358,4 +1622,5 @@ export {
   INDUSTRIES,
   SYSTEM_STACK,
   INTELLIGENCE_INPUTS,
+  ROADMAP_TABLES_CONTENT,
 };

@@ -153,7 +153,7 @@ const DefaultTable = ({
           style={{ minWidth: tableWidth }}
         >
           <thead>
-            <tr className="text-Content-Secondary text-sm bg-Surface0">
+            <tr className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7 bg-Surface0">
               {cols.map((c, i) => {
                 const isLeft = c._fixed === "left";
                 const isRight = c._fixed === "right";
@@ -238,7 +238,7 @@ const DefaultTable = ({
             </tr>
           </thead>
 
-          <tbody className="text-Content-Primary">
+          <tbody className="text-Content-Secondary">
             {data.map((row, rIdx) => (
               <tr
                 key={row[rowKey] ?? rIdx}
@@ -293,7 +293,7 @@ const DefaultTable = ({
                         padX,
                         padYCell,
                         "align-top bg-Surface1",
-                        "text-sm leading-6",
+                        "text-sm leading-5 lg:text-base lg:leading-6",
                         "whitespace-normal",
                         sticky && "relative",
                         dividerClass,

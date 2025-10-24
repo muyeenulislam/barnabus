@@ -7,6 +7,7 @@ const SIZE_STYLES = {
     iconSize: "h-[0.625rem] w-[0.625rem]",
     padding: "py-[0.325rem] px-[0.5rem]",
     gap: "gap-[0.05rem]",
+    dot: "h-[0.625rem] w-[0.625rem]",
     icon: 16,
   },
   M: {
@@ -14,6 +15,7 @@ const SIZE_STYLES = {
     iconSize: "h-[1.625rem] w-[1.625rem]",
     padding: "py-[0.125rem] px-[0.75rem]",
     gap: "gap-[0.125rem]",
+    dot: "h-[0.625rem] w-[0.625rem]",
     icon: 20,
   },
   L: {
@@ -21,6 +23,7 @@ const SIZE_STYLES = {
     iconSize: "h-[1.5rem] w-[1.5rem]",
     padding: "py-[0.75rem] px-[1.25rem]",
     gap: "gap-4",
+    dot: "h-[0.625rem] w-[0.625rem]",
     icon: 24,
   },
 };
@@ -66,6 +69,11 @@ const VARIANT_STYLES = {
     "text-Badge-Gold-Outline-Content",
     "border border-Badge-Gold-Outline-Border",
   ].join(" "),
+  Lime: [
+    "bg-Badge-Lime-Outline-Background",
+    "text-Badge-Lime-Outline-Content",
+    "border border-Badge-Lime-Outline-Border",
+  ].join(" "),
 };
 const VARIANT_STYLES_SOLID = {
   Plum: [
@@ -93,6 +101,17 @@ const VARIANT_STYLES_SOLID = {
     "text-Badge-Gold-Solid-Content",
   ].join(" "),
 };
+const DOT_BG = {
+  Plum: "bg-Badge-Plum-Subtle-Background",
+  Indigo: "bg-Badge-Indigo-Subtle-Background",
+  Green: "bg-Badge-Green-Subtle-Background",
+  Amber: "bg-Badge-Amber-Subtle-Background",
+  Teal: "bg-Badge-Teal-Subtle-Background",
+  Gold: "bg-Badge-Gold-Solid-Background",
+  Lime: "bg-[#94BA2C]",
+  "Brand-Accent": "bg-[#00C1CC]",
+  Violet: "bg-[#AA99EC]",
+};
 
 const Tags = ({
   size = "M",
@@ -108,6 +127,7 @@ const Tags = ({
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
   const v = VARIANT_STYLES[variant] || VARIANT_STYLES["green"];
+  const d = DOT_BG[variant] || DOT_BG["green"];
   const iconSize = s.icon;
 
   return (
@@ -124,14 +144,7 @@ const Tags = ({
       {...rest}
     >
       {leadingDot && (
-        <Image
-          src={leadingDot}
-          alt="leading badge"
-          height={iconSize}
-          width={iconSize}
-          aria-hidden="true"
-          className={s.iconSize}
-        />
+        <div className={["rounded-full", s.dot, d].join(" ")}></div>
       )}
 
       {leadingIcon && (
