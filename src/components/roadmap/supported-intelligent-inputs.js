@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import Image from "next/image";
+import React from "react";
 
 import AgentTables from "./agent-tables";
 import InputCards from "./input-cards";
+
 import { INTELLIGENCE_INPUTS, ROADMAP_TABLES_CONTENT } from "@/utils/arrays";
 import { IconBadge } from "@/utils/common-styles";
 
