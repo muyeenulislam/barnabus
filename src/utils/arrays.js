@@ -1773,10 +1773,9 @@ const BAA = [
     list1: [
       `**Effective Date:** Upon activation of Covered Entity’s Barnabus account.`,
       `**Termination for Cause:** Either party may terminate this Agreement with 30 days’ notice upon a material breach.`,
-      `**Post-Termination:**\n
---Barnabus will retain only PHI needed for legal or operational purposes.--
---Return or securely destroy remaining PHI where feasible.--
---Maintain protections and restrict use of retained PHI.--`,
+      `**Post-Termination:**\n• Barnabus will retain only PHI needed for legal or operational purposes.
+• Return or securely destroy remaining PHI where feasible.
+• Maintain protections and restrict use of retained PHI.`,
     ],
   },
   {

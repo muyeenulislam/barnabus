@@ -7,8 +7,6 @@ const addLineBreaks = (text) => {
       (match, p1) => `<strong>${p1}</strong>`
     );
 
-    line = line.replace(/--(.*?)--/g, (match, p1) => `<li>• ${p1}</li>`);
-
     line = line.replace(/#([\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,})#/g, (match, p1) => {
       return `<a href="mailto:${p1}">${p1}</a>`;
     });

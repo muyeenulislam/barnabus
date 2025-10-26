@@ -215,7 +215,7 @@ function BaseTabs({
       <BottomSheet
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        title="More Tabs"
+        title="Select"
         className="md:hidden"
         contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
