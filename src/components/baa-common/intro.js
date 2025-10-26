@@ -7,15 +7,12 @@ const BAAIntro = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Initialize the tab state directly from the pathname
   const [tab, setTab] = useState(pathname);
 
-  // Effect hook to update tab when pathname changes
   useEffect(() => {
     setTab(pathname);
   }, [pathname]);
 
-  // Effect hook to update URL when the tab changes
   useEffect(() => {
     if (tab !== pathname) {
       router.push(tab);
@@ -23,7 +20,7 @@ const BAAIntro = () => {
   }, [tab, pathname, router]);
 
   return (
-    <div className="page-intro">
+    <div className="page-intro !pb-0">
       <div className="page-intro-inner z-101">
         <h1 className="page-intro-heading !max-w-full">
           Business Associate Agreement (BAA), Terms of Use, and Privacy Policy -{" "}
