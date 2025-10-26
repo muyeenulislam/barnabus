@@ -1680,6 +1680,338 @@ const TECHNOLOGY_STACK = [
   },
 ];
 
+const BAA = [
+  {
+    title: "A Living System, Not a Static Platform",
+    desc1: `This Business Associate Agreement ("Agreement") is entered into by and between Barnabus Inc., a corporation incorporated in Ontario, Canada under provincial and federal law ("Business Associate" or "Barnabus"), and the applicable healthcare provider, organization, or licensed professional ("Covered Entity").\nThis Agreement is incorporated into and forms part of the Barnabus Terms of Use. It governs how Barnabus handles Protected Health Information ("PHI") and Electronic Protected Health Information ("ePHI") in accordance with:`,
+    list1: [
+      `The Health Insurance Portability and Accountability Act of 1996 ("HIPAA"), as amended`,
+      `The Health Information Technology for Economic and Clinical Health Act ("HITECH"),`,
+      `And applicable Canadian privacy laws, including but not limited to PIPEDA, PHIPA (Ontario), and other provincial acts.`,
+    ],
+  },
+  {
+    title: "Purpose",
+    desc1: `Barnabus provides AI-powered services that may involve creating, receiving, maintaining, or transmitting PHI for clinical decision support, diagnostics, workflow automation, or research. This Agreement ensures compliance with HIPAA and Canadian laws and defines the mutual obligations for safeguarding PHI.`,
+  },
+  {
+    title: "Definitions",
+    desc1: `Terms such as "Protected Health Information (PHI)," "Electronic PHI (ePHI)," "Individual," "Subcontractor," "Use," and "Disclosure" have the meanings set forth in 45 C.F.R. §160.103 and applicable Canadian privacy law.`,
+  },
+  {
+    title: "Obligations of Barnabus (Business Associate)",
+    desc1: `Barnabus agrees to:`,
+    list1: [
+      `Use or disclose PHI only as permitted by this Agreement or as Required by Law.`,
+      `Implement appropriate administrative, technical, and physical safeguards to protect ePHI in accordance with 45 C.F.R. §164 Subpart C and equivalent Canadian standards.`,
+      `Report to Covered Entity any breach, unauthorized use, or security incident involving PHI within 10 business days of discovery.`,
+      `Notify Covered Entity of any attempted but unsuccessful security incidents.`,
+      `Ensure that subcontractors with PHI access enter into agreements with obligations no less stringent than this Agreement.`,
+      `Make PHI available to Covered Entity to meet access or amendment obligations under HIPAA and applicable Canadian regulations.`,
+      `Refer any individual requests for PHI access or changes directly to Covered Entity unless otherwise instructed in writing.`,
+      `Cooperate with audits by the U.S. Secretary of Health and Human Services or Canadian regulators.`,
+    ],
+  },
+  {
+    title: "Permitted Uses and Disclosures",
+    desc1: `Barnabus may:`,
+    list1: [
+      `Use PHI to provide services under its Terms of Use.`,
+      `Use PHI for its internal operations, legal compliance, or de-identification (in accordance with HIPAA §164.514 and Canadian anonymization standards).`,
+      `Disclose PHI as Required by Law.`,
+      `Use PHI for Data Aggregation related to healthcare operations.`,
+      `Share PHI with authorized subcontractors under appropriate agreements.`,
+    ],
+  },
+  {
+    title: "Additional Canadian-Specific Commitments",
+    desc1: `Barnabus agrees to:`,
+    list1: [
+      `Comply with PIPEDA, PHIPA (Ontario), and other applicable provincial legislation where PHI is collected, used, or disclosed.`,
+      `Address any conflicts between HIPAA and Canadian law by applying the most protective standard.`,
+      `Disclose PHI as Required by Law.`,
+      `Use PHI for Data Aggregation related to healthcare operations.`,
+      `Share PHI with authorized subcontractors under appropriate agreements.`,
+    ],
+  },
+  {
+    title: "Data Residency and Cross-Border Transfers",
+    desc1: `Covered Entity acknowledges that Barnabus may use secure cloud infrastructure located in the United States, Canada, or other approved jurisdictions. All cross-border transfers of PHI shall be encrypted and governed by appropriate contractual and technical safeguards.`,
+  },
+  {
+    title: "Subcontractor Accountability",
+    desc1: `Barnabus remains directly responsible for its subcontractors’ handling of PHI and shall require them to:`,
+    list1: [
+      `Enter written agreements with equivalent privacy and security obligations.`,
+      `Notify Barnabus of any security incident or breach related to Covered Entity’s PHI.`,
+    ],
+  },
+  {
+    title: "Breach Notification and Incident Handling",
+    desc1: ``,
+    list1: [
+      `Barnabus will notify Covered Entity of any confirmed breach or material incident involving PHI within 10 business days.`,
+      `Where full impact assessment is delayed, Barnabus will provide an initial notice and issue updates as more details become available.`,
+    ],
+  },
+  {
+    title: "Liability Limitation",
+    desc1: `Except in cases of gross negligence or willful misconduct, Barnabus’s total liability under this Agreement is limited to the total amount paid by Covered Entity for services in the twelve (12) months preceding any claim.`,
+  },
+  {
+    title: "Right to Audit",
+    desc1: `Covered Entity may, no more than once annually and with reasonable advance notice, request evidence of Barnabus’s HIPAA and Canadian privacy compliance. Barnabus may provide:`,
+    list1: [
+      `Summaries of third-party security assessments (e.g., SOC 2, ISO 27001),`,
+      `Documentation of internal safeguards,`,
+      `Annual risk audit summaries, All subject to a mutually agreed non-disclosure agreement or standard confidentiality protections.`,
+    ],
+  },
+  {
+    title: "Term & Termination",
+    desc1: `Covered Entity shall:`,
+    list1: [
+      `**Effective Date:** Upon activation of Covered Entity’s Barnabus account.`,
+      `**Termination for Cause:** Either party may terminate this Agreement with 30 days’ notice upon a material breach.`,
+      `**Post-Termination:**\n
+--Barnabus will retain only PHI needed for legal or operational purposes.--
+--Return or securely destroy remaining PHI where feasible.--
+--Maintain protections and restrict use of retained PHI.--`,
+    ],
+  },
+  {
+    title: "Miscellaneous",
+    list1: [
+      `**Governing Law:** Laws of Ontario, Canada, unless overridden by applicable federal privacy laws or HIPAA.`,
+      `**Dispute Resolution:** Any dispute shall be resolved via binding arbitration under the rules of JAMS, with hearings held in a mutually agreed location.`,
+      `**Amendments:** May be modified to reflect legal changes or regulatory updates.`,
+      `**Severability:** If a provision is found unenforceable, the remainder shall still apply.`,
+      `**No Third-Party Rights:** This Agreement benefits only Barnabus and the Covered Entity.`,
+    ],
+  },
+  {
+    title: "Acceptance",
+    desc1: `By registering for and using Barnabus services, the Covered Entity agrees to the terms of this Business Associate Agreement.`,
+  },
+];
+
+const TERMS = [
+  {
+    title: "Account Registration",
+    desc1: `To access certain Services, you must register and create an account. You agree to provide accurate, current, and complete registration information, including your name, professional credentials, and contact details. You are responsible for maintaining the confidentiality of your login credentials and all activity under your account.`,
+  },
+  {
+    title: "Use of the Services",
+    desc1:
+      "The Services are intended only for licensed healthcare professionals in Canada, the United States, and other authorized jurisdictions. By using the Services, you represent that you:",
+    list1: [
+      `Are legally authorized to practice in your jurisdiction;`,
+      `Have provided accurate professional credentials;`,
+      `Will use the Services in accordance with these Terms and applicable law.`,
+    ],
+    desc2:
+      "The Services do not constitute medical advice. Information provided is for professional support and reference only. Decisions about diagnosis or treatment remain the sole responsibility of the healthcare provider. You are responsible for complying with all applicable laws, including HIPAA, PIPEDA, PHIPA (Ontario), and other relevant federal and provincial regulations.\nIf you are a Covered Entity under HIPAA and use Barnabus to transmit Protected Health Information (PHI), our Business Associate Agreement (BAA) applies and is incorporated herein by reference.",
+  },
+  {
+    title: "Professional Use Only",
+    desc1: `Barnabus is not intended for direct use by patients or consumers. If you are a non-professional accessing the Services, you acknowledge that content provided is not a substitute for professional medical advice, diagnosis, or treatment.`,
+  },
+  {
+    title: "Privacy and Security",
+    desc1: `Our Privacy Policy outlines how we collect, store, and process personal and non-personal information. By using the Services, you agree to the terms of our Privacy Policy.\nPHI submitted through the Services is protected under HIPAA, PIPEDA, and other applicable regulations. We apply strict security protocols, including encryption, access controls, and audit logging.`,
+  },
+  {
+    title: "Acceptable Use",
+    desc1: "You agree not to:",
+    list1: [
+      `Use the Services for unlawful, unethical, or unauthorized purposes;`,
+      `Upload content that includes PHI without appropriate patient consent;`,
+      `Violate privacy, copyright, trademark, or other legal rights;`,
+      `Attempt to probe, scan, or test system security;`,
+      `Use bots, crawlers, or scraping tools to access the Services;`,
+      `Reverse-engineer or disassemble any part of the Services.`,
+    ],
+    desc2:
+      "We reserve the right to suspend or terminate accounts found to be in violation of these Terms.",
+  },
+  {
+    title: "User-Generated Content",
+    desc1:
+      "If you submit content (e.g., case notes, annotations, feedback), you retain ownership but grant Barnabus a royalty-free, worldwide license to use, display, and improve our Services. You are solely responsible for the legality and compliance of any information you submit.",
+    desc2:
+      "Do not upload PHI or personally identifiable information without obtaining all legally required patient consents.",
+  },
+  {
+    title: "Data Collection and Use",
+    desc1:
+      "Barnabus may collect de-identified usage data, interaction logs, and prompt inputs for the purpose of improving system performance, safety, and AI models. This data may be shared or licensed in anonymized form but will never include identifiable personal or patient data unless expressly permitted by law or consent.",
+  },
+  {
+    title: "Third-Party Content and Integrations",
+    desc1:
+      "Barnabus may provide access to third-party tools, content, or APIs. We do not endorse, and are not responsible for, the accuracy, availability, or security of any third-party resources.",
+  },
+  {
+    title: "Service Availability and Modifications",
+    desc1:
+      "We may modify, suspend, or discontinue parts of the Services at any time. We are not liable for loss of access, data, or interruptions caused by such changes.",
+  },
+  {
+    title: "Intellectual Property",
+    desc1:
+      "All content, trademarks, designs, and software associated with Barnabus are owned by Barnabus Inc. or its licensors. You are granted a limited, non-transferable license to use the Services for personal and professional healthcare use. Any commercial use, distribution, or reproduction is strictly prohibited.",
+  },
+  {
+    title: "Limitation of Liability",
+    desc1:
+      "To the maximum extent permitted by law, Barnabus and its officers, directors, employees, contractors, and partners are not liable for indirect, incidental, or consequential damages arising from use of the Services.",
+    desc2: "Barnabus’s total liability for any claim will not exceed CAD $100.",
+  },
+  {
+    title: "Indemnity",
+    desc1:
+      "You agree to indemnify and hold harmless Barnabus and its affiliates against claims arising from your use of the Services, your violation of these Terms, or any unauthorized disclosure of patient or third-party data.",
+  },
+  {
+    title: "Governing Law",
+    desc1:
+      "These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada. Any disputes shall be resolved under binding arbitration in Ontario.",
+  },
+  {
+    title: "Termination",
+    desc1:
+      "We reserve the right to suspend or terminate your access at our discretion, particularly in cases of fraud, misuse, or breach of these Terms.",
+  },
+  {
+    title: "Feedback",
+    desc1:
+      "Any suggestions or feedback submitted become the property of Barnabus Inc. and may be used to improve the Services without obligation or compensation.",
+  },
+  {
+    title: "Changes to These Terms",
+    desc1:
+      "We may update these Terms at any time. Changes will be posted on our website. Continued use of the Services after changes means you accept the updated Terms.",
+  },
+  {
+    title: "Contact Us",
+    desc1: "For questions, legal notices, or support:",
+    list1: [
+      `**Email:** #support@barnabus.ai#`,
+      `**Mailing Address:** Barnabus Inc., [Insert Canadian office address here]`,
+    ],
+  },
+];
+
+const PRIVACY = [
+  {
+    title: "Scope and Applicability",
+    desc1:
+      "This Privacy Policy applies to all users of Barnabus Services, including healthcare professionals, researchers, and invited collaborators. If you are a patient, please note that Barnabus is not intended for direct consumer use. Any patient information processed is done solely on behalf of authorized healthcare professionals using our Services.",
+  },
+  {
+    title: "Use of the Services",
+    desc1:
+      "The Services are intended only for licensed healthcare professionals in Canada, the United States, and other authorized jurisdictions. By using the Services, you represent that you:",
+    list1: [
+      `Are legally authorized to practice in your jurisdiction;`,
+      `Have provided accurate professional credentials;`,
+      `Will use the Services in accordance with these Terms and applicable law.`,
+    ],
+    desc2:
+      "The Services do not constitute medical advice. Information provided is for professional support and reference only. Decisions about diagnosis or treatment remain the sole responsibility of the healthcare provider. You are responsible for complying with all applicable laws, including HIPAA, PIPEDA, PHIPA (Ontario), and other relevant federal and provincial regulations.\nIf you are a Covered Entity under HIPAA and use Barnabus to transmit Protected Health Information (PHI), our Business Associate Agreement (BAA) applies and is incorporated herein by reference.",
+  },
+  {
+    title: "Professional Use Only",
+    desc1:
+      "Barnabus is not intended for direct use by patients or consumers. If you are a non-professional accessing the Services, you acknowledge that content provided is not a substitute for professional medical advice, diagnosis, or treatment.",
+  },
+  {
+    title: "Privacy and Security",
+    desc1:
+      "Our Privacy Policy outlines how we collect, store, and process personal and non-personal information. By using the Services, you agree to the terms of our Privacy Policy.\nPHI submitted through the Services is protected under HIPAA, PIPEDA, and other applicable regulations. We apply strict security protocols, including encryption, access controls, and audit logging.",
+  },
+  {
+    title: "Acceptable Use",
+    desc1: "You agree not to:",
+    list1: [
+      `Use the Services for unlawful, unethical, or unauthorized purposes;`,
+      `Upload content that includes PHI without appropriate patient consent;`,
+      `Violate privacy, copyright, trademark, or other legal rights;`,
+      `Attempt to probe, scan, or test system security;`,
+      `Use bots, crawlers, or scraping tools to access the Services;`,
+      `Reverse-engineer or disassemble any part of the Services.`,
+    ],
+    desc2:
+      "We reserve the right to suspend or terminate accounts found to be in violation of these Terms.",
+  },
+  {
+    title: "User-Generated Content",
+    desc1:
+      "If you submit content (e.g., case notes, annotations, feedback), you retain ownership but grant Barnabus a royalty-free, worldwide license to use, display, and improve our Services. You are solely responsible for the legality and compliance of any information you submit.",
+    desc2:
+      "Do not upload PHI or personally identifiable information without obtaining all legally required patient consents.",
+  },
+  {
+    title: "Data Collection and Use",
+    desc1:
+      "Barnabus may collect de-identified usage data, interaction logs, and prompt inputs for the purpose of improving system performance, safety, and AI models. This data may be shared or licensed in anonymized form but will never include identifiable personal or patient data unless expressly permitted by law or consent.",
+  },
+  {
+    title: "Third-Party Content and Integrations",
+    desc1:
+      "Barnabus may provide access to third-party tools, content, or APIs. We do not endorse, and are not responsible for, the accuracy, availability, or security of any third-party resources.",
+  },
+  {
+    title: "Service Availability and Modifications",
+    desc1:
+      "We may modify, suspend, or discontinue parts of the Services at any time. We are not liable for loss of access, data, or interruptions caused by such changes..",
+  },
+  {
+    title: "Intellectual Property",
+    desc1:
+      "All content, trademarks, designs, and software associated with Barnabus are owned by Barnabus Inc. or its licensors. You are granted a limited, non-transferable license to use the Services for personal and professional healthcare use. Any commercial use, distribution, or reproduction is strictly prohibited.",
+  },
+  {
+    title: "Limitation of Liability",
+    desc1:
+      "To the maximum extent permitted by law, Barnabus and its officers, directors, employees, contractors, and partners are not liable for indirect, incidental, or consequential damages arising from use of the Services.",
+    desc2: "Barnabus’s total liability for any claim will not exceed CAD $100.",
+  },
+  {
+    title: "Indemnity",
+    desc1:
+      "You agree to indemnify and hold harmless Barnabus and its affiliates against claims arising from your use of the Services, your violation of these Terms, or any unauthorized disclosure of patient or third-party data.",
+  },
+  {
+    title: "Governing Law",
+    desc1:
+      "These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada. Any disputes shall be resolved under binding arbitration in Ontario.",
+  },
+  {
+    title: "Termination",
+    desc1:
+      "We reserve the right to suspend or terminate your access at our discretion, particularly in cases of fraud, misuse, or breach of these Terms.",
+  },
+  {
+    title: "Feedback",
+    desc1:
+      "Any suggestions or feedback submitted become the property of Barnabus Inc. and may be used to improve the Services without obligation or compensation.",
+  },
+  {
+    title: "Changes to These Terms",
+    desc1:
+      "We may update these Terms at any time. Changes will be posted on our website. Continued use of the Services after changes means you accept the updated Terms.",
+  },
+  {
+    title: "Contact Us",
+    desc1: "For questions, legal notices, or support:",
+    list1: [
+      `**Email:** #support@barnabus.ai#`,
+      `**Mailing Address:** Barnabus Inc., [Insert Canadian office address here]`,
+    ],
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1713,4 +2045,7 @@ export {
   INTELLIGENCE_INPUTS,
   ROADMAP_TABLES_CONTENT,
   TECHNOLOGY_STACK,
+  BAA,
+  PRIVACY,
+  TERMS,
 };

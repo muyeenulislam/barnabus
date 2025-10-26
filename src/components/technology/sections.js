@@ -1,3 +1,5 @@
+"use client";
+
 import React, { memo } from "react";
 import Image from "next/image";
 
@@ -5,6 +7,7 @@ import { BlackCard } from "../cards";
 
 import { TECHNOLOGY_STACK } from "@/utils/arrays";
 import { SECTION_GAPS } from "@/utils/common-styles";
+import addLineBreaks from "@/utils/add-line-break";
 
 const cx = (...xs) => xs.filter(Boolean).join(" ");
 const slug = (s = "") =>
@@ -32,10 +35,12 @@ const SectionHeader = memo(function SectionHeader({
       aria-labelledby={anchorId}
     >
       <h2 id={anchorId} className="h2-title">
-        {title}
+        {addLineBreaks(title)}
       </h2>
-      {subtitle ? <p className="p-subtitle">{subtitle}</p> : null}
-      {desc ? <p className={P_DESC}>{desc}</p> : null}
+      {subtitle ? (
+        <p className="p-subtitle">{addLineBreaks(subtitle)}</p>
+      ) : null}
+      {desc ? <p className={P_DESC}>{addLineBreaks(desc)}</p> : null}
     </header>
   );
 });
@@ -63,13 +68,13 @@ const SectionImage = memo(function SectionImage({
 const ListItem = memo(function ListItem({ item, idx }) {
   return (
     <section className="flex flex-col lg:flex-row items-start gap-6 md:gap-8 lg:gap-16">
-      <div className="flex flex-col gap-4 md:gap-5 lg:gap-6 justify-center items-center text-center md:max-w-[75%] lg:w-1/3 mx-auto">
+      <div className="flex flex-col gap-4 md:gap-5 lg:gap-6 justify-center items-center text-center lg:text-left md:max-w-[75%] lg:w-1/3 mx-auto">
         <h3 className="text-Content-Primary text-[1.25rem] md:text-[1.5rem] lg:text-[2.5rem] font-semibold leading-7 md:leading-8 lg:leading-12">
-          {item.title}
+          {addLineBreaks(item.title)}
         </h3>
         {item.subtitle ? (
           <p className="text-Content-Secondary text-sm lg:text-base leading-5 lg:leading-6">
-            {item.subtitle}
+            {addLineBreaks(item.subtitle)}
           </p>
         ) : null}
       </div>
