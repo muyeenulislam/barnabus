@@ -46,6 +46,7 @@ const BAAIntro = () => {
         setTab={setTab}
         additionalStyle="z-101"
         tabItemFullWidth={true}
+        showBottomSheet={true}
       />
     </div>
   );
