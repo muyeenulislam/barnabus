@@ -1,6 +1,8 @@
 import React, { memo } from "react";
 import Image from "next/image";
 
+import { BlackCard } from "../cards";
+
 import { TECHNOLOGY_STACK } from "@/utils/arrays";
 import { SECTION_GAPS } from "@/utils/common-styles";
 
@@ -138,21 +140,23 @@ const TechnologySections = ({ stack = TECHNOLOGY_STACK || [] }) => {
             index={idx}
           />
         ))}
-        <div className="flex flex-col md:flex-row gap-5 md:gap-12 lg:gap-16 p-5 md:p-6 lg:p-16 rounded-3xl md:rounded-4xl lg:rounded-[4rem] bg-Overlays-Black-9 shadow-boxPrimary z-101">
-          <h3 className="content-heading md:w-1/2">
-            A Living System, Not a Static Platform
-          </h3>
+        <BlackCard additionalStyle="!bg-Overlays-Black-9">
+          <div className="flex flex-col md:flex-row gap-5 md:gap-12 lg:gap-16">
+            <h3 className="content-heading md:w-1/2">
+              A Living System, Not a Static Platform
+            </h3>
 
-          <p className="content-subheading md:w-1/2">
-            Barnabus redefines what intelligence infrastructure means.It’s not a
-            black box — it’s a transparent, adaptive ecosystem designed to serve
-            industries where accuracy, governance, and human trust define
-            success.
-            <br />
-            <br /> Every agent built on Barnabus doesn’t just automate.It
-            understands. Learns. Evolves.
-          </p>
-        </div>
+            <p className="content-subheading md:w-1/2">
+              Barnabus redefines what intelligence infrastructure means.It’s not
+              a black box — it’s a transparent, adaptive ecosystem designed to
+              serve industries where accuracy, governance, and human trust
+              define success.
+              <br />
+              <br /> Every agent built on Barnabus doesn’t just automate.It
+              understands. Learns. Evolves.
+            </p>
+          </div>
+        </BlackCard>
       </div>
     </div>
   );
