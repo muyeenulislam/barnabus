@@ -66,7 +66,7 @@ const InputCards = memo(function InputCards({
 
       <div className="flex flex-col gap-5 md:gap-8 w-full">
         <h2
-          className="font-bold text-Content-Primary text-xl leading-7 md:text-2xl md:leading-8 lg:text-[2rem] lg:leading-10 pb-3 lg:pb-4 border-b-[0.073rem]"
+          className="font-bold text-Content-Primary text-xl leading-7 md:text-2xl md:leading-8 lg:text-[2rem] lg:leading-10 pb-3 lg:pb-4 border-b-[0.073rem] text-center"
           style={{ borderColor: "var(--acc)" }}
         >
           {title}

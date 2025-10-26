@@ -16,6 +16,7 @@ import {
   PARTNERSHIP_LIST,
   TAGS_LIST,
 } from "@/utils/arrays";
+import { SECTION_GAPS } from "@/utils/common-styles";
 import { useIsMobile } from "@/utils/useismobile";
 
 const PartnerDetailsContent = React.memo(function PartnerDetailsContent({
@@ -261,7 +262,7 @@ const Partnership = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
+    <div className={`flex flex-col ${SECTION_GAPS}`}>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Select
           label="Tier"

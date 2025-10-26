@@ -34,10 +34,8 @@ const SectionIntro = memo(function SectionIntro() {
   return (
     <div className="flex flex-col md:flex-row lg:flex-col gap-6 md:gap-8 lg:gap-[4rem] lg:w-[35%]">
       <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 text-left">
-        <h2 className="text-Content-Primary text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold leading-10 md:leading-12 lg:leading-16">
-          Complete Your Free Registration
-        </h2>
-        <p className="text-Content-Secondary text-base md:text-[1.125rem] lg:text-[1.25rem] leading-6 md:leading-[1.625rem] lg:leading-7">
+        <h2 className="h2-title">Complete Your Free Registration</h2>
+        <p className="p-subtitle">
           Exclusively for licensed medical professionals in the U.S. and Canada.
           Access is by invitation only during our limited launch cohort.
         </p>
@@ -47,7 +45,7 @@ const SectionIntro = memo(function SectionIntro() {
           <h2 className="text-Content-Primary text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] font-semibold leading-7 md:leading-8 lg:leading-10">
             Verification Help
           </h2>
-          <p className="text-Content-Secondary text-base md:text-[1.125rem] lg:text-[1.25rem] leading-6 md:leading-[1.625rem] lg:leading-7">
+          <p className="p-subtitle">
             Barnabus is free for verified healthcare professionals. We use
             licensing identifiers to ensure clinical-grade access.
           </p>

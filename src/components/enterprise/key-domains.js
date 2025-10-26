@@ -11,13 +11,13 @@ import {
   SAFE_BY_DESIGN,
   EVOLUTION_PATH,
 } from "@/utils/arrays";
-import { IconBadge } from "@/utils/common-styles";
+import { IconBadge, SECTION_GAPS } from "@/utils/common-styles";
 
 const CARD_BASE = "bg-Overlays-Black-9 shadow-boxPrimary text-Content-Primary";
 
 const SMALL_CARD = `${CARD_BASE} flex flex-col gap-5 md:gap-6 lg:gap-12 p-4 md:p-5 lg:p-8 rounded-[1.25rem] md:rounded-3xl lg:rounded-4xl`;
 
-const BIG_CARD = `${CARD_BASE} flex flex-col justify-between gap-6 md:gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[3rem]`;
+const BIG_CARD = `${CARD_BASE} flex flex-col justify-between ${SECTION_GAPS} p-6 md:p-8 lg:p-12 rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[3rem]`;
 
 const H_LINE =
   "bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,#3BF5FF_30%,#3BF5FF_70%,rgba(255,255,255,0.01)_100%)]";
@@ -127,7 +127,9 @@ const EvolutionNode = memo(function EvolutionNode({ item }) {
     placement === "top" ? "bottom" : placement === "left" ? "right" : "left";
 
   return (
-    <div className="flex lg:flex-col gap-6 md:gap-8 lg:gap-12 items-center lg:justify-center">
+    <div
+      className={`flex lg:flex-col ${SECTION_GAPS} items-center lg:justify-center`}
+    >
       <Tooltip
         trigger="click"
         placement={placement}
@@ -229,12 +231,8 @@ const EvolutionPath = memo(function EvolutionPath() {
   return (
     <div className="flex flex-col md:flex-row lg:flex-col pt-[2.5rem] md:pt-[3rem] lg:pt-[4rem] gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem]">
       <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 text-center md:text-left lg:text-center md:w-1/2 lg:w-full">
-        <h2 className="text-Content-Primary text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold leading-10 md:leading-12 lg:leading-16">
-          The Evolution Path
-        </h2>
-        <p className="text-Content-Secondary text-base md:text-[1.125rem] lg:text-[1.25rem] leading-6 md:leading-[1.625rem] lg:leading-7">
-          Your Systems Today. Smarter Tomorrow.
-        </p>
+        <h2 className="h2-title">The Evolution Path</h2>
+        <p className="p-subtitle">Your Systems Today. Smarter Tomorrow.</p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 md:w-1/2 lg:w-full relative">
@@ -256,10 +254,7 @@ const EvolutionPath = memo(function EvolutionPath() {
 
 function KeyEnterpriseDomains() {
   return (
-    <section
-      className="py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem] bg-[linear-gradient(180deg,#121314_0%,#1F2021_50%)]"
-      aria-labelledby="key-domains-heading"
-    >
+    <section className="section-wrapper" aria-labelledby="key-domains-heading">
       <FirstPart />
       <EvolutionPath />
     </section>

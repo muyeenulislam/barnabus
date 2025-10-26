@@ -25,4 +25,6 @@ const IconBadge = memo(function IconBadge({ src, alt = "" }) {
   );
 });
 
-export { IconBadge };
+const SECTION_GAPS = "gap-6 md:gap-8 lg:gap-12";
+
+export { IconBadge, SECTION_GAPS };

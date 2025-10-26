@@ -1591,6 +1591,95 @@ const ROADMAP_TABLES_CONTENT = [
   },
 ];
 
+const TECHNOLOGY_STACK = [
+  {
+    title: "Architecture & Orchestration",
+    subtitle: "The Brain of Barnabus",
+    desc: "Barnabus operates through the Axon Routing Layer — the neural bridge that lets agents communicate, collaborate, and reason together. Each workflow is dynamically assembled, combining data access, domain reasoning, and safety in real time.",
+    image: "/images/architecture-and-orchestration.webp",
+    neonText:
+      "Every workflow in Barnabus is built through modular orchestration — connecting reasoning, safety, and domain expertise into one adaptive network.",
+    list: [],
+  },
+  {
+    title: "Agent Builder & Deployment Fabric",
+    subtitle: "From Idea to Intelligence",
+    desc: "With the Barnabus Builder, teams can design, configure, and deploy domain-specific intelligence units in minutes — no coding required. Every agent is built from modular components that blend reasoning, data, and governance into a single, explainable system.",
+    image: null,
+    neonText: null,
+    list: [
+      {
+        title: "2.1.  Custom Agent Builder",
+        subtitle:
+          "Select, combine, and shape the intelligence you need. Barnabus Intelligence Units include healthcare reasoning, semiconductor analytics, and causality logic — all integrated with partner LLMs like GPT-4, Llama 2, and Cohere Command.",
+        image: "/images/custom-agent-builder.webp",
+        neonText:
+          "From Healthcare Actions to Semiconductor Analytics — configure any agent through Barnabus’ modular intelligence library.",
+      },
+      {
+        title: "2.2.  Training Data & Context Integration",
+        subtitle:
+          "Agents don’t just generate results — they understand their environment.\n\nThrough secure CORTEX Memory Fabric and private dataset connections, each agent learns from structured and unstructured data while preserving context, privacy, and compliance.",
+        image: "/images/training-data.webp",
+        neonText:
+          "Securely connect agents to your private datasets and knowledge bases with full governance and contextual alignment.",
+      },
+      {
+        title: "2.3.  Governance & Safety Validation",
+        subtitle:
+          "Before deployment, every build passes through NAYAR Governance, enforcing frameworks like HIPAA, SOC-2, and internal policy controls.\n\nBarnabus validates every rule, ensuring intelligence never compromises compliance or safety.",
+        image: "/images/governance-and-safety-validation.webp",
+        neonText:
+          "Governance and compliance are integrated at the design level — not added after the fact.",
+      },
+      {
+        title: "2.4.  Deployment & Status",
+        subtitle:
+          "Deploying an agent is a one-click transition from knowledge to action.\n\nOnce live, the Barnabus Fabric continuously monitors and validates each agent’s performance, security, and compliance state.",
+        image: "/images/deployment-and-status.webp",
+        neonText:
+          "From knowledge to action — agents go live instantly with continuous performance monitoring.",
+      },
+    ],
+  },
+  {
+    title: "Evaluation & Reliability Dashboard",
+    subtitle: "Reliability Built In",
+    desc: "Barnabus measures what matters: accuracy, recall, and risk. Each deployment includes a built-in evaluation suite that runs real-world simulations and verifies every decision before release.",
+    image: "/images/evaluation-dashboard.webp",
+    neonText:
+      "Real-time evaluation ensures every decision remains accurate, compliant, and explainable.",
+    list: [],
+  },
+  {
+    title: "Traceability & Audit Layer",
+    subtitle: "Explainable by Design",
+    desc: "Every decision made by Barnabus is fully traceable — from input to outcome. The Trace View allows teams to inspect reasoning paths, validate outputs, and perform complete audits in seconds.",
+    image: "/images/traceability-and-audit.webp",
+    neonText:
+      "Complete decision traceability ensures transparency, compliance, and human oversight at every step.",
+    list: [],
+  },
+  {
+    title: "Custom Evaluation Framework",
+    subtitle: "Your Rules. Your Metrics. Your Confidence.",
+    desc: "Barnabus adapts to your standards. Define your own evaluation metrics — from factual accuracy to ethical compliance — and plug them directly into the feedback loop that drives retraining and system evolution.",
+    image: "/images/custom-evaluation-framework.webp",
+    neonText:
+      "Custom metrics, automated retraining, and human feedback — all built into the evaluation lifecycle.",
+    list: [],
+  },
+  {
+    title: "Continuous Learning & Evolution",
+    subtitle: "The Living Intelligence Loop",
+    desc: "Barnabus never stands still. It learns from every interaction through a structured feedback cycle that combines human review, evaluation pipelines, and adaptive retraining. Over time, it doesn’t just get better — it becomes trustworthy intelligence that evolves with you.",
+    image: "/images/continuos-learning-evolution.webp",
+    neonText:
+      "From oversight to evolution — Barnabus learns, adapts, and improves through continuous feedback and human collaboration.",
+    list: [],
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -1623,4 +1712,5 @@ export {
   SYSTEM_STACK,
   INTELLIGENCE_INPUTS,
   ROADMAP_TABLES_CONTENT,
+  TECHNOLOGY_STACK,
 };

@@ -32,10 +32,10 @@ const pct = (n) => `w-[${n}%]`;
 const SectionIntro = memo(function SectionIntro() {
   return (
     <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-center mb-10 md:mb-12 lg:mb-16">
-      <h2 className="text-Content-Primary text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold leading-10 md:leading-12 lg:leading-16">
+      <h2 className="h2-title">
         Barnabus Define a New Category
       </h2>
-      <p className="text-Content-Secondary text-base md:text-[1.125rem] lg:text-[1.25rem] leading-6 md:leading-[1.625rem] lg:leading-7">
+      <p className="p-subtitle">
         “Barnabus is different, we don’t build GenAI. We build Agentic AI.”
         <br />
         That alone separates us from 90% of the GenAI tools trying to act smart.

@@ -8,12 +8,7 @@ import { IconBadge } from "@/utils/common-styles";
 
 const SupportedIntelligentInputs = () => {
   return (
-    <div
-      className="py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem] "
-      style={{
-        background: "linear-gradient(180deg, #121314 0%, #1F2021 50%)",
-      }}
-    >
+    <div className="section-wrapper ">
       <div className="space-y-10 md:space-y-12 lg:space-y-[4rem]">
         <div className="flex flex-col gap-4 md:gap-5 lg:gap-6 text-center justify-center items-center">
           <h1 className="text-Content-Primary font-semibold text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] leading-[2.5rem] md:leading-[3rem] lg:leading-[4rem]">

@@ -7,15 +7,15 @@ import { GRADE_INTELLIGENCE } from "@/utils/arrays";
 
 const EnterpriseIntro = () => {
   return (
-    <div className="bg-backgroundDarkGray py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col gap-[3.5rem] md:gap-[4rem] lg:gap-[6rem]">
-      <div className="flex flex-col gap-[1.5rem] text-center justify-center items-center z-101">
-        <h1 className="text-Content-Primary font-semibold text-[2.5rem] md:text-[3rem] lg:text-[4rem] leading-[3rem] md:leading-[3.5rem] lg:leading-[4.5rem] lg:max-w-[60rem]">
+    <div className="page-intro">
+      <div className="page-intro-inner z-101">
+        <h1 className="page-intro-heading">
           Agentic Infrastructure for the{" "}
           <span className="text-Action-Buttons-Primary-Accent-Content-Default">
             Real World
           </span>
         </h1>
-        <p className="text-Content-Secondary text-xl leading-7 lg:max-w-[40rem] mx-auto">
+        <p className="page-intro-subheading">
           Whether you&apos;re securing a network, managing clinical workflows,
           or simulating industrial systems — Barnabus adapts to your world.
         </p>

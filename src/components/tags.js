@@ -172,14 +172,7 @@ const Tags = ({
       )}
 
       {trailingDot && (
-        <Image
-          src={trailingDot}
-          alt="trailing badge"
-          height={iconSize}
-          width={iconSize}
-          aria-hidden="true"
-          className={s.iconSize}
-        />
+        <div className={["rounded-full", s.dot, d].join(" ")}></div>
       )}
     </div>
   );

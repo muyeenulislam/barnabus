@@ -8,11 +8,11 @@ import { NOT_JUST_AI_LIST } from "@/utils/arrays";
 const SectionIntro = memo(function SectionIntro() {
   return (
     <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-center">
-      <h2 className="text-Content-Primary text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold leading-10 md:leading-12 lg:leading-16">
+      <h2 className="h2-title">
         Not Just AI. A Thinking Layer
         <br /> for the Future.
       </h2>
-      <p className="text-Content-Secondary text-base md:text-[1.125rem] lg:text-[1.25rem] leading-6 md:leading-[1.625rem] lg:leading-7">
+      <p className="p-subtitle">
         We believe in intelligence that remembers, reasons, and evolves with
         you.
         <br /> Not a chatbot. A living system.

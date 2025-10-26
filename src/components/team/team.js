@@ -12,6 +12,7 @@ import { TEAM_LIST, ROLE_LIST, TAGS_LIST } from "@/utils/arrays";
 import { useIsMobile } from "@/utils/useismobile";
 import { ddmmmyyyy } from "@/utils/date-formatter";
 import { buildTagMap, TagChips } from "@/utils/tag-utils";
+import { SECTION_GAPS } from "@/utils/common-styles";
 
 const TAB_ITEMS = [
   { value: "core-team", label: "Core Team" },
@@ -325,7 +326,7 @@ export default function Team() {
   };
 
   return (
-    <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
+    <div className={`flex flex-col ${SECTION_GAPS}`}>
       <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
         <div className="flex gap-4 justify-between items-center">
           <Tab
