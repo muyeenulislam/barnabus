@@ -2011,6 +2011,86 @@ const PRIVACY = [
   },
 ];
 
+const AGI_COMPASS = [
+  {
+    title: "A System That Knows Why",
+    subtitle: "From Data to Understanding",
+    list: [
+      {
+        listTitle: "Persistent Memory Across Agents",
+        listSubtitle: "What it knows isn’t lost between tasks.",
+      },
+      {
+        listTitle: "Human Feedback Loops",
+        listSubtitle: "When people correct the system, it learns why.",
+      },
+      {
+        listTitle: "Contextual Awareness",
+        listSubtitle: "Actions are shaped by time, domain, and consequence.",
+      },
+    ],
+  },
+  {
+    title: "Giving Intelligence a Soul",
+    subtitle: "Why Barnabus Exists",
+    list: [
+      {
+        listTitle: "Our Mission",
+        listSubtitle:
+          "To build aligned, evolving intelligence that supports and scales human judgment.",
+      },
+      {
+        listTitle: "Ethics-First Framework",
+        listSubtitle: "Transparency, traceability, value-alignment.",
+      },
+      {
+        listTitle: "A Compass, Not Just a Map",
+        listSubtitle: "Barnabus doesn’t just act — it reflects on why it acts.",
+      },
+    ],
+  },
+];
+
+const CAPABILITIES_POINTS = [
+  {
+    icons: "/icons/barnabus-logo-neon.svg",
+    title: "Core Intelligence (Barnabus)",
+    subtitle: `The Brain, Alignment Hub for All Reasoning.\n\nAt the center is Barnabus Core, where knowledge, memory, and routing converge into aligned decisions.  It orchestrates complexity into clarity, scaling across industries, missions, and nations.`,
+    neonText: "The reasoning engine of living intelligence.",
+  },
+  {
+    icons: "/icons/navigator.svg",
+    title: "Routing Layer (AXON)",
+    subtitle: `The Nervous System,  Intent Flows Across the Ecosystem.\n\nAXON is the neural highway that routes signals across agents and domains. It ensures decisions never stall in silos, but flow seamlessly — from ICUs to semiconductor fabs to defense command.`,
+    neonText: "The connective tissue of modular intelligence.",
+  },
+  {
+    icons: "/icons/guardian-layer.svg",
+    title: "Guardian Layer (NAYAR)",
+    subtitle: `The Conscience, Sovereignty, Trust, and Compliance by Design.\n\nNAYAR is Barnabus’ built-in conscience. Every decision is auditable, explainable, and governed by human oversight. For governments, it means sovereignty. For enterprises, it means compliance. For humanity, it means trust.`,
+    neonText: "Ethics not as policy, but as architecture.",
+  },
+  {
+    icons: "/icons/touch-interaction.svg",
+    title: "Action Agents",
+    subtitle: `The Hands, From Intelligence to Execution.\n\nBarnabus doesn’t just recommend. It acts. From reducing surgical delays to optimizing global supply chains, Action Agents deliver outcomes that matter. Every action is traceable, accountable, and aligned with mission goals.`,
+    neonText: "The execution layer of trusted intelligence.",
+  },
+  {
+    icons: "/icons/cells.svg",
+    title: "Modular Intelligence Units",
+    subtitle: `The Minds Within the Mind, Specialized Reasoning at Scale.\n\nAround the Core orbit specialized intelligence units, empathy, ethics, simulation, planning, cause-effect reasoning. They adapt to new domains without starting from zero.`,
+    neonText: "A constellation of minds, growing toward AGI.",
+  },
+  {
+    icons: "/icons/usb-memory.svg",
+    title: "Memory & Data Fabric",
+    subtitle: `The Living Memory, Knowledge That Compounds, Never Resets.\n\nUnlike today’s AI that forgets with each reset, Barnabus remembers. Short-term recall, long-term semantic memory, and domain-specific ontologies build a compounding intelligence fabric.`,
+    neonText:
+      "The living archive of intelligence, growing stronger with every cycle.",
+  },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -2047,4 +2127,6 @@ export {
   BAA,
   PRIVACY,
   TERMS,
+  AGI_COMPASS,
+  CAPABILITIES_POINTS,
 };

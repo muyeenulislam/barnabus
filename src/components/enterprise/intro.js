@@ -3,7 +3,7 @@ import Button from "../button";
 import Link from "next/link";
 import Image from "next/image";
 
-import { BlackCard } from "../cards";
+import { BlackCardDefault } from "../cards";
 
 import { GRADE_INTELLIGENCE } from "@/utils/arrays";
 
@@ -31,7 +31,7 @@ const EnterpriseIntro = () => {
           />
         </Link>
       </div>
-      <BlackCard>
+      <BlackCardDefault>
         <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-16">
           <div className="flex flex-col gap-3 md:gap-6 lg:w-1/2 lg:pr-[10rem]">
             <h3 className="content-heading">
@@ -63,7 +63,7 @@ const EnterpriseIntro = () => {
             ))}
           </div>
         </div>
-      </BlackCard>
+      </BlackCardDefault>
     </div>
   );
 };

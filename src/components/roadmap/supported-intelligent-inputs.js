@@ -3,7 +3,7 @@ import React from "react";
 import AgentTables from "./agent-tables";
 import InputCards from "./input-cards";
 
-import { BlackCard } from "../cards";
+import { BlackCardDefault } from "../cards";
 
 import { INTELLIGENCE_INPUTS, ROADMAP_TABLES_CONTENT } from "@/utils/arrays";
 import { IconBadge } from "@/utils/common-styles";
@@ -39,7 +39,7 @@ const SupportedIntelligentInputs = () => {
       </div>
       <div className="mt-10 md:mt-12 lg:mt-16 space-y-4 md:space-y-5 lg:space-y-6">
         {ROADMAP_TABLES_CONTENT?.map((table, idx) => (
-          <BlackCard key={idx} additionalStyle="!bg-Overlays-Black-9">
+          <BlackCardDefault key={idx} additionalStyle="!bg-Overlays-Black-9">
             <div className="space-y-4 md:space-y-5 lg:space-y-8">
               <div className="flex flex-col md:items-center md:flex-row gap-2 md:gap-3 lg:gap-4">
                 <IconBadge src={table.icon} />
@@ -54,7 +54,7 @@ const SupportedIntelligentInputs = () => {
               </div>
               <AgentTables rows={table.rows} />
             </div>
-          </BlackCard>
+          </BlackCardDefault>
         ))}
       </div>
     </div>

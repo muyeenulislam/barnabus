@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProgressBar from "../progress-bar";
 import { Tags } from "../tags";
 import Button from "../button";
+import { BlackCardDefault } from "../cards";
 
 import {
   DEFINE_NEW_CATEGORY_TABLE_CONTENT,
@@ -32,9 +33,7 @@ const pct = (n) => `w-[${n}%]`;
 const SectionIntro = memo(function SectionIntro() {
   return (
     <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-center mb-10 md:mb-12 lg:mb-16">
-      <h2 className="h2-title">
-        Barnabus Define a New Category
-      </h2>
+      <h2 className="h2-title">Barnabus Define a New Category</h2>
       <p className="p-subtitle">
         “Barnabus is different, we don’t build GenAI. We build Agentic AI.”
         <br />
@@ -439,33 +438,32 @@ const CTAButtons = memo(function CTAButtons() {
 
 const DefineNewCategory = () => {
   return (
-    <div
-      className="py-[2rem] px-[1.5rem] md:py-[3rem] md:px-[5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col"
-      style={{ background: "linear-gradient(180deg, #121314 0%, #1F2021 50%)" }}
-    >
+    <div className="section-wrapper">
       <SectionIntro />
 
       {/* Comparison */}
-      <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-16 p-5 md:p-6 lg:p-16 rounded-3xl md:rounded-4xl lg:rounded-[4rem] bg-Overlays-Black-9 shadow-boxPrimary">
-        <div className="flex flex-col gap-3 md:gap-6 w-3/4 lg:w-1/3">
-          <h3 className="content-heading">
-            Comparison Between Barnabus’s Value Proposition and Key
-            Differentiators
-          </h3>
-          <p className="content-subheading">
-            Barnabus replaces dashboards, chatbots, and pipelines with living,
-            thinking agents.
-          </p>
-        </div>
+      <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
+        <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-16 ">
+          <div className="flex flex-col gap-3 md:gap-6 w-3/4 lg:w-1/3">
+            <h3 className="content-heading">
+              Comparison Between Barnabus’s Value Proposition and Key
+              Differentiators
+            </h3>
+            <p className="content-subheading">
+              Barnabus replaces dashboards, chatbots, and pipelines with living,
+              thinking agents.
+            </p>
+          </div>
 
-        <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
-          <ComparisonTable rows={DEFINE_NEW_CATEGORY_TABLE_CONTENT} />
-          <p className="font-semibold text-Brand-Accent-Alpha-200 text-xs leading-4 md:text-sm md:leading-5 lg:text-lg lg:leading-6">
-            Agentic AI doesn’t just answer — it collaborates, adapts, and grows
-            with you.
-          </p>
+          <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
+            <ComparisonTable rows={DEFINE_NEW_CATEGORY_TABLE_CONTENT} />
+            <p className="font-semibold text-Brand-Accent-Alpha-200 text-xs leading-4 md:text-sm md:leading-5 lg:text-lg lg:leading-6">
+              Agentic AI doesn’t just answer — it collaborates, adapts, and
+              grows with you.
+            </p>
+          </div>
         </div>
-      </div>
+      </BlackCardDefault>
 
       {/* Cards grid */}
       <div className="pt-[4rem] lg:pt-[6rem]">

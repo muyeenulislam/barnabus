@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import addLineBreaks from "@/utils/add-line-break";
-import { BlackCard } from "../cards";
+import { BlackCardDefault } from "../cards";
 
 const ListSection = ({ list = [] }) => {
   return (
@@ -28,7 +28,7 @@ const BAASections = ({ list = [] }) => {
     <div className="section-wrapper !pt-0">
       <div className="flex flex-col gap-3 md:gap-4 lg:gap-6">
         {list.map((item, index) => (
-          <BlackCard key={index} additionalStyle="!bg-Overlays-Black-9">
+          <BlackCardDefault key={index} additionalStyle="!bg-Overlays-Black-9">
             <div className="flex flex-col gap-5 md:gap-6 lg:gap-8">
               <h2 className="card-heading">{item.title}</h2>
               {item.desc1 && (
@@ -40,7 +40,7 @@ const BAASections = ({ list = [] }) => {
               )}
               {item.list2?.length > 0 && <ListSection list={item.list2} />}
             </div>
-          </BlackCard>
+          </BlackCardDefault>
         ))}
       </div>
     </div>

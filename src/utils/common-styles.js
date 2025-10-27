@@ -6,7 +6,7 @@ const ICON_PANEL_BOX =
 
 const ICON_PANEL_STYLE = Object.freeze({
   background:
-    "radial-gradient(66.22% 86.87% at 50% 100%, rgba(255, 255, 255, 0.08) 0%, rgba(18, 19, 20, 0.19) 100%), rgba(255, 255, 255, 0.03)",
+    "radial-gradient(66.22% 86.87% at 50% 100%, rgba(255, 255, 255, 0.08) 0%, rgba(18, 19, 20, 0.19)) 100%, rgba(255, 255, 255, 0.03)",
   boxShadow:
     "0 0.5px 0 0.5px rgba(255, 255, 255, 0.12) inset, 0 0 1.5px 1.5px rgba(247, 247, 248, 0.12) inset",
 });

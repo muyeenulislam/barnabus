@@ -3,7 +3,7 @@
 import React, { memo } from "react";
 import Image from "next/image";
 
-import { BlackCard } from "../cards";
+import { BlackCardDefault } from "../cards";
 
 import { TECHNOLOGY_STACK } from "@/utils/arrays";
 import { SECTION_GAPS } from "@/utils/common-styles";
@@ -145,7 +145,7 @@ const TechnologySections = ({ stack = TECHNOLOGY_STACK || [] }) => {
             index={idx}
           />
         ))}
-        <BlackCard additionalStyle="!bg-Overlays-Black-9">
+        <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
           <div className="flex flex-col md:flex-row gap-5 md:gap-12 lg:gap-16">
             <h3 className="content-heading md:w-1/2">
               A Living System, Not a Static Platform
@@ -161,7 +161,7 @@ const TechnologySections = ({ stack = TECHNOLOGY_STACK || [] }) => {
               understands. Learns. Evolves.
             </p>
           </div>
-        </BlackCard>
+        </BlackCardDefault>
       </div>
     </div>
   );
