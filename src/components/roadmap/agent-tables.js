@@ -101,7 +101,6 @@ const AgentTables = ({ rows }) => {
   return (
     <div className="z-[200]">
       <DefaultTable
-        key={Math.random()}
         columns={columns}
         data={rows}
         className="text-Content-Primary"

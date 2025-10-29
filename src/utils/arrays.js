@@ -2055,7 +2055,7 @@ const CAPABILITIES_POINTS = [
   {
     icons: "/icons/barnabus-logo-neon.svg",
     title: "Core Intelligence (Barnabus)",
-    subtitle: `The Brain, Alignment Hub for All Reasoning.\n\nAt the center is Barnabus Core, where knowledge, memory, and routing converge into aligned decisions.  It orchestrates complexity into clarity, scaling across industries, missions, and nations.`,
+    subtitle: `The Brain, Alignment Hub for All Reasoning.\n\nAt the center is Barnabus Core, where knowledge, memory, and routing converge into aligned decisions. It orchestrates complexity into clarity, scaling across industries, missions, and nations.`,
     neonText: "The reasoning engine of living intelligence.",
   },
   {
@@ -2088,6 +2088,79 @@ const CAPABILITIES_POINTS = [
     subtitle: `The Living Memory, Knowledge That Compounds, Never Resets.\n\nUnlike today’s AI that forgets with each reset, Barnabus remembers. Short-term recall, long-term semantic memory, and domain-specific ontologies build a compounding intelligence fabric.`,
     neonText:
       "The living archive of intelligence, growing stronger with every cycle.",
+  },
+];
+const SOLUTIONS_POINTS = [
+  {
+    icons: "/icons/stethoscope.svg",
+    title: "Healthcare & Clinical AI",
+    subtitle: "Reimagining clinical decision support.",
+    desc: `Barnabus brings structure and safety to clinical data. Its healthcare agents assist physicians and hospital systems in automating pre-operative clearance, risk prediction, medication reconciliation, and multi-specialty case reviews.\n\nEach solution operates under strict compliance (HIPAA, SOC-2) and provides full reasoning traceability — turning fragmented EHR data into validated clinical insights.`,
+    useCases: [
+      "Pre-operative risk assessment and clearance workflows",
+      "Tumor board reasoning and report generation",
+      "Medication reconciliation and interaction safety",
+      "Patient-centric insight summarization",
+      "Automated documentation with audit trail",
+    ],
+  },
+  {
+    icons: "/icons/chip-neon.svg",
+    title: "Semiconductor & Manufacturing Intelligence",
+    subtitle: "Driving yield and reliability through agentic analytics.",
+    desc: `For fabs and manufacturing environments, Barnabus transforms complex production data into actionable intelligence.\n\nIts specialized agents (like Vorin and E142) perform deep wafer analysis, pattern recognition, and anomaly detection, helping engineers make faster and more accurate yield decisions while keeping data local and secure.`,
+    useCases: [
+      "Automated wafer map and defect analysis",
+      "Yield prediction and anomaly correlation",
+      "Process control and optimization",
+      "AI-assisted troubleshooting and digital twin insights",
+      "Secure cross-fab data orchestration",
+    ],
+  },
+  {
+    icons: "/icons/permanent-job.svg",
+    title: "Enterprise Intelligence & Automation",
+    subtitle: "Secure intelligence for organizations that demand precision.",
+    desc: `Barnabus augments decision-making within enterprises by combining structured databases with unstructured knowledge.\n\nFrom financial systems to logistics and compliance automation, its multi-agent architecture provides clarity, context, and control, enabling smarter decisions without compromising governance.`,
+    useCases: [
+      "AI-powered insight extraction from documents",
+      "Fraud and anomaly detection for finance teams",
+      "Policy-aware automation for compliance operations",
+      "Secure retrieval-augmented generation (RAG) within private data",
+      "Decision orchestration across teams and workflows",
+    ],
+  },
+  {
+    icons: "/icons/test-tube1.svg",
+    title: "Research, Education & Innovation",
+    subtitle: "Accelerating scientific and academic discovery.",
+    desc: `Barnabus enables researchers, universities, and think-tanks to build their own AI reasoning environments, combining literature, datasets, and experimental data into one intelligent ecosystem.\n\nAgents reason over context, cite evidence, and maintain transparency in every hypothesis, enabling safe and auditable innovation.`,
+    useCases: [
+      "Automated literature review and summarization",
+      "Multi-source data correlation and hypothesis testing",
+      "Scientific writing with verifiable references",
+      "Data curation and semantic search for academic datasets",
+    ],
+  },
+  {
+    icons: "/icons/legal-hammer.svg",
+    title: "Government & Public Sector",
+    subtitle: "Responsible AI for regulated environments.",
+    desc: `Barnabus delivers auditable, privacy-preserving AI infrastructure for governments and public institutions.\n\nIts architecture ensures sensitive information never leaves approved environments, while decision agents operate under strict policy and traceability controls.`,
+    useCases: [
+      "Citizen service automation with data privacy compliance",
+      "Policy analysis and evidence-based decision systems",
+      "Secure AI sandboxes for classified or regulated data",
+      "Multilingual document intelligence and translation",
+    ],
+  },
+  {
+    icons: "/icons/3d-scale.svg",
+    title: "Configurable, Scalable, and Evolving",
+    subtitle:
+      "Barnabus is not locked to one domain or workflow; it’s a foundation that can expand with you.",
+    desc: `Through modular agents, secure APIs, and adaptive orchestration layers, it can be configured for new challenges, extended to new data sources, and tuned for new levels of reasoning, all without rebuilding from scratch.\n\nOne ecosystem. Infinite configurations. From hospitals to fabs, from enterprises to labs, Barnabus adapts to you.`,
+    closingStatement: `Barnabus was not built to automate tasks, it was built to earn trust.\n\nAcross every domain, its agents operate with precision, transparency, and compliance — transforming AI from a black box into a reliable, human-aligned partner for real-world decision-making.`,
   },
 ];
 
@@ -2129,4 +2202,5 @@ export {
   TERMS,
   AGI_COMPASS,
   CAPABILITIES_POINTS,
+  SOLUTIONS_POINTS,
 };

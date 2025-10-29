@@ -47,7 +47,7 @@ const DefineCategoryCard = memo(function DefineCategoryCard({
 }) {
   return (
     <div
-      className={`p-4 md:p-5 lg:p-12 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-container relative overflow-hidden h-[26rem] lg:h-[35rem] ${className}`}
+      className={`p-4 md:p-5 lg:p-12 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-container relative overflow-hidden min-h-[26rem] lg:min-h-[35rem] ${className}`}
     >
       {children}
     </div>

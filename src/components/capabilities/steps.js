@@ -15,6 +15,7 @@ const CapabilitiesImage = memo(function CapabilitiesImage() {
         height={1200}
         width={1200}
         className="w-full h-max"
+        priority
         alt="pointer"
       />
       <div className="w-full md:w-max mx-auto bg-Surface2 text-Content-Brand-Accent rounded-full p-2 md:px-[0.6rem] md:py-[0.4rem] lg:px-5.5 lg:py-3.5 text-sm md:text-base leading-4.5 md:leading-6 lg:text-2xl lg:leading-7 text-center">

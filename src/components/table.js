@@ -143,7 +143,7 @@ const DefaultTable = ({
   }, [tableWidth]);
 
   return (
-    <div className={cx("relative w-full", className)}>
+    <div className={cx("relative w-full", className)} key={Math.random()}>
       <div
         ref={scrollRef}
         className="overflow-x-auto rounded-2xl md:rounded-3xl bg-Overlays-Black-9 shadow-table"
@@ -190,7 +190,7 @@ const DefaultTable = ({
 
                 return (
                   <th
-                    key={c.key}
+                    key={Math.random()}
                     className={cx(
                       "top-0 bg-Surface0 font-medium text-left",
                       padX,
@@ -241,7 +241,7 @@ const DefaultTable = ({
           <tbody className="text-Content-Secondary">
             {data.map((row, rIdx) => (
               <tr
-                key={row[rowKey] ?? rIdx}
+                key={Math.random()}
                 className={cx(
                   "border-t border-Surface0 bg-Surface1",
                   striped && rIdx % 2 === 1 ? "bg-Surface1/90" : ""
