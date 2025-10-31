@@ -2164,6 +2164,164 @@ const SOLUTIONS_POINTS = [
   },
 ];
 
+const CORE_INTELLIGENCE = [
+  {
+    sectionTitle: "Core Intelligence",
+    items: [
+      {
+        title: "BARNABUS",
+        subTitle:
+          "The central reasoning unit,  where decisions are made, logic is orchestrated, and systems align.",
+        color: "green",
+      },
+      {
+        title: "AXON",
+        subTitle:
+          "Routes intent across modular agents and links thought to execution.",
+        color: "violet",
+      },
+      {
+        title: "NAYAR",
+        subTitle:
+          "The system’s conscience,  ethical guardian, override logic, and escalation handler.",
+        color: "yellow",
+      },
+    ],
+  },
+];
+const AGENT_STACK_DETAILS = [
+  {
+    sectionTitle: "Action Agents",
+    items: [
+      {
+        title: "YARM",
+        subTitle:
+          "Executes clinical actions and health insights with embedded medical ethics.",
+      },
+      {
+        title: "VORIN",
+        subTitle:
+          "Analyzes semiconductor data and orchestrates yield-based decisions.",
+      },
+      {
+        title: "FARO",
+        subTitle:
+          "Scans, defends, and adapts in cybersecurity environments in real-time.",
+      },
+      {
+        title: "KRON",
+        subTitle:
+          "Manages real-time controls across industrial and manufacturing systems.",
+      },
+      {
+        title: "DEKA",
+        subTitle:
+          "Simulates complex scenarios for training, planning, and foresight.",
+      },
+      {
+        title: "SYNRIX",
+        subTitle:
+          "Maintains system integrity through diagnostics, repair, and resilience checks.",
+      },
+      {
+        title: "ZARIF",
+        subTitle:
+          "Provides traceable forensic audit trails across all agent decisions.",
+      },
+      {
+        title: "OBRAH",
+        subTitle:
+          "Optimizes logistics and resource routing in time sensitive environments.",
+      },
+    ],
+  },
+  {
+    sectionTitle: "Modular Intelligence Units",
+    items: [
+      {
+        title: "NIVARA",
+        subTitle:
+          "Understands, explains, and communicates decisions across human and machine interfaces.",
+      },
+      {
+        title: "AQIRA",
+        subTitle:
+          "Aligns agent actions with ethical values and domain-specific norms.",
+      },
+      {
+        title: "EDIOS",
+        subTitle:
+          "Builds models of cause, effect, and abstract world reasoning.",
+      },
+      {
+        title: "ZINDRA",
+        subTitle:
+          "Monitors system reflection — adapting protocols based on past learning.",
+      },
+      {
+        title: "MYRA",
+        subTitle:
+          "Models human empathy, intention, and social nuance in interactions.",
+      },
+      {
+        title: "VELON",
+        subTitle:
+          "Breaks down goals into structured, executable plans for other agents.",
+      },
+      {
+        title: "ORBITA",
+        subTitle:
+          "Processes visual inputs and converts spatial context into actionable insight.",
+      },
+      {
+        title: "KANUN",
+        subTitle:
+          "Applies legal frameworks and compliance rules to system decisions.",
+      },
+    ],
+  },
+  {
+    sectionTitle: "Memory & Fabric Agents",
+    items: [
+      {
+        title: "CORTEX",
+        subTitle: "Short-term, volatile memory tuned to live agent operations.",
+      },
+      {
+        title: "SYNTRIX",
+        subTitle: "Long-term, multi-agent memory with shared semantic context.",
+      },
+      {
+        title: "ETHRA",
+        subTitle:
+          "Medical memory engine with diagnostic pathways and knowledge graphs.",
+      },
+      {
+        title: "LUMINA",
+        subTitle:
+          "Curates and maintains the Barnabus ontology, the semantic brain of the system.",
+      },
+      {
+        title: "ZARIF",
+        subTitle:
+          "Archives decision trails for transparency and post-analysis.",
+      },
+    ],
+  },
+];
+
+const LEARNING_IN_MOTION = [
+  {
+    title: "Track not just what a user does — but why they do it",
+    icon: "/icons/ai-governance-tracked.svg",
+  },
+  {
+    title: "Override mechanisms treated as training events",
+    icon: "/icons/cics-sit-overrides.svg",
+  },
+  { title: "Feedback loop embedded in protocol flow", icon: "/icons/loop.svg" },
+];
+
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -2203,4 +2361,7 @@ export {
   AGI_COMPASS,
   CAPABILITIES_POINTS,
   SOLUTIONS_POINTS,
+  CORE_INTELLIGENCE,
+  AGENT_STACK_DETAILS,
+  LEARNING_IN_MOTION,
 };
