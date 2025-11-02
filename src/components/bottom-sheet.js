@@ -57,7 +57,7 @@ export default function BottomSheet({
         </TransitionChild>
 
         {/* Panel */}
-        <div className="fixed inset-x-0 bottom-0">
+        <div className="fixed inset-x-0 bottom-0 ">
           <TransitionChild
             as={Fragment}
             enter="transform transition ease-out duration-200"
