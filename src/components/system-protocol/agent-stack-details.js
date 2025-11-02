@@ -1,6 +1,7 @@
 "use client";
 
 import React, { memo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import useScreenSize from "@/utils/usescreensize";
 
@@ -61,6 +62,8 @@ const AgentStackContent = memo(function AgentStackContent() {
   );
 });
 
+const EASE = [0.22, 1, 0.36, 1];
+
 const AgentStackDetails = memo(function AgentStackDetails() {
   const screenSize = useScreenSize();
   const isMobile = screenSize.width < 768;
@@ -105,7 +108,22 @@ const AgentStackDetails = memo(function AgentStackDetails() {
         />
       </div>
 
-      {!isMobile && showAgentStack && <AgentStackContent />}
+      {!isMobile && (
+        <AnimatePresence initial={false}>
+          {showAgentStack && (
+            <motion.div
+              key="agent-stack"
+              initial={{ height: 0, opacity: 0, y: -8 }}
+              animate={{ height: "auto", opacity: 1, y: 0 }}
+              exit={{ height: 0, opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: EASE }}
+              style={{ overflow: "hidden" }}
+            >
+              <AgentStackContent />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
 
       <BottomSheet
         open={isMobile && drawerOpen}
@@ -114,7 +132,7 @@ const AgentStackDetails = memo(function AgentStackDetails() {
         className="md:hidden"
         contentClassName="px-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
-        <div className="pt-2 pb-4  max-h-[80vh] overflow-y-auto">
+        <div className="pt-2 pb-4 max-h-[80vh] overflow-y-auto">
           <AgentStackContent />
         </div>
       </BottomSheet>
