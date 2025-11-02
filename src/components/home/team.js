@@ -8,29 +8,11 @@ import Button from "../button";
 import { Tab } from "../tabs";
 
 import { PARTNERSHIP_LIST, TEAM_LIST } from "@/utils/arrays";
-
-const CTAButtons = memo(function CTAButtons({ text }) {
-  return (
-    <>
-      <Button
-        size="XL"
-        variant="Secondary"
-        label={text}
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="!hidden lg:!flex w-max"
-      />
-      <Button
-        size="L"
-        variant="Secondary"
-        label={text}
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="lg:!hidden w-full md:w-max"
-      />
-    </>
-  );
-});
+import useScreenSize from "@/utils/usescreensize";
 
 const Team = () => {
+  const screenSize = useScreenSize();
+
   const [tab, setTab] = useState("team");
 
   return (
@@ -45,7 +27,13 @@ const Team = () => {
             </p>
           </div>
           <Link href="/team">
-            <CTAButtons text="Go To Team Page" />
+            <Button
+              size={screenSize.width >= 1024 ? "XL" : "L"}
+              variant="Secondary"
+              label="Go To Team Page"
+              trailingIcon="/icons/arrow-right.svg"
+              additionalStyle="w-full md:w-max"
+            />
           </Link>
         </div>
 

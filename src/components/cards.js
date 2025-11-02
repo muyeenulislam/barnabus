@@ -25,5 +25,22 @@ const GrayCard = ({ additionalStyle = "", children }) => {
     </div>
   );
 };
+const ColorCard = ({ additionalStyle = "", variant = "green", children }) => {
+  const bg =
+    variant === "green"
+      ? "border border-Badge-Green-Outline-Border bg-Badge-Green-Outline-Background text-Badge-Green-Outline-Content"
+      : variant === "violet"
+      ? "border border-Badge-Violet-Outline-Border bg-Badge-Violet-Outline-Background text-Badge-Violet-Outline-Content"
+      : variant === "yellow"
+      ? "border border-Badge-Yellow-Outline-Border bg-Badge-Yellow-Outline-Background text-Badge-Yellow-Outline-Content"
+      : null;
+  return (
+    <div
+      className={`p-4 md:p-5 lg:p-6 rounded-[1rem] md:rounded-[1.25rem] lg:rounded-[1.5rem] backdrop-blur-[75px] ${bg} ${additionalStyle}`}
+    >
+      {children}
+    </div>
+  );
+};
 
-export { BlackCardDefault, BlackCardSmall, GrayCard };
+export { BlackCardDefault, BlackCardSmall, GrayCard, ColorCard };

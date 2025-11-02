@@ -6,6 +6,7 @@ import Accordion from "../accordion";
 import Button from "../button";
 import ProgressBar from "../progress-bar";
 
+import useScreenSize from "@/utils/usescreensize";
 import { PROGRESS_TRACKER_POINTS, ECO_BREAKDOWN_POINTS } from "@/utils/arrays";
 
 const ICON_PANEL_STYLE = Object.freeze({
@@ -15,28 +16,9 @@ const ICON_PANEL_STYLE = Object.freeze({
     "0 0.4px 0 0.4px var(--Overlays-White-6, rgba(255, 255, 255, 0.12)) inset, 0 0 1.2px 1.2px var(--Overlays-White-6, rgba(247, 247, 248, 0.12)) inset",
 });
 
-const CTAButtons = memo(function CTAButtons({ text }) {
-  return (
-    <>
-      <Button
-        size="XL"
-        variant="Secondary"
-        label={text}
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="!hidden lg:!flex w-max"
-      />
-      <Button
-        size="L"
-        variant="Secondary"
-        label={text}
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="lg:!hidden w-full md:w-max"
-      />
-    </>
-  );
-});
-
 const ProgressTracker = memo(function ProgressTracker() {
+  const screenSize = useScreenSize();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-3 lg:gap-4">
       <div className="flex flex-col gap-8 lg:gap-10 pb-4 md:pb-0">
@@ -46,7 +28,13 @@ const ProgressTracker = memo(function ProgressTracker() {
             Improving semiconductor manufacturing throughput
           </p>
         </div>
-        <CTAButtons text={"See the Progress"} />
+        <Button
+          size={screenSize.width >= 1024 ? "XL" : "L"}
+          variant="Secondary"
+          label="See the Progress"
+          trailingIcon="/icons/arrow-right.svg"
+          additionalStyle="w-max"
+        />
       </div>
       {PROGRESS_TRACKER_POINTS?.map((item, index) => (
         <div
@@ -110,6 +98,8 @@ const Chevron = ({ open = false }) => (
 );
 
 const EcoBreakdown = memo(function EcoBreakdown() {
+  const screenSize = useScreenSize();
+
   const items = ECO_BREAKDOWN_POINTS.map((p) => ({
     title: p.accordionTitle,
     subtitle: p.accordionSubtitle,
@@ -142,7 +132,13 @@ const EcoBreakdown = memo(function EcoBreakdown() {
             Improving semiconductor manufacturing throughput
           </p>
         </div>
-        <CTAButtons text="See the Ecosystem" />
+        <Button
+          size={screenSize.width >= 1024 ? "XL" : "L"}
+          variant="Secondary"
+          label="See the Ecosystem"
+          trailingIcon="/icons/arrow-right.svg"
+          additionalStyle="w-max"
+        />
       </div>
 
       {/* Right column */}

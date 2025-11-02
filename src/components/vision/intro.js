@@ -1,9 +1,13 @@
+"use client";
+
 import React, { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import Button from "../button";
 import { BlackCardDefault } from "../cards";
+
+import useScreenSize from "@/utils/usescreensize";
 
 const CTAS = [
   {
@@ -20,7 +24,9 @@ const CTAS = [
   },
 ];
 
-function CTAGroup({ size, containerClass, fullWidth = false }) {
+function CTAGroup({ containerClass, fullWidth = false }) {
+  const screenSize = useScreenSize();
+
   return (
     <div className={`my-6 md:my-8 lg:my-10 ${containerClass}`}>
       {CTAS.map((c, i) => (
@@ -28,9 +34,15 @@ function CTAGroup({ size, containerClass, fullWidth = false }) {
           <Button
             label={c.label}
             variant={c.variant}
-            size={size}
+            size={
+              screenSize.width < 768
+                ? "L"
+                : screenSize.width >= 768 && screenSize.width < 1024
+                ? "XL"
+                : "2XL"
+            }
             trailingIcon={c.icon}
-            additionalStyle={fullWidth ? "w-full" : undefined}
+            additionalStyle="w-full md:w-max"
           />
         </Link>
       ))}
@@ -55,19 +67,7 @@ const VisionIntro = memo(function VisionIntro() {
           understand — with purpose.
         </p>
 
-        <CTAGroup
-          size="2XL"
-          containerClass="hidden lg:flex md:flex-row gap-4"
-        />
-        <CTAGroup
-          size="XL"
-          containerClass="hidden md:flex lg:hidden flex-row justify-center items-center gap-4"
-        />
-        <CTAGroup
-          size="L"
-          containerClass="w-full flex flex-col md:hidden justify-center items-center gap-4"
-          fullWidth
-        />
+        <CTAGroup containerClass="flex flex-col w-full md:w-max md:flex-row gap-4" />
       </div>
 
       <BlackCardDefault>

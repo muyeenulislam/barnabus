@@ -3,6 +3,11 @@ import Image from "next/image";
 
 import { BlackCardSmall } from "../cards";
 
+import AgentStackDetails from "./agent-stack-details";
+import DataEngine from "./data-engine";
+import Transparency from "./transparency";
+import LearningInMotion from "./learning-in-motion";
+
 const SectionIntro = memo(function SectionIntro() {
   return (
     <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-center">
@@ -16,9 +21,9 @@ const ArchitectureOverviewImage = memo(function ArchitectureOverviewImage() {
   return (
     <BlackCardSmall>
       <Image
-        src="/images/architecture-overview.svg"
-        height={100}
-        width={250}
+        src="/images/architecture-overview.png"
+        height={1500}
+        width={2500}
         className="w-full h-max md:pb-10"
         alt="pointer"
       />
@@ -31,6 +36,12 @@ const ArchitectureOverview = () => {
     <div className="section-wrapper border-t border-t-Overlays-White-4">
       <SectionIntro />
       <ArchitectureOverviewImage />
+      <AgentStackDetails />
+      <div className="space-y-10 md:space-y-16 lg:space-y-[6rem]">
+        <Transparency />
+        <DataEngine />
+        <LearningInMotion />
+      </div>
     </div>
   );
 };

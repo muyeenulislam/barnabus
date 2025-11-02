@@ -12,6 +12,7 @@ import {
   CLINICAL_FEED,
   CLINICAL_FEED_SUMMARY,
 } from "@/utils/arrays";
+import useScreenSize from "@/utils/usescreensize";
 
 import {
   DefineCategoryCard,
@@ -415,28 +416,9 @@ const DomainMemory = memo(function DomainMemory() {
   );
 });
 
-const CTAButtons = memo(function CTAButtons() {
-  return (
-    <>
-      <Button
-        size="XL"
-        variant="Secondary"
-        label="See the Difference"
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="!hidden lg:!flex"
-      />
-      <Button
-        size="L"
-        variant="Secondary"
-        label="See the Difference"
-        trailingIcon="/icons/arrow-right.svg"
-        additionalStyle="lg:!hidden w-full md:w-max"
-      />
-    </>
-  );
-});
-
 const DefineNewCategory = () => {
+  const screenSize = useScreenSize();
+
   return (
     <div className="section-wrapper">
       <SectionIntro />
@@ -476,7 +458,13 @@ const DefineNewCategory = () => {
                 Improving semiconductor manufacturing throughput
               </p>
             </div>
-            <CTAButtons />
+            <Button
+              size={screenSize.width >= 1024 ? "XL" : "L"}
+              variant="Secondary"
+              label="See the Difference"
+              trailingIcon="/icons/arrow-right.svg"
+              additionalStyle="!hidden lg:!flex"
+            />
           </div>
 
           <ThinkActLearn />

@@ -1,37 +1,16 @@
+"use client";
+
 import React, { memo } from "react";
 import Link from "next/link";
+
+import useScreenSize from "@/utils/usescreensize";
 
 import Button from "../button";
 import { BlackCardDefault } from "../cards";
 
-const CTAS = [
-  {
-    href: "#",
-    label: "See Agent Stack",
-    variant: "Secondary",
-    icon: "/icons/circle-arrow-right.svg",
-  },
-];
-
-function CTAGroup({ size, containerClass, fullWidth = false }) {
-  return (
-    <div className={`my-6 md:my-8 lg:my-10 ${containerClass}`}>
-      {CTAS.map((c, i) => (
-        <Link key={i} href={c.href} className={fullWidth ? "w-full" : ""}>
-          <Button
-            label={c.label}
-            variant={c.variant}
-            size={size}
-            trailingIcon={c.icon}
-            additionalStyle={fullWidth ? "w-full" : undefined}
-          />
-        </Link>
-      ))}
-    </div>
-  );
-}
-
 const ProtocolIntro = memo(function ProtocolIntro() {
+  const screenSize = useScreenSize();
+
   return (
     <section className="page-intro">
       <div className="page-intro-inner z-101">
@@ -47,20 +26,21 @@ const ProtocolIntro = memo(function ProtocolIntro() {
           Barnabus operates through a modular protocol of intelligence agents
           that route, decide, act, and evolve.
         </p>
-
-        <CTAGroup
-          size="2XL"
-          containerClass="hidden lg:flex md:flex-row gap-4"
-        />
-        <CTAGroup
-          size="XL"
-          containerClass="hidden md:flex lg:hidden flex-row justify-center items-center gap-4"
-        />
-        <CTAGroup
-          size="L"
-          containerClass="w-full flex flex-col md:hidden justify-center items-center gap-4"
-          fullWidth
-        />
+        <Link href="#" className="w-full md:w-max my-6 md:my-8 lg:my-10">
+          <Button
+            size={
+              screenSize.width < 768
+                ? "L"
+                : screenSize.width >= 768 && screenSize.width < 1024
+                ? "XL"
+                : "2XL"
+            }
+            variant="Secondary"
+            label="See Agent Stack"
+            trailingIcon="/icons/circle-arrow-right.svg"
+            additionalStyle="w-full md:w-max"
+          />
+        </Link>
       </div>
 
       <BlackCardDefault>

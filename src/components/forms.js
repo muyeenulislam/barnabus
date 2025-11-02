@@ -1,17 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 import Button from "./button";
 import { Toast } from "./toast";
 import { TextAreaInput, TextInput } from "./input-fields";
 import { Select } from "./select";
 
+import useScreenSize from "@/utils/usescreensize";
 import { emailValid } from "@/utils/validators";
 import { TIER_LIST } from "@/utils/arrays";
-import Link from "next/link";
 
 const EarlyAccessForm = () => {
+  const screenSize = useScreenSize();
+
   const [state, setState] = useState({
     companyName: "",
     firstName: "",
@@ -20,7 +23,6 @@ const EarlyAccessForm = () => {
     email: "",
     interest: "",
   });
-
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "" });
 
@@ -136,17 +138,8 @@ const EarlyAccessForm = () => {
             label="Apply for Early Access"
             trailingIcon="/icons/arrow-right-neon.svg"
             variant="Primary-Accent"
-            size="2XL"
-            additionalStyle="!hidden lg:!flex w-full"
-            onClick={handleSubmit}
-            loading={loading}
-          />
-          <Button
-            label="Apply for Early Access"
-            trailingIcon="/icons/arrow-right-neon.svg"
-            variant="Primary-Accent"
-            size="XL"
-            additionalStyle="lg:!hidden w-full"
+            size={screenSize >= 1024 ? "2XL" : "XL"}
+            additionalStyle="w-full"
             onClick={handleSubmit}
             loading={loading}
           />
@@ -164,6 +157,8 @@ const EarlyAccessForm = () => {
 };
 
 const CompleteFreeRegistrationForm = () => {
+  const screenSize = useScreenSize();
+
   const [state, setState] = useState({
     fullName: "",
     occupation: null,
@@ -357,18 +352,8 @@ const CompleteFreeRegistrationForm = () => {
             label="Join the Pilot Cohort"
             trailingIcon="/icons/arrow-right-neon.svg"
             variant="Primary-Accent"
-            size="2XL"
-            additionalStyle="!hidden lg:!flex w-full"
-            onClick={handleSubmit}
-            loading={loading}
-            disabled={loading || !checked}
-          />
-          <Button
-            label="Join the Pilot Cohort"
-            trailingIcon="/icons/arrow-right-neon.svg"
-            variant="Primary-Accent"
-            size="XL"
-            additionalStyle="lg:!hidden w-full"
+            size={screenSize >= 1024 ? "2XL" : "XL"}
+            additionalStyle="w-full"
             onClick={handleSubmit}
             loading={loading}
             disabled={loading || !checked}
