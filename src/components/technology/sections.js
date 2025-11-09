@@ -113,7 +113,7 @@ const SectionBlock = memo(function SectionBlock({ section, index }) {
 
       {Array.isArray(section.list) && section.list.length > 0 ? (
         <div className="flex flex-col gap-[3.5rem] md:gap-[4rem] lg:gap-[8rem] mt-[3.5rem] md:mt-[4rem] lg:mt-[8rem]">
-          {section.list.map((item, idx) => (
+          {section.list?.map((item, idx) => (
             <ListItem
               key={`${id}-item-${idx}-${slug(item.title)}`}
               item={item}
@@ -139,7 +139,7 @@ const TechnologySections = ({ stack = TECHNOLOGY_STACK || [] }) => {
     <div className="gray-gradient-bg">
       <section className="section-wrapper">
         <div className={cx("flex flex-col", BLOCK_GAPS)}>
-          {safeStack.map((section, idx) => (
+          {safeStack?.map((section, idx) => (
             <SectionBlock
               key={`${slug(section.title)}-${idx}`}
               section={section}

@@ -70,7 +70,7 @@ const DefineCategoryCardRound = memo(function DefineCategoryCardRound({
 const DomainMemoryInnerCard = memo(function DomainMemoryInnerCard() {
   return (
     <div className="flex flex-col p-[1.3rem] lg:p-[1.5rem] gap-2.5 lg:gap-3 rounded-[1.3rem] lg:rounded-3xl bg-Surface0 shadow-boxPrimary max-w-[90%] lg:max-w-[75%] relative">
-      {DOMAIN_MEMORY_CHIPS.map((c, i) => (
+      {DOMAIN_MEMORY_CHIPS?.map((c, i) => (
         <Chip key={i} {...c} />
       ))}
 
@@ -97,7 +97,7 @@ const DomainMemoryInnerCard = memo(function DomainMemoryInnerCard() {
 
       <div className="flex flex-col shadow-boxPrimary rounded-xl lg:rounded-2xl p-[1px]">
         <div className="bg-Surface1 rounded-t-xl lg:rounded-t-2xl">
-          {DOMAIN_MEMORY_HEADER_ITEMS.map(({ title, titleCls, desc }, idx) => (
+          {DOMAIN_MEMORY_HEADER_ITEMS?.map(({ title, titleCls, desc }, idx) => (
             <div
               key={title}
               className={`flex flex-col gap-1 p-4 ${idx > 0 ? "pt-0" : ""}`}

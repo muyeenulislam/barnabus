@@ -220,7 +220,7 @@ const MemberDetailsContent = React.memo(function MemberDetailsContent({
                 Publications
               </h4>
               <div className="flex flex-col gap-1">
-                {member.publications.map((pub, i) => (
+                {member.publications?.map((pub, i) => (
                   <div
                     key={`${pub?.name || "pub"}-${i}`}
                     className={
@@ -352,7 +352,7 @@ export default function Team() {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {(ROLE_LIST || []).map((role) => (
+          {(ROLE_LIST || [])?.map((role) => (
             <button
               type="button"
               key={role}
@@ -373,7 +373,7 @@ export default function Team() {
 
       {!!featured.length && (
         <div className="flex flex-col gap-4">
-          {featured.map((item) => (
+          {featured?.map((item) => (
             <FeaturedCard
               key={item?.name}
               item={item}
@@ -385,7 +385,7 @@ export default function Team() {
       )}
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[2rem]">
-        {filteredMembers.map((item, index) => (
+        {filteredMembers?.map((item, index) => (
           <React.Fragment key={item?.name || index}>
             <MemberCard item={item} onOpen={openDetails} tagMap={tagMap} />
 

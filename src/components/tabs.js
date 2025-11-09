@@ -221,7 +221,7 @@ function BaseTabs({
         className="md:hidden"
         contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
-        {tabItems.map((item, idx) => (
+        {tabItems?.map((item, idx) => (
           <motion.button
             key={idx}
             onClick={() => setTab(item.value)}

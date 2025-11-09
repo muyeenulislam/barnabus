@@ -50,7 +50,7 @@ const NotJustAI = () => {
             )}
             {item.list && (
               <div className="flex flex-col lg:flex-row gap-2 items-center justify-around w-full pt-[1rem] md:pt-0 lg:pt-[2rem]">
-                {item.list.map((value, index) => (
+                {item.list?.map((value, index) => (
                   <React.Fragment key={index}>
                     <Tags
                       label={value?.point}

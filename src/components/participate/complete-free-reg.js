@@ -51,7 +51,7 @@ const SectionIntro = memo(function SectionIntro() {
           </p>
         </div>
         <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-          {VERIFICATION_HELP.map((s) => (
+          {VERIFICATION_HELP?.map((s) => (
             <VerificationCard key={s.title ?? s.subtitle} {...s} />
           ))}
         </div>

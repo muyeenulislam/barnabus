@@ -100,7 +100,7 @@ const Navbar = () => {
         {/* Center A: Desktop (lg and up) – full nav with animated pill */}
         <LayoutGroup id="nav-desktop">
           <div className="hidden lg:flex p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar">
-            {NAV_ITEMS.map((item, index) => {
+            {NAV_ITEMS?.map((item, index) => {
               const active = isActive(item.route);
               return (
                 <Link
@@ -126,7 +126,7 @@ const Navbar = () => {
         {/* Center B: Tablet (md only) – first 3 + dropdown, with animated pill on the first 3 */}
         <LayoutGroup id="nav-md">
           <div className="hidden md:flex lg:hidden p-1 items-center justify-center gap-1 rounded-full bg-Overlays-White-5 shadow-navbar relative">
-            {first.map((item, index) => {
+            {first?.map((item, index) => {
               const active = isActive(item.route);
               return (
                 <Link
@@ -179,7 +179,7 @@ const Navbar = () => {
                       leaveTo="opacity-0 scale-95"
                     >
                       <MenuItems className="absolute right-0 top-12 z-20 rounded-2xl bg-[rgba(18,19,20,0.44)] shadow-navDropdown p-2 backdrop-blur-lg">
-                        {rest.map((item, idx) => {
+                        {rest?.map((item, idx) => {
                           const active = isActive(item.route);
                           return (
                             <MenuItem key={idx}>
@@ -241,7 +241,7 @@ const Navbar = () => {
         className="md:hidden"
         contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4"
       >
-        {NAV_ITEMS.map((item, idx) => (
+        {NAV_ITEMS?.map((item, idx) => (
           <Link
             key={idx}
             href={item.route}

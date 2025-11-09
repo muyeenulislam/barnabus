@@ -61,7 +61,7 @@ const ComparisonTable = memo(function ComparisonTable({ rows }) {
         </p>
       </div>
 
-      {rows.map(({ left, right }, i) => {
+      {rows?.map(({ left, right }, i) => {
         const isLast = i === rows.length - 1;
         return (
           <div key={`${left}→${right}`} className="flex">
@@ -116,7 +116,7 @@ const ResponsiveTag = memo(function ResponsiveTag({ label, variant }) {
 const HumanUXList = memo(function HumanUXList({ items }) {
   return (
     <div className="flex flex-col gap-2 lg:gap-8 lg:pb-10">
-      {items.map(({ title, icon }) => (
+      {items?.map(({ title, icon }) => (
         <div key={title} className="flex gap-4 lg:gap-6">
           <div
             className="shrink-0 h-max flex justify-center items-center rounded-[1.125rem] lg:rounded-3xl p-2 lg:p-3"
@@ -198,7 +198,7 @@ const ClinicalFeed = memo(function ClinicalFeed({ items }) {
         <p className={[pct(28.571), "text-right"].join(" ")}>Status</p>
       </div>
 
-      {items.map((it, idx) => (
+      {items?.map((it, idx) => (
         <ClinicalFeedRow
           key={`${it.title}-${idx}`}
           item={it}
@@ -506,7 +506,7 @@ const DefineNewCategory = () => {
                   <ClinicalFeed items={CLINICAL_FEED} />
 
                   <div className="flex flex-col gap-2 absolute max-w-[20rem] lg:max-w-[25rem] bottom-[-2rem] lg:bottom-[-6rem] right-[-14rem] lg:right-[-9rem] z-[100]">
-                    {CLINICAL_FEED_SUMMARY.map((it, i) => (
+                    {CLINICAL_FEED_SUMMARY?.map((it, i) => (
                       <ClinicalSummaryCard key={`${it.title}-${i}`} item={it} />
                     ))}
                   </div>

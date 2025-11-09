@@ -40,10 +40,10 @@ function ActionButtons({
   className = "",
   fullWidthOnMobile = false,
 }) {
-  const map = new Map(BUTTONS.map((b) => [b.key, b]));
+  const map = new Map(BUTTONS?.map((b) => [b.key, b]));
   return (
     <div className={className}>
-      {order.map((k) => {
+      {order?.map((k) => {
         const b = map.get(k);
         return (
           <Link

@@ -38,7 +38,7 @@ export default function Accordion({
 
   return (
     <div className={`w-full ${className}`}>
-      {items.map((item, index) => {
+      {items?.map((item, index) => {
         const isOpen = index === openIndex;
         const panelId = `acc-panel-${index}`;
         const btnId = `acc-btn-${index}`;

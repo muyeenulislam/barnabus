@@ -100,12 +100,12 @@ const Chevron = ({ open = false }) => (
 const EcoBreakdown = memo(function EcoBreakdown() {
   const screenSize = useScreenSize();
 
-  const items = ECO_BREAKDOWN_POINTS.map((p) => ({
+  const items = ECO_BREAKDOWN_POINTS?.map((p) => ({
     title: p.accordionTitle,
     subtitle: p.accordionSubtitle,
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-3">
-        {p.accordionOpen.map((card, i) => (
+        {p.accordionOpen?.map((card, i) => (
           <div
             key={i}
             className="bg-Overlays-White-3 shadow-boxPrimary p-3 rounded-2xl lg:p-6 lg:rounded-3xl"

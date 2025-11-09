@@ -38,7 +38,7 @@ const LearningInMotion = memo(function LearningInMotion() {
               <p className="content-subheading">Built with Ethical Memory</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-x-8 md:gap-y-5 lg:gap-x-12 lg:gap-y-6">
-              {alignmentItems.map((item, index) => (
+              {alignmentItems?.map((item, index) => (
                 <div key={index} className="flex gap-3 lg:gap-4">
                   <Image
                     src="/icons/circle-arrow-right-neon.svg"

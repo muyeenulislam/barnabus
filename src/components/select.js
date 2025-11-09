@@ -120,7 +120,7 @@ export function BaseSelect({
   const S = SIZE_STYLES[size] ?? SIZE_STYLES.M;
 
   const byValue = useMemo(
-    () => new Map(options.map((o) => [o.value, o])),
+    () => new Map(options?.map((o) => [o.value, o])),
     [options]
   );
 
@@ -266,7 +266,7 @@ export function BaseSelect({
                   S.chipsWrap
                 )}
               >
-                {selectedValues.map((v) => {
+                {selectedValues?.map((v) => {
                   const o = byValue.get(v);
                   if (!o) return null;
                   return (
@@ -414,7 +414,7 @@ export function BaseSelect({
                     No results
                   </div>
                 ) : (
-                  filtered.map((opt, i) => {
+                  filtered?.map((opt, i) => {
                     const selected = selectedSet.has(opt.value);
                     const active = i === activeIndex;
                     return (

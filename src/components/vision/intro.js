@@ -31,7 +31,7 @@ function CTAGroup({ containerClass, fullWidth = false }) {
 
   return (
     <div className={`my-6 md:my-8 lg:my-10 ${containerClass}`}>
-      {CTAS.map((c, i) => (
+      {CTAS?.map((c, i) => (
         <Link
           key={i}
           href={`${c.path && `/${c.path}`}${c.id && `#${c.id}`}`}

@@ -16,7 +16,7 @@ const TagChips = React.memo(function TagChips({
   if (!tags?.length) return null;
   return (
     <div className="flex gap-1 flex-wrap">
-      {tags.map((name, idx) => {
+      {tags?.map((name, idx) => {
         const t = tagMap[name];
         if (!t) return null;
         if (responsive) {

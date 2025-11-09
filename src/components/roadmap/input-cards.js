@@ -73,7 +73,7 @@ const InputCards = memo(function InputCards({
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-y-3 md:gap-x-12 lg:gap-4">
-          {items.map((item, idx) => {
+          {items?.map((item, idx) => {
             const { icon: ItemIcon, label, detail: desc, id } = item || {};
             const key = id ?? idx;
 

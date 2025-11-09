@@ -94,7 +94,7 @@ const StepTooltipContent = memo(function StepTooltipContent({ item }) {
 
       {!!steps.length && (
         <div className="space-y-3">
-          {steps.map((step) => (
+          {steps?.map((step) => (
             <div className="flex gap-1 md:gap-3" key={step.code ?? step.title}>
               <Image
                 src="/icons/circle-check-neon.svg"
@@ -177,7 +177,7 @@ const FirstPart = memo(function FirstPart() {
         />
       </div>
 
-      {domains.map((d) => (
+      {domains?.map((d) => (
         <DomainCard
           key={d.title ?? d.subtitle}
           icon={d.icon}
@@ -198,7 +198,7 @@ const FirstPart = memo(function FirstPart() {
           </div>
 
           <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-            {safety.map((s) => (
+            {safety?.map((s) => (
               <SafetyCard key={s.title ?? s.subtitle} {...s} />
             ))}
           </div>
@@ -215,7 +215,7 @@ const FirstPart = memo(function FirstPart() {
           </div>
 
           <div className="flex items-center flex-wrap gap-x-6 gap-y-5 md:gap-x-8 md:gap-y-6 lg:gap-x-12 lg:gap-y-8">
-            {infra.map((src, i) => (
+            {infra?.map((src, i) => (
               <InfraLogo key={`${src}-${i}`} src={src} />
             ))}
           </div>
@@ -247,7 +247,7 @@ const EvolutionPath = memo(function EvolutionPath() {
           className={`absolute w-[0.1875rem] h-full left-[1.4rem] lg:hidden ${V_LINE}`}
         />
 
-        {path.map((p) => (
+        {path?.map((p) => (
           <EvolutionNode key={p.title ?? p.phase} item={p} />
         ))}
       </div>

@@ -78,7 +78,7 @@ const SolutionsPoints = memo(function SolutionsPoints() {
                     Use cases include:
                   </h4>
                   <ul>
-                    {item.useCases.map((item, index) => (
+                    {item.useCases?.map((item, index) => (
                       <li key={index} className="content-subheading list-disc">
                         {item}
                       </li>

@@ -43,7 +43,7 @@ const DefaultTable = ({
   edgeFadeOpacity = 0.35,
 }) => {
   const computed = useMemo(() => {
-    const cols = columns.map((c) => {
+    const cols = columns?.map((c) => {
       const widthPx = toPx(c.width) || toPx(c.minWidth) || 220;
       return {
         ...c,
@@ -154,7 +154,7 @@ const DefaultTable = ({
         >
           <thead>
             <tr className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7 bg-Surface0">
-              {cols.map((c, i) => {
+              {cols?.map((c, i) => {
                 const isLeft = c._fixed === "left";
                 const isRight = c._fixed === "right";
                 const sticky = isLeft || isRight;
@@ -239,7 +239,7 @@ const DefaultTable = ({
           </thead>
 
           <tbody className="text-Content-Secondary">
-            {data.map((row, rIdx) => (
+            {data?.map((row, rIdx) => (
               <tr
                 key={Math.random()}
                 className={cx(
@@ -247,7 +247,7 @@ const DefaultTable = ({
                   striped && rIdx % 2 === 1 ? "bg-Surface1/90" : ""
                 )}
               >
-                {cols.map((c, i) => {
+                {cols?.map((c, i) => {
                   const isLeft = c._fixed === "left";
                   const isRight = c._fixed === "right";
                   const sticky = isLeft || isRight;

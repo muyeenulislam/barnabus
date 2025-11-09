@@ -37,7 +37,7 @@ const EarlyAccessForm = () => {
 
     const missing = Object.entries(reqMap)
       .filter(([key]) => !String(state[key] || "").trim())
-      .map(([, label]) => label);
+      ?.map(([, label]) => label);
 
     if (missing.length > 0) {
       setToast({
@@ -183,7 +183,7 @@ const CompleteFreeRegistrationForm = () => {
 
     const missing = Object.entries(reqMap)
       .filter(([key]) => !String(state[key] || "").trim())
-      .map(([, label]) => label);
+      ?.map(([, label]) => label);
 
     if (missing.length > 0) {
       setToast({

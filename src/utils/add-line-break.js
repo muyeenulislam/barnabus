@@ -18,7 +18,7 @@ const addLineBreaks = (text) => {
     return line;
   };
 
-  return text.split("\n").map((line, index) => (
+  return text.split("\n")?.map((line, index) => (
     <span key={index}>
       <span dangerouslySetInnerHTML={{ __html: formatText(line) }} />
       {index !== text.split("\n").length - 1 && <br />}

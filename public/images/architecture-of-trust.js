@@ -141,7 +141,7 @@ const ArchitectureOfTrust = () => {
         ry="388"
         stroke="#5D5F61"
         strokeWidth="3.02934"
-        stroke-dasharray="5.99 11.97"
+        strokeDasharray="5.99 11.97"
       />
       <path
         d="M434.5 112C503.875 112 571.985 130.553 631.753 165.731C691.52 200.91 740.766 251.43 774.373 312.044C807.98 372.657 824.722 441.153 822.86 510.413C820.998 579.674 800.6 647.174 763.785 705.899"
@@ -192,12 +192,12 @@ const ArchitectureOfTrust = () => {
         <path
           d="M96.8877 238.934C102.511 235.688 109.44 235.688 115.064 238.934L144.498 255.928C150.122 259.175 153.586 265.176 153.586 271.669V305.657C153.586 312.151 150.122 318.151 144.498 321.398L115.064 338.392C109.44 341.639 102.511 341.639 96.8877 338.392L67.4534 321.398C61.8297 318.151 58.3653 312.151 58.3653 305.657V271.669C58.3653 265.176 61.8297 259.175 67.4534 255.928L96.8877 238.934Z"
           fill="white"
-          fill-opacity="0.034"
+          fillOpacity="0.034"
         />
         <path
           d="M96.8877 238.934C102.511 235.688 109.44 235.688 115.064 238.934L144.498 255.928C150.122 259.175 153.586 265.176 153.586 271.669V305.657C153.586 312.151 150.122 318.151 144.498 321.398L115.064 338.392C109.44 341.639 102.511 341.639 96.8877 338.392L67.4534 321.398C61.8297 318.151 58.3653 312.151 58.3653 305.657V271.669C58.3653 265.176 61.8297 259.175 67.4534 255.928L96.8877 238.934Z"
           fill="url(#paint3_radial_4518_56133)"
-          fill-opacity="0.439"
+          fillOpacity="0.439"
         />
       </g>
       <path
@@ -242,8 +242,8 @@ const ArchitectureOfTrust = () => {
         fill="#121314"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M786.5 295.188H790V305.688H786.5V295.188ZM779.5 295.188H783V305.688H779.5V295.188ZM786.5 274.188H790V284.688H786.5V274.188ZM779.5 274.188H783V284.688H779.5V274.188Z"
         fill="#121314"
       />
@@ -267,20 +267,20 @@ const ArchitectureOfTrust = () => {
         <path
           d="M96.8955 658.778C102.519 655.531 109.448 655.531 115.072 658.778L144.506 675.772C150.13 679.019 153.594 685.019 153.594 691.513V725.501C153.594 731.995 150.129 737.995 144.506 741.242L115.071 758.236C109.448 761.482 102.519 761.482 96.8955 758.236L67.4612 741.242C61.8375 737.995 58.3732 731.995 58.3732 725.501V691.513C58.3732 685.019 61.8375 679.019 67.4612 675.772L96.8955 658.778Z"
           fill="white"
-          fill-opacity="0.034"
+          fillOpacity="0.034"
         />
         <path
           d="M96.8955 658.778C102.519 655.531 109.448 655.531 115.072 658.778L144.506 675.772C150.13 679.019 153.594 685.019 153.594 691.513V725.501C153.594 731.995 150.129 737.995 144.506 741.242L115.071 758.236C109.448 761.482 102.519 761.482 96.8955 758.236L67.4612 741.242C61.8375 737.995 58.3732 731.995 58.3732 725.501V691.513C58.3732 685.019 61.8375 679.019 67.4612 675.772L96.8955 658.778Z"
           fill="url(#paint4_radial_4518_56133)"
-          fill-opacity="0.439"
+          fillOpacity="0.439"
         />
       </g>
       <path
         d="M114.167 716.729C113.651 714.8 112.531 713.087 110.972 711.839C109.413 710.592 107.495 709.876 105.5 709.796C103.505 709.876 101.587 710.592 100.028 711.839C98.4689 713.087 97.3494 714.8 96.8333 716.729M115.902 690.036C119.068 691.867 121.698 694.497 123.529 697.663M123.529 718.463C121.698 721.628 119.068 724.258 115.902 726.089M95.1023 726.089C91.9364 724.258 89.3065 721.628 87.4756 718.463M87.4756 697.663C89.3065 694.497 91.9364 691.867 95.1023 690.036M100.3 702.863C100.285 703.554 100.409 704.242 100.664 704.886C100.919 705.529 101.299 706.116 101.783 706.61C102.268 707.105 102.846 707.498 103.484 707.766C104.122 708.034 104.807 708.172 105.499 708.172C106.191 708.172 106.876 708.034 107.514 707.766C108.152 707.498 108.73 707.105 109.214 706.61C109.699 706.116 110.079 705.529 110.334 704.886C110.589 704.242 110.712 703.554 110.698 702.863C110.669 701.503 110.109 700.208 109.137 699.257C108.165 698.305 106.859 697.772 105.499 697.772C104.139 697.772 102.833 698.305 101.861 699.257C100.889 700.208 100.329 701.503 100.3 702.863ZM101.167 686.396C101.167 687.545 101.623 688.647 102.436 689.46C103.249 690.273 104.351 690.729 105.5 690.729C106.649 690.729 107.751 690.273 108.564 689.46C109.377 688.647 109.833 687.545 109.833 686.396C109.833 685.247 109.377 684.144 108.564 683.332C107.751 682.519 106.649 682.062 105.5 682.062C104.351 682.062 103.249 682.519 102.436 683.332C101.623 684.144 101.167 685.247 101.167 686.396ZM122.833 708.063C122.833 709.212 123.29 710.314 124.103 711.127C124.915 711.939 126.017 712.396 127.167 712.396C128.316 712.396 129.418 711.939 130.231 711.127C131.043 710.314 131.5 709.212 131.5 708.063C131.5 706.913 131.043 705.811 130.231 704.998C129.418 704.186 128.316 703.729 127.167 703.729C126.017 703.729 124.915 704.186 124.103 704.998C123.29 705.811 122.833 706.913 122.833 708.063ZM101.167 729.729C101.167 730.878 101.623 731.981 102.436 732.793C103.249 733.606 104.351 734.063 105.5 734.063C106.649 734.063 107.751 733.606 108.564 732.793C109.377 731.981 109.833 730.878 109.833 729.729C109.833 728.58 109.377 727.478 108.564 726.665C107.751 725.852 106.649 725.396 105.5 725.396C104.351 725.396 103.249 725.852 102.436 726.665C101.623 727.478 101.167 728.58 101.167 729.729ZM79.5 708.063C79.5 709.212 79.9565 710.314 80.7692 711.127C81.5819 711.939 82.6841 712.396 83.8333 712.396C84.9826 712.396 86.0848 711.939 86.8975 711.127C87.7101 710.314 88.1667 709.212 88.1667 708.063C88.1667 706.913 87.7101 705.811 86.8975 704.998C86.0848 704.186 84.9826 703.729 83.8333 703.729C82.6841 703.729 81.5819 704.186 80.7692 704.998C79.9565 705.811 79.5 706.913 79.5 708.063Z"
         stroke="white"
         strokeWidth="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M761.584 645.102C768.634 641.031 777.321 641.031 784.372 645.102L822.186 666.934C829.237 671.005 833.58 678.528 833.58 686.669V730.333C833.58 738.475 829.237 745.998 822.186 750.068L784.372 771.901C777.321 775.971 768.634 775.971 761.584 771.901L723.769 750.068C716.719 745.998 712.375 738.475 712.375 730.333V686.669C712.375 678.528 716.719 671.005 723.769 666.934L761.584 645.102Z"
@@ -302,12 +302,12 @@ const ArchitectureOfTrust = () => {
         <path
           d="M763.888 658.778C769.511 655.531 776.44 655.531 782.064 658.778L811.498 675.772C817.122 679.019 820.586 685.019 820.586 691.513V725.501C820.586 731.995 817.122 737.995 811.498 741.242L782.064 758.236C776.44 761.482 769.511 761.482 763.888 758.236L734.453 741.242C728.83 737.995 725.365 731.995 725.365 725.501V691.513C725.365 685.019 728.83 679.019 734.453 675.772L763.888 658.778Z"
           fill="white"
-          fill-opacity="0.034"
+          fillOpacity="0.034"
         />
         <path
           d="M763.888 658.778C769.511 655.531 776.44 655.531 782.064 658.778L811.498 675.772C817.122 679.019 820.586 685.019 820.586 691.513V725.501C820.586 731.995 817.122 737.995 811.498 741.242L782.064 758.236C776.44 761.482 769.511 761.482 763.888 758.236L734.453 741.242C728.83 737.995 725.365 731.995 725.365 725.501V691.513C725.365 685.019 728.83 679.019 734.453 675.772L763.888 658.778Z"
           fill="url(#paint5_radial_4518_56133)"
-          fill-opacity="0.439"
+          fillOpacity="0.439"
         />
       </g>
       <path
@@ -315,8 +315,8 @@ const ArchitectureOfTrust = () => {
         fill="white"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M760.201 689.571L772.895 682.062L784.998 689.492L785.075 703.639L779.067 707.475C779.067 707.475 775.532 704.133 772.318 704.132C769.102 704.132 766.216 707.473 766.216 707.473L760.549 703.656L760.201 689.571ZM761.675 702.367L772.078 696.163L771.97 684.07L761.289 690.422L761.675 702.367ZM762.257 703.894C762.838 703.894 766.071 706.093 766.071 706.093C766.071 706.093 768.991 702.843 772.436 702.948C775.88 703.054 779.211 706.179 779.211 706.179L783.762 703.498L772.798 697.619C772.798 697.619 761.676 703.894 762.257 703.894ZM759.693 734.062L746.844 726.823L747.226 712.627L759.757 705.168L765.766 708.772C765.766 708.772 764.681 713.345 766.288 716.129C767.895 718.914 772.189 719.902 772.189 719.902L772.035 726.718L759.693 734.062ZM770.037 726.387L759.463 720.48L749.045 726.62L759.886 732.695L770.037 726.388L770.037 726.387ZM771.069 725.12C770.779 724.617 771.067 720.718 771.067 720.718C771.067 720.718 766.834 719.655 765.204 716.619C763.573 713.583 764.571 709.295 764.571 709.295L759.973 706.694L760.365 719.129C760.365 719.129 771.36 725.623 771.069 725.12V725.12ZM797.898 712.135L798.053 726.883L785.568 733.65L773.278 726.644L772.96 719.839C772.96 719.839 777.26 718.927 778.869 716.143C780.477 713.359 779.705 708.711 779.705 708.711L785.526 705.395L797.898 712.135ZM786.079 707.015L786.251 719.126L796.777 725.079L796.617 712.652L786.079 707.015ZM784.784 707.073L780.972 709.276C780.972 709.276 781.649 713.907 779.835 716.837C778.021 719.767 774.327 720.613 774.327 720.613L774.374 725.259L784.63 719.021L784.784 707.073Z"
         fill="white"
       />
@@ -335,12 +335,12 @@ const ArchitectureOfTrust = () => {
         <path
           d="M428.497 62.6142C434.121 59.3673 441.049 59.3673 446.673 62.6142L476.107 79.6081C481.731 82.8549 485.195 88.8553 485.195 95.349V129.337C485.195 135.83 481.731 141.831 476.107 145.078L446.673 162.072C441.049 165.318 434.121 165.318 428.497 162.072L399.063 145.078C393.439 141.831 389.975 135.83 389.975 129.337V95.349C389.975 88.8553 393.439 82.8549 399.063 79.6081L428.497 62.6142Z"
           fill="white"
-          fill-opacity="0.034"
+          fillOpacity="0.034"
         />
         <path
           d="M428.497 62.6142C434.121 59.3673 441.049 59.3673 446.673 62.6142L476.107 79.6081C481.731 82.8549 485.195 88.8553 485.195 95.349V129.337C485.195 135.83 481.731 141.831 476.107 145.078L446.673 162.072C441.049 165.318 434.121 165.318 428.497 162.072L399.063 145.078C393.439 141.831 389.975 135.83 389.975 129.337V95.349C389.975 88.8553 393.439 82.8549 399.063 79.6081L428.497 62.6142Z"
           fill="url(#paint6_radial_4518_56133)"
-          fill-opacity="0.439"
+          fillOpacity="0.439"
         />
       </g>
       <path
@@ -376,12 +376,12 @@ const ArchitectureOfTrust = () => {
         <path
           d="M428.497 838.427C434.121 835.18 441.049 835.18 446.673 838.427L476.107 855.421C481.731 858.667 485.195 864.668 485.195 871.161V905.149C485.195 911.643 481.731 917.643 476.107 920.89L446.673 937.884C441.049 941.131 434.121 941.131 428.497 937.884L399.063 920.89C393.439 917.643 389.975 911.643 389.975 905.149V871.161C389.975 864.668 393.439 858.667 399.063 855.421L428.497 838.427Z"
           fill="white"
-          fill-opacity="0.034"
+          fillOpacity="0.034"
         />
         <path
           d="M428.497 838.427C434.121 835.18 441.049 835.18 446.673 838.427L476.107 855.421C481.731 858.667 485.195 864.668 485.195 871.161V905.149C485.195 911.643 481.731 917.643 476.107 920.89L446.673 937.884C441.049 941.131 434.121 941.131 428.497 937.884L399.063 920.89C393.439 917.643 389.975 911.643 389.975 905.149V871.161C389.975 864.668 393.439 858.667 399.063 855.421L428.497 838.427Z"
           fill="url(#paint7_radial_4518_56133)"
-          fill-opacity="0.439"
+          fillOpacity="0.439"
         />
       </g>
       <path
@@ -396,9 +396,9 @@ const ArchitectureOfTrust = () => {
           width="387.788"
           height="387.6"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -417,9 +417,9 @@ const ArchitectureOfTrust = () => {
           width="346.05"
           height="345.863"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -438,9 +438,9 @@ const ArchitectureOfTrust = () => {
           width="324.677"
           height="324.49"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -459,9 +459,9 @@ const ArchitectureOfTrust = () => {
           width="311.448"
           height="311.26"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -480,9 +480,9 @@ const ArchitectureOfTrust = () => {
           width="306.767"
           height="306.579"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -501,9 +501,9 @@ const ArchitectureOfTrust = () => {
           width="306.767"
           height="306.579"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -522,9 +522,9 @@ const ArchitectureOfTrust = () => {
           width="306.767"
           height="306.579"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -543,9 +543,9 @@ const ArchitectureOfTrust = () => {
           width="306.36"
           height="306.173"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -567,9 +567,9 @@ const ArchitectureOfTrust = () => {
           width="135.219"
           height="144.328"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -625,9 +625,9 @@ const ArchitectureOfTrust = () => {
           width="246.686"
           height="255.795"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -738,9 +738,9 @@ const ArchitectureOfTrust = () => {
           width="135.219"
           height="144.328"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -796,9 +796,9 @@ const ArchitectureOfTrust = () => {
           width="135.219"
           height="144.328"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -854,9 +854,9 @@ const ArchitectureOfTrust = () => {
           width="135.219"
           height="144.328"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -912,9 +912,9 @@ const ArchitectureOfTrust = () => {
           width="135.219"
           height="144.328"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -971,8 +971,8 @@ const ArchitectureOfTrust = () => {
           y2="358.943"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3BF5FF" stop-opacity="0" />
-          <stop offset="1" stop-color="#3BF5FF" />
+          <stop stopColor="#3BF5FF" stopOpacity="0" />
+          <stop offset="1" stopColor="#3BF5FF" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4518_56133"
@@ -982,10 +982,10 @@ const ArchitectureOfTrust = () => {
           y2="694.062"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3BF5FF" stop-opacity="0" />
-          <stop offset="0.3" stop-color="#3BF5FF" />
-          <stop offset="0.7" stop-color="#3BF5FF" />
-          <stop offset="1" stop-color="#3BF5FF" stop-opacity="0" />
+          <stop stopColor="#3BF5FF" stopOpacity="0" />
+          <stop offset="0.3" stopColor="#3BF5FF" />
+          <stop offset="0.7" stopColor="#3BF5FF" />
+          <stop offset="1" stopColor="#3BF5FF" stopOpacity="0" />
         </linearGradient>
         <radialGradient
           id="paint3_radial_4518_56133"
@@ -995,8 +995,8 @@ const ArchitectureOfTrust = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(105.976 343.639) rotate(-90) scale(76.5407 58.3439)"
         >
-          <stop stop-color="white" stop-opacity="0.034" />
-          <stop offset="1" stop-color="#121314" stop-opacity="0.439" />
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
         </radialGradient>
         <radialGradient
           id="paint4_radial_4518_56133"
@@ -1006,8 +1006,8 @@ const ArchitectureOfTrust = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(105.984 763.483) rotate(-90) scale(76.5407 58.3439)"
         >
-          <stop stop-color="white" stop-opacity="0.034" />
-          <stop offset="1" stop-color="#121314" stop-opacity="0.439" />
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
         </radialGradient>
         <radialGradient
           id="paint5_radial_4518_56133"
@@ -1017,8 +1017,8 @@ const ArchitectureOfTrust = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(772.976 763.483) rotate(-90) scale(76.5407 58.3439)"
         >
-          <stop stop-color="white" stop-opacity="0.034" />
-          <stop offset="1" stop-color="#121314" stop-opacity="0.439" />
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
         </radialGradient>
         <radialGradient
           id="paint6_radial_4518_56133"
@@ -1028,8 +1028,8 @@ const ArchitectureOfTrust = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(437.585 167.319) rotate(-90) scale(76.5407 58.3439)"
         >
-          <stop stop-color="white" stop-opacity="0.034" />
-          <stop offset="1" stop-color="#121314" stop-opacity="0.439" />
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
         </radialGradient>
         <radialGradient
           id="paint7_radial_4518_56133"
@@ -1039,8 +1039,8 @@ const ArchitectureOfTrust = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(437.585 943.131) rotate(-90) scale(76.5407 58.3439)"
         >
-          <stop stop-color="white" stop-opacity="0.034" />
-          <stop offset="1" stop-color="#121314" stop-opacity="0.439" />
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
         </radialGradient>
       </defs>
     </svg>

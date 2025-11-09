@@ -149,7 +149,7 @@ const PartnerDetailsContent = React.memo(function PartnerDetailsContent({
                 Publications
               </h4>
               <div className="flex flex-col gap-1">
-                {partner.publications.map((pub, i) => (
+                {partner.publications?.map((pub, i) => (
                   <div
                     key={`${pub?.name || "pub"}-${i}`}
                     className={
@@ -320,7 +320,7 @@ const Partnership = () => {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 lg:gap-10 place-items-left">
-          {partners.map((item) => (
+          {partners?.map((item) => (
             <div
               key={Math.random()}
               className="group flex items-center justify-left overflow-hidden"

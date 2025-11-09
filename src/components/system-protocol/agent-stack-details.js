@@ -21,7 +21,7 @@ const AgentStackContent = memo(function AgentStackContent() {
         <div className="space-y-3 lg:space-y-4" key={index}>
           <h2 className="content-heading">{item.sectionTitle}</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-2 lg:gap-3">
-            {item.items.map((list, idx) => (
+            {item.items?.map((list, idx) => (
               <ColorCard key={idx} variant={list.color}>
                 <div className="space-y-2">
                   <h6 className="font-semibold text-base lg:text-2xl lg:leading-8">
@@ -41,7 +41,7 @@ const AgentStackContent = memo(function AgentStackContent() {
         <div className="space-y-3 lg:space-y-4" key={index}>
           <h2 className="content-heading">{item.sectionTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 md:gap-2 lg:gap-3">
-            {item.items.map((list, idx) => (
+            {item.items?.map((list, idx) => (
               <GrayCard key={idx}>
                 <div className="space-y-2">
                   <h6 className="text-Content-Primary font-semibold text-base lg:text-2xl lg:leading-8">
