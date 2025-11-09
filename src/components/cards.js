@@ -19,7 +19,7 @@ const BlackCardSmall = ({ additionalStyle = "", children }) => {
 const BlackCardXS = ({ additionalStyle = "", children }) => {
   return (
     <div
-      className={`backdrop-blur-[10px] p-[1.25rem] md:p-[1.5rem] lg:p-[2rem] rounded-[1.5rem] md:rounded-[2rem] bg-Overlays-Black-9 shadow-boxPrimary z-101 ${additionalStyle}`}
+      className={`backdrop-blur-[10px] p-[1.25rem] md:p-[1.5rem] lg:p-[2rem] rounded-[1.5rem] md:rounded-[2rem] bg-Overlays-Black-9 shadow-boxPrimary ${additionalStyle}`}
     >
       {children}
     </div>

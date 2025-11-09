@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo, useMemo } from "react";
+import React, { memo } from "react";
 import Image from "next/image";
 import Tooltip from "../tooltip";
 
@@ -164,9 +164,9 @@ const EvolutionNode = memo(function EvolutionNode({ item }) {
 });
 
 const FirstPart = memo(function FirstPart() {
-  const domains = useMemo(() => KEY_ENTERPRISE_DOMAINS || [], []);
-  const safety = useMemo(() => SAFE_BY_DESIGN || [], []);
-  const infra = useMemo(() => RUN_ANYWHERE || [], []);
+  const domains = memo(() => KEY_ENTERPRISE_DOMAINS || [], []);
+  const safety = memo(() => SAFE_BY_DESIGN || [], []);
+  const infra = memo(() => RUN_ANYWHERE || [], []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-3 lg:gap-4">
@@ -226,7 +226,7 @@ const FirstPart = memo(function FirstPart() {
 });
 
 const EvolutionPath = memo(function EvolutionPath() {
-  const path = useMemo(() => EVOLUTION_PATH || [], []);
+  const path = memo(() => EVOLUTION_PATH || [], []);
 
   return (
     <div
