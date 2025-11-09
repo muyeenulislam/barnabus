@@ -16,6 +16,15 @@ const BlackCardSmall = ({ additionalStyle = "", children }) => {
     </div>
   );
 };
+const BlackCardXS = ({ additionalStyle = "", children }) => {
+  return (
+    <div
+      className={`backdrop-blur-[10px] p-[1.25rem] md:p-[1.5rem] lg:p-[2rem] rounded-[1.5rem] md:rounded-[2rem] bg-Overlays-Black-9 shadow-boxPrimary z-101 ${additionalStyle}`}
+    >
+      {children}
+    </div>
+  );
+};
 const GrayCard = ({ additionalStyle = "", children }) => {
   return (
     <div
@@ -43,4 +52,4 @@ const ColorCard = ({ additionalStyle = "", variant = "green", children }) => {
   );
 };
 
-export { BlackCardDefault, BlackCardSmall, GrayCard, ColorCard };
+export { BlackCardDefault, BlackCardSmall, GrayCard, ColorCard, BlackCardXS };
