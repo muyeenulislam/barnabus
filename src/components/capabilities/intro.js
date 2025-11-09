@@ -2,7 +2,7 @@ import React from "react";
 
 const CapabilitiesIntro = () => {
   return (
-    <div className="page-intro">
+    <section className="page-intro">
       <div className="page-intro-inner md:max-w-[30rem] lg:max-w-[40rem]">
         <h1 className="page-intro-heading">
           The Architecture of{" "}
@@ -19,7 +19,7 @@ const CapabilitiesIntro = () => {
           <strong>foundations of AGI.</strong>
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

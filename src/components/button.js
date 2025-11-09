@@ -58,12 +58,18 @@ const VARIANT_STYLES = {
     "text-action-buttons-secondary-content-default-pressed-hover",
     "shadow-SecondaryButton",
   ].join(" "),
+  Pulse: [
+    "bg-backgroundDarkGray",
+    "text-Content-Brand-Accent",
+    "shadow-pulseButton",
+  ].join(" "),
 };
 
 const Button = ({
   label = "",
   leadingIcon = null,
   trailingIcon = null,
+  trailingIconNeon = null,
   leadingBadge = null,
   trailingBadge = null,
   size = "L",
@@ -74,10 +80,14 @@ const Button = ({
   onClick,
   loading = false,
   disabled = false,
+  /** NEW: enable subtle pulse animation when true */
+  pulse = false,
   ...rest
 }) => {
   const s = SIZE_STYLES[size] || SIZE_STYLES.L;
-  const v = VARIANT_STYLES[variant] || VARIANT_STYLES["Primary-Default"];
+  const v = pulse
+    ? VARIANT_STYLES["Pulse"]
+    : VARIANT_STYLES[variant] || VARIANT_STYLES["Primary-Default"];
   const iconSize = s.icon;
 
   return (
@@ -90,6 +100,7 @@ const Button = ({
         s.gap,
         v,
         "backdrop-blur-lg",
+        pulse ? "pulse" : "",
         className,
         additionalStyle,
       ].join(" ")}
@@ -121,7 +132,7 @@ const Button = ({
 
       {label}
 
-      {!loading && trailingIcon && (
+      {!loading && !pulse && trailingIcon && (
         <Image
           src={trailingIcon}
           alt="trailing icon"
@@ -131,6 +142,17 @@ const Button = ({
           className={s.iconSize}
         />
       )}
+      {!loading && pulse && trailingIconNeon && (
+        <Image
+          src={trailingIconNeon}
+          alt="trailing icon neon"
+          height={iconSize}
+          width={iconSize}
+          aria-hidden="true"
+          className={s.iconSize}
+        />
+      )}
+
       {loading && (
         <FiLoader
           className={`${s.iconSize} motion-safe:animate-[spin_1.6s_linear_infinite]`}
@@ -162,6 +184,7 @@ Button.propTypes = {
   className: PropTypes.string,
   additionalStyle: PropTypes.string,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
+  pulse: PropTypes.bool,
 };
 
 export default Button;

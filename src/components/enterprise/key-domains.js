@@ -128,10 +128,10 @@ const EvolutionNode = memo(function EvolutionNode({ item }) {
 
   return (
     <div
-      className={`flex lg:flex-col ${SECTION_GAPS} items-center lg:justify-center`}
+      className={`group flex lg:flex-col ${SECTION_GAPS} items-center lg:justify-center`}
     >
       <Tooltip
-        trigger="click"
+        trigger="hover"
         placement={placement}
         offset={12}
         arrowSide={arrowSide}
@@ -155,7 +155,7 @@ const EvolutionNode = memo(function EvolutionNode({ item }) {
         <p className="text-Content-Tertiary text-xs leading-4 md:text-sm md:leading-5 lg:text-base lg:leading-5">
           Phase {phase}
         </p>
-        <h6 className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7">
+        <h6 className="text-Content-Primary text-sm leading-5 md:text-base md:leading-6 lg:text-xl lg:leading-7 transition-colors group-hover:text-Content-Brand-Accent">
           {title}
         </h6>
       </div>
@@ -229,7 +229,10 @@ const EvolutionPath = memo(function EvolutionPath() {
   const path = useMemo(() => EVOLUTION_PATH || [], []);
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-col pt-[2.5rem] md:pt-[3rem] lg:pt-[4rem] gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem]">
+    <div
+      className="flex flex-col md:flex-row lg:flex-col pt-[2.5rem] md:pt-[3rem] lg:pt-[4rem] gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem]"
+      id="evolution-path"
+    >
       <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 text-center md:text-left lg:text-center md:w-1/2 lg:w-full">
         <h2 className="h2-title">The Evolution Path</h2>
         <p className="p-subtitle">Your Systems Today. Smarter Tomorrow.</p>
@@ -254,10 +257,16 @@ const EvolutionPath = memo(function EvolutionPath() {
 
 function KeyEnterpriseDomains() {
   return (
-    <section className="section-wrapper" aria-labelledby="key-domains-heading">
-      <FirstPart />
-      <EvolutionPath />
-    </section>
+    <div className="gray-gradient-bg">
+      <section
+        className="section-wrapper"
+        aria-labelledby="key-domains-heading"
+      >
+        <FirstPart />
+
+        <EvolutionPath />
+      </section>
+    </div>
   );
 }
 

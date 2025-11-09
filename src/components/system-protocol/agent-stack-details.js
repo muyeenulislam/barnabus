@@ -74,12 +74,13 @@ const AgentStackDetails = memo(function AgentStackDetails() {
   const isOpen = isMobile ? drawerOpen : showAgentStack;
 
   return (
-    <div>
+    <div id="agent-stack-details">
       <div className="relative w-full py-[2rem] flex justify-center items-center">
         <div
           className={`absolute h-[0.1875rem] w-full top-1/2 block ${H_LINE}`}
         />
         <Button
+          pulse={!showAgentStack}
           label={
             isOpen
               ? "Click to Hide Agent Stack Details"
@@ -98,6 +99,7 @@ const AgentStackDetails = memo(function AgentStackDetails() {
               ? "/icons/circle-arrow-up-black.svg"
               : "/icons/circle-arrow-down-black.svg"
           }
+          trailingIconNeon="/icons/circle-arrow-down-neon.svg"
           onClick={() => {
             if (isMobile) {
               setDrawerOpen(true);

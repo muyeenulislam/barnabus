@@ -9,7 +9,7 @@ import addLineBreaks from "@/utils/add-line-break";
 
 const SolutionsImage = memo(function SolutionsImage() {
   return (
-    <div className="space-y-[2.5rem] md:space-y-[3rem] lg:space-y-[4rem] py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] !pt-[2rem]">
+    <div className="space-y-[2.5rem] md:space-y-[3rem] lg:space-y-[4rem] py-[4rem] md:py-[6rem] lg:py-[8rem] !pt-[2rem]">
       <div className="flex flex-col gap-2 md:gap-5 lg:gap-6 justify-center items-center text-center ">
         <h2 className="h2-title md:max-w-[55rem]">
           Transforming How Every Domain Thinks, Acts, and Learns
@@ -107,9 +107,13 @@ const SolutionsPoints = memo(function SolutionsPoints() {
 const SolutionsSteps = () => {
   return (
     <>
-      <SolutionsImage />
-      <div className="section-wrapper">
-        <SolutionsPoints />
+      <section>
+        <SolutionsImage />
+      </section>
+      <div className="gray-gradient-bg">
+        <section className="section-wrapper">
+          <SolutionsPoints />
+        </section>
       </div>
     </>
   );

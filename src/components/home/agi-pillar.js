@@ -156,10 +156,10 @@ const EcoBreakdown = memo(function EcoBreakdown() {
 
 const AgiPillar = () => {
   return (
-    <div className="py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:p-[16rem] lg:pt-0 flex flex-col gap-[4rem] md:gap-[6rem] lg:gap-[6rem]">
+    <section className="py-[4rem] md:py-[6rem] lg:py-[16rem] lg:pt-0 flex flex-col gap-[4rem] md:gap-[6rem] lg:gap-[6rem]">
       <ProgressTracker />
       <EcoBreakdown />
-    </div>
+    </section>
   );
 };
 

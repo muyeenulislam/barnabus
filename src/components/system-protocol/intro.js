@@ -4,6 +4,7 @@ import React, { memo } from "react";
 import Link from "next/link";
 
 import useScreenSize from "@/utils/usescreensize";
+import handleCenterScroll from "@/utils/handle-center-scroll";
 
 import Button from "../button";
 import { BlackCardDefault } from "../cards";
@@ -26,7 +27,12 @@ const ProtocolIntro = memo(function ProtocolIntro() {
           Barnabus operates through a modular protocol of intelligence agents
           that route, decide, act, and evolve.
         </p>
-        <Link href="#" className="w-full md:w-max my-6 md:my-8 lg:my-10">
+        <Link
+          href="#agent-stack-details"
+          className="w-full md:w-max my-6 md:my-8 lg:my-10"
+          scroll={false}
+          onClick={(e) => handleCenterScroll(e, "agent-stack-details")}
+        >
           <Button
             size={
               screenSize.width < 768

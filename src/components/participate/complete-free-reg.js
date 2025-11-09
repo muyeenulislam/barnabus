@@ -62,12 +62,12 @@ const SectionIntro = memo(function SectionIntro() {
 
 const CompleteFreeRegistration = () => {
   return (
-    <div className="py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[6rem]">
+    <section className="py-[4rem] md:py-[6rem] lg:py-[8rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[6rem]">
       <SectionIntro />
       <div className="lg:w-[65%]">
         <CompleteFreeRegistrationForm />
       </div>
-    </div>
+    </section>
   );
 };
 

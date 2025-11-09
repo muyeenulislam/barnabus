@@ -10,13 +10,17 @@ import { BAA } from "@/utils/arrays";
 const Page = () => {
   return (
     <SectionStartingGradient>
-      <BAAIntro />
-      <BAAPageInfo
-        title={`Business Associate\nAgreement (BAA)`}
-        topRightText="Effective Date"
-        date="Aug 27, 2025"
-      />
-      <BAASections list={BAA} />
+      <div className="gray-gradient-bg">
+        <section>
+          <BAAIntro />
+          <BAAPageInfo
+            title={`Business Associate\nAgreement (BAA)`}
+            topRightText="Effective Date"
+            date="Aug 27, 2025"
+          />
+          <BAASections list={BAA} />
+        </section>
+      </div>
     </SectionStartingGradient>
   );
 };

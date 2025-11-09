@@ -9,7 +9,7 @@ import addLineBreaks from "@/utils/add-line-break";
 
 const CapabilitiesImage = memo(function CapabilitiesImage() {
   return (
-    <div className="space-y-[2rem] py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:py-[8rem] lg:px-[16rem] !pt-0">
+    <div className="space-y-[2rem] py-[4rem] md:py-[6rem] lg:py-[8rem] !pt-0">
       <Image
         src="/images/capabilities.png"
         height={1200}
@@ -52,9 +52,13 @@ const CapabilitiesPoints = memo(function CapabilitiesPoints() {
 const CapabilitiesSteps = () => {
   return (
     <>
-      <CapabilitiesImage />
-      <div className="section-wrapper">
-        <CapabilitiesPoints />
+      <section>
+        <CapabilitiesImage />
+      </section>
+      <div className="gray-gradient-bg">
+        <section className="section-wrapper">
+          <CapabilitiesPoints />
+        </section>
       </div>
     </>
   );

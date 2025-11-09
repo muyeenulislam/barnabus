@@ -42,10 +42,10 @@ const KeyPoints = memo(function KeyPoints() {
 
 const Intelligence = () => {
   return (
-    <div className="py-[4rem] px-[2rem] md:py-[6rem] md:px-[2.5rem] lg:p-[16rem] flex flex-col gap-4.5 md:gap-6 lg:gap-[4rem]">
+    <section className="py-[4rem] md:py-[6rem] lg:py-[16rem] flex flex-col gap-4.5 md:gap-6 lg:gap-[4rem]">
       <SectionIntro />
       <KeyPoints />
-    </div>
+    </section>
   );
 };
 

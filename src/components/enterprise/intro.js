@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Button from "../button";
 import Link from "next/link";
@@ -6,10 +8,11 @@ import Image from "next/image";
 import { BlackCardDefault } from "../cards";
 
 import { GRADE_INTELLIGENCE } from "@/utils/arrays";
+import handleCenterScroll from "@/utils/handle-center-scroll";
 
 const EnterpriseIntro = () => {
   return (
-    <div className="page-intro">
+    <section className="page-intro">
       <div className="page-intro-inner z-101">
         <h1 className="page-intro-heading">
           Agentic Infrastructure for the{" "}
@@ -21,7 +24,12 @@ const EnterpriseIntro = () => {
           Whether you&apos;re securing a network, managing clinical workflows,
           or simulating industrial systems — Barnabus adapts to your world.
         </p>
-        <Link href={"#"} className="lg:my-8 w-full">
+        <Link
+          href={"#evolution-path"}
+          className="lg:my-8 w-full"
+          scroll={false}
+          onClick={(e) => handleCenterScroll(e, "evolution-path")}
+        >
           <Button
             label="See Use Cases"
             trailingIcon="/icons/circle-arrow-right.svg"
@@ -64,7 +72,7 @@ const EnterpriseIntro = () => {
           </div>
         </div>
       </BlackCardDefault>
-    </div>
+    </section>
   );
 };
 

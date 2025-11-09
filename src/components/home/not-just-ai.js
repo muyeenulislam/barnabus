@@ -23,7 +23,7 @@ const SectionIntro = memo(function SectionIntro() {
 
 const NotJustAI = () => {
   return (
-    <div className="py-[4rem] px-[1.5rem] md:py-[6rem] md:px-[2.5rem] lg:p-[16rem] flex flex-col gap-[4rem] md:gap-[6rem] lg:gap-[6rem]">
+    <section className="py-[4rem] md:py-[6rem] lg:py-[16rem] flex flex-col gap-[4rem] md:gap-[6rem] lg:gap-[6rem]">
       <SectionIntro />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-1.5 md:gap-2 lg:gap-4">
         {NOT_JUST_AI_LIST?.map((item, index) => (
@@ -77,7 +77,7 @@ const NotJustAI = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

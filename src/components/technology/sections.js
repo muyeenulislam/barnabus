@@ -136,33 +136,35 @@ const TechnologySections = ({ stack = TECHNOLOGY_STACK || [] }) => {
   const safeStack = Array.isArray(stack) ? stack.filter(Boolean) : [];
 
   return (
-    <div className="section-wrapper">
-      <div className={cx("flex flex-col", BLOCK_GAPS)}>
-        {safeStack.map((section, idx) => (
-          <SectionBlock
-            key={`${slug(section.title)}-${idx}`}
-            section={section}
-            index={idx}
-          />
-        ))}
-        <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
-          <div className="flex flex-col md:flex-row gap-5 md:gap-12 lg:gap-16">
-            <h3 className="content-heading md:w-1/2">
-              A Living System, Not a Static Platform
-            </h3>
+    <div className="gray-gradient-bg">
+      <section className="section-wrapper">
+        <div className={cx("flex flex-col", BLOCK_GAPS)}>
+          {safeStack.map((section, idx) => (
+            <SectionBlock
+              key={`${slug(section.title)}-${idx}`}
+              section={section}
+              index={idx}
+            />
+          ))}
+          <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
+            <div className="flex flex-col md:flex-row gap-5 md:gap-12 lg:gap-16">
+              <h3 className="content-heading md:w-1/2">
+                A Living System, Not a Static Platform
+              </h3>
 
-            <p className="content-subheading md:w-1/2">
-              Barnabus redefines what intelligence infrastructure means.It’s not
-              a black box — it’s a transparent, adaptive ecosystem designed to
-              serve industries where accuracy, governance, and human trust
-              define success.
-              <br />
-              <br /> Every agent built on Barnabus doesn’t just automate.It
-              understands. Learns. Evolves.
-            </p>
-          </div>
-        </BlackCardDefault>
-      </div>
+              <p className="content-subheading md:w-1/2">
+                Barnabus redefines what intelligence infrastructure means.It’s
+                not a black box — it’s a transparent, adaptive ecosystem
+                designed to serve industries where accuracy, governance, and
+                human trust define success.
+                <br />
+                <br /> Every agent built on Barnabus doesn’t just automate.It
+                understands. Learns. Evolves.
+              </p>
+            </div>
+          </BlackCardDefault>
+        </div>
+      </section>
     </div>
   );
 };

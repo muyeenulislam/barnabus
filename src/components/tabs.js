@@ -49,8 +49,10 @@ function BaseTabs({
         >
           <div
             className={`w-full ${
-              isMobile ? "hidden" : "block"
-            } p-0.5 lg:p-1 overscroll-x-contain touch-pan-x`}
+              isMobile && showBottomSheet ? "hidden" : "block"
+            } ${
+              variant === "primary" && "p-0.5 lg:p-1"
+            }  overscroll-x-contain touch-pan-x`}
           >
             <div
               role="tablist"

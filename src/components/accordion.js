@@ -44,7 +44,7 @@ export default function Accordion({
         const btnId = `acc-btn-${index}`;
 
         return (
-          <section
+          <div
             key={index}
             className={`${
               index !== 0 ? "border-t border-white/10" : ""
@@ -76,8 +76,8 @@ export default function Accordion({
                       transition-all duration-300 ease-out motion-reduce:transition-none
                       ${
                         isOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 -translate-y-1"
+                          ? "opacity-100 h-max translate-y-0"
+                          : "opacity-0 h-0 -translate-y-1"
                       }
                     `}
                   >
@@ -116,7 +116,7 @@ export default function Accordion({
                 </motion.div>
               )}
             </AnimatePresence>
-          </section>
+          </div>
         );
       })}
     </div>

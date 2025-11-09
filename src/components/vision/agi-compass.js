@@ -64,10 +64,12 @@ const PointCards = memo(function PointCards() {
 
 const AGICompass = () => {
   return (
-    <div className="section-wrapper">
-      <SectionIntro />
-      <NorthStarImage />
-      <PointCards />
+    <div className="gray-gradient-bg-50">
+      <section className="section-wrapper">
+        <SectionIntro />
+        <NorthStarImage />
+        <PointCards />
+      </section>
     </div>
   );
 };

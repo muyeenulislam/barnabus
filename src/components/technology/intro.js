@@ -2,7 +2,7 @@ import React from "react";
 
 const TechnologyIntro = () => {
   return (
-    <div className="page-intro">
+    <section className="page-intro">
       <div className="page-intro-inner md:max-w-[40rem] lg:max-w-[50rem]">
         <h1 className="page-intro-heading">
           The Living <br />
@@ -20,7 +20,7 @@ const TechnologyIntro = () => {
           continuously adaptive ecosystem.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

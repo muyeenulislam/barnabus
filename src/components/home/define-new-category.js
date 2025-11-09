@@ -422,99 +422,101 @@ const DefineNewCategory = () => {
   const screenSize = useScreenSize();
 
   return (
-    <div className="section-wrapper">
-      <SectionIntro />
+    <div className="gray-gradient-bg">
+      <section className="section-wrapper">
+        <SectionIntro />
 
-      {/* Comparison */}
-      <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
-        <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-16 ">
-          <div className="flex flex-col gap-3 md:gap-6 w-3/4 lg:w-1/3">
-            <h3 className="content-heading">
-              Comparison Between Barnabus’s Value Proposition and Key
-              Differentiators
-            </h3>
-            <p className="content-subheading">
-              Barnabus replaces dashboards, chatbots, and pipelines with living,
-              thinking agents.
-            </p>
-          </div>
-
-          <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
-            <ComparisonTable rows={DEFINE_NEW_CATEGORY_TABLE_CONTENT} />
-            <p className="font-semibold text-Brand-Accent-Alpha-200 text-xs leading-4 md:text-sm md:leading-5 lg:text-lg lg:leading-6">
-              Agentic AI doesn’t just answer — it collaborates, adapts, and
-              grows with you.
-            </p>
-          </div>
-        </div>
-      </BlackCardDefault>
-
-      {/* Cards grid */}
-      <div className="pt-[4rem] lg:pt-[6rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-x-2 md:gap-y-6 lg:gap-4">
-          {/* Left column with CTA */}
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center lg:flex-col lg:justify-start lg:items-start gap-8 lg:gap-10 md:col-span-2 lg:col-span-1 pb-4 md:pb-0">
-            <div className="flex flex-col gap-1 lg:gap-3">
-              <h3 className="content-heading">Why Barnabus Is Different</h3>
+        {/* Comparison */}
+        <BlackCardDefault additionalStyle="!bg-Overlays-Black-9">
+          <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-16 ">
+            <div className="flex flex-col gap-3 md:gap-6 w-3/4 lg:w-1/3">
+              <h3 className="content-heading">
+                Comparison Between Barnabus’s Value Proposition and Key
+                Differentiators
+              </h3>
               <p className="content-subheading">
-                Improving semiconductor manufacturing throughput
+                Barnabus replaces dashboards, chatbots, and pipelines with
+                living, thinking agents.
               </p>
             </div>
-            <Button
-              size={screenSize.width >= 1024 ? "XL" : "L"}
-              variant="Secondary"
-              label="See the Difference"
-              trailingIcon="/icons/arrow-right.svg"
-              additionalStyle="!hidden lg:!flex"
-            />
+
+            <div className="lg:w-2/3 flex flex-col text-center justify-between gap-2 md:gap-3">
+              <ComparisonTable rows={DEFINE_NEW_CATEGORY_TABLE_CONTENT} />
+              <p className="font-semibold text-Brand-Accent-Alpha-200 text-xs leading-4 md:text-sm md:leading-5 lg:text-lg lg:leading-6">
+                Agentic AI doesn’t just answer — it collaborates, adapts, and
+                grows with you.
+              </p>
+            </div>
           </div>
+        </BlackCardDefault>
 
-          <ThinkActLearn />
-          <DomainMemory />
-
-          {/* Human UX + Clinical */}
-          <div className="md:col-span-2 lg:col-span-3 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-container relative overflow-hidden p-4 md:p-5 lg:p-12 !pb-0">
-            <div
-              className="h-[25rem] w-[33rem] rounded-[33rem] absolute right-[-22rem] bottom-[-14rem] lg:right-0 lg:bottom-[-10.75rem] bg-Brand-Accent-Alpha-200/25 blur-[50px] z-[100] pointer-events-none"
-              aria-hidden="true"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-end">
-              {/* Human UX */}
-              <div className="flex flex-col lg:gap-[1rem] lg:max-w-[50%]">
-                <div className="flex flex-col gap-1 lg:gap-3 mb-4">
-                  <h3 className="card-heading">Human UX</h3>
-                  <p className="card-subheading">
-                    Designed for real interaction, not backend workflows.
-                  </p>
-                </div>
-                <HumanUXList items={HUMAN_UX_ITEMS} />
+        {/* Cards grid */}
+        <div className="pt-[4rem] lg:pt-[6rem]" id="future-updates">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-x-2 md:gap-y-6 lg:gap-4">
+            {/* Left column with CTA */}
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center lg:flex-col lg:justify-start lg:items-start gap-8 lg:gap-10 md:col-span-2 lg:col-span-1 pb-4 md:pb-0">
+              <div className="flex flex-col gap-1 lg:gap-3">
+                <h3 className="content-heading">Why Barnabus Is Different</h3>
+                <p className="content-subheading">
+                  Improving semiconductor manufacturing throughput
+                </p>
               </div>
+              <Button
+                size={screenSize.width >= 1024 ? "XL" : "L"}
+                variant="Secondary"
+                label="See the Difference"
+                trailingIcon="/icons/arrow-right.svg"
+                additionalStyle="!hidden lg:!flex"
+              />
+            </div>
 
-              {/* Clinical feed panel */}
-              <div className="flex flex-col p-[1rem] lg:p-[1.5rem] gap-2.5 lg:gap-3 rounded-t-[1.3rem] lg:rounded-t-3xl bg-Surface0 shadow-boxPrimary max-w-[90%] lg:max-w-[75%] relative h-max">
-                <div className="flex flex-col gap-2">
-                  <h6 className="text-Content-Primary font-semibold text-[0.56rem] leading-[0.6rem] lg:text-base lg:leading-[1.18rem]">
-                    Healthcare Clinical Feed
-                  </h6>
-                  <p className="text-Content-Tertiary text-[0.4rem] leading-2 lg:text-[0.75rem] lg:leading-4">
-                    Agents run in parallel with a shared context layer for the
-                    selected goal.
-                  </p>
+            <ThinkActLearn />
+            <DomainMemory />
+
+            {/* Human UX + Clinical */}
+            <div className="md:col-span-2 lg:col-span-3 rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[3rem] bg-Overlays-Black-9 shadow-container relative overflow-hidden p-4 md:p-5 lg:p-12 !pb-0">
+              <div
+                className="h-[25rem] w-[33rem] rounded-[33rem] absolute right-[-22rem] bottom-[-14rem] lg:right-0 lg:bottom-[-10.75rem] bg-Brand-Accent-Alpha-200/25 blur-[50px] z-[100] pointer-events-none"
+                aria-hidden="true"
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-end">
+                {/* Human UX */}
+                <div className="flex flex-col lg:gap-[1rem] lg:max-w-[50%]">
+                  <div className="flex flex-col gap-1 lg:gap-3 mb-4">
+                    <h3 className="card-heading">Human UX</h3>
+                    <p className="card-subheading">
+                      Designed for real interaction, not backend workflows.
+                    </p>
+                  </div>
+                  <HumanUXList items={HUMAN_UX_ITEMS} />
                 </div>
 
-                <ClinicalFeed items={CLINICAL_FEED} />
+                {/* Clinical feed panel */}
+                <div className="flex flex-col p-[1rem] lg:p-[1.5rem] gap-2.5 lg:gap-3 rounded-t-[1.3rem] lg:rounded-t-3xl bg-Surface0 shadow-boxPrimary max-w-[90%] lg:max-w-[75%] relative h-max">
+                  <div className="flex flex-col gap-2">
+                    <h6 className="text-Content-Primary font-semibold text-[0.56rem] leading-[0.6rem] lg:text-base lg:leading-[1.18rem]">
+                      Healthcare Clinical Feed
+                    </h6>
+                    <p className="text-Content-Tertiary text-[0.4rem] leading-2 lg:text-[0.75rem] lg:leading-4">
+                      Agents run in parallel with a shared context layer for the
+                      selected goal.
+                    </p>
+                  </div>
 
-                <div className="flex flex-col gap-2 absolute max-w-[20rem] lg:max-w-[25rem] bottom-[-2rem] lg:bottom-[-6rem] right-[-14rem] lg:right-[-9rem] z-[100]">
-                  {CLINICAL_FEED_SUMMARY.map((it, i) => (
-                    <ClinicalSummaryCard key={`${it.title}-${i}`} item={it} />
-                  ))}
+                  <ClinicalFeed items={CLINICAL_FEED} />
+
+                  <div className="flex flex-col gap-2 absolute max-w-[20rem] lg:max-w-[25rem] bottom-[-2rem] lg:bottom-[-6rem] right-[-14rem] lg:right-[-9rem] z-[100]">
+                    {CLINICAL_FEED_SUMMARY.map((it, i) => (
+                      <ClinicalSummaryCard key={`${it.title}-${i}`} item={it} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+            {/* /Human UX + Clinical */}
           </div>
-          {/* /Human UX + Clinical */}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

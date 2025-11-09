@@ -145,6 +145,9 @@
   --shadow-participateBlackCard: 0 0 3.323px 0 rgba(59, 245, 255, 0.5);
   --shadow-participateNeonCard: 0 0 3.323px 0 #3bf5ff, 0 0 0.831px 0 #3bf5ff,
     0 0 0.498px 0 #3bf5ff;
+  --shadow-pulseButton: 0 0 0 1px #3bf5ff inset, 0 0 5px 2px #009199 inset,
+    0 0 0 2px #3bf5ff, 0 0 0 10px rgba(59, 245, 255, 0.5),
+    0 0 0 25px rgba(59, 245, 255, 0.1);
 
   /* Fonts (kept as-is so Next.js font var works) */
   --font-outfit: var(--font-outfit);
@@ -156,7 +159,7 @@ html {
   /* scrollbar-gutter: stable both-edges; */
 }
 
-@media (min-width: 5760px) {
+/* @media (min-width: 5760px) {
   html {
     font-size: 48.2px;
   }
@@ -196,7 +199,7 @@ html {
   html {
     font-size: 16px;
   }
-}
+} */
 
 @media (min-width: 1745px) and (max-width: 1919px) {
   html {
@@ -242,6 +245,13 @@ body {
 
 a {
   text-decoration: none !important;
+}
+
+section {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: 1.5rem !important;
+  margin-inline: 0;
 }
 
 .glowyBoxBg {
@@ -302,7 +312,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1.5rem;
+  padding-block: 2rem;
   gap: 3.5rem;
 }
 .page-intro-inner {
@@ -339,11 +349,10 @@ a {
   line-height: 1.5rem;
 }
 .section-wrapper {
-  background: linear-gradient(180deg, #121314 0%, #1f2021 50%);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding: 2rem 1.5rem;
+  padding-block: 2rem;
 }
 .shadow-container::before {
   content: "";
@@ -392,13 +401,23 @@ a {
   mask-size: 100% 100%;
 }
 
+.gray-gradient-bg {
+  background: linear-gradient(180deg, #121314 0%, #1f2021 75%);
+}
+.gray-gradient-bg-50 {
+  background: linear-gradient(180deg, #121314 0%, #1f2021 50%);
+}
+
 @media (min-width: 768px) {
+  section {
+    padding-inline: 2.5rem !important; /* 40px left & right */
+  }
   .card-heading {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
   }
   .page-intro {
-    padding: 3rem 2.5rem !important;
+    padding-block: 3rem !important;
     gap: 4rem !important;
   }
   .page-intro-heading {
@@ -415,7 +434,7 @@ a {
   }
   .section-wrapper {
     gap: 3rem !important;
-    padding: 3rem 2.5rem !important;
+    padding-block: 3rem !important;
   }
   .shadow-container::before {
     border-radius: 1.5rem !important;
@@ -426,6 +445,9 @@ a {
 }
 
 @media (min-width: 1024px) {
+  section {
+    padding-inline: 8rem !important; /* 128px left & right */
+  }
   .content-heading {
     font-size: 2.5rem !important;
     line-height: 3rem !important;
@@ -443,7 +465,7 @@ a {
     line-height: 1.5rem !important;
   }
   .page-intro {
-    padding: 8rem 16rem !important;
+    padding-block: 8rem !important;
     gap: 6rem !important;
   }
   .page-intro-heading {
@@ -465,10 +487,18 @@ a {
   }
   .section-wrapper {
     gap: 4rem !important;
-    padding: 8rem 16rem !important;
+    padding-block: 8rem !important;
   }
   .shadow-container::before {
     border-radius: 3rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  section {
+    max-width: 1408px;
+    margin-inline: auto; /* center */
+    padding-inline: 0 !important; /* no side padding—fixed width handles the layout */
   }
 }
 
@@ -490,4 +520,57 @@ a {
 
 *::-webkit-scrollbar-thumb {
   background-color: var(--color-Border-Secondary) !important;
+}
+
+.pulse {
+  position: relative;
+  z-index: 0;
+  will-change: transform, box-shadow;
+  animation: button-breathe 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  transform-origin: center;
+  box-shadow: 0 0 0 1px #3bf5ff inset, 0 0 6px 2px #009199 inset;
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: 0 0 0 0 rgba(59, 245, 255, 0.55);
+  animation: ring-pulse 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+/* gentle scale in/out */
+@keyframes button-breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* smooth ring that expands and fades */
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 245, 255, 0.55);
+  }
+
+  100% {
+    box-shadow: 0 0 0 28px rgba(59, 245, 255, 0);
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .pulse::after {
+    animation: none;
+  }
 }

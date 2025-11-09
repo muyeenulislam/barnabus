@@ -2,7 +2,7 @@ import React from "react";
 
 const SolutionsIntro = () => {
   return (
-    <div className="page-intro">
+    <section className="page-intro">
       <div className="page-intro-inner md:max-w-[30rem] lg:max-w-[40rem]">
         <h1 className="page-intro-heading">
           An Intelligent Ecosystem,
@@ -22,7 +22,7 @@ const SolutionsIntro = () => {
           hospitals and fabs to enterprises and public institutions.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

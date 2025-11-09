@@ -9,7 +9,7 @@ const BAAPageInfo = ({
   date = "",
 }) => {
   return (
-    <div className="p-6 md:p-10 lg:px-[16rem] lg:py-[4rem]">
+    <div className="py-6 md:py-10 lg:py-[4rem]">
       <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-5 lg:gap-6">
         <div className="flex-1 space-y-2 md:space-y-4 lg:space-y-8">
           <h3 className="text-Content-Primary font-semibold text-xl md:text-2xl leading-7 md:leading-8 lg:text-[2.5rem] lg:leading-12">

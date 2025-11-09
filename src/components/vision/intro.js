@@ -11,13 +11,15 @@ import useScreenSize from "@/utils/usescreensize";
 
 const CTAS = [
   {
-    href: "#",
+    path: "roadmap",
+    id: "future-updates",
     label: "Explore Future Updates",
     variant: "Secondary",
     icon: "/icons/circle-arrow-right.svg",
   },
   {
-    href: "#",
+    path: "",
+    id: "join-rnd",
     label: "Join R&D Cohort",
     variant: "Primary-Accent",
     icon: "/icons/join-rnd-btn.svg",
@@ -30,7 +32,11 @@ function CTAGroup({ containerClass, fullWidth = false }) {
   return (
     <div className={`my-6 md:my-8 lg:my-10 ${containerClass}`}>
       {CTAS.map((c, i) => (
-        <Link key={i} href={c.href} className={fullWidth ? "w-full" : ""}>
+        <Link
+          key={i}
+          href={`${c.path && `/${c.path}`}${c.id && `#${c.id}`}`}
+          className={fullWidth ? "w-full" : ""}
+        >
           <Button
             label={c.label}
             variant={c.variant}

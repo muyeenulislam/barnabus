@@ -33,15 +33,17 @@ const ArchitectureOverviewImage = memo(function ArchitectureOverviewImage() {
 
 const ArchitectureOverview = () => {
   return (
-    <div className="section-wrapper border-t border-t-Overlays-White-4">
-      <SectionIntro />
-      <ArchitectureOverviewImage />
-      <AgentStackDetails />
-      <div className="space-y-10 md:space-y-16 lg:space-y-[6rem]">
-        <Transparency />
-        <DataEngine />
-        <LearningInMotion />
-      </div>
+    <div className="gray-gradient-bg  border-t border-t-Overlays-White-4">
+      <section className="section-wrapper">
+        <SectionIntro />
+        <ArchitectureOverviewImage />
+        <AgentStackDetails />
+        <div className="space-y-10 md:space-y-16 lg:space-y-[6rem]">
+          <Transparency />
+          <DataEngine />
+          <LearningInMotion />
+        </div>
+      </section>
     </div>
   );
 };
