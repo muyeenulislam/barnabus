@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const HERO_BG_STYLE = Object.freeze({
   backgroundImage:
-    "linear-gradient(to top, #121314 0%, rgba(0,0,0,0) 60%), url('/images/hero-bg.webp')",
+    "linear-gradient(to top, #121314 0%, rgba(0,0,0,0) 60%), url('/images/hero-bg.svg')",
   backgroundRepeat: "no-repeat, no-repeat",
   backgroundSize: "100% 100%, cover",
   backgroundPosition: "top, center",
@@ -46,7 +46,11 @@ function ActionButtons({
       {order.map((k) => {
         const b = map.get(k);
         return (
-          <Link key={b.key} href={b.link}>
+          <Link
+            key={b.key}
+            href={b.link}
+            className={fullWidthOnMobile ? "w-full md:w-auto" : ""}
+          >
             <Button
               label={b.label}
               variant={b.variant}

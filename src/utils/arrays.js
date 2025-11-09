@@ -2322,6 +2322,124 @@ const LEARNING_IN_MOTION = [
   { title: "Feedback loop embedded in protocol flow", icon: "/icons/loop.svg" },
 ];
 
+const TRUST_BY_DESIGN = [
+  {
+    title: "Orbit Layer",
+    subtitle: "Human-in-the-loop review and continuous accountability feedback",
+    icon: "/icons/orbit.svg",
+  },
+  {
+    title: "NAYAR Governance",
+    subtitle: "Ethical alignment, compliance validation, and risk oversight",
+    icon: "/icons/ai-governance-tracked.svg",
+  },
+  {
+    title: "Axon Core",
+    subtitle: "Reasoning with transparent logic graphs and explainable paths",
+    icon: "/icons/orbital.svg",
+  },
+  {
+    title: "Memory Fabric",
+    subtitle:
+      "Temporal recall, version control, and audit trails for every decision",
+    icon: "/icons/design-layer.svg",
+  },
+  {
+    title: "Fuel Layer",
+    subtitle: "Data lineage, encryption, and provenance validation",
+    icon: "/icons/layer-diagonal-sparkle.svg",
+  },
+];
+
+const TRUST_FRAMEWORK_PILLARS = [
+  {
+    title: "Explainability",
+    subtitle:
+      "Every output includes a visible reasoning trace — data sources, contributing agents, and decision logic.",
+    icon: "/icons/trace-eye.svg",
+  },
+  {
+    title: "Governance & Oversight",
+    subtitle:
+      "Built-in multi-tier audit systems ensure all reasoning conforms to institutional and ethical boundaries.",
+    icon: "/icons/building-government-search.svg",
+  },
+  {
+    title: "Privacy & Security",
+    subtitle:
+      "Enforced under HIPAA, SOC-2, GDPR, PHIPA, and ISO 27001. Data remains encrypted in motion and at rest.",
+    icon: "/icons/personal-privacy.svg",
+  },
+  {
+    title: "Ethical Intelligence",
+    subtitle:
+      "The NAYAR layer prevents bias, enforces boundaries, and aligns agentic behavior with human-defined ethics.",
+    icon: "/icons/artificial-intelligence1.svg",
+  },
+  {
+    title: "Compliance-Ready",
+    subtitle:
+      "Integrated validation for CAP/CLIA (labs), ABIM (clinicians), and ISO (enterprises). Continuous audit synchronization.",
+    icon: "/icons/ibm-cloud-security.svg",
+  },
+  {
+    title: "Traceability & Accountability",
+    subtitle:
+      "Every model, dataset, and decision is versioned, timestamped, and reversible through our Explainability Console.",
+    icon: "/icons/inprivate-account.svg",
+  },
+];
+const DEMAND_PROOF = [
+  {
+    title: "Clinicians",
+    subtitle:
+      "Verified medical provenance, explainable recommendations, and override control.",
+    icon: "/icons/user-nurse.svg",
+  },
+  {
+    title: "Researchers",
+    subtitle:
+      "Full lineage tracking for datasets, features, and model versions.",
+    icon: "/icons/virus-lab-research-microscope.svg",
+  },
+  {
+    title: "Enterprises",
+    subtitle:
+      "SOC-2, HIPAA, and ISO-27001 frameworks mapped directly into the NAYAR governance fabric.",
+    icon: "/icons/enterprise.svg",
+  },
+  {
+    title: "Regulators",
+    subtitle:
+      "Transparent audit logs, policy mappings, and continuous monitoring of decision pipelines.",
+    icon: "/icons/law.svg",
+  },
+  {
+    title: "Partners & Competitors",
+    subtitle:
+      "Architectural integrity that cannot be imitated — trust enforced at the system level, not the marketing layer.",
+    icon: "/icons/handshake.svg",
+  },
+];
+
+const COMPLIANCE_READY = [
+  "HIPAA",
+  "SOC 2 Type II",
+  "ISO 27001",
+  "GDPR",
+  "PHIPA",
+  "CAP/CLIA",
+];
+
+const SECURITY_PRACTICES = [
+  "End-to-end encryption (AES-256, TLS 1.3)",
+  "Role-based secrets management (Vault integrated)",
+  "Immutable audit trails for all agentic actions",
+  "Multi-tenant isolation with dedicated compliance sandboxes",
+  "Zero-trust network architecture",
+  "Fine-grained ABAC/ReBAC access control",
+  "Continuous vulnerability scanning and threat modeling",
+];
 export {
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
@@ -2364,4 +2482,9 @@ export {
   CORE_INTELLIGENCE,
   AGENT_STACK_DETAILS,
   LEARNING_IN_MOTION,
+  TRUST_BY_DESIGN,
+  TRUST_FRAMEWORK_PILLARS,
+  DEMAND_PROOF,
+  COMPLIANCE_READY,
+  SECURITY_PRACTICES,
 };
