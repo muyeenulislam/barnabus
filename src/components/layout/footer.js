@@ -10,18 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div
-      className="pb-[2.5rem] pt-[2.5rem] px-[1.5rem] md:pb-[4rem] md:pt-[8rem] md:px-[8rem] bg-no-repeat bg-top bg-cover flex flex-col gap-[4rem] relative"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom, #121314, rgba(0,0,0,0)), url('/images/footer-bg.webp')",
-        backgroundRepeat: "no-repeat, no-repeat",
-        backgroundSize: "100% 100%, cover",
-        backgroundPosition: "top, top",
-      }}
-    >
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 h-[5rem] w-[60%] rounded-full blur-[6rem] bg-white/15 z-10"></div>
-
+    <div className="pb-[2.5rem] pt-[2.5rem] px-[1.5rem] md:pb-[4rem] md:pt-[8rem] md:px-[8rem] bg-[url('/images/footer-bg.svg')] bg-no-repeat bg-center bg-cover flex flex-col gap-[4rem] relative">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-[50]">
         <div className="flex flex-col gap-4 md:gap-6">
           <h1 className="text-[2rem] md:text-[3rem] font-semibold text-Content-Primary leading-10 md:leading-14">

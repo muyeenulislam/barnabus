@@ -151,7 +151,7 @@ const INTELLIGENCE_KEYPOINTS = [
 const PROGRESS_TRACKER_POINTS = [
   {
     title: "Think",
-    icon: "/icons/think.svg",
+    icon: "/icons/think.png",
     percentage: 70,
     tags: ["Reason", "Analyze", "Plan"],
   },
@@ -163,7 +163,7 @@ const PROGRESS_TRACKER_POINTS = [
   },
   {
     title: "Act",
-    icon: "/icons/act.svg",
+    icon: "/icons/act.png",
     percentage: 40,
     tags: ["Execute with Context"],
   },
@@ -999,14 +999,14 @@ const SAFE_BY_DESIGN = [
   },
 ];
 const RUN_ANYWHERE = [
-  "/icons/kubernetes-logo.svg",
+  "/icons/kubernetes-logo.png",
   "/icons/safe-vault-remix.svg",
   "/icons/ibm-quantum-safe-advisor.svg",
   "/icons/azure-logo.svg",
   "/icons/database-encryption.svg",
   "/icons/aws-logo.svg",
   "/icons/nvidia.svg",
-  "/icons/gcp.svg",
+  "/icons/gcp.png",
 ];
 
 const EVOLUTION_PATH = [

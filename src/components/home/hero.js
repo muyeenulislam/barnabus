@@ -5,14 +5,6 @@ import Image from "next/image";
 import Button from "../button";
 import Link from "next/link";
 
-const HERO_BG_STYLE = Object.freeze({
-  backgroundImage:
-    "linear-gradient(to top, #121314 0%, rgba(0,0,0,0) 60%), url('/images/hero-bg.svg')",
-  backgroundRepeat: "no-repeat, no-repeat",
-  backgroundSize: "100% 100%, cover",
-  backgroundPosition: "top, center",
-});
-
 const HEADLINE_CLS =
   "text-Content-Primary font-semibold text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] leading-[3rem] md:leading-[3.5rem] lg:leading-[4.5rem]";
 const SUBTEXT_CLS = "lg:pr-[8rem] text-Content-Secondary text-xl leading-7";
@@ -69,8 +61,7 @@ const HomeHero = memo(function HomeHero() {
   return (
     <div
       aria-labelledby="home-hero-title"
-      className="relative py-[2rem] md:py-[3rem] lg:py-[8rem]"
-      style={HERO_BG_STYLE}
+      className="relative py-[2rem] md:py-[3rem] lg:py-[8rem] bg-[url('/images/hero-bg.svg')] 2xl:bg-[url('/images/hero-bg-lg.svg')] bg-no-repeat bg-center lg:bg-left bg-cover"
     >
       <section className="flex flex-col-reverse lg:flex-row md:gap-[2.5rem] lg:gap-[6rem]">
         <div className="flex flex-col gap-[2rem] lg:gap-[4rem] flex-1">
@@ -97,7 +88,7 @@ const HomeHero = memo(function HomeHero() {
             order={["join", "updates"]}
             size="XL"
             fullWidthOnMobile
-            className="flex lg:hidden w-full items-center justify-center lg:justify-start gap-4 flex-col md:flex-row"
+            className="flex lg:hidden w-full items-center justify-center lg:justify-start gap-4 flex-col md:flex-row-reverse"
           />
 
           <ActionButtons
