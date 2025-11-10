@@ -234,24 +234,31 @@ const ArchitectureOfTrust = () => {
         <div
           xmlns="http://www.w3.org/1999/xhtml"
           style={{
-            backdropFilter: "blur(37.87px)",
-            clipPath: "url(#bgblur_1_4518_56133_clip_path)",
+            backdropFilter: "blur(10px)",
+            clipPath: "url(#bgblur_6_4518_56133_clip_path)",
             height: "100%",
             width: "100%",
           }}
         ></div>
       </foreignObject>
       <g
+        // filter="url(#filter9_ii_4518_56133)"
         filter={
           step === 0
             ? "url(#filter9_iiiii_4518_56133)"
-            : "url(#filter14_ii_4518_56133)"
+            : "url(#filter9_ii_4518_56133)"
         }
         data-figma-bg-blur-radius="75.7334"
       >
         <path
           d="M763.888 238.934C769.511 235.688 776.44 235.688 782.064 238.934L811.498 255.928C817.122 259.175 820.586 265.176 820.586 271.669V305.657C820.586 312.151 817.122 318.151 811.498 321.398L782.064 338.392C776.44 341.639 769.511 341.639 763.888 338.392L734.453 321.398C728.83 318.151 725.365 312.151 725.365 305.657V271.669C725.365 265.176 728.83 259.175 734.453 255.928L763.888 238.934Z"
-          fill={step === 0 ? "white" : "url(#paint4_radial_4518_56133)"}
+          fill="white"
+          fillOpacity="0.034"
+        />
+        <path
+          d="M763.888 238.934C769.511 235.688 776.44 235.688 782.064 238.934L811.498 255.928C817.122 259.175 820.586 265.176 820.586 271.669V305.657C820.586 312.151 817.122 318.151 811.498 321.398L782.064 338.392C776.44 341.639 769.511 341.639 763.888 338.392L734.453 321.398C728.83 318.151 725.365 312.151 725.365 305.657V271.669C725.365 265.176 728.83 259.175 734.453 255.928L763.888 238.934Z"
+          fill={step === 0 ? "white" : "url(#paint8_radial_4518_56133)"}
+          fillOpacity={step === 0 ? "1" : "0.439"}
         />
       </g>
       <path
@@ -584,6 +591,64 @@ const ArchitectureOfTrust = () => {
         </filter>
         <clipPath id="paint0_angular_4518_56133_clip_path">
           <ellipse cx="434.596" cy="500.089" rx="151.143" ry="151.049" />
+        </clipPath>
+        <filter
+          id="filter9_ii_4518_56133"
+          x="722.976"
+          y="216.5"
+          width="135.219"
+          height="144.328"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset />
+          <feGaussianBlur stdDeviation="0.75" />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.968627 0 0 0 0 0.968627 0 0 0 0 0.972549 0 0 0 0.124 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="shape"
+            result="effect1_innerShadow_4518_56133"
+          />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="0.5" />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.124 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="effect1_innerShadow_4518_56133"
+            result="effect2_innerShadow_4518_56133"
+          />
+        </filter>
+        <clipPath
+          id="bgblur_6_4518_56133_clip_path"
+          transform="translate(-650 -158)"
+        >
+          <path d="M763.888 238.934C769.511 235.688 776.44 235.688 782.064 238.934L811.498 255.928C817.122 259.175 820.586 265.176 820.586 271.669V305.657C820.586 312.151 817.122 318.151 811.498 321.398L782.064 338.392C776.44 341.639 769.511 341.639 763.888 338.392L734.453 321.398C728.83 318.151 725.365 312.151 725.365 305.657V271.669C725.365 265.176 728.83 259.175 734.453 255.928L763.888 238.934Z" />
         </clipPath>
         <filter
           id="filter8_ii_4518_56133"
@@ -1115,6 +1180,17 @@ const ArchitectureOfTrust = () => {
           r="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(437.585 943.131) rotate(-90) scale(76.5407 58.3439)"
+        >
+          <stop stopColor="white" stopOpacity="0.034" />
+          <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
+        </radialGradient>
+        <radialGradient
+          id="paint8_radial_4518_56133"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(772.976 323.483) rotate(-90) scale(76.5407 58.3439)"
         >
           <stop stopColor="white" stopOpacity="0.034" />
           <stop offset="1" stopColor="#121314" stopOpacity="0.439" />
