@@ -21,12 +21,12 @@ const TrustByDesign = () => {
       <div className="flex flex-col items-center">
         {TRUST_BY_DESIGN?.map((item, index) => {
           const WIDTHS = [
-            "w-full lg:w-[80%]",
-            "w-full md:w-[90%] lg:w-[70%]",
-            "w-full md:w-[80%] lg:w-[60%]",
-            "w-full md:w-[70%] lg:w-[50%]",
-            "w-full md:w-[60%] lg:w-[40%]",
-            "w-full md:w-[50%] lg:w-[30%]",
+            "w-full lg:w-[90%]",
+            "w-full md:w-[90%] lg:w-[80%]",
+            "w-full md:w-[80%] lg:w-[70%]",
+            "w-full md:w-[70%] lg:w-[60%]",
+            "w-full md:w-[60%] lg:w-[50%]",
+            "w-full md:w-[50%] lg:w-[40%]",
           ];
           const ZS = ["z-50", "z-40", "z-30", "z-20", "z-10", "z-0"];
 
