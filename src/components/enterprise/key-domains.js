@@ -164,10 +164,6 @@ const EvolutionNode = memo(function EvolutionNode({ item }) {
 });
 
 const FirstPart = memo(function FirstPart() {
-  const domains = memo(() => KEY_ENTERPRISE_DOMAINS || [], []);
-  const safety = memo(() => SAFE_BY_DESIGN || [], []);
-  const infra = memo(() => RUN_ANYWHERE || [], []);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-3 lg:gap-4">
       <div className="flex flex-col gap-8 lg:gap-10 pb-4 md:pb-0">
@@ -177,7 +173,7 @@ const FirstPart = memo(function FirstPart() {
         />
       </div>
 
-      {domains?.map((d) => (
+      {KEY_ENTERPRISE_DOMAINS?.map((d) => (
         <DomainCard
           key={d.title ?? d.subtitle}
           icon={d.icon}
@@ -198,7 +194,7 @@ const FirstPart = memo(function FirstPart() {
           </div>
 
           <div className="flex flex-col gap-1 md:gap-2 lg:gap-3">
-            {safety?.map((s) => (
+            {SAFE_BY_DESIGN?.map((s) => (
               <SafetyCard key={s.title ?? s.subtitle} {...s} />
             ))}
           </div>
@@ -215,7 +211,7 @@ const FirstPart = memo(function FirstPart() {
           </div>
 
           <div className="flex items-center flex-wrap gap-x-6 gap-y-5 md:gap-x-8 md:gap-y-6 lg:gap-x-12 lg:gap-y-8">
-            {infra?.map((src, i) => (
+            {RUN_ANYWHERE?.map((src, i) => (
               <InfraLogo key={`${src}-${i}`} src={src} />
             ))}
           </div>
@@ -226,8 +222,6 @@ const FirstPart = memo(function FirstPart() {
 });
 
 const EvolutionPath = memo(function EvolutionPath() {
-  const path = memo(() => EVOLUTION_PATH || [], []);
-
   return (
     <div
       className="flex flex-col md:flex-row lg:flex-col pt-[2.5rem] md:pt-[3rem] lg:pt-[4rem] gap-[2.5rem] md:gap-[3rem] lg:gap-[4rem]"
@@ -247,7 +241,7 @@ const EvolutionPath = memo(function EvolutionPath() {
           className={`absolute w-[0.1875rem] h-full left-[1.4rem] lg:hidden ${V_LINE}`}
         />
 
-        {path?.map((p) => (
+        {EVOLUTION_PATH?.map((p) => (
           <EvolutionNode key={p.title ?? p.phase} item={p} />
         ))}
       </div>

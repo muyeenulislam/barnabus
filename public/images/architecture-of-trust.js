@@ -3,14 +3,16 @@
 import React, { useEffect, useState } from "react";
 
 const ArchitectureOfTrust = () => {
-  const [step, setStep] = useState(0); // 0..5
+  const [step, setStep] = useState(0);
+
+  const ANGLES = [0, 64, 122, 180, 245, 303];
 
   useEffect(() => {
     const id = setInterval(() => setStep((s) => (s + 1) % 6), 3000);
     return () => clearInterval(id);
   }, []);
 
-  const angle = step * 60;
+  const angle = ANGLES[step];
   const strokeFor = (i) => (step === i - 1 ? "#3BF5FF" : "#5D5F61");
   const widthFor = (i) => (step === i - 1 ? 5 : 1.89899);
 
