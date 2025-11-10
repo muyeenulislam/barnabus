@@ -1,18 +1,18 @@
 import React from "react";
 
-import { TRUST_FRAMEWORK_PILLARS } from "@/utils/arrays";
+import { DEMAND_PROOF } from "@/utils/arrays";
 
 import { SectionHeading, DomainCard } from "./trust-components";
 
-const TrustPillars = () => {
+const DemandProof = () => {
   return (
     <section className="space-y-8">
       <SectionHeading
-        title="Pillars of the Barnabus Trust Framework"
-        subtitle="Six foundational principles that govern every aspect of our system"
+        title="For Every Audience That Demands Proof"
+        subtitle="Built for accountability, designed for everyone who needs verification"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 md:gap-3 lg:gap-4">
-        {TRUST_FRAMEWORK_PILLARS?.map((d) => (
+        {DEMAND_PROOF?.map((d) => (
           <DomainCard
             key={d.title ?? d.subtitle}
             icon={d.icon}
@@ -25,4 +25,4 @@ const TrustPillars = () => {
   );
 };
 
-export default TrustPillars;
+export default DemandProof;
