@@ -75,7 +75,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div
+      <nav
         className="w-full flex justify-between items-center self-stretch px-3 py-3 md:p-5 border-b border-Border-Secondary bg-Surface0 fixed z-1010"
         ref={navRef}
       >
@@ -231,7 +231,7 @@ const Navbar = () => {
             />
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* BottomSheet (mobile) */}
       <BottomSheet

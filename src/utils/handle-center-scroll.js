@@ -1,11 +1,12 @@
 const handleCenterScroll = (e, id, route) => {
-  e.preventDefault();
-  const el = document.getElementById(id);
+  e?.preventDefault?.();
 
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+
+  const el = document.getElementById(id);
   if (!el) return;
 
-  const header = document.querySelector("header");
-  const headerH = header?.offsetHeight ?? 0;
+  const headerH = document.querySelector("header")?.offsetHeight ?? 0;
 
   const y =
     el.getBoundingClientRect().top +
@@ -14,6 +15,13 @@ const handleCenterScroll = (e, id, route) => {
     headerH;
 
   window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-  history.replaceState(null, "", `${route && `/${route}`}#${id}`);
+
+  const url = new URL(window.location.href);
+  if (typeof route === "string" && route.trim()) {
+    url.pathname = route.startsWith("/") ? route : `/${route}`;
+  }
+  url.hash = id;
+  history.replaceState(null, "", url.toString());
 };
+
 export default handleCenterScroll;
