@@ -109,6 +109,7 @@ export function BaseSelect({
   maxMenuHeight = 264,
   className = "",
   size = "M",
+  error,
 }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -329,7 +330,7 @@ export function BaseSelect({
           )}
         </div>
       </button>
-
+      {error && <p className="text-red-500 pt-2">{error}</p>}
       {/* Dropdown */}
       <AnimatePresence>
         {open && (

@@ -5,6 +5,7 @@ const TextInput = ({
   onChange,
   value,
   label,
+  error,
   required = true,
   placeholder = "Enter value",
 }) => {
@@ -19,8 +20,11 @@ const TextInput = ({
         type={type}
         placeholder={placeholder}
         required={required}
-        className="outline-none text-Content-Primary font-normal .placeholder-Content-Tertiary border border-Badge-Gray-Subtle-Background bg-Overlays-Black-9 text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4"
+        className={`outline-none text-Content-Primary font-normal .placeholder-Content-Tertiary border ${
+          error ? "border-red-500" : "border-Badge-Gray-Subtle-Background"
+        } bg-Overlays-Black-9 text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4`}
       />
+      {error && <p className="text-red-500">{error}</p>}
     </div>
   );
 };
@@ -28,6 +32,7 @@ const TextAreaInput = ({
   onChange,
   value,
   label,
+  error,
   rows = 4,
   required = true,
   placeholder = "Enter value",
@@ -43,8 +48,11 @@ const TextAreaInput = ({
         rows={rows}
         placeholder={placeholder}
         required={required}
-        className="outline-none text-Content-Primary .placeholder-Content-Tertiary border border-Badge-Gray-Subtle-Background bg-Overlays-Black-9 text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4"
+        className={`outline-none text-Content-Primary .placeholder-Content-Tertiary border ${
+          error ? "border-red-500" : "border-Badge-Gray-Subtle-Background"
+        }  bg-Overlays-Black-9 text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4`}
       />
+      {error && <p className="text-red-500">{error}</p>}
     </div>
   );
 };

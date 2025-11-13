@@ -47,16 +47,19 @@ const VARIANT_STYLES = {
     "bg-Action-Buttons-Primary-Default-Background-Default",
     "text-action-buttons-primary-default-content-default-hover-pressed",
     "shadow-LightGrayButton",
+    "hover:shadow-LightGrayButtonHover hover:scale-102",
   ].join(" "),
   "Primary-Accent": [
     "bg-Action-Buttons-Primary-Accent-Background-Default",
     "text-Action-Buttons-Primary-Accent-Content-Default",
     "shadow-AccentButton",
+    "hover:shadow-AccentButtonHover hover:scale-102",
   ].join(" "),
   Secondary: [
     "bg-Action-Buttons-Secondary-Background-Default",
     "text-action-buttons-secondary-content-default-pressed-hover",
     "shadow-SecondaryButton",
+    "hover:shadow-SecondaryButtonHover hover:scale-102",
   ].join(" "),
   Pulse: [
     "bg-backgroundDarkGray",
@@ -80,7 +83,6 @@ const Button = ({
   onClick,
   loading = false,
   disabled = false,
-  /** NEW: enable subtle pulse animation when true */
   pulse = false,
   ...rest
 }) => {
@@ -94,7 +96,8 @@ const Button = ({
     <button
       type={type || "button"}
       className={[
-        "inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer outline-none disabled:cursor-default",
+        "group inline-flex items-center justify-center rounded-full font-semibold text-center cursor-pointer outline-none disabled:pointer-events-none",
+        "transition-all duration-200 ease-out",
         s.text,
         s.padding,
         s.gap,
@@ -115,7 +118,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
-          className={s.iconSize}
+          className={`${s.iconSize} transition-transform duration-200 ease-out group-hover:-translate-x-0.5`}
         />
       )}
 
@@ -126,7 +129,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
-          className={s.iconSize}
+          className={`${s.iconSize} transition-transform duration-200 ease-out group-hover:-translate-x-0.5`}
         />
       )}
 
@@ -139,9 +142,10 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
-          className={s.iconSize}
+          className={`${s.iconSize} transition-transform duration-200 ease-out group-hover:translate-x-0.5`}
         />
       )}
+
       {!loading && pulse && trailingIconNeon && (
         <Image
           src={trailingIconNeon}
@@ -149,7 +153,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
-          className={s.iconSize}
+          className={`${s.iconSize} transition-transform duration-200 ease-out group-hover:translate-x-0.5`}
         />
       )}
 
@@ -166,7 +170,7 @@ const Button = ({
           height={iconSize}
           width={iconSize}
           aria-hidden="true"
-          className={s.iconSize}
+          className={`${s.iconSize} transition-transform duration-200 ease-out group-hover:translate-x-0.5`}
         />
       )}
     </button>
