@@ -10,9 +10,10 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  metadataBase: new URL(await getBaseUrl()),
-};
+export async function generateMetadata() {
+  const url = await getBaseUrl();
+  return { metadataBase: new URL(url) };
+}
 
 export default function RootLayout({ children }) {
   return (
