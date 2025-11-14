@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import {
   FOOTER_NAV_ITEMS,
@@ -25,14 +24,12 @@ const Footer = () => {
           </Link>
 
           <div className="flex gap-4">
-            {FOOTER_SOCIAL_LINKS?.map((item, index) => (
-              <Link key={index} href={item.link}>
-                <Image
-                  src={item.icon}
-                  height={32}
-                  width={32}
-                  alt="social"
-                  className="h-8 w-8 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(59,245,255)] transition-all duration-200"
+            {FOOTER_SOCIAL_LINKS?.map(({ Icon, link }, index) => (
+              <Link key={index} href={link} className="group inline-flex">
+                <Icon
+                  className="h-8 w-8 text-[#CACED5] transition-all duration-200 hover:scale-105
+                   group-hover:text-Content-Brand-Accent
+                   group-hover:drop-shadow-[0_0_8px_rgba(59,245,255)]"
                 />
               </Link>
             ))}

@@ -4,6 +4,8 @@ import Stethoscope from "../../public/icons/stethoscope";
 import Chip from "../../public/icons/chip";
 import StarAward from "../../public/icons/star-award";
 import ArtificalIntelligence from "../../public/icons/artifical-intelligence";
+import LinkedinIcon from "../../public/icons/linkedin";
+import XIcon from "../../public/icons/x.js";
 
 const NAV_ITEMS = [
   { title: "Vision", route: "/vision" },
@@ -20,14 +22,12 @@ const FOOTER_NAV_ITEMS = [
   { title: "Participate", route: "/participate" },
 ];
 
-const FOOTER_SOCIAL_LINKS = [
-  { icon: "/icons/x.svg", link: "https://x.com/BarnabusAI" },
-  // { icon: "/icons/facebook.svg", link: "#" },
+export const FOOTER_SOCIAL_LINKS = [
+  { Icon: XIcon, link: "https://x.com/BarnabusAI" },
   {
-    icon: "/icons/linkedin.svg",
+    Icon: LinkedinIcon,
     link: "https://www.linkedin.com/company/barnabus-labs/about/?viewAsMember=true",
   },
-  // { icon: "/icons/instagram.svg", link: "#" },
 ];
 
 const FOOTER_OTHER_LINKS = [
