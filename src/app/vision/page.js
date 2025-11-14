@@ -4,9 +4,9 @@ import SectionStartingGradient from "@/components/section-starting-gradient";
 import VisionIntro from "@/components/vision/intro";
 import AGICompass from "@/components/vision/agi-compass";
 import JoinRnd from "@/components/home/join-rnd";
-import { createMetadata } from "@/utils/metadata";
+import { generateMetadata } from "@/utils/metadata";
 
-export const metadata = createMetadata({
+export const metadata = generateMetadata({
   title: "Barnabus Vision | Human-Centered Agentic Intelligence",
   description:
     "See how Barnabus pairs self-organizing agent stacks with human-centered governance to give AGI purpose, context, and ethical direction.",

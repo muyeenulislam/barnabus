@@ -1,20 +1,16 @@
-import { getBaseUrl } from "./get-base-url";
-
 const DEFAULT_OG_IMAGE = "/icons/logo-chrome.svg";
 const DEFAULT_TAB_IMAGE = "/icons/barnabus-logo.svg";
 
-export async function createMetadata({
+export async function generateMetadata({
   title,
   description,
   path = "/",
   image = DEFAULT_OG_IMAGE,
   type = "website",
 }) {
-  const baseUrl = await getBaseUrl();
-  const url = `${baseUrl}${path}`;
+  const url = `${path}`;
 
   return {
-    metadataBase: new URL(baseUrl),
     title,
     description,
     icons: {
@@ -38,8 +34,6 @@ export async function createMetadata({
       images: [
         {
           url: image,
-          width: 1200,
-          height: 630,
           alt: "Barnabus agentic intelligence",
         },
       ],
@@ -53,8 +47,3 @@ export async function createMetadata({
     },
   };
 }
-
-export const metadataDefaults = {
-  baseUrl: await getBaseUrl(),
-  ogImage: DEFAULT_OG_IMAGE,
-};

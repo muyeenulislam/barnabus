@@ -10,9 +10,9 @@ import SecurityPractices from "@/components/trust/security-practices";
 import ResponsibleIntelligence from "@/components/trust/responsible-intelligence";
 import BuiltForAccountability from "@/components/trust/built-for-accountability";
 import JoinRnd from "@/components/home/join-rnd";
-import { createMetadata } from "@/utils/metadata";
+import { generateMetadata } from "@/utils/metadata";
 
-export const metadata = createMetadata({
+export const metadata = generateMetadata({
   title: "Barnabus Trust | Architecture, Security, and Accountability",
   description:
     "Explore the trust-by-design architecture, observability layers, and security practices that keep Barnabus auditable across regulated missions.",

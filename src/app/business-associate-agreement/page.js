@@ -6,9 +6,9 @@ import BAAPageInfo from "@/components/baa-common/page-info";
 import BAASections from "@/components/baa-common/sections";
 
 import { BAA } from "@/utils/arrays";
-import { createMetadata } from "@/utils/metadata";
+import { generateMetadata } from "@/utils/metadata";
 
-export const metadata = createMetadata({
+export const metadata = generateMetadata({
   title: "Barnabus Business Associate Agreement (BAA)",
   description:
     "Review Barnabus' HIPAA-aligned Business Associate Agreement outlining safeguards, permitted uses, and shared responsibilities for PHI.",
