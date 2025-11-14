@@ -8,19 +8,6 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Barnabus.ai",
-  description: "Barnabus",
-  icons: {
-    icon: [
-      {
-        url: "/icons/barnabus-logo.svg",
-        href: "/icons/barnabus-logo.svg",
-      },
-    ],
-  },
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

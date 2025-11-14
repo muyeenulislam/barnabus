@@ -6,6 +6,14 @@ import BAAPageInfo from "@/components/baa-common/page-info";
 import BAASections from "@/components/baa-common/sections";
 
 import { TERMS } from "@/utils/arrays";
+import { createMetadata } from "@/utils/metadata";
+
+export const metadata = createMetadata({
+  title: "Barnabus Terms of Use",
+  description:
+    "Review the legally binding terms that govern how licensed healthcare professionals use the Barnabus Platform and Services.",
+  path: "/terms-of-use",
+});
 
 const Page = () => {
   return (

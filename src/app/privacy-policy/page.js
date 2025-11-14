@@ -6,6 +6,14 @@ import BAAPageInfo from "@/components/baa-common/page-info";
 import BAASections from "@/components/baa-common/sections";
 
 import { PRIVACY } from "@/utils/arrays";
+import { createMetadata } from "@/utils/metadata";
+
+export const metadata = createMetadata({
+  title: "Barnabus Privacy Policy",
+  description:
+    "Understand how Barnabus collects, uses, and safeguards personal information under Canadian privacy legislation including PIPEDA and PHIPA.",
+  path: "/privacy-policy",
+});
 
 const Page = () => {
   return (

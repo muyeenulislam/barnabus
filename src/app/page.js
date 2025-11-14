@@ -5,6 +5,14 @@ import AgiPillar from "@/components/home/agi-pillar";
 import Team from "@/components/home/team";
 import NotJustAI from "@/components/home/not-just-ai";
 import JoinRnd from "@/components/home/join-rnd";
+import { createMetadata } from "@/utils/metadata";
+
+export const metadata = createMetadata({
+  title: "Barnabus.ai",
+  description:
+    "Barnabus builds living, agentic intelligence that collaborates like a co-founder, adapts to your workflows, and keeps learning beyond one-off prompts.",
+  path: "/",
+});
 
 export default function Home() {
   return (

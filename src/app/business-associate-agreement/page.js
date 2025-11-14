@@ -6,6 +6,14 @@ import BAAPageInfo from "@/components/baa-common/page-info";
 import BAASections from "@/components/baa-common/sections";
 
 import { BAA } from "@/utils/arrays";
+import { createMetadata } from "@/utils/metadata";
+
+export const metadata = createMetadata({
+  title: "Barnabus Business Associate Agreement (BAA)",
+  description:
+    "Review Barnabus' HIPAA-aligned Business Associate Agreement outlining safeguards, permitted uses, and shared responsibilities for PHI.",
+  path: "/business-associate-agreement",
+});
 
 const Page = () => {
   return (
