@@ -7,6 +7,26 @@ import ArtificalIntelligence from "../../public/icons/artifical-intelligence";
 import LinkedinIcon from "../../public/icons/linkedin";
 import XIcon from "../../public/icons/x.js";
 
+const ROUTES = [
+  { name: "Home", route: "/" },
+  { name: "Vision", route: "/vision" },
+  { name: "Capabilities", route: "/capabilities" },
+  { name: "Solutions", route: "/solutions" },
+  { name: "System Protocol", route: "/system-protocol" },
+  { name: "Enterprise", route: "/enterprise" },
+  { name: "Trust", route: "/trust" },
+  { name: "Roadmap", route: "/roadmap" },
+  { name: "Participate", route: "/participate" },
+  { name: "Team", route: "/team" },
+  { name: "Technology", route: "/technology" },
+  {
+    name: "Business Associate Agreement",
+    route: "/business-associate-agreement",
+  },
+  { name: "Privacy Policy", route: "/privacy-policy" },
+  { name: "Terms of Use", route: "/terms-of-use" },
+];
+
 const NAV_ITEMS = [
   { title: "Vision", route: "/vision" },
   { title: "Capabilities", route: "/capabilities" },
@@ -34,7 +54,7 @@ const FOOTER_OTHER_LINKS = [
   { title: "English", route: "/roadmap" },
   { title: "Privacy", route: "/privacy-policy" },
   { title: "Terms", route: "/terms-of-use" },
-  { title: "Sitemap", route: "/sitemap" },
+  { title: "Sitemap", route: "/sitemaps" },
 ];
 const DEFINE_NEW_CATEGORY_TABLE_CONTENT = [
   {
@@ -2724,6 +2744,7 @@ const COUNTRIES = [
 ];
 
 export {
+  ROUTES,
   NAV_ITEMS,
   FOOTER_NAV_ITEMS,
   FOOTER_SOCIAL_LINKS,

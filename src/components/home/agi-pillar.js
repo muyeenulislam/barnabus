@@ -33,7 +33,7 @@ const ProgressTracker = memo(function ProgressTracker() {
           variant="Secondary"
           label="See the Progress"
           trailingIcon="/icons/arrow-right.svg"
-          additionalStyle="w-max"
+          additionalStyle="w-full md:w-max"
         />
       </div>
       {PROGRESS_TRACKER_POINTS?.map((item, index) => (
@@ -137,7 +137,7 @@ const EcoBreakdown = memo(function EcoBreakdown() {
           variant="Secondary"
           label="See the Ecosystem"
           trailingIcon="/icons/arrow-right.svg"
-          additionalStyle="w-max"
+          additionalStyle="w-full md:w-max"
         />
       </div>
 

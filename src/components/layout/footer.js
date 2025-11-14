@@ -9,8 +9,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="pb-[2.5rem] pt-[2.5rem] px-[1.5rem] md:pb-[4rem] md:pt-[8rem] md:px-[8rem] bg-[url('/images/footer-bg.svg')] bg-no-repeat bg-center bg-cover flex flex-col gap-[4rem] relative">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-[50]">
+    <div className="pb-[2.5rem] pt-[2.5rem] md:pb-[4rem] md:pt-[8rem] bg-[url('/images/footer-bg.svg')] bg-no-repeat bg-center bg-cover flex flex-col gap-[4rem] relative">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 z-[50]">
         <div className="flex flex-col gap-4 md:gap-6">
           <h1 className="text-[2rem] md:text-[3rem] font-semibold text-Content-Primary leading-10 md:leading-14">
             Let&apos;s Talk
@@ -46,8 +46,8 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 z-[50]">
+      </section>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-3 z-[50]">
         <p className="text-[#9DA1A8] leading-6 hidden md:block">
           © 2016 - {new Date().getFullYear()} Barnabus. All rights reserved.
         </p>
@@ -65,7 +65,7 @@ const Footer = () => {
         <p className="text-sm md:text-base text-[#9DA1A8] leading-6 md:hidden text-center">
           © 2016 - {new Date().getFullYear()} Barnabus. All rights reserved.
         </p>
-      </div>
+      </section>
     </div>
   );
 };

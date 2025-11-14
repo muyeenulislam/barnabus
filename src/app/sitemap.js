@@ -1,5 +1,7 @@
 import { headers } from "next/headers";
 
+import { ROUTES } from "@/utils/arrays";
+
 export const getBaseUrl = async () => {
   if (typeof window !== "undefined") {
     return window.location.origin;
@@ -12,30 +14,13 @@ export const getBaseUrl = async () => {
   return `${protocol}://${host}`;
 };
 
-const routes = [
-  "/",
-  "/business-associate-agreement",
-  "/capabilities",
-  "/enterprise",
-  "/participate",
-  "/privacy-policy",
-  "/roadmap",
-  "/solutions",
-  "/system-protocol",
-  "/team",
-  "/technology",
-  "/terms-of-use",
-  "/trust",
-  "/vision",
-];
-
 export default async function sitemap() {
   const lastModified = new Date();
 
   const baseUrl = await getBaseUrl();
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+  return ROUTES.map((route) => ({
+    url: `${baseUrl}${route.route}`,
     lastModified,
   }));
 }
