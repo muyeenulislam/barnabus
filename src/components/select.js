@@ -110,6 +110,7 @@ export function BaseSelect({
   className = "",
   size = "M",
   error,
+  ...rest
 }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -221,7 +222,7 @@ export function BaseSelect({
   }
 
   const controlSkeleton =
-    "w-full bg-Overlays-Black-9 border border-Badge-Gray-Subtle-Background text-Content-Primary " +
+    "w-full bg-backgroundDarkGray border border-Content-Tertiary text-Content-Primary " +
     "placeholder:text-[#9DA1A8] flex items-center justify-between";
 
   return (
@@ -245,15 +246,14 @@ export function BaseSelect({
         className={classNames(
           controlSkeleton,
           S.control,
-          disabled
-            ? "opacity-50 cursor-not-allowed"
-            : "cursor-pointer hover:border-white/20",
+          disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
           className
         )}
         onClick={() => !disabled && setOpen((s) => !s)}
         onKeyDown={onKeyDown}
         aria-haspopup="listbox"
         aria-expanded={open}
+        {...rest}
       >
         {/* Left: value/chips/placeholder */}
         <div

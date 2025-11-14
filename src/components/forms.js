@@ -9,7 +9,7 @@ import { Select } from "./select";
 
 import useScreenSize from "@/utils/usescreensize";
 import { emailValid } from "@/utils/validators";
-import { TIER_LIST } from "@/utils/arrays";
+import { REFERRAL_SOURCES, OCCUPATIONS, COUNTRIES } from "@/utils/arrays";
 
 const EarlyAccessForm = () => {
   const screenSize = useScreenSize();
@@ -162,6 +162,7 @@ const EarlyAccessForm = () => {
         <div className="col-span-2">
           <TextAreaInput
             label="Tell us about your Interest"
+            subLabel="Tell us how you plan to use Barnabus or what your organization focuses on."
             value={state.interest}
             placeholder="Enter your interest..."
             onChange={(e) => {
@@ -305,9 +306,9 @@ const CompleteFreeRegistrationForm = () => {
         </div>
         <Select
           label="Occupation *"
-          options={TIER_LIST?.map((item) => ({
-            label: item.name,
-            value: item.value,
+          options={OCCUPATIONS?.map((item) => ({
+            label: item,
+            value: item,
           }))}
           value={state.occupation}
           onChange={(e) => {
@@ -322,9 +323,9 @@ const CompleteFreeRegistrationForm = () => {
         />
         <Select
           label="Country of Practice *"
-          options={TIER_LIST?.map((item) => ({
-            label: item.name,
-            value: item.value,
+          options={COUNTRIES?.map((item) => ({
+            label: item,
+            value: item,
           }))}
           value={state.countryOfPractice}
           onChange={(e) => {
@@ -333,9 +334,9 @@ const CompleteFreeRegistrationForm = () => {
           }}
           error={errors.countryOfPractice}
           placeholder="Select"
-          searchable={false}
           clearable
           size="L"
+          searchable={true}
         />
         <div className="col-span-2">
           <TextInput
@@ -376,9 +377,9 @@ const CompleteFreeRegistrationForm = () => {
         <div className="col-span-2">
           <Select
             label="How Did You Hear About Barnabus? (Optional)"
-            options={TIER_LIST?.map((item) => ({
-              label: item.name,
-              value: item.value,
+            options={REFERRAL_SOURCES?.map((item) => ({
+              label: item,
+              value: item,
             }))}
             value={state.howDidYouHear}
             onChange={(e) => setState({ ...state, howDidYouHear: e })}
@@ -386,6 +387,7 @@ const CompleteFreeRegistrationForm = () => {
             searchable={false}
             clearable
             size="L"
+            maxMenuHeight={400}
           />
         </div>
         <div className="col-span-2 flex gap-2 lg:items-center">

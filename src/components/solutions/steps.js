@@ -89,7 +89,7 @@ const SolutionsPoints = memo(function SolutionsPoints() {
               {item.closingStatement && (
                 <div className="space-y-1.5 md:space-y-2 lg:space-y-3">
                   <h4 className="text-Content-Brand-Accent font-semibold text-base leading-6 md:text-lg md:leading-6.5 lg:text-[1.5rem] lg:leading-8">
-                    Closing Statement
+                    Built on Trust
                   </h4>
                   <p className="content-subheading">
                     {addLineBreaks(item.closingStatement)}

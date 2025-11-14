@@ -17,12 +17,13 @@ const Footer = () => {
             Let&apos;s Talk
           </h1>
           <Link
-            href="mailto:hey@barnabus.ai"
+            href="mailto:contact@barnabus.ai"
             target="_blank"
-            className="md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 md:leading-7 hover:text-Content-Brand-Accent transition-all duration-200"
+            className="w-max md:text-lg text-[#CACED5] !underline !underline-offset-[25%] leading-6 md:leading-7 hover:text-Content-Brand-Accent hover:[text-shadow:0_0_16px_rgba(59,245,255,0.9)] hover:scale-102 transition-all duration-200"
           >
-            hey@barnabus.ai
+            contact@barnabus.ai
           </Link>
+
           <div className="flex gap-4">
             {FOOTER_SOCIAL_LINKS?.map((item, index) => (
               <Link key={index} href={item.link}>
@@ -31,7 +32,7 @@ const Footer = () => {
                   height={32}
                   width={32}
                   alt="social"
-                  className="h-8 w-8 hover:scale-110 transition-all duration-200"
+                  className="h-8 w-8 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(59,245,255)] transition-all duration-200"
                 />
               </Link>
             ))}
@@ -51,7 +52,7 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 z-[50]">
         <p className="text-[#9DA1A8] leading-6 hidden md:block">
-          © 2016 - {new Date().getFullYear()} Barnabus
+          © 2016 - {new Date().getFullYear()} Barnabus. All rights reserved.
         </p>
         <div className="flex justify-between items-center">
           {FOOTER_OTHER_LINKS?.map((item, index) => (
@@ -65,7 +66,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="text-sm md:text-base text-[#9DA1A8] leading-6 md:hidden text-center">
-          © 2016 - {new Date().getFullYear()} Barnabus
+          © 2016 - {new Date().getFullYear()} Barnabus. All rights reserved.
         </p>
       </div>
     </div>

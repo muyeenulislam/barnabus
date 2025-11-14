@@ -2,6 +2,7 @@
 
 import React, { memo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import ProgressBar from "../progress-bar";
 import { Tags } from "../tags";
@@ -461,13 +462,15 @@ const DefineNewCategory = () => {
                   Improving semiconductor manufacturing throughput
                 </p>
               </div>
-              <Button
-                size={screenSize.width >= 1024 ? "XL" : "L"}
-                variant="Secondary"
-                label="See the Difference"
-                trailingIcon="/icons/arrow-right.svg"
-                additionalStyle="!hidden lg:!flex"
-              />
+              <Link href="/system-protocol" className="w-full md:w-max">
+                <Button
+                  size={screenSize.width >= 1024 ? "XL" : "L"}
+                  variant="Secondary"
+                  label="See the Difference"
+                  trailingIcon="/icons/arrow-right.svg"
+                  additionalStyle="w-full md:w-max"
+                />
+              </Link>
             </div>
 
             <ThinkActLearn />
