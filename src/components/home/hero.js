@@ -1,63 +1,11 @@
-"use client";
-
 import React, { memo } from "react";
 import Image from "next/image";
-import Button from "../button";
-import Link from "next/link";
 
-const HEADLINE_CLS =
-  "text-Content-Primary font-semibold text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] leading-[3rem] md:leading-[3.5rem] lg:leading-[4.5rem]";
-const SUBTEXT_CLS = "lg:pr-[8rem] text-Content-Secondary text-xl leading-7";
-
-const BUTTONS = [
-  {
-    key: "updates",
-    label: "Explore Future Updates",
-    link: "#future-updates",
-    variant: "Secondary",
-    trailingIcon: "/icons/circle-arrow-right.svg",
-  },
-  {
-    key: "join",
-    label: "Join R&D Cohort",
-    link: "#join-rnd",
-    variant: "Primary-Accent",
-    trailingIcon: "/icons/join-rnd-btn.svg",
-  },
-];
-
-function ActionButtons({
-  order,
-  size,
-  className = "",
-  fullWidthOnMobile = false,
+const HomeHero = memo(function HomeHero({
+  headlineClass,
+  subtitleClass,
+  actionButtons,
 }) {
-  const map = new Map(BUTTONS?.map((b) => [b.key, b]));
-  return (
-    <div className={className}>
-      {order?.map((k) => {
-        const b = map.get(k);
-        return (
-          <Link
-            key={b.key}
-            href={b.link}
-            className={fullWidthOnMobile ? "w-full md:w-auto" : ""}
-          >
-            <Button
-              label={b.label}
-              variant={b.variant}
-              size={size}
-              trailingIcon={b.trailingIcon}
-              additionalStyle={fullWidthOnMobile ? "w-full md:w-auto" : ""}
-            />
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
-
-const HomeHero = memo(function HomeHero() {
   return (
     <div
       aria-labelledby="home-hero-title"
@@ -65,8 +13,8 @@ const HomeHero = memo(function HomeHero() {
     >
       <section className="flex flex-col-reverse lg:flex-row md:gap-[2.5rem] lg:gap-[6rem]">
         <div className="flex flex-col gap-[2rem] lg:gap-[4rem] flex-1">
-          <div className="flex flex-col gap-[2rem] text-center lg:text-left">
-            <h1 id="home-hero-title" className={HEADLINE_CLS}>
+          <div className="flex flex-col gap-[2rem] items-center lg:items-start text-center lg:text-left">
+            <h1 id="home-hero-title" className={headlineClass}>
               AI that doesn’t just generate — it
               <br />
               <span className="text-Action-Buttons-Primary-Accent-Content-Default">
@@ -74,7 +22,7 @@ const HomeHero = memo(function HomeHero() {
               </span>
             </h1>
 
-            <p className={SUBTEXT_CLS}>
+            <p className={subtitleClass}>
               Barnabus is Agentic AI. It doesn’t just predict or respond — it
               thinks like a team, acts like a co-founder, and learns like a
               living system.
@@ -84,18 +32,7 @@ const HomeHero = memo(function HomeHero() {
             </p>
           </div>
 
-          <ActionButtons
-            order={["join", "updates"]}
-            size="XL"
-            fullWidthOnMobile
-            className="flex lg:hidden w-full items-center justify-center lg:justify-start gap-4 flex-col md:flex-row-reverse"
-          />
-
-          <ActionButtons
-            order={["updates", "join"]}
-            size="2XL"
-            className="hidden lg:flex gap-4"
-          />
+          {actionButtons}
         </div>
 
         <div className="flex-1 flex items-center justify-center">

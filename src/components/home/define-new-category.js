@@ -23,8 +23,6 @@ import {
   DomainMemoryInnerCard,
 } from "./define-category-card-items";
 
-import "./styles.css";
-
 const ICON_PANEL_STYLE = Object.freeze({
   background:
     "radial-gradient(53.06% 69.61% at 50% 100%, var(--Overlays-White-3, rgba(255, 255, 255, 0.01)) 0%, var(--Overlays-Black-9, rgba(18, 19, 20, 0.19)) 100%), var(--Overlays-White-3, rgba(255, 255, 255, 0.03))",

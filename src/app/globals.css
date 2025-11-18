@@ -403,12 +403,65 @@ section {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+.fade-top-25 {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(to top, #000 0%, #000 45%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.fade-bottom-teal-25 {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
 
 .gray-gradient-bg {
   background: linear-gradient(180deg, #121314 0%, #1f2021 75%);
 }
 .gray-gradient-bg-50 {
   background: linear-gradient(180deg, #121314 0%, #1f2021 50%);
+}
+.gray-radial-gradient-bg-50 {
+  background: radial-gradient(
+      81.46% 48.05% at 75.65% 50%,
+      rgba(18, 19, 20, 0) 32.88%,
+      #121314 47.81%
+    ),
+    #000;
+}
+.hero-four-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 14, 19, 0) 37.55%,
+    #020e13 63.13%
+  );
+}
+.hero-five-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 14, 19, 0) 37.55%,
+    #020e13 63.13%
+  );
 }
 
 @media (min-width: 768px) {
@@ -494,6 +547,16 @@ section {
   }
   .shadow-container::before {
     border-radius: 3rem !important;
+  }
+  .hero-four-gradient {
+    background: linear-gradient(
+      259deg,
+      rgba(2, 14, 19, 0) 37.55%,
+      #020e13 63.13%
+    );
+  }
+  .hero-five-gradient {
+    background: linear-gradient(259deg, rgba(2, 14, 19, 0) 37.55%, #000000 65%);
   }
 }
 
