@@ -7,8 +7,9 @@ import Image from "next/image";
 import { Select } from "../select";
 import Modal from "../modal";
 import BottomSheet from "../bottom-sheet";
-import { buildTagMap, TagChips } from "@/utils/tag-utils";
+import Button from "../button";
 
+import { buildTagMap, TagChips } from "@/utils/tag-utils";
 import {
   TIER_LIST,
   DOMAIN_LIST,
@@ -18,6 +19,7 @@ import {
 } from "@/utils/arrays";
 import { SECTION_GAPS } from "@/utils/common-styles";
 import { useIsMobile } from "@/utils/useismobile";
+import useScreenSize from "@/utils/usescreensize";
 
 const PartnerDetailsContent = React.memo(function PartnerDetailsContent({
   partner,
@@ -197,6 +199,7 @@ const getVal = (x) => (x && typeof x === "object" ? x.value : x) || null;
 
 const Partnership = () => {
   const isMobile = useIsMobile();
+  const screenSize = useScreenSize();
 
   const tagMap = useMemo(() => buildTagMap(TAGS_LIST), []);
   const tierMap = useMemo(() => buildTagMap(TIER_LIST), []);
@@ -208,7 +211,7 @@ const Partnership = () => {
     region: null,
     status: null,
   });
-  const [partners, setPartners] = useState(PARTNERSHIP_LIST);
+  const [partners, setPartners] = useState([]);
   const [partnerDetails, setPartnerDetails] = useState(null);
 
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -233,7 +236,8 @@ const Partnership = () => {
       return tierOk && domainOk && regionOk && statusOk;
     });
 
-    setPartners(next);
+    setPartners([]);
+    // setPartners(next);
   }, [filters]);
 
   useEffect(() => {
@@ -263,79 +267,123 @@ const Partnership = () => {
 
   return (
     <div className={`flex flex-col ${SECTION_GAPS}`}>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Select
-          label="Tier"
-          options={TIER_LIST?.map((item) => ({
-            label: item.name,
-            value: item.value,
-          }))}
-          value={filters.tier}
-          onChange={(e) => setFilters((f) => ({ ...f, tier: e }))}
-          placeholder="Select tier"
-          searchable={false}
-          clearable
-        />
-        <Select
-          label="Domain"
-          options={DOMAIN_LIST?.map((item) => ({
-            label: item.name,
-            value: item.value,
-          }))}
-          value={filters.domain}
-          onChange={(e) => setFilters((f) => ({ ...f, domain: e }))}
-          placeholder="All"
-          searchable={false}
-          clearable
-        />
-        <Select
-          label="Region"
-          options={REGION_LIST?.map((item) => ({
-            label: item.name,
-            value: item.value,
-          }))}
-          value={filters.region}
-          onChange={(e) => setFilters((f) => ({ ...f, region: e }))}
-          placeholder="All"
-          searchable
-          clearable
-        />
-        <Select
-          label="Status"
-          options={[
-            { label: "Active", value: "active" },
-            { label: "Inactive", value: "inactive" },
-          ]}
-          value={filters.status}
-          onChange={(e) => setFilters((f) => ({ ...f, status: e }))}
-          placeholder="All"
-          searchable={false}
-          clearable
-        />
-      </div>
-
       {partners.length === 0 ? (
-        <p className="text-sm text-Content-Tertiary">
-          No partners match your filters.
-        </p>
+        <>
+          <Image
+            src="/images/empty-partnerships.svg"
+            alt="No partners"
+            width={1000}
+            height={1000}
+            className="h-[12.5rem] mx-auto"
+          />
+          <div className="space-y-2 md:space-y-3 lg:space-y-4 mx-auto text-center">
+            <h1 className="card-heading mx-auto">
+              The First Step Toward Collaboration Starts Here.
+            </h1>
+            <p className="card-subheading">
+              Barnabus is opening doors for cross-domain partnerships in
+              Healthcare, Semiconductor, Cybersecurity, and Automation. We’re
+              seeking collaborators who share our vision of building impactful,
+              future-ready systems.
+            </p>
+          </div>
+          <Link href="#join-rnd" className="w-full md:w-auto mx-auto">
+            <Button
+              label={"Become a Partner"}
+              variant="Primary-Accent"
+              size={
+                screenSize.width >= 1920
+                  ? "2XL"
+                  : screenSize.width > 1024
+                  ? "XL"
+                  : "L"
+              }
+              trailingIcon="/icons/arrow-right-neon.svg"
+              additionalStyle="w-full md:w-auto"
+            />
+          </Link>
+        </>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 lg:gap-10 place-items-left">
-          {partners?.map((item) => (
-            <div
-              key={Math.random()}
-              className="group flex items-center justify-left overflow-hidden"
-              onClick={() => openDetails(item.name)}
-            >
-              <Image
-                src={item.icon}
-                alt={item.name}
-                width={160}
-                height={64}
-                className="p-3 w-[10rem] h-max object-contain grayscale transition duration-300 ease-out group-hover:grayscale-0 group-hover:scale-105 transform motion-reduce:transform-none cursor-pointer"
-              />
+        <>
+          <h1 className="lg:max-w-[50rem] text-Content-Primary font-semibold text-lg leading-6.5 md:text-xl md:leading-7 lg:text-[2rem] lg:leading-10">
+            Cross-domain Team across Healthcare, Semiconductor, Cybersecurity,
+            and Automation.
+          </h1>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Select
+              label="Tier"
+              options={TIER_LIST?.map((item) => ({
+                label: item.name,
+                value: item.value,
+              }))}
+              value={filters.tier}
+              onChange={(e) => setFilters((f) => ({ ...f, tier: e }))}
+              placeholder="Select tier"
+              searchable={false}
+              clearable
+            />
+            <Select
+              label="Domain"
+              options={DOMAIN_LIST?.map((item) => ({
+                label: item.name,
+                value: item.value,
+              }))}
+              value={filters.domain}
+              onChange={(e) => setFilters((f) => ({ ...f, domain: e }))}
+              placeholder="All"
+              searchable={false}
+              clearable
+            />
+            <Select
+              label="Region"
+              options={REGION_LIST?.map((item) => ({
+                label: item.name,
+                value: item.value,
+              }))}
+              value={filters.region}
+              onChange={(e) => setFilters((f) => ({ ...f, region: e }))}
+              placeholder="All"
+              searchable
+              clearable
+            />
+            <Select
+              label="Status"
+              options={[
+                { label: "Active", value: "active" },
+                { label: "Inactive", value: "inactive" },
+              ]}
+              value={filters.status}
+              onChange={(e) => setFilters((f) => ({ ...f, status: e }))}
+              placeholder="All"
+              searchable={false}
+              clearable
+            />
+          </div>
+
+          {partners.length === 0 ? (
+            <p className="text-sm text-Content-Tertiary">
+              No partners match your filters.
+            </p>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 lg:gap-10 place-items-left">
+              {partners?.map((item) => (
+                <div
+                  key={Math.random()}
+                  className="group flex items-center justify-left overflow-hidden"
+                  onClick={() => openDetails(item.name)}
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    width={160}
+                    height={64}
+                    className="p-3 w-[10rem] h-max object-contain grayscale transition duration-300 ease-out group-hover:grayscale-0 group-hover:scale-105 transform motion-reduce:transform-none cursor-pointer"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
       <BottomSheet
         open={isMobile && drawerOpen}

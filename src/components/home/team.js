@@ -90,32 +90,68 @@ const Team = () => {
                   ))}
                 </div>
               ) : tab === "partners" ? (
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[4rem]">
-                  {PARTNERSHIP_LIST?.map((item, index) => (
-                    <React.Fragment key={index}>
-                      <div className="shrink-0 space-y-2">
-                        <Image
-                          src={item.icon}
-                          height={32}
-                          width={32}
-                          alt="linkedin"
-                          className="h-[1.5rem] w-full"
-                        />
-                      </div>
-
-                      {index % 2 === 1 &&
-                        index < PARTNERSHIP_LIST.length - 1 && (
-                          <div className="col-span-2 my-4 border-t border-white/10 block lg:hidden" />
-                        )}
-
-                      {index % 4 === 3 &&
-                        index < PARTNERSHIP_LIST.length - 1 && (
-                          <div className="hidden lg:block lg:col-span-4 my-6 border-t border-white/10" />
-                        )}
-                    </React.Fragment>
-                  ))}
+                <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
+                  <Image
+                    src="/images/empty-partnerships.svg"
+                    alt="No partners"
+                    width={1000}
+                    height={1000}
+                    className="h-[12.5rem] mx-auto"
+                  />
+                  <div className="space-y-2 md:space-y-3 lg:space-y-4 mx-auto text-center">
+                    <h1 className="card-heading mx-auto">
+                      The First Step Toward Collaboration Starts Here.
+                    </h1>
+                    <p className="card-subheading">
+                      Barnabus is opening doors for cross-domain partnerships in
+                      Healthcare, Semiconductor, Cybersecurity, and Automation.
+                      We’re seeking collaborators who share our vision of
+                      building impactful, future-ready systems.
+                    </p>
+                  </div>
+                  <Link href="#join-rnd" className="w-full md:w-auto mx-auto">
+                    <Button
+                      label={"Become a Partner"}
+                      variant="Primary-Accent"
+                      size={
+                        screenSize.width >= 1920
+                          ? "2XL"
+                          : screenSize.width > 1024
+                          ? "XL"
+                          : "L"
+                      }
+                      trailingIcon="/icons/arrow-right-neon.svg"
+                      additionalStyle="w-full md:w-auto"
+                    />
+                  </Link>
                 </div>
-              ) : null}
+              ) : // <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[4rem]">
+
+              //   {PARTNERSHIP_LIST?.map((item, index) => (
+              //     <React.Fragment key={index}>
+              //       <div className="shrink-0 space-y-2">
+              //         <Image
+              //           src={item.icon}
+              //           height={32}
+              //           width={32}
+              //           alt="linkedin"
+              //           className="h-[1.5rem] w-full"
+              //         />
+              //       </div>
+
+              //       {index % 2 === 1 &&
+              //         index < PARTNERSHIP_LIST.length - 1 && (
+              //           <div className="col-span-2 my-4 border-t border-white/10 block lg:hidden" />
+              //         )}
+
+              //       {index % 4 === 3 &&
+              //         index < PARTNERSHIP_LIST.length - 1 && (
+              //           <div className="hidden lg:block lg:col-span-4 my-6 border-t border-white/10" />
+              //         )}
+              //     </React.Fragment>
+              //   ))}
+              // </div>
+              null}
             </div>
           </div>
         </div>

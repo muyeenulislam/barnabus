@@ -326,109 +326,119 @@ export default function Team() {
   };
 
   return (
-    <div className={`flex flex-col ${SECTION_GAPS}`}>
-      <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
-        <div className="flex gap-4 justify-between items-center">
-          <Tab
-            tabItems={TAB_ITEMS}
-            currentTab={tab}
-            setTab={setTab}
-            additionalStyle="w-max"
-          />
-          <button
-            type="button"
-            className="flex justify-center items-center rounded-full bg-Action-Buttons-Secondary-Background-Default text-action-buttons-secondary-content-default-pressed-hover font-semibold gap-1 lg:gap-2 py-2 px-5 lg:py-3 lg:px-5 text-xs lg:text-base leading-4 lg:leading-6 cursor-pointer"
-            onClick={resetFilter}
-          >
-            <p>Filter</p>
-            <Image
-              src="/icons/filter-remove.svg"
-              alt="Clear filter"
-              height={24}
-              width={24}
-              className="h-5 w-5"
+    <>
+      <h1 className="lg:max-w-[50rem] text-Content-Primary font-semibold text-lg leading-6.5 md:text-xl md:leading-7 lg:text-[2rem] lg:leading-10">
+        Cross-domain Team across Healthcare, Semiconductor, Cybersecurity, and
+        Automation.
+      </h1>
+      <div className={`flex flex-col ${SECTION_GAPS}`}>
+        <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
+          <div className="flex gap-4 justify-between items-center">
+            <Tab
+              tabItems={TAB_ITEMS}
+              currentTab={tab}
+              setTab={setTab}
+              additionalStyle="w-max"
             />
-          </button>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {(ROLE_LIST || [])?.map((role) => (
             <button
               type="button"
-              key={role}
-              className={[
-                "rounded-full font-semibold backdrop-blur-lg px-3 py-2 text-xs lg:text-[0.875rem] leading-4 lg:leading-5 cursor-pointer",
-                role === roleFilter
-                  ? "bg-Action-Buttons-Primary-Default-Background-Default text-backgroundDarkGray"
-                  : "bg-Action-Buttons-Secondary-Background-Default",
-              ].join(" ")}
-              onClick={() => setRoleFilter(role)}
-              aria-pressed={role === roleFilter}
+              className="flex justify-center items-center rounded-full bg-Action-Buttons-Secondary-Background-Default text-action-buttons-secondary-content-default-pressed-hover font-semibold gap-1 lg:gap-2 py-2 px-5 lg:py-3 lg:px-5 text-xs lg:text-base leading-4 lg:leading-6 cursor-pointer"
+              onClick={resetFilter}
             >
-              {role}
+              <p>Filter</p>
+              <Image
+                src="/icons/filter-remove.svg"
+                alt="Clear filter"
+                height={24}
+                width={24}
+                className="h-5 w-5"
+              />
             </button>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {(ROLE_LIST || [])?.map((role) => (
+              <button
+                type="button"
+                key={role}
+                className={[
+                  "rounded-full font-semibold backdrop-blur-lg px-3 py-2 text-xs lg:text-[0.875rem] leading-4 lg:leading-5 cursor-pointer",
+                  role === roleFilter
+                    ? "bg-Action-Buttons-Primary-Default-Background-Default text-backgroundDarkGray"
+                    : "bg-Action-Buttons-Secondary-Background-Default",
+                ].join(" ")}
+                onClick={() => setRoleFilter(role)}
+                aria-pressed={role === roleFilter}
+              >
+                {role}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {!!featured.length && (
+          <div className="flex flex-col gap-4">
+            {featured?.map((item) => (
+              <FeaturedCard
+                key={item?.name}
+                item={item}
+                onOpen={openDetails}
+                tagMap={tagMap}
+              />
+            ))}
+          </div>
+        )}
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[2rem]">
+          {filteredMembers?.map((item, index) => (
+            <React.Fragment key={item?.name || index}>
+              <MemberCard item={item} onOpen={openDetails} tagMap={tagMap} />
+
+              {index % 2 === 1 && index < filteredMembers.length - 1 && (
+                <div
+                  aria-hidden="true"
+                  className="col-span-2 my-3 border-t border-white/10 block md:hidden"
+                />
+              )}
+              {index % 3 === 2 && index < filteredMembers.length - 1 && (
+                <div
+                  aria-hidden="true"
+                  className="hidden md:block lg:hidden md:col-span-3 my-6 border-t border-white/10"
+                />
+              )}
+              {index % 4 === 3 && index < filteredMembers.length - 1 && (
+                <div
+                  aria-hidden="true"
+                  className="hidden lg:block lg:col-span-4 my-8 border-t border-white/10"
+                />
+              )}
+            </React.Fragment>
           ))}
         </div>
+
+        <BottomSheet
+          open={isMobile && drawerOpen}
+          onClose={closeDetails}
+          title="Member Details"
+          className="md:hidden"
+          contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4 max-h-[80vh] overflow-y-auto"
+        >
+          <MemberDetailsContent
+            member={memberDetails}
+            tagMap={tagMap}
+            compact
+          />
+        </BottomSheet>
+
+        <Modal
+          open={!isMobile && modalOpen}
+          onClose={closeDetails}
+          title="Member Details"
+          panelClassName="md:!max-w-[40rem] lg:!max-w-[50rem]"
+        >
+          <MemberDetailsContent member={memberDetails} tagMap={tagMap} />
+        </Modal>
       </div>
-
-      {!!featured.length && (
-        <div className="flex flex-col gap-4">
-          {featured?.map((item) => (
-            <FeaturedCard
-              key={item?.name}
-              item={item}
-              onOpen={openDetails}
-              tagMap={tagMap}
-            />
-          ))}
-        </div>
-      )}
-
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[1.25rem] md:gap-x-[1.5rem] lg:gap-x-[2rem]">
-        {filteredMembers?.map((item, index) => (
-          <React.Fragment key={item?.name || index}>
-            <MemberCard item={item} onOpen={openDetails} tagMap={tagMap} />
-
-            {index % 2 === 1 && index < filteredMembers.length - 1 && (
-              <div
-                aria-hidden="true"
-                className="col-span-2 my-3 border-t border-white/10 block md:hidden"
-              />
-            )}
-            {index % 3 === 2 && index < filteredMembers.length - 1 && (
-              <div
-                aria-hidden="true"
-                className="hidden md:block lg:hidden md:col-span-3 my-6 border-t border-white/10"
-              />
-            )}
-            {index % 4 === 3 && index < filteredMembers.length - 1 && (
-              <div
-                aria-hidden="true"
-                className="hidden lg:block lg:col-span-4 my-8 border-t border-white/10"
-              />
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-
-      <BottomSheet
-        open={isMobile && drawerOpen}
-        onClose={closeDetails}
-        title="Member Details"
-        className="md:hidden"
-        contentClassName="px-[1.5rem] py-[1.25rem] bg-Surface2 flex flex-col gap-4 max-h-[80vh] overflow-y-auto"
-      >
-        <MemberDetailsContent member={memberDetails} tagMap={tagMap} compact />
-      </BottomSheet>
-
-      <Modal
-        open={!isMobile && modalOpen}
-        onClose={closeDetails}
-        title="Member Details"
-        panelClassName="md:!max-w-[40rem] lg:!max-w-[50rem]"
-      >
-        <MemberDetailsContent member={memberDetails} tagMap={tagMap} />
-      </Modal>
-    </div>
+    </>
   );
 }

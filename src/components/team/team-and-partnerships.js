@@ -51,10 +51,6 @@ const TeamAndPartnership = () => {
             setTab(value);
           }}
         />
-        <h1 className="lg:max-w-[50rem] text-Content-Primary font-semibold text-lg leading-6.5 md:text-xl md:leading-7 lg:text-[2rem] lg:leading-10">
-          Cross-domain Team across Healthcare, Semiconductor, Cybersecurity, and
-          Automation.
-        </h1>
         {tab === "team" ? <Team /> : <Partnership />}
       </section>
     </div>

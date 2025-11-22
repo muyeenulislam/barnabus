@@ -57,11 +57,11 @@ function ActionButtons({
   );
 }
 
-const HomeHero = memo(function HomeHero() {
+const HomeHeroSecondary = memo(function HomeHeroSecondary() {
   return (
     <div
       aria-labelledby="home-hero-title"
-      className="relative py-[2rem] md:py-[3rem] lg:py-[8rem] bg-[url('/images/hero-bg.svg')] 2xl:bg-[url('/images/hero-bg-lg.svg')] bg-no-repeat bg-center lg:bg-left bg-cover"
+      className="relative py-[2rem] md:py-[3rem] lg:py-[8rem]"
     >
       <section className="flex flex-col-reverse lg:flex-row md:gap-[2.5rem] lg:gap-[6rem]">
         <div className="flex flex-col gap-[2rem] lg:gap-[4rem] flex-1">
@@ -117,4 +117,4 @@ const HomeHero = memo(function HomeHero() {
   );
 });
 
-export default HomeHero;
+export default HomeHeroSecondary;
