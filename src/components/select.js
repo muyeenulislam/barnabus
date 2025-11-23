@@ -222,8 +222,7 @@ export function BaseSelect({
   }
 
   const controlSkeleton =
-    "w-full bg-backgroundDarkGray border border-Content-Tertiary text-Content-Primary " +
-    "placeholder:text-[#9DA1A8] flex items-center justify-between";
+    "w-full bg-backgroundDarkGray border border-Border-Secondary text-Content-Primary focus:border-Content-Brand-Accent hover:border-Content-Tertiary placeholder:text-[#9DA1A8] flex items-center justify-between transition-all";
 
   return (
     <div className="flex flex-col">

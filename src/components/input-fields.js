@@ -41,8 +41,8 @@ const TextInput = ({
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
         className={`outline-none text-Content-Primary font-normal .placeholder-Content-Tertiary border ${
-          error ? "border-red-500" : "border-Content-Tertiary"
-        } bg-backgroundDarkGray text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4`}
+          error ? "border-red-500" : "border-Border-Secondary"
+        } bg-backgroundDarkGray text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4 focus:border-Content-Brand-Accent hover:border-Content-Tertiary transition-all`}
         {...rest}
       />
       {error && (
@@ -99,8 +99,8 @@ const TextAreaInput = ({
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
         className={`outline-none text-Content-Primary .placeholder-Content-Tertiary border ${
-          error ? "border-red-500" : "border-Content-Tertiary"
-        }  bg-backgroundDarkGray text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4`}
+          error ? "border-red-500" : "border-Border-Secondary"
+        }  bg-backgroundDarkGray text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4 focus:border-Content-Brand-Accent hover:border-Content-Tertiary transition-all`}
         {...rest}
       />
       {error && (
