@@ -18,11 +18,7 @@ const VerificationCard = memo(function VerificationCard({
       </h6>
       <p className="text-Content-Secondary text-sm leading-5 lg:text-base lg:leading-6">
         {subtitle}{" "}
-        <Link
-          href={link}
-          target="_blank"
-          className="text-Action-Buttons-Link-Content-Default"
-        >
+        <Link href={link} className="text-Action-Buttons-Link-Content-Default">
           {linkText}
         </Link>
       </p>
@@ -62,7 +58,10 @@ const SectionIntro = memo(function SectionIntro() {
 
 const CompleteFreeRegistration = () => {
   return (
-    <section className="py-[4rem] md:py-[6rem] lg:py-[8rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[6rem]">
+    <section
+      className="py-[4rem] md:py-[6rem] lg:py-[8rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[6rem]"
+      id="complete-free-registration"
+    >
       <SectionIntro />
       <div className="lg:w-[65%]">
         <CompleteFreeRegistrationForm />

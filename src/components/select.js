@@ -346,7 +346,7 @@ export function BaseSelect({
             }}
             className="relative z-[60]"
           >
-            <div className="absolute left-0 right-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0F1113] shadow-xl">
+            <div className="absolute left-0 right-0 overflow-hidden rounded-2xl border border-white/10 bg-Overlays-Black-9 backdrop-blur-[1rem] shadow-selectDropdown">
               {/* Search */}
               {searchable && (
                 <div
@@ -402,7 +402,7 @@ export function BaseSelect({
                 role="listbox"
                 aria-multiselectable={multiple || undefined}
                 style={{ maxHeight: maxMenuHeight }}
-                className="no-scrollbar overflow-y-auto py-1"
+                className="no-scrollbar overflow-y-auto py-4"
               >
                 {filtered.length === 0 ? (
                   <div
@@ -424,17 +424,14 @@ export function BaseSelect({
                         aria-selected={selected}
                         data-active={active || undefined}
                         onMouseEnter={() => setActiveIndex(i)}
-                        onMouseDown={(e) => e.preventDefault()} // keep focus
+                        onMouseDown={(e) => e.preventDefault()}
                         onClick={() => !opt.disabled && selectOption(opt.value)}
                         className={classNames(
-                          "mx-1 flex cursor-pointer items-center gap-2 rounded-xl",
+                          "mx-1 flex cursor-pointer items-center gap-2 rounded-full text-white hover:bg-Action-Buttons-Tertiary-Background-Hover",
                           S.option,
-                          opt.disabled
-                            ? "opacity-40 cursor-not-allowed"
-                            : active
-                            ? "bg-white/5"
-                            : "hover:bg-white/5",
-                          selected ? "text-white" : "text-[#E5E7EB]"
+                          opt.disabled && "opacity-40 cursor-not-allowed",
+                          selected &&
+                            "bg-Action-Buttons-Tertiary-Background-Hover"
                         )}
                       >
                         {multiple ? (

@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 import Button from "./button";
 import { TextAreaInput, TextInput } from "./input-fields";
@@ -200,13 +202,13 @@ const EarlyAccessForm = () => {
 };
 
 const CompleteFreeRegistrationForm = () => {
+  const searchParams = useSearchParams();
   const screenSize = useScreenSize();
 
   const [state, setState] = useState({
     fullName: "",
     occupation: null,
     countryOfPractice: null,
-    minc: "",
     invitationCode: "",
     organization: "",
     howDidYouHear: null,
@@ -215,18 +217,23 @@ const CompleteFreeRegistrationForm = () => {
     fullName: "",
     occupation: "",
     countryOfPractice: "",
-    minc: "",
     invitationCode: "",
   });
   const [checked, setChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [verificationState, setVerificationState] = useState({
+    show: false,
+    code: "",
+    verified: false,
+    loading: false,
+    error: "",
+  });
 
   const requiredFields = [
     "fullName",
     "occupation",
     "countryOfPractice",
-    "minc",
     "invitationCode",
   ];
 
@@ -234,12 +241,42 @@ const CompleteFreeRegistrationForm = () => {
     String(state[key] || "").trim()
   );
 
+  useEffect(() => {
+    const countryFromQuery = searchParams.get("country");
+
+    if (!countryFromQuery) return;
+
+    setState({ ...state, countryOfPractice: countryFromQuery });
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (
+      state.countryOfPractice === "United States of America" ||
+      state.countryOfPractice === "Canada"
+    ) {
+      setVerificationState({ ...verificationState, show: true });
+    } else {
+      setVerificationState({ ...verificationState, show: false });
+    }
+  }, [state.countryOfPractice]);
+
+  const handleVerify = () => {
+    setVerificationState({ ...verificationState, loading: true });
+    setTimeout(() => {
+      setVerificationState({
+        ...verificationState,
+        verified: false,
+        error: true,
+        loading: false,
+      });
+    }, 2000);
+  };
+
   const handleSubmit = () => {
     const reqMap = {
       fullName: "Full Name",
       occupation: "Occupation",
       countryOfPractice: "Country of Practice",
-      minc: "MINC",
       invitationCode: "Invitation Code",
     };
 
@@ -247,7 +284,6 @@ const CompleteFreeRegistrationForm = () => {
       fullName: "",
       occupation: "",
       countryOfPractice: "",
-      minc: "",
       invitationCode: "",
     };
 
@@ -266,7 +302,6 @@ const CompleteFreeRegistrationForm = () => {
       fullName: "",
       occupation: "",
       countryOfPractice: "",
-      minc: "",
       invitationCode: "",
     });
 
@@ -278,7 +313,6 @@ const CompleteFreeRegistrationForm = () => {
         fullName: "",
         occupation: null,
         countryOfPractice: null,
-        minc: "",
         invitationCode: "",
         organization: "",
         howDidYouHear: null,
@@ -288,6 +322,20 @@ const CompleteFreeRegistrationForm = () => {
       }, 3000);
     }, 1000);
   };
+
+  const getStatusIcon = () => {
+    if (verificationState?.error && !verificationState?.verified) {
+      return "/icons/alert-red.svg";
+    }
+
+    if (!verificationState?.error && verificationState?.verified) {
+      return "/icons/checkmark-circle-green.svg";
+    }
+
+    return null;
+  };
+
+  const statusIcon = getStatusIcon();
 
   return (
     <div className="bg-Overlays-White-3 shadow-boxPrimary flex flex-col gap-5 md:gap-8 lg:gap-[3rem] p-5 md:p-6 lg:p-[4rem] rounded-3xl md:rounded-4xl lg:rounded-[4rem]">
@@ -331,6 +379,13 @@ const CompleteFreeRegistrationForm = () => {
           onChange={(e) => {
             setState({ ...state, countryOfPractice: e });
             setErrors({ ...errors, countryOfPractice: "" });
+            setVerificationState({
+              show: false,
+              code: "",
+              verified: false,
+              loading: false,
+              error: "",
+            });
           }}
           error={errors.countryOfPractice}
           placeholder="Select"
@@ -338,18 +393,164 @@ const CompleteFreeRegistrationForm = () => {
           size="L"
           searchable={true}
         />
-        <div className="col-span-2">
-          <TextInput
-            label="MINC (Medical Identification Number for Canada) *"
-            value={state.minc}
-            placeholder="Enter MINC Number"
-            onChange={(e) => {
-              setState({ ...state, minc: e.target.value });
-              setErrors({ ...errors, minc: "" });
-            }}
-            error={errors.minc}
-          />
-        </div>
+        {verificationState?.show && (
+          <div className="col-span-2 bg-Surface2 rounded-3xl flex flex-col gap-6 p-4 lg:p-6">
+            <div className="space-y-2 lg:space-y-3">
+              <h4 className="text-Content-Primary font-semibold text-base leading-6 md:text-lg md:leading-6.5 lg:text-[1.5rem] lg:leading-8">
+                Verify your credentials
+              </h4>
+              <p className="card-subheading">
+                <strong>Barnabus</strong>
+                {state.countryOfPractice === "Canada"
+                  ? " is free for verified physicians in Canada. If you are eligible for access, please enter your Medical Identification Number for Canada (MINC)."
+                  : " is free for verified physicians in Canada. If you are eligible for access, please enter your NPI or valid state medical license number for verification."}
+              </p>
+            </div>
+            {verificationState.verified && (
+              <div className="mx-auto flex flex-col gap-2 justify-center items-center">
+                <Image
+                  src="/icons/checkmark-circle-green2.svg"
+                  alt="Verification status"
+                  width={120}
+                  height={120}
+                  className="h-10 w-10 lg:h-12 lg:w-12"
+                />
+                <p>
+                  {state.countryOfPractice === "Canada"
+                    ? "Your MINC was verified successfully!"
+                    : "Your NPI was verified successfully!"}
+                </p>
+              </div>
+            )}
+            {!verificationState.verified && verificationState.error && (
+              <div className="mx-auto flex flex-col gap-2 justify-center items-center">
+                <Image
+                  src="/icons/close-red.svg"
+                  alt="Verification status"
+                  width={120}
+                  height={120}
+                  className="h-10 w-10 lg:h-12 lg:w-12"
+                />
+                <div className="text-center font-semibold">
+                  <p className="text-Content-Error-Bold">
+                    Your license could not be verified
+                  </p>
+
+                  {state.countryOfPractice === "Canada" ? (
+                    <p className="text-Content-Primary">
+                      Please check your MINC, or{" "}
+                      <Link
+                        href="#"
+                        target="_blank"
+                        className="text-Action-Buttons-Link-Content-Default"
+                      >
+                        contact support.
+                      </Link>
+                    </p>
+                  ) : (
+                    <p className="text-Content-Primary">
+                      Please check your NPI, or{" "}
+                      <Link
+                        href="#"
+                        target="_blank"
+                        className="text-Action-Buttons-Link-Content-Default"
+                      >
+                        contact support.
+                      </Link>
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+            <div className="space-y-2">
+              <p className="content-subheading !font-semibold !text-Content-Primary">
+                {state.countryOfPractice === "Canada"
+                  ? "MINC (Medical Identification Number for Canada)"
+                  : "NPI or License Number"}
+              </p>
+              <div className="relative">
+                <input
+                  value={verificationState.code}
+                  onChange={(e) =>
+                    setVerificationState({
+                      ...verificationState,
+                      error: null,
+                      code: e.target.value,
+                    })
+                  }
+                  placeholder={
+                    state.countryOfPractice === "Canada"
+                      ? "Enter MINC Number"
+                      : "Enter your NPI or License Number"
+                  }
+                  className="outline-none w-full text-Content-Primary font-normal placeholder-Content-Tertiary border border-Border-Secondary bg-Overlays-Black-9 text-base md:text-lg lg:text-xl leading-6 md:leading-6.5 lg:leading-7 rounded-xl px-3 py-4 lg:px-5 lg:py-4 focus:border-Content-Brand-Accent hover:border-Content-Tertiary transition-all"
+                />
+                {statusIcon && (
+                  <Image
+                    src={statusIcon}
+                    alt="Verification status"
+                    width={32}
+                    height={32}
+                    className="h-4 w-4 lg:h-6 lg:w-6 absolute right-4 top-2 translate-y-1/2"
+                  />
+                )}
+              </div>
+              <p className="card-subheading">
+                {state.countryOfPractice === "Canada"
+                  ? "The MINC is a number used exclusively for physicians and those studying to become physicians in Canada."
+                  : "The NPI is a number used exclusively for physicians and those studying to become physicians in Canada."}
+              </p>
+            </div>
+            <p className="card-subheading">
+              {state.countryOfPractice === "Canada" ? (
+                <>
+                  If eligible, your MINC can be obtained from your{" "}
+                  <Link
+                    href="https://portal.physiciansapply.ca/Account/InitialLogin"
+                    target="_blank"
+                    className="text-Action-Buttons-Link-Content-Default"
+                  >
+                    physiciansapply.ca
+                  </Link>{" "}
+                  account or your appropriate{" "}
+                  <Link
+                    href="https://mcc.ca/about/partner-organizations/medical-regulatory-authorities/"
+                    target="_blank"
+                    className="text-Action-Buttons-Link-Content-Default"
+                  >
+                    Medical Regulatory Authority.
+                  </Link>
+                </>
+              ) : (
+                <>
+                  If eligible, your NPPES Registry Lookup can be obtained from
+                  your{" "}
+                  <Link
+                    href="https://npiregistry.cms.hhs.gov"
+                    target="_blank"
+                    className="text-Action-Buttons-Link-Content-Default"
+                  >
+                    npiregistry.cms.hhs.gov
+                  </Link>{" "}
+                  account.
+                </>
+              )}
+            </p>
+            <Button
+              label="Verify"
+              trailingIcon="/icons/arrow-right-black.svg"
+              loading={verificationState.loading}
+              disabled={
+                !verificationState.code ||
+                verificationState.loading ||
+                verificationState.error ||
+                verificationState.verified
+              }
+              additionalStyle="md:!w-max"
+              onClick={handleVerify}
+            />
+          </div>
+        )}
         <div className="col-span-2 space-y-1">
           <TextInput
             label="Invitation Code *"
