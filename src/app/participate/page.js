@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import SectionStartingGradient from "@/components/section-starting-gradient";
 import ParticipateIntro from "@/components/participate/intro";
@@ -15,11 +15,13 @@ export const metadata = generateMetadata({
 
 const Page = () => {
   return (
-    <SectionStartingGradient>
-      <ParticipateIntro />
-      <Steps />
-      <CompleteFreeRegistration />
-    </SectionStartingGradient>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SectionStartingGradient>
+        <ParticipateIntro />
+        <Steps />
+        <CompleteFreeRegistration />
+      </SectionStartingGradient>
+    </Suspense>
   );
 };
 
